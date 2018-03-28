@@ -4248,13 +4248,13 @@
 				TargetAttributes = {
 					661FDC921F94B50A0045ED98 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -4500,7 +4500,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		74F8E9000E6B8B59EE721EE0 /* [CP] Embed Pods Frameworks */ = {
@@ -5167,11 +5167,10 @@
 			baseConfigurationReference = 745E089CA2D9A0319C6A03CB /* Pods-Meimeila.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Meimeila/Meimeila.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: jingcheng he (YG32BA9FL9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YG32BA9FL9;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = HR6HGC9SU2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Meimeila/Classes/Common/3rd/Alipay",
@@ -5179,10 +5178,10 @@
 				INFOPLIST_FILE = Meimeila/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nnddkj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.welcare.aolanya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "691e5800-5071-4063-a405-60ef96431ea8";
+				PROVISIONING_PROFILE_SPECIFIER = dev_aolanya;
 				SWIFT_OBJC_BRIDGING_HEADER = Meimeila/Meimeila_bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -5194,11 +5193,10 @@
 			baseConfigurationReference = 21746042E2717376CF8F3BFF /* Pods-Meimeila.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Meimeila/Meimeila.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: jingcheng he (YG32BA9FL9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YG32BA9FL9;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = HR6HGC9SU2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Meimeila/Classes/Common/3rd/Alipay",
@@ -5206,10 +5204,10 @@
 				INFOPLIST_FILE = Meimeila/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nnddkj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.welcare.aolanya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "691e5800-5071-4063-a405-60ef96431ea8";
+				PROVISIONING_PROFILE_SPECIFIER = dev_aolanya;
 				SWIFT_OBJC_BRIDGING_HEADER = Meimeila/Meimeila_bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
