@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="payImmdiatelyCell" customModule="Meimeila" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gQN-dh-Zhp">
+                        <rect key="frame" x="16" y="12" width="58.5" height="58.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="gQN-dh-Zhp" secondAttribute="height" id="xk0-DO-Doq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-bl-GOp">
+                        <rect key="frame" x="94.5" y="29" width="253.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="SEj-xA-8vZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rl-Wl-Vr6">
+                        <rect key="frame" x="368" y="31" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="BjI-9N-RxY"/>
+                            <constraint firstAttribute="width" constant="20" id="NcJ-2l-fQr"/>
+                        </constraints>
+                        <state key="normal" image="selected_img_m"/>
+                        <state key="selected" image="selected_img"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Loo-bl-GOp" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6XJ-a3-wIB"/>
+                    <constraint firstAttribute="bottom" secondItem="gQN-dh-Zhp" secondAttribute="bottom" constant="12" id="NeM-pf-Xf9"/>
+                    <constraint firstItem="5rl-Wl-Vr6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U5V-TB-412"/>
+                    <constraint firstAttribute="trailing" secondItem="5rl-Wl-Vr6" secondAttribute="trailing" constant="16" id="XNG-ko-jza"/>
+                    <constraint firstItem="5rl-Wl-Vr6" firstAttribute="leading" secondItem="Loo-bl-GOp" secondAttribute="trailing" constant="20" id="Y8U-rS-sVj"/>
+                    <constraint firstItem="gQN-dh-Zhp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lVT-Al-QIA"/>
+                    <constraint firstItem="Loo-bl-GOp" firstAttribute="leading" secondItem="gQN-dh-Zhp" secondAttribute="trailing" constant="20" id="oJf-GV-hy5"/>
+                    <constraint firstItem="gQN-dh-Zhp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="s3n-xc-v7E"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="gQN-dh-Zhp" id="yjF-es-4z1"/>
+                <outlet property="selectBt" destination="5rl-Wl-Vr6" id="ufK-fD-u13"/>
+                <outlet property="titleLabel" destination="Loo-bl-GOp" id="tsl-qo-Ffd"/>
+            </connections>
+            <point key="canvasLocation" x="8" y="33.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="selected_img" width="21" height="21"/>
+        <image name="selected_img_m" width="21" height="21"/>
+    </resources>
+</document>

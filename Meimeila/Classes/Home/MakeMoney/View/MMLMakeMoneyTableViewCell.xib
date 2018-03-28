@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MMLMakeMoneyTableViewCell" rowHeight="108" id="KGk-i7-Jjw" customClass="MMLMakeMoneyTableViewCell" customModule="Meimeila" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PY2-U2-wrr">
+                        <rect key="frame" x="15" y="13" width="120" height="80"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="NSy-5T-QHh"/>
+                            <constraint firstAttribute="height" constant="80" id="Xek-qF-OaB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新手福利" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sak-uc-Rhh">
+                        <rect key="frame" x="150" y="30" width="155" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="3SV-eR-mrF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完成每日任务可领取" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-kx-360">
+                        <rect key="frame" x="150" y="58" width="155" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PY2-U2-wrr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5Y4-PQ-dMr"/>
+                    <constraint firstAttribute="trailing" secondItem="pJt-kx-360" secondAttribute="trailing" constant="15" id="8DH-Ob-MnK"/>
+                    <constraint firstItem="sak-uc-Rhh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Iv5-ln-i9p"/>
+                    <constraint firstItem="pJt-kx-360" firstAttribute="top" secondItem="sak-uc-Rhh" secondAttribute="bottom" constant="10" id="MTw-Ab-B6P"/>
+                    <constraint firstAttribute="trailing" secondItem="sak-uc-Rhh" secondAttribute="trailing" constant="15" id="NbW-ta-LwB"/>
+                    <constraint firstItem="sak-uc-Rhh" firstAttribute="leading" secondItem="pJt-kx-360" secondAttribute="leading" id="S2W-SL-RRv"/>
+                    <constraint firstItem="sak-uc-Rhh" firstAttribute="leading" secondItem="PY2-U2-wrr" secondAttribute="trailing" constant="15" id="cuW-3e-lBZ"/>
+                    <constraint firstItem="PY2-U2-wrr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rmh-Ug-vHI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="PY2-U2-wrr" id="n49-bX-sCG"/>
+                <outlet property="messageLabel" destination="pJt-kx-360" id="mqc-dy-rFV"/>
+                <outlet property="titleLabel" destination="sak-uc-Rhh" id="iZX-ZX-phe"/>
+            </connections>
+            <point key="canvasLocation" x="37" y="135.5"/>
+        </tableViewCell>
+    </objects>
+</document>

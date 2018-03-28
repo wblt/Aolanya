@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSXMineOrderListsVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="allBt" destination="VCA-hB-d4D" id="X8z-NJ-3uC"/>
+                <outlet property="btBGView" destination="444-Rx-cHF" id="4YZ-Do-chr"/>
+                <outlet property="collectionView" destination="TVV-Uv-kIi" id="e2h-Fb-cq7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="waitGetBt" destination="eUf-y3-QGE" id="W7M-R1-7Wi"/>
+                <outlet property="waitPayBt" destination="q4e-Ad-fA3" id="oWo-wp-pF2"/>
+                <outlet property="waitSendBt" destination="Ib7-Dt-wwP" id="BiX-Ly-ui8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="444-Rx-cHF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCA-hB-d4D">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="全部">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="btAction:" destination="-1" eventType="touchUpInside" id="5ge-KJ-mKB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4e-Ad-fA3">
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="待付款">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="btAction:" destination="-1" eventType="touchUpInside" id="FGX-ae-rPF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-Dt-wwP">
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="待收货">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="btAction:" destination="-1" eventType="touchUpInside" id="PgF-ar-qD2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUf-y3-QGE">
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="已完成">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="btAction:" destination="-1" eventType="touchUpInside" id="7wV-YD-y1p"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Ib7-Dt-wwP" firstAttribute="width" secondItem="VCA-hB-d4D" secondAttribute="width" id="F8o-bv-YdV"/>
+                        <constraint firstItem="q4e-Ad-fA3" firstAttribute="width" secondItem="VCA-hB-d4D" secondAttribute="width" id="bxW-iy-u3W"/>
+                        <constraint firstAttribute="height" constant="44" id="uZx-sc-gzt"/>
+                        <constraint firstItem="eUf-y3-QGE" firstAttribute="width" secondItem="VCA-hB-d4D" secondAttribute="width" id="vbm-nN-QCl"/>
+                    </constraints>
+                </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TVV-Uv-kIi">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iz6-ki-wKh">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="TVV-Uv-kIi" secondAttribute="trailing" id="3W9-Ju-2u4"/>
+                <constraint firstAttribute="trailing" secondItem="444-Rx-cHF" secondAttribute="trailing" id="FQu-8h-ikg"/>
+                <constraint firstItem="444-Rx-cHF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S0n-Nd-s8t"/>
+                <constraint firstItem="TVV-Uv-kIi" firstAttribute="top" secondItem="444-Rx-cHF" secondAttribute="bottom" id="aiJ-HI-zVO"/>
+                <constraint firstItem="TVV-Uv-kIi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gAq-ta-AtH"/>
+                <constraint firstItem="444-Rx-cHF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iTl-2G-uMB"/>
+                <constraint firstAttribute="bottom" secondItem="TVV-Uv-kIi" secondAttribute="bottom" id="nZ8-VW-9f6"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

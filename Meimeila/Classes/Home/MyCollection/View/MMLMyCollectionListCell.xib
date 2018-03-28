@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MMLMyCollectionListCell" rowHeight="77" id="KGk-i7-Jjw" customClass="MMLMyCollectionListCell" customModule="Meimeila" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="76.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MSs-5g-cxd">
+                        <rect key="frame" x="15" y="13" width="50" height="50"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.70196078429999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="E0B-4L-qPg"/>
+                            <constraint firstAttribute="height" constant="50" id="OQ3-X8-auF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDs-6q-S0D">
+                        <rect key="frame" x="85" y="13" width="61.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏 899" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0R-oF-SRM">
+                        <rect key="frame" x="85" y="45" width="63" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-0D-UKq">
+                        <rect key="frame" x="261" y="45" width="44" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.83137254900000002" green="0.054901960780000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aDs-6q-S0D" firstAttribute="leading" secondItem="MSs-5g-cxd" secondAttribute="trailing" constant="20" id="And-3d-h1k"/>
+                    <constraint firstItem="aDs-6q-S0D" firstAttribute="top" secondItem="MSs-5g-cxd" secondAttribute="top" id="Bf4-eT-gxv"/>
+                    <constraint firstAttribute="trailing" secondItem="uNl-0D-UKq" secondAttribute="trailing" constant="15" id="aLF-pY-6o2"/>
+                    <constraint firstItem="uNl-0D-UKq" firstAttribute="bottom" secondItem="MSs-5g-cxd" secondAttribute="bottom" id="bBX-xG-3tX"/>
+                    <constraint firstItem="i0R-oF-SRM" firstAttribute="leading" secondItem="MSs-5g-cxd" secondAttribute="trailing" constant="20" id="djO-2J-E23"/>
+                    <constraint firstItem="MSs-5g-cxd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vdh-F9-vME"/>
+                    <constraint firstItem="i0R-oF-SRM" firstAttribute="bottom" secondItem="MSs-5g-cxd" secondAttribute="bottom" id="xFp-vH-hMO"/>
+                    <constraint firstItem="MSs-5g-cxd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yqK-kW-CKl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionLabel" destination="i0R-oF-SRM" id="9SX-2F-GN6"/>
+                <outlet property="priceLabel" destination="uNl-0D-UKq" id="8Kp-4J-wkE"/>
+                <outlet property="productImageView" destination="MSs-5g-cxd" id="4gN-Yf-gzf"/>
+                <outlet property="productNameLabel" destination="aDs-6q-S0D" id="KVA-mw-iJ3"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="168.5"/>
+        </tableViewCell>
+    </objects>
+</document>

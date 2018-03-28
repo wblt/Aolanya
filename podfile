@@ -1,0 +1,56 @@
+
+platform :ios, ‘8.0’
+use_frameworks!
+inhibit_all_warnings!
+
+target 'Meimeila' do
+    pod 'XLPagerTabStrip', '~> 8.0.0' 
+    pod 'SVProgressHUD'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'FDStackView', '~> 1.0'
+    pod 'MJRefresh', '~> 3.1.15'
+    pod 'TZImagePickerController', '~> 1.9.5'
+    pod 'FreeStreamer', '~> 3.8.0'
+
+    # 微信
+    # pod 'WechatOpenSDK'
+    # 融云
+    pod 'RongCloudIM/IMLib', '~> 2.8.3'
+    pod 'RongCloudIM/IMKit', '~> 2.8.3'
+    # 机关推送
+    pod 'JPush', '~> 3.0.6'
+    # 检查内存泄漏
+    # pod 'MLeaksFinder', '~> 0.2.1'
+    
+    # 友盟统计
+    pod 'UMengAnalytics-NO-IDFA'
+    # U-Share SDK UI模块（分享面板，建议添加）
+    pod ‘UMengUShare/UI’
+    # 集成微信(完整版14.4M)
+    pod ‘UMengUShare/Social/WeChat'
+    # 集成QQ(完整版7.6M)
+    pod ‘UMengUShare/Social/QQ'
+    # 集成新浪微博(完整版25.3M)
+    pod ‘UMengUShare/Social/Sina'
+
+    pod 'SnapKit', '~> 4.0.0'
+    pod 'Kingfisher', '~> 4.1.0'
+    pod 'Alamofire', '~> 4.5.1'
+    pod 'SwiftyJSON', '~> 4.0.0'
+    pod 'FSPagerView', '~> 0.7.0'
+    pod 'IQKeyboardManagerSwift', '~> 5.0.3'
+    pod 'Charts', '~> 3.0.4'
+    pod 'CryptoSwift', '~> 0.7.2'
+    pod 'StreamingKit'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.0'
+            #if config.build_settings['PRODUCT_NAME'] == 'Alamofire'
+                #config.build_settings['SWIFT_VERSION'] = '3.2'
+                #end
+        end
+    end
+end

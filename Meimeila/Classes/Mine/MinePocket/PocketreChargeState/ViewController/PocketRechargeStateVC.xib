@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PocketRechargeStateVC" customModule="Mythsbears" customModuleProvider="target">
+            <connections>
+                <outlet property="StopPayBt" destination="HXW-Dg-wpw" id="0vJ-Id-Lr5"/>
+                <outlet property="payAgainBt" destination="Pdf-hX-IMN" id="EbI-6e-wfc"/>
+                <outlet property="payStatueIconBt" destination="gsH-Lv-dvC" id="uCD-xT-cFC"/>
+                <outlet property="payStatueLabel" destination="n8K-cn-nu6" id="jUJ-NF-nUe"/>
+                <outlet property="payTimeLabel" destination="KP1-cP-plA" id="gwe-ei-UoB"/>
+                <outlet property="payTypeLabel" destination="5uM-51-FEu" id="6Na-8R-K7l"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单交易失败" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8K-cn-nu6">
+                    <rect key="frame" x="16" y="236" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="BKV-iu-3Jv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.88051927090000004" green="0.35655948520000003" blue="0.54909062389999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsH-Lv-dvC">
+                    <rect key="frame" x="127.5" y="100" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="NUd-YA-U0L"/>
+                        <constraint firstAttribute="height" constant="120" id="aMf-3X-I3s"/>
+                    </constraints>
+                    <state key="normal" image="payfail_icon"/>
+                    <state key="selected" image="paysucess_icon"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交易方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uM-51-FEu">
+                    <rect key="frame" x="16" y="262" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="E1S-gG-Sia"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下单时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP1-cP-plA">
+                    <rect key="frame" x="16" y="288" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="vt4-n2-rex"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-hX-IMN">
+                    <rect key="frame" x="44" y="343" width="121.5" height="44"/>
+                    <color key="backgroundColor" red="0.88051927090000004" green="0.35655948520000003" blue="0.54909062389999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="t9O-gE-1Lu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="重新支付">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="payAgainBtAction:" destination="-1" eventType="touchUpInside" id="ce2-Wc-3Nf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXW-Dg-wpw">
+                    <rect key="frame" x="209.5" y="343" width="121.5" height="44"/>
+                    <color key="backgroundColor" red="0.88051927089691162" green="0.35655948519706726" blue="0.54909062385559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="放弃支付">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="stopPayBtAction:" destination="-1" eventType="touchUpInside" id="wj0-Ux-624"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Pdf-hX-IMN" firstAttribute="top" secondItem="KP1-cP-plA" secondAttribute="bottom" constant="34" id="0Ht-KR-IKg"/>
+                <constraint firstAttribute="trailing" secondItem="5uM-51-FEu" secondAttribute="trailing" constant="16" id="5To-7D-6o2"/>
+                <constraint firstItem="5uM-51-FEu" firstAttribute="top" secondItem="n8K-cn-nu6" secondAttribute="bottom" constant="5" id="9ae-E1-OI1"/>
+                <constraint firstItem="gsH-Lv-dvC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="DG3-5M-noA"/>
+                <constraint firstAttribute="trailing" secondItem="KP1-cP-plA" secondAttribute="trailing" constant="16" id="F9h-Mp-fmT"/>
+                <constraint firstItem="Pdf-hX-IMN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="44" id="H2j-tm-goU"/>
+                <constraint firstItem="HXW-Dg-wpw" firstAttribute="height" secondItem="Pdf-hX-IMN" secondAttribute="height" id="JFY-dP-FNv"/>
+                <constraint firstAttribute="trailing" secondItem="n8K-cn-nu6" secondAttribute="trailing" constant="16" id="KHo-e1-ava"/>
+                <constraint firstItem="5uM-51-FEu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="WAe-dK-RRM"/>
+                <constraint firstItem="HXW-Dg-wpw" firstAttribute="width" secondItem="Pdf-hX-IMN" secondAttribute="width" id="WDv-D0-0yB"/>
+                <constraint firstItem="KP1-cP-plA" firstAttribute="top" secondItem="5uM-51-FEu" secondAttribute="bottom" constant="5" id="YD5-Ar-h9T"/>
+                <constraint firstItem="HXW-Dg-wpw" firstAttribute="leading" secondItem="Pdf-hX-IMN" secondAttribute="trailing" constant="44" id="ZeZ-tq-Ixk"/>
+                <constraint firstItem="gsH-Lv-dvC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bDz-9D-aSC"/>
+                <constraint firstItem="KP1-cP-plA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ceo-TO-87J"/>
+                <constraint firstAttribute="trailing" secondItem="HXW-Dg-wpw" secondAttribute="trailing" constant="44" id="pKY-5I-6eM"/>
+                <constraint firstItem="n8K-cn-nu6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="sVr-IO-zuN"/>
+                <constraint firstItem="n8K-cn-nu6" firstAttribute="top" secondItem="gsH-Lv-dvC" secondAttribute="bottom" constant="16" id="sdv-eX-VcA"/>
+                <constraint firstItem="HXW-Dg-wpw" firstAttribute="top" secondItem="KP1-cP-plA" secondAttribute="bottom" constant="34" id="yz6-Ob-9Vp"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="payfail_icon" width="133" height="133"/>
+        <image name="paysucess_icon" width="133" height="133"/>
+    </resources>
+</document>

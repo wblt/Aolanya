@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMLSetHeadIconVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="changeBt" destination="HpA-HW-GJM" id="PRa-lr-gz6"/>
+                <outlet property="headIconImageView" destination="nC8-Pm-7QD" id="Yxv-vv-I8N"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defaultHeadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nC8-Pm-7QD">
+                    <rect key="frame" x="147.5" y="60" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Ef5-nM-TpA"/>
+                        <constraint firstAttribute="height" constant="80" id="kDx-CZ-E1F"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpA-HW-GJM">
+                    <rect key="frame" x="112.5" y="184" width="150" height="40"/>
+                    <color key="backgroundColor" red="0.372394532" green="0.70272278789999998" blue="0.33334794639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="H82-3e-KaL"/>
+                        <constraint firstAttribute="width" constant="150" id="ggM-zD-Z0T"/>
+                    </constraints>
+                    <state key="normal" title="更换头像">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="changeBtAction:" destination="-1" eventType="touchUpInside" id="Iot-84-XeW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HpA-HW-GJM" firstAttribute="top" secondItem="nC8-Pm-7QD" secondAttribute="bottom" constant="44" id="9BR-zh-Fcu"/>
+                <constraint firstItem="nC8-Pm-7QD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="9xO-X4-Y4m"/>
+                <constraint firstItem="nC8-Pm-7QD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BGz-81-h8r"/>
+                <constraint firstItem="HpA-HW-GJM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Q3R-Yo-zT1"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_defaultHeadIcon" width="256" height="256"/>
+    </resources>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMLMusicVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="loveTableView" destination="7Bw-Y9-Gm5" id="LLE-Q9-Be0"/>
+                <outlet property="tableView" destination="1De-zg-YYK" id="Fag-RS-5Ke"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1De-zg-YYK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-Y9-Gm5">
+                    <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7Bw-Y9-Gm5" firstAttribute="top" secondItem="1De-zg-YYK" secondAttribute="bottom" id="20R-Yg-anh"/>
+                <constraint firstAttribute="bottom" secondItem="7Bw-Y9-Gm5" secondAttribute="bottom" id="5MF-zX-Nty"/>
+                <constraint firstItem="1De-zg-YYK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Es1-kO-2fZ"/>
+                <constraint firstItem="1De-zg-YYK" firstAttribute="height" secondItem="7Bw-Y9-Gm5" secondAttribute="height" id="FPS-Be-wH4"/>
+                <constraint firstItem="7Bw-Y9-Gm5" firstAttribute="top" secondItem="1De-zg-YYK" secondAttribute="bottom" id="G0w-HW-fvM"/>
+                <constraint firstAttribute="trailing" secondItem="1De-zg-YYK" secondAttribute="trailing" id="kSy-J5-vw0"/>
+                <constraint firstAttribute="trailing" secondItem="7Bw-Y9-Gm5" secondAttribute="trailing" id="pDH-Vp-DZN"/>
+                <constraint firstItem="7Bw-Y9-Gm5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tIu-I5-4eC"/>
+                <constraint firstItem="1De-zg-YYK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ygR-Cc-JgK"/>
+            </constraints>
+            <point key="canvasLocation" x="32.5" y="55.5"/>
+        </view>
+    </objects>
+</document>

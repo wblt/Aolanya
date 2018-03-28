@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMLWithdrawVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="1zr-2y-crV" id="4TX-TJ-Dxh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="withdrawButton" destination="cCH-dM-d6o" id="eFb-VY-9I3"/>
+                <outlet property="withdrawRecordButton" destination="K65-u4-JyS" id="sZO-hz-Ylo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-Uj-fvq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wuA-b5-xGW">
+                            <rect key="frame" x="110" y="5" width="155" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCH-dM-d6o">
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                    <color key="backgroundColor" red="0.83137254900000002" green="0.054901960780000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="75" id="1vw-av-Gjy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="我要提现"/>
+                                    <connections>
+                                        <action selector="withdrawOrRecordAction:" destination="-1" eventType="touchUpInside" id="IeZ-jK-jOO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K65-u4-JyS">
+                                    <rect key="frame" x="80" y="0.0" width="75" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="提现记录">
+                                        <color key="titleColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="withdrawOrRecordAction:" destination="-1" eventType="touchUpInside" id="sBS-8Z-RMY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="K65-u4-JyS" firstAttribute="width" secondItem="cCH-dM-d6o" secondAttribute="width" id="YLk-aE-ZZB"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wuA-b5-xGW" firstAttribute="centerX" secondItem="Ccx-Uj-fvq" secondAttribute="centerX" id="4Wq-Jb-sCj"/>
+                        <constraint firstItem="wuA-b5-xGW" firstAttribute="top" secondItem="Ccx-Uj-fvq" secondAttribute="top" constant="5" id="Agr-bf-gaJ"/>
+                        <constraint firstAttribute="height" constant="40" id="K5b-Xd-IRV"/>
+                        <constraint firstAttribute="bottom" secondItem="wuA-b5-xGW" secondAttribute="bottom" constant="5" id="avO-zl-BpB"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-2y-crV">
+                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CqR-Bk-YTc">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ccx-Uj-fvq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0KI-jA-MAF"/>
+                <constraint firstAttribute="trailing" secondItem="1zr-2y-crV" secondAttribute="trailing" id="5Cx-M6-NZd"/>
+                <constraint firstAttribute="trailing" secondItem="Ccx-Uj-fvq" secondAttribute="trailing" id="9IK-1W-1JH"/>
+                <constraint firstAttribute="bottom" secondItem="1zr-2y-crV" secondAttribute="bottom" id="M66-Qy-ufx"/>
+                <constraint firstItem="1zr-2y-crV" firstAttribute="top" secondItem="Ccx-Uj-fvq" secondAttribute="bottom" id="QKU-FY-6IA"/>
+                <constraint firstItem="1zr-2y-crV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ze0-ef-UVe"/>
+                <constraint firstItem="Ccx-Uj-fvq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="akr-xF-TfT"/>
+            </constraints>
+            <point key="canvasLocation" x="39.5" y="151.5"/>
+        </view>
+    </objects>
+</document>

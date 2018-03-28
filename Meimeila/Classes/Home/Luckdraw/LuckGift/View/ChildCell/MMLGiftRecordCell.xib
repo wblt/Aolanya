@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="101" id="KGk-i7-Jjw" customClass="MMLGiftRecordCell" customModule="Meimeila" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="101"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="100.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机端" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-41-uK6">
+                        <rect key="frame" x="217" y="42" width="46" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已兑换" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-Qj-cmu">
+                        <rect key="frame" x="352" y="40" width="52" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="IUs-3N-8i9"/>
+                            <constraint firstAttribute="width" constant="52" id="xzf-NE-6H8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能面膜产品一套" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrT-ck-3Sh">
+                        <rect key="frame" x="16" y="40" width="185" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="WwF-L1-ytn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.39360812309999998" green="0.80381804700000004" blue="0.54120039939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OrT-ck-3Sh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1Cl-n0-kd1"/>
+                    <constraint firstItem="AuH-Qj-cmu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BRk-Wg-ZOx"/>
+                    <constraint firstItem="Quu-41-uK6" firstAttribute="leading" secondItem="OrT-ck-3Sh" secondAttribute="trailing" constant="16" id="VU3-N0-q8F"/>
+                    <constraint firstAttribute="trailing" secondItem="AuH-Qj-cmu" secondAttribute="trailing" constant="16" id="WUy-S0-6i1"/>
+                    <constraint firstItem="Quu-41-uK6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fNx-SV-vsx"/>
+                    <constraint firstItem="OrT-ck-3Sh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kSu-d8-9OK"/>
+                    <constraint firstItem="Quu-41-uK6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="30" id="uqu-pP-8Gh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLabel" destination="OrT-ck-3Sh" id="4rp-2h-uk5"/>
+                <outlet property="statueLabel" destination="AuH-Qj-cmu" id="Mwh-mR-feH"/>
+                <outlet property="typeLabel" destination="Quu-41-uK6" id="i8L-d3-BJX"/>
+            </connections>
+            <point key="canvasLocation" x="75" y="80.5"/>
+        </tableViewCell>
+    </objects>
+</document>

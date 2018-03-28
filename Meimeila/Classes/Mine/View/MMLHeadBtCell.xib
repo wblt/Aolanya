@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MMLHeadBtCell" customModule="Meimeila" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="81"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCt-vs-Ahv">
+                        <rect key="frame" x="156" y="8" width="2" height="65"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="8H0-KI-ECm"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ9-eT-Vdg">
+                        <rect key="frame" x="1" y="60" width="155" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CLJ-Co-uBh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_allOrderList" translatesAutoresizingMaskIntoConstraints="NO" id="3De-Zf-qjb">
+                        <rect key="frame" x="54" y="5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="3De-Zf-qjb" secondAttribute="height" id="HgZ-k7-3sp"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cCt-vs-Ahv" firstAttribute="leading" secondItem="mQ9-eT-Vdg" secondAttribute="trailing" id="7SC-cn-Bga"/>
+                <constraint firstAttribute="bottom" secondItem="cCt-vs-Ahv" secondAttribute="bottom" constant="8" id="AFf-8J-k2q"/>
+                <constraint firstItem="mQ9-eT-Vdg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="P4f-n7-2TF"/>
+                <constraint firstItem="cCt-vs-Ahv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="YGK-ZM-KqZ"/>
+                <constraint firstAttribute="bottom" secondItem="mQ9-eT-Vdg" secondAttribute="bottom" id="ayC-mw-EhG"/>
+                <constraint firstAttribute="trailing" secondItem="cCt-vs-Ahv" secondAttribute="trailing" id="fvr-Rt-o0r"/>
+                <constraint firstItem="3De-Zf-qjb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="il2-3Z-u9o"/>
+                <constraint firstItem="3De-Zf-qjb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="k4Z-vV-A6I"/>
+                <constraint firstItem="mQ9-eT-Vdg" firstAttribute="top" secondItem="3De-Zf-qjb" secondAttribute="bottom" constant="5" id="wNT-Hz-Fog"/>
+            </constraints>
+            <size key="customSize" width="158" height="81"/>
+            <connections>
+                <outlet property="cellImageView" destination="3De-Zf-qjb" id="66q-hp-GZp"/>
+                <outlet property="cellLine" destination="cCt-vs-Ahv" id="qbU-mu-tkm"/>
+                <outlet property="cellTitleLabel" destination="mQ9-eT-Vdg" id="Y6s-Rw-eXf"/>
+            </connections>
+            <point key="canvasLocation" x="79" y="67.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_allOrderList" width="59" height="59"/>
+    </resources>
+</document>

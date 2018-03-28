@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DDShoppingCarListCell" rowHeight="133" id="KGk-i7-Jjw" customClass="DDShoppingCarListCell" customModule="Meimeila" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="132.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5V-Nw-Zc0">
+                        <rect key="frame" x="15" y="10" width="30" height="114.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="sT1-lB-H6D"/>
+                        </constraints>
+                        <state key="normal" image="mall_icon_unselected"/>
+                        <state key="selected" image="mall_icon_selected"/>
+                        <connections>
+                            <action selector="selectedButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZQQ-fn-1KK"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-6j-Dxc">
+                        <rect key="frame" x="50" y="21" width="90" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="02M-4i-f7A"/>
+                            <constraint firstAttribute="width" constant="90" id="ztL-wE-qj5"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dD0-Xx-fdw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95686274510000002" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="hav-RC-3x5"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智能手环测心率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgr-TY-Emh">
+                        <rect key="frame" x="160" y="21" width="145" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Rtn-0y-ZtI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEr-Ug-UXk" customClass="DDAddDeletedLineLabel" customModule="Meimeila" customModuleProvider="target">
+                        <rect key="frame" x="160" y="69" width="40.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.79215686269999996" green="0.79215686269999996" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXb-ZM-EvR">
+                        <rect key="frame" x="160" y="90" width="46" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="hG1-FZ-4zm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.98431372549999996" green="0.0" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8l4-IQ-0HM" customClass="DDProductAddOrSubtractView" customModule="Meimeila" customModuleProvider="target">
+                        <rect key="frame" x="227" y="76" width="78" height="25"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="HzY-lg-Odi"/>
+                            <constraint firstAttribute="width" constant="78" id="ves-Uv-qeM"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="deincreaseBackgroudColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="increaseBackgroudColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                <color key="value" red="0.79215686269999996" green="0.79215686269999996" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="deincreaseImage" value="mall_icon_sub"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="increaseImage" value="mall_icon_increase"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isFastIncreaseOrDecrease" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bordColor">
+                                <color key="value" red="0.79215686269999996" green="0.79215686269999996" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bordWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="x5V-Nw-Zc0" firstAttribute="top" secondItem="dD0-Xx-fdw" secondAttribute="bottom" id="4R3-cK-N8U"/>
+                    <constraint firstItem="8l4-IQ-0HM" firstAttribute="bottom" secondItem="jXb-ZM-EvR" secondAttribute="bottom" constant="-10.5" id="DuH-Fp-Jza"/>
+                    <constraint firstItem="jXb-ZM-EvR" firstAttribute="top" secondItem="KEr-Ug-UXk" secondAttribute="bottom" constant="5" id="FjG-M5-StT"/>
+                    <constraint firstItem="5WT-6j-Dxc" firstAttribute="leading" secondItem="x5V-Nw-Zc0" secondAttribute="trailing" constant="5" id="HyG-ns-DBa"/>
+                    <constraint firstItem="Sgr-TY-Emh" firstAttribute="top" secondItem="5WT-6j-Dxc" secondAttribute="top" id="HzJ-ai-J93"/>
+                    <constraint firstItem="KEr-Ug-UXk" firstAttribute="leading" secondItem="5WT-6j-Dxc" secondAttribute="trailing" constant="20" id="Laj-O5-G8f"/>
+                    <constraint firstItem="5WT-6j-Dxc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="O7v-3d-o9g"/>
+                    <constraint firstAttribute="trailing" secondItem="8l4-IQ-0HM" secondAttribute="trailing" constant="15" id="TSn-d5-mHT"/>
+                    <constraint firstAttribute="trailing" secondItem="Sgr-TY-Emh" secondAttribute="trailing" constant="15" id="VYH-t4-Vkw"/>
+                    <constraint firstItem="dD0-Xx-fdw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XUD-xj-baH"/>
+                    <constraint firstItem="Sgr-TY-Emh" firstAttribute="leading" secondItem="5WT-6j-Dxc" secondAttribute="trailing" constant="20" id="aY3-m3-QoI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="x5V-Nw-Zc0" secondAttribute="bottom" id="eb6-RO-Kbl"/>
+                    <constraint firstAttribute="trailing" secondItem="dD0-Xx-fdw" secondAttribute="trailing" id="kRF-x4-yfC"/>
+                    <constraint firstItem="jXb-ZM-EvR" firstAttribute="leading" secondItem="5WT-6j-Dxc" secondAttribute="trailing" constant="20" id="mYY-R6-01u"/>
+                    <constraint firstItem="jXb-ZM-EvR" firstAttribute="bottom" secondItem="5WT-6j-Dxc" secondAttribute="bottom" id="r90-db-Umq"/>
+                    <constraint firstItem="x5V-Nw-Zc0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wCE-Sf-HWa"/>
+                    <constraint firstItem="dD0-Xx-fdw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="z8h-5E-lcp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addOrSubView" destination="8l4-IQ-0HM" id="Xnc-kq-yTI"/>
+                <outlet property="originalPriceLabel" destination="KEr-Ug-UXk" id="RzP-Cn-RKs"/>
+                <outlet property="presentpriceLabel" destination="jXb-ZM-EvR" id="Pn8-SI-o9h"/>
+                <outlet property="productImageView" destination="5WT-6j-Dxc" id="1S8-ey-pz1"/>
+                <outlet property="productNameLabel" destination="Sgr-TY-Emh" id="LKY-Tb-O4Q"/>
+                <outlet property="selectedButton" destination="x5V-Nw-Zc0" id="W0t-mf-VOK"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="59.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mall_icon_increase" width="13" height="13"/>
+        <image name="mall_icon_selected" width="20" height="20"/>
+        <image name="mall_icon_sub" width="13" height="13"/>
+        <image name="mall_icon_unselected" width="20" height="20"/>
+    </resources>
+</document>

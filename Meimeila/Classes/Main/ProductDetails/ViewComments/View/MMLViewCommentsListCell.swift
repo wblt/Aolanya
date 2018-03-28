@@ -1,0 +1,24 @@
+//
+//  MMLViewCommentsListCell.swift
+//  Meimeila
+//
+//  Created by HJQ on 2017/10/24.
+//  Copyright © 2017年 HJQ. All rights reserved.
+//
+
+import UIKit
+
+class MMLViewCommentsListCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

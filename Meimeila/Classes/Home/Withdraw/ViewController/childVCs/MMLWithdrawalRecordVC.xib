@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMLWithdrawalRecordVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="s2A-wV-bEa" id="G2a-zz-p02"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79u-RD-Aiv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH7-6a-3qi">
+                            <rect key="frame" x="15" y="6.5" width="29" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fcX-oz-gXM">
+                            <rect key="frame" x="120" y="0.0" width="135" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ic9-ot-l8E">
+                                    <rect key="frame" x="0.0" y="0.0" width="57.5" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD4-Lc-21m">
+                                    <rect key="frame" x="77.5" y="0.0" width="57.5" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="nD4-Lc-21m" firstAttribute="width" secondItem="Ic9-ot-l8E" secondAttribute="width" id="5nG-vT-8p3"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh4-rU-bHY">
+                            <rect key="frame" x="331" y="6.5" width="29" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="tH7-6a-3qi" firstAttribute="leading" secondItem="79u-RD-Aiv" secondAttribute="leading" constant="15" id="HEe-DM-HvW"/>
+                        <constraint firstItem="tH7-6a-3qi" firstAttribute="centerY" secondItem="79u-RD-Aiv" secondAttribute="centerY" id="JHj-hK-q7Q"/>
+                        <constraint firstItem="fcX-oz-gXM" firstAttribute="top" secondItem="79u-RD-Aiv" secondAttribute="top" id="K4j-hI-Arv"/>
+                        <constraint firstItem="oh4-rU-bHY" firstAttribute="centerY" secondItem="79u-RD-Aiv" secondAttribute="centerY" id="NyN-tg-cf5"/>
+                        <constraint firstItem="fcX-oz-gXM" firstAttribute="centerX" secondItem="79u-RD-Aiv" secondAttribute="centerX" id="eRv-7h-bgS"/>
+                        <constraint firstAttribute="height" constant="30" id="mCM-1v-pme"/>
+                        <constraint firstAttribute="trailing" secondItem="oh4-rU-bHY" secondAttribute="trailing" constant="15" id="v6j-Ml-BCt"/>
+                        <constraint firstAttribute="bottom" secondItem="fcX-oz-gXM" secondAttribute="bottom" id="vWa-3J-3FI"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s2A-wV-bEa">
+                    <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="s2A-wV-bEa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Di1-Aq-O1Y"/>
+                <constraint firstItem="79u-RD-Aiv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DxF-nd-Wse"/>
+                <constraint firstAttribute="trailing" secondItem="s2A-wV-bEa" secondAttribute="trailing" id="RR5-K6-qXr"/>
+                <constraint firstItem="s2A-wV-bEa" firstAttribute="top" secondItem="79u-RD-Aiv" secondAttribute="bottom" id="TzA-zg-eEY"/>
+                <constraint firstItem="79u-RD-Aiv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="geA-MF-XIP"/>
+                <constraint firstAttribute="bottom" secondItem="s2A-wV-bEa" secondAttribute="bottom" id="h2X-1R-SNr"/>
+                <constraint firstAttribute="trailing" secondItem="79u-RD-Aiv" secondAttribute="trailing" id="njO-pz-jfy"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
