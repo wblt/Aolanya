@@ -89,8 +89,8 @@ extension LoginAPI: Request {
             return DDIntegrationOfTheParameter(params: param)
             
         case .login(let phone, let password):
-            var param = postParameters()
-            param["phone"] = phone
+			var param = [String: Any]()
+            param["username"] = phone
             param["password"] = password.MD5.uppercased()
             return DDIntegrationOfTheParameter(params: param)
             

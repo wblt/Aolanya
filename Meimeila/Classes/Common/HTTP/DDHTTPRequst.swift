@@ -86,42 +86,55 @@ extension DDHTTPRequest {
         let status = object.code
         let msg = object.message
         //let data = object.data
+		
+		switch status {
+		case 0:
+			requestSuccess(response)
+			break
+//		case 1:
+//			requestSuccess(response)
+//			break
+		default:
+			let m = DDErrorModel(status: status, message: msg)
+			requestError(response, m)
+			break
+		}
         
-        switch status {
-        case 110: // 签名不正确
-            BFunction.shared.hideLoadingMessage()
-            //NotificationCenter.default.post(name: cNShouldLogin, object: nil)
-            DDDeviceManager.shared.saveLoginStatue(isLogin: false)
-            let m = DDErrorModel(status: 110, message: "登录凭证失效")
-            requestError(response, m)
-            break
-        case 100: // 请求成功
-            requestSuccess(response)
-            break
-            
-        case 101: // 请登录
-            DDDeviceManager.shared.saveLoginStatue(isLogin: false)
-            let m = DDErrorModel(status: status, message: msg)
-            requestError(response, m)
-            break
-            
-        case 108: // 请求超时
-            
-            let m = DDErrorModel(status: status, message: msg)
-            requestError(response, m)
-            break
-            
-        default:
-            let m = DDErrorModel(status: status, message: msg)
-            
-            /* if isCheckRequestError {
-             BFunction.shared.showErrorMessage(m.message)
-             }
-             */
-            requestError(response, m)
-            break
-        }
-        
+//        switch status {
+//        case 110: // 签名不正确
+//            BFunction.shared.hideLoadingMessage()
+//            //NotificationCenter.default.post(name: cNShouldLogin, object: nil)
+//            DDDeviceManager.shared.saveLoginStatue(isLogin: false)
+//            let m = DDErrorModel(status: 110, message: "登录凭证失效")
+//            requestError(response, m)
+//            break
+//        case 100: // 请求成功
+//            requestSuccess(response)
+//            break
+//
+//        case 101: // 请登录
+//            DDDeviceManager.shared.saveLoginStatue(isLogin: false)
+//            let m = DDErrorModel(status: status, message: msg)
+//            requestError(response, m)
+//            break
+//
+//        case 108: // 请求超时
+//
+//            let m = DDErrorModel(status: status, message: msg)
+//            requestError(response, m)
+//            break
+//
+//        default:
+//            let m = DDErrorModel(status: status, message: msg)
+//
+//            /* if isCheckRequestError {
+//             BFunction.shared.showErrorMessage(m.message)
+//             }
+//             */
+//            requestError(response, m)
+//            break
+//        }
+		
     }
 }
 

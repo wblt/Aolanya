@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="382" height="87"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="382" height="86.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="382" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RSI-hp-Plu">
@@ -35,17 +36,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYH-jd-uQu">
+                        <rect key="frame" x="189" y="44" width="157" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RSI-hp-Plu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6yj-eP-XCa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="DYH-jd-uQu" secondAttribute="trailing" constant="20" id="9er-Bz-c4G"/>
                     <constraint firstItem="BfP-Fc-vnG" firstAttribute="leading" secondItem="RSI-hp-Plu" secondAttribute="trailing" constant="16" id="V9O-98-0bN"/>
                     <constraint firstItem="BfP-Fc-vnG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aA6-LQ-Jr2"/>
+                    <constraint firstItem="DYH-jd-uQu" firstAttribute="leading" secondItem="BfP-Fc-vnG" secondAttribute="trailing" id="b2G-dF-Qjh"/>
                     <constraint firstItem="RSI-hp-Plu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ep7-bf-haz"/>
+                    <constraint firstItem="DYH-jd-uQu" firstAttribute="centerY" secondItem="BfP-Fc-vnG" secondAttribute="centerY" id="lbx-Y3-yc4"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellImage" destination="RSI-hp-Plu" id="I7c-se-j34"/>
                 <outlet property="cellTitleLabel" destination="BfP-Fc-vnG" id="Sva-V7-Y2r"/>
+                <outlet property="celllNumLabel" destination="DYH-jd-uQu" id="PXZ-aM-GKI"/>
             </connections>
             <point key="canvasLocation" x="56" y="-27.5"/>
         </tableViewCell>

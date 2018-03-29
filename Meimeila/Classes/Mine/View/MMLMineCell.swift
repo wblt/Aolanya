@@ -14,8 +14,9 @@ class MMLMineCell: UITableViewCell {
    
     
     @IBOutlet weak var cellTitleLabel: UILabel!
-    
-    override func awakeFromNib() {
+    // 我的邀请码
+	@IBOutlet weak var celllNumLabel: UILabel!
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -25,7 +26,11 @@ class MMLMineCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+	
+	func setInvateCode(code:String) {
+		celllNumLabel.text = code
+	}
+	
     
     var setDic:[String:String] = [:] {
         

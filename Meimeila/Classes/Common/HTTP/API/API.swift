@@ -12,7 +12,8 @@ import Foundation
 struct API {
     
     // 服务器地址
-    static let baseServer = "http://ml.nnddkj.com/meimeila/API/"
+    //static let baseServer = "http://ml.nnddkj.com/meimeila/API/"
+	static let baseServer = "http://120.26.104.21/"
 }
 
 // MARK: - 首页
@@ -115,7 +116,8 @@ extension API {
     
     /// 个人中心相关
     // 用户登录
-    static let login = "user/login.php"
+    //static let login = "user/login.php"
+	static let login = "tpiot/app/login"
     
     //微信登录
     static let login_weChat = "user/login_weixin_qq.php"
@@ -321,6 +323,6 @@ extension API {
 
 extension API{
     ///联系客服
-    static let contactServiceAPI = "config/contact.php"
+    static let contactServiceAPI = "tpiot/app/contact"
     
 }

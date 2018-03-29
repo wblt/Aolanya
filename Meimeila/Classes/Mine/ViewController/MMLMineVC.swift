@@ -160,11 +160,11 @@ extension MMLMineVC:UITableViewDelegate{
         
         if indexPath.section == 0 {
            
-            if !loginStatue{
-                goLogin(loginStatue: loginStatue)
-                return;
-            }
-            
+//            if !loginStatue{
+//                goLogin(loginStatue: loginStatue)
+//                return;
+//            }
+			
             
             if indexPath.row == 0{
                 
@@ -178,33 +178,38 @@ extension MMLMineVC:UITableViewDelegate{
                 let vc = MMLEditeUserInfoVC();
                 navigationController?.pushViewController(vc, animated: true);
                 
-            }else if indexPath.row == 2 {
+            }else if indexPath.row == 4 {
                 
                 let vc = MMLPocketVC()
                 vc.title = "健康豆"
                 vc.isHealthBean = true;
                 navigationController?.pushViewController(vc, animated: true);
                 
-            }else{
-                
-                let vc = DayTaskVC();
-                navigationController?.pushViewController(vc, animated: true)
             }
         
         }else if indexPath.section == 1 {
            
             if indexPath.row == 0{
-                if !loginStatue{
-                    goLogin(loginStatue: loginStatue)
-                    return;
-                }
-                let vc = MMLMineAddressVC()
-                vc.isEdit = true;
-                navigationController?.pushViewController(vc, animated: true);
-                
+//                if !loginStatue{
+//                    goLogin(loginStatue: loginStatue)
+//                    return;
+//                }
+				
+				let vc = DayTaskVC();
+				navigationController?.pushViewController(vc, animated: true)
+// 				  //地址
+//                let vc = MMLMineAddressVC()
+//                vc.isEdit = true;
+//                navigationController?.pushViewController(vc, animated: true);
+//
             }else if indexPath.row == 1 {
-                let vc  = APPVersionVC();
-                navigationController?.pushViewController(vc, animated: true);
+				
+				let vc = MMLContactServiceVC();
+				vc.title = "联系客服";
+				self.navigationController?.pushViewController(vc, animated: true);
+				
+//                let vc  = APPVersionVC();
+//                navigationController?.pushViewController(vc, animated: true);
             }
         }else if indexPath.section == 2 {
             
@@ -241,6 +246,9 @@ extension MMLMineVC:UITableViewDataSource{
         
         let arr = vm.mineCellTitleDic[indexPath.section];
         let dic = arr[indexPath.row];
+		if indexPath.section == 0 && indexPath.row == 2 {
+			cell?.setInvateCode(code: "123")
+		}
         cell?.setDic = dic;
         return cell!
     }
