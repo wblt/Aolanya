@@ -75,7 +75,7 @@ extension API {
     static let delShopFabulous = "shoping/delShopFabulous.php"
     
     // 获取商品评价列表
-    static let getEvaluation = "shoping/getEvaluation.php"
+    static let getEvaluation = "tpiot/app/getEvaluation"
     
     // 商品搜索
     static let searchProduct = "shoping/getQueryShopping.php"
@@ -132,10 +132,10 @@ extension API {
     static let getRegistrationID = "user/getRegistrationID.php"
     
     // 找回密码
-    static let findPassword = "user/findPassword.php"
+    static let findPassword = "tpiot/app/restpwd"
     
     // 修改密码
-    static let checkPassword = "user/checkPassword.php"
+    static let checkPassword = "tpiot/app/restpwd"
     
     //验证token
     static let checkToken = "user/checkLoginToken.php"
@@ -153,7 +153,7 @@ extension API {
     static let memberLevelAPI = "tpiot/app/getMembershipCard"
     
     //修改用户资料
-    static let userInfoUpDataAPI = "tpiot/app/usrprofile"
+    static let userInfoUpDataAPI = "tpiot/app/updateuserinfo"
     
     
     //商品收藏列表
@@ -161,25 +161,25 @@ extension API {
     
     ///订单
     //全部订单
-    static let allOrderAPI = "shoping/selectOrder.php"
+    static let allOrderAPI = "tpiot/app/selectOrder"
     
     //待付款订单
-    static let waitPayOrderAPI = "shoping/selectPaymentOrder.php"
+    static let waitPayOrderAPI = "tpiot/app/selectPaymentOrder"
     
     //待发货订单
-    static let waitSendOrderAPI = "shoping/selectPaymentOrder.php"
+    static let waitSendOrderAPI = "tpiot/app/selectPaymentOrder"
     
     //待收货订单
-    static let waitGetOrderAPI = "shoping/selectPaymentOrder.php"
+    static let waitGetOrderAPI = "tpiot/app/selectPaymentOrder"
     
     //待评价订单
-    static let waitCommentOrderAPI = "shoping/selectPaymentOrder.php"
+    static let waitCommentOrderAPI = "tpiot/app/selectPaymentOrder"
     
     //正在申请退款订单
-    static let reimburseNowAPI = "shoping/selectPaymentOrder.php"
+    static let reimburseNowAPI = "tpiot/app/selectPaymentOrder"
     
     //已退款订单
-    static let reimburseFinishAPI = "shoping/selectPaymentOrder.php"
+    static let reimburseFinishAPI = "tpiot/app/selectPaymentOrder"
     
     //删除订单
     static let deleteOrderAPI = "shoping/delOrder.php"
@@ -189,13 +189,13 @@ extension API {
     
     
     //订单详情
-    static let orderDetailAPI = "shoping/selectPaymentOrder.php"
+    static let orderDetailAPI = "tpiot/app/selectPaymentOrder"
     
     //查看物流
     static let logisticsAPI = "notice/express_api/express_api.php"
     
     ///确认收货
-    static let verifyTakeGoods = "shoping/confirmReceipt.php"
+    static let verifyTakeGoods = "tpiot/app/confirmReceipt"
     
     
     ///售后
@@ -203,10 +203,10 @@ extension API {
     static let afterSaleListAPI = "shoping/getAfterSaleList.php"
     
     //售后退款详情
-    static let afterSaleDetailAPI = "shoping/getReturnMoneyDetail.php"
+    static let afterSaleDetailAPI = "tpiot/app/getReturnMoneyDetail"
     
     //申请售后
-    static let afterSaleApplyAPI = "shoping/addAfteSalesApplication.php"
+    static let afterSaleApplyAPI = "tpiot/app/addAfteSalesApplication"
     
     ///微信申请退款
     static let refundCash_weChatPayAPI = "wechaPay/refundWechapayOrder.php"
@@ -245,7 +245,7 @@ extension API {
 	static let moneyBalanceAPI = "tpiot/app/selectMoney"
     
     ///钱包充值
-    static let moneyRechargeAPI = "wechaPay/getWechapayOrders.php"
+    static let moneyRechargeAPI = "tpiot/app/wechaPay/getWechapayOrders"
     
     ///明细
     static let detailAPI = "tpiot/app/moneyDetail"
@@ -255,14 +255,15 @@ extension API {
     static let maskDataupLoadAPI = "smart/getMaskData.php"
     
     ///面膜数据列表
-    static let maskDataListAPI = "smart/getUserMaskData.php"
+    static let maskDataListAPI = "tpiot/app/getUserMaskData"
     
     ///上传评论
-    static let commentAPI = "shoping/addEvaluete.php"
+    static let commentAPI = "tpiot/app/addEvaluete"
     
-    ///意见反馈
-    static let feedbackAPI = "user/feedbackMessage.php"
-    
+    ///意见反馈 + 商家入驻
+    static let feedbackAPI = "tpiot/app/usropinon"
+	
+	
     ///每日任务
     static let dayTaskAPI = "tpiot/app/getTask"
 
@@ -296,13 +297,13 @@ extension API {
 
 extension API{
     //中奖纪录
-    static let luckDrawRecordAPI = "pan/myPrize.php";
+    static let luckDrawRecordAPI = "tpiot/app/myPrize";
     
     ///兑换记录
-    static let exchangeGiftAPI = "pan/exchangeRecord.php";
+    static let exchangeGiftAPI = "tpiot/app/exchangeRecord";
     
     ///兑换奖品
-    static let exchangeGift2_0API = "pan/payForPrize.php";
+    static let exchangeGift2_0API = "tpiot/app/payForPrize";
 }
 
 // MARK: - 健康豆

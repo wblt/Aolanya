@@ -83,7 +83,7 @@ extension LoginAPI: Request {
         case .getSmsCode(let phone, let type):
             // 公共参数 + 请求参数
             var param = postParameters()
-            param["phone"] = phone
+            param["username"] = phone
             param["type"] = "\(type)"
             param["message"] = DDGenerateARandomNumber()
             return DDIntegrationOfTheParameter(params: param)
@@ -96,7 +96,7 @@ extension LoginAPI: Request {
             
         case .registered(let phone, let password, let code, let inviter):
             var param = postParameters()
-            param["phone"] = phone
+            param["username"] = phone
             param["password"] = password.MD5.uppercased()
             param["code"] = code
             param["inviter"] = inviter
@@ -112,7 +112,7 @@ extension LoginAPI: Request {
        
         case .forgetPassword(let phone, let newPassword,let sms):
             var param = postParameters()
-            param["phone"] = phone
+            param["username"] = phone
             param["password"] = newPassword.MD5.uppercased()
             param["code"] = sms
             return DDIntegrationOfTheParameter(params: param)
