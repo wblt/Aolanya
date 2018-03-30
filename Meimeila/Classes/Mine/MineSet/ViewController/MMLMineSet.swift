@@ -96,24 +96,31 @@ extension MMLMineSet:UITableViewDelegate {
 //            let vc = MMLMoneyPaySetPWVC()
 //            vc.title = "设置支付密码"
 //            navigationController?.pushViewController(vc, animated: true);
-			//地址
-			let vc = MMLMineAddressVC()
-			vc.isEdit = true;
+			
+			let vc = MMLBindPhoneVC()
+			vc.title = "绑定手机号"
 			navigationController?.pushViewController(vc, animated: true);
+		
 			
         }else if indexPath.row == 1 {
 //            let vc = MMLBindPhoneVC()
 //            vc.title = "绑定手机号"
 //            navigationController?.pushViewController(vc, animated: true);
+			
+			let vc = MMLBindPhoneVC()
+			vc.title = "解除绑定"
+			vc.isBindPhone = false;
+			navigationController?.pushViewController(vc, animated: true);
+        }else if indexPath.row == 2{
+			//地址
+			let vc = MMLMineAddressVC()
+			vc.isEdit = true;
+			navigationController?.pushViewController(vc, animated: true);
+			
+		}else {
 			let vc = MMLMineOpinionVC();
 			navigationController?.pushViewController(vc, animated: true);
-        }else{
-//            let vc = MMLBindPhoneVC()
-//            vc.title = "解除绑定"
-//            vc.isBindPhone = false;
-//            navigationController?.pushViewController(vc, animated: true);
-			
-        }
+		}
     }
 }
 

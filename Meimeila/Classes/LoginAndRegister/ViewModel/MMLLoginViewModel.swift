@@ -26,7 +26,8 @@ class MMLLoginViewModel {
             let jsonResult = JSON.init(responds)
             let uid = jsonResult["data"]["uid"].stringValue
             let token = jsonResult["data"]["token"].stringValue
-            DDUDManager.share.saveUserID(uid: uid)
+           // DDUDManager.share.saveUserID(uid: uid)
+			DDUDManager.share.saveUserID(uid: "673") // 先存死的
             DDUDManager.share.saveUserToken(token)
             BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             

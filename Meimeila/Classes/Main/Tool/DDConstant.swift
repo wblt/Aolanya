@@ -133,7 +133,8 @@ let kApp_key = ""
 let kSecret = ""
 
 // 图片的前缀链接
-let kPrefixLink = "http://meimeila.nnddkj.com/"
+let kPrefixLink = ""
+//let kPrefixLink = "http://meimeila.nnddkj.com/"
 
 // 导航栏(动态获取主要为了适配iphone X)
 let kNavigationBarH : CGFloat = 44.0

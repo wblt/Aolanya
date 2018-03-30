@@ -19,8 +19,8 @@ class MMLEditeInfoVC: DDBaseViewController {
     
     @IBOutlet weak var enterBt: UIButton!
     @IBAction func enterBtAction(_ sender: Any) {
-        
         delegate?.editiFinish(indexPath: self.indexPath!, message: self.editTF.text ?? "未设置")
+		self.navigationController?.popViewController(animated: true);
     }
     
     //iOS8用到XIB必须写这两个方法

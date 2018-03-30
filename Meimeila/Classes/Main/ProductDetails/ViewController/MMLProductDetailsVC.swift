@@ -70,7 +70,7 @@ class MMLProductDetailsVC: DDBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //navigationController?.setNavigationBarHidden(true, animated: false)
-        requestQueryGoodsIsCollectionData()
+      //  requestQueryGoodsIsCollectionData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

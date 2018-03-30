@@ -21,7 +21,7 @@ extension API {
     
     /// 首页
     // 首页推荐列表
-    static let homeData = "indexAPI/index.php"
+    static let homeData = "tpiot/app/shoptop"
     
     // 签到红包
     static let addSignRed = "makeMoney/addSignRed.php"
@@ -51,16 +51,16 @@ extension API {
 extension API {
     /// 商城相关
     // 商品详情
-    static let productDetails = "shoping/productDetails.php"
+    static let productDetails = "tpiot/app/productdetails"
     
     // 商品详情领取抵现红包
     static let useRedPackets = "user/useRedPackets.php"
     
     // 商品添加收藏
-    static let addShopCollection = "shoping/addShopCollection.php"
+    static let addShopCollection = "tpiot/app/addshopcollection"
     
     // 取消商品收藏
-    static let delShopCollection = "shoping/delShopCollection.php"
+    static let delShopCollection = "tpiot/app/delshopcollection"
     
     // 商品是否收藏
     static let isCollection = "shoping/isCollection.php"
@@ -96,16 +96,16 @@ extension API {
     
     /// 购物车相关
     // 获取购物车列表
-    static let shoppingcarList = "shoping/getShoppingCartInfo.php"
+    static let shoppingcarList = "tpiot/app/getshoppingcartinfo"
     
     // 购物车数量增加
-    static let productIncrease = "shoping/addShoppingCartNumber.php"
+    static let productIncrease = "tpiot/app/addshoppingcartnumber"
     
     // 购物车数量减少
-    static let productDeIncrease = "shoping/delShoppingCartNumber.php"
+    static let productDeIncrease = "tpiot/app/delshoppingcartnumber"
     
     // 删除购物车商品
-    static let productDeleted = "shoping/delShoppingCart.php"
+    static let productDeleted = "tpiot/app/delshoppingcart"
     
     // 分享
     static let share = "shoping/share.php"
@@ -123,10 +123,10 @@ extension API {
     static let login_weChat = "user/login_weixin_qq.php"
     
     // 用户注册
-    static let register = "user/registered.php"
+    static let register = "tpiot/app/register"
     
     // 获取注册验证码
-    static let smsCode = "user/sendSms.php"
+    static let smsCode = "tpiot/app/vercode"
     
     // 上传极光推送registerID
     static let getRegistrationID = "user/getRegistrationID.php"
@@ -153,11 +153,11 @@ extension API {
     static let memberLevelAPI = "tpiot/app/getMembershipCard"
     
     //修改用户资料
-    static let userInfoUpDataAPI = "user/updateUserInfo.php"
+    static let userInfoUpDataAPI = "tpiot/app/usrprofile"
     
     
     //商品收藏列表
-    static let shopCollectListAPI = "shoping/getCollecInfo.php"
+    static let shopCollectListAPI = "tpiot/app/getcollecinfo"
     
     ///订单
     //全部订单
@@ -224,22 +224,22 @@ extension API {
     ///收货地址
     
     //收货地址列表
-    static let addressListAPI = "shoping/getReceiptAddress.php"
+    static let addressListAPI = "tpiot/app/getReceiptAddress"
     
     //新增收货地址
-    static let addNewAddressAPI = "shoping/receiptAddress.php"
+    static let addNewAddressAPI = "tpiot/app/receiptaddress"
     
     //修改收货地址
-    static let modifiedAddressAPI = "shoping/updateReceiptAddress.php"
+    static let modifiedAddressAPI = "tpiot/app/updateOrder"
     
     //修改订单的收货地址
-    static let orderAddressSelect = "shoping/updateOrder.php"
+    static let orderAddressSelect = "tpiot/app/updateOrder"
     
     //删除收货地址
-    static let deleteAddressAPI = "shoping/deleteReceiptAddress.php"
+    static let deleteAddressAPI = "tpiot/app/deletereceiptaddress"
     
     //获取默认收货地址
-    static let defaultAddressAPI = "shoping/getDefaultAddress.php"
+    static let defaultAddressAPI = "tpiot/app/getDefaultAddress"
     
     ///钱包余额
 	static let moneyBalanceAPI = "tpiot/app/selectMoney"
@@ -248,7 +248,7 @@ extension API {
     static let moneyRechargeAPI = "wechaPay/getWechapayOrders.php"
     
     ///明细
-    static let detailAPI = "user/moneyDetail.php"
+    static let detailAPI = "tpiot/app/moneyDetail"
     
     ////面膜
     ///上传面膜测试数据
@@ -290,7 +290,7 @@ extension API {
     static let moneyPay_PW_API = "user/payment_pwd.php"
     
     ///绑定手机号
-    static let moneyPayBindPhoneAPI = "user/bindphone.php"
+    static let moneyPayBindPhoneAPI = "tpiot/app/bindphone"
 }
 
 

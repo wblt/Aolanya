@@ -39,7 +39,8 @@ class MMLProductCommentCell: UITableViewCell {
             let imageUrl = (evaluateData?.picture)!.hasPrefix("http") ? (evaluateData?.picture)! : (kPrefixLink + (evaluateData?.picture)!)
             headerImageView.jq_setImage(imageUrl: imageUrl,  placeholder: "http_error")
             nameLabel.text = evaluateData?.name
-            timeLabel.text = timestampToDate(format: "yyyy-mm-dd", timestamp: (evaluateData?.evaluateTime)!)
+			
+			// timeLabel.text = timestampToDate(format: "yyyy-mm-dd", timestamp: (evaluateData?.evaluateTime)!)
             contentLabel.text = evaluateData?.evaluateMessage
             
             shopFabulousButton.isSelected = (evaluateData?.totalFabulous) > 0 ? true : false
