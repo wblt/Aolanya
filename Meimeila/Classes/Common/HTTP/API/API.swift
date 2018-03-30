@@ -13,7 +13,9 @@ struct API {
     
     // 服务器地址
     //static let baseServer = "http://ml.nnddkj.com/meimeila/API/"
-	static let baseServer = "http://120.26.104.21/"
+	//static let baseServer = "http://120.26.104.21/"
+	static let baseServer = "http://yg.welcare-tech.com.cn/"
+	
 }
 
 // MARK: - 首页

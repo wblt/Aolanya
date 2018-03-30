@@ -101,8 +101,8 @@ class HTTPClient {
         
         debugLog("请求链接:\(r.host + r.path)")
         debugLog("请求参数:\( r.parameters ?? [:] )")
-        
-        sessionManager.request(r.host + r.path, method: r.method, parameters: r.parameters, headers: headers).downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+		
+		sessionManager.request(r.host + r.path, method: r.method, parameters: r.parameters,encoding:JSONEncoding.default,headers: headers).downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
                 debugLog("Progress: \(progress.fractionCompleted)")
             
             }
