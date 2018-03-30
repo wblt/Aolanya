@@ -75,8 +75,10 @@ class MMLMineSet: DDBaseViewController {
     @objc func outOfLogin() {
         
         loginOut.outLoginAction {
-            
-            
+			DispatchQueue.main.asyncAfter(deadline:DispatchTime.now()+1.0, execute: {
+				
+				   self.navigationController?.popViewController(animated: true);
+			})
         }
         
         
@@ -91,21 +93,26 @@ extension MMLMineSet:UITableViewDelegate {
         
         if indexPath.row == 0{
           
-            let vc = MMLMoneyPaySetPWVC()
-            vc.title = "设置支付密码"
-            navigationController?.pushViewController(vc, animated: true);
+//            let vc = MMLMoneyPaySetPWVC()
+//            vc.title = "设置支付密码"
+//            navigationController?.pushViewController(vc, animated: true);
+			//地址
+			let vc = MMLMineAddressVC()
+			vc.isEdit = true;
+			navigationController?.pushViewController(vc, animated: true);
+			
         }else if indexPath.row == 1 {
-            let vc = MMLBindPhoneVC()
-            vc.title = "绑定手机号"
-            navigationController?.pushViewController(vc, animated: true);
-            
-          
+//            let vc = MMLBindPhoneVC()
+//            vc.title = "绑定手机号"
+//            navigationController?.pushViewController(vc, animated: true);
+			let vc = MMLMineOpinionVC();
+			navigationController?.pushViewController(vc, animated: true);
         }else{
-            let vc = MMLBindPhoneVC()
-            vc.title = "解除绑定"
-            vc.isBindPhone = false;
-            navigationController?.pushViewController(vc, animated: true);
-         
+//            let vc = MMLBindPhoneVC()
+//            vc.title = "解除绑定"
+//            vc.isBindPhone = false;
+//            navigationController?.pushViewController(vc, animated: true);
+			
         }
     }
 }
@@ -125,7 +132,7 @@ extension MMLMineSet:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return vm.cellDic.count;
     }
 }
 

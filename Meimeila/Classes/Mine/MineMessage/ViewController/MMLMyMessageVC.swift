@@ -105,7 +105,12 @@ extension MMLMyMessageVC:UITableViewDataSource{
             }
             return vm.userMessageArr.count;
         }
-        
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true);
+		
+		debugLog("消息跳转-\(indexPath.row)");
+	}
 }
     
 extension MMLMyMessageVC:UITableViewDelegate{

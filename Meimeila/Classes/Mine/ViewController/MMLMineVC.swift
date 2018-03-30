@@ -108,12 +108,10 @@ extension MMLMineVC{
     ///获取用户信息
     func requestUsrInfoData() {
         uservm.getUserInfo {[weak self] in
-            
-            
-            
+			
             self?.tableHeadView.headIconBt.jq_setButtonImage(url: URL.init(string: self?.uservm.infoModel?.picture ?? ""), placeholder: "icon_defaultHeadIcon", state: UIControlState.normal);
-            
-            self?.tableHeadView.nickNameLabel.text = self?.uservm.infoModel?.name ?? self?.uservm.infoModel?.uid!
+           // 这个借口好像有问题
+          //  self?.tableHeadView.nickNameLabel.text = self?.uservm.infoModel?.name ?? self?.uservm.infoModel?.uid!
         }
     }
     
@@ -160,10 +158,10 @@ extension MMLMineVC:UITableViewDelegate{
         
         if indexPath.section == 0 {
            
-//            if !loginStatue{
-//                goLogin(loginStatue: loginStatue)
-//                return;
-//            }
+            if !loginStatue{
+                goLogin(loginStatue: loginStatue)
+                return;
+            }
 			
             
             if indexPath.row == 0{
@@ -178,10 +176,10 @@ extension MMLMineVC:UITableViewDelegate{
                 let vc = MMLEditeUserInfoVC();
                 navigationController?.pushViewController(vc, animated: true);
                 
-            }else if indexPath.row == 4 {
+            }else if indexPath.row == 2 {
                 
                 let vc = MMLPocketVC()
-                vc.title = "健康豆"
+                vc.title = "我的健康豆"
                 vc.isHealthBean = true;
                 navigationController?.pushViewController(vc, animated: true);
                 
@@ -190,10 +188,10 @@ extension MMLMineVC:UITableViewDelegate{
         }else if indexPath.section == 1 {
            
             if indexPath.row == 0{
-//                if !loginStatue{
-//                    goLogin(loginStatue: loginStatue)
-//                    return;
-//                }
+                if !loginStatue{
+                    goLogin(loginStatue: loginStatue)
+                    return;
+                }
 				
 				let vc = DayTaskVC();
 				navigationController?.pushViewController(vc, animated: true)
@@ -246,9 +244,6 @@ extension MMLMineVC:UITableViewDataSource{
         
         let arr = vm.mineCellTitleDic[indexPath.section];
         let dic = arr[indexPath.row];
-		if indexPath.section == 0 && indexPath.row == 2 {
-			cell?.setInvateCode(code: "123")
-		}
         cell?.setDic = dic;
         return cell!
     }

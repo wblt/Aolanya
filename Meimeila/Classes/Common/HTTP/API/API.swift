@@ -141,16 +141,16 @@ extension API {
     static let checkToken = "user/checkLoginToken.php"
     
     //退出登录
-    static let userLogout = "user/logout.php"
+    static let userLogout = "tpiot/app/loginout"
     
     //修改头像
     static let feedbackImg = "user/feedbackImg.php"
     
     //用户资料
-    static let userInfoAPI = "user/getUserInfo.php"
+    static let userInfoAPI = "tpiot/app/getuserinfo"
     
     //会员等级
-    static let memberLevelAPI = "user/memberLevel.php"
+    static let memberLevelAPI = "tpiot/app/getMembershipCard"
     
     //修改用户资料
     static let userInfoUpDataAPI = "user/updateUserInfo.php"
@@ -217,7 +217,7 @@ extension API {
     
     ///消息
     //用户消息
-    static let customerMessageAPI = "notice/getNotice.php"
+    static let customerMessageAPI = "tpiot/app/notice"
     //系统消息
     static let systemMessageAPI = ""
     
@@ -242,7 +242,7 @@ extension API {
     static let defaultAddressAPI = "shoping/getDefaultAddress.php"
     
     ///钱包余额
-    static let moneyBalanceAPI = "shoping/selectMoney.php"
+	static let moneyBalanceAPI = "tpiot/app/selectMoney"
     
     ///钱包充值
     static let moneyRechargeAPI = "wechaPay/getWechapayOrders.php"
@@ -264,7 +264,7 @@ extension API {
     static let feedbackAPI = "user/feedbackMessage.php"
     
     ///每日任务
-    static let dayTaskAPI = "mylove/getTask.php"
+    static let dayTaskAPI = "tpiot/app/getTask"
 
     
     //音乐
@@ -308,13 +308,13 @@ extension API{
 // MARK: - 健康豆
 extension API {
     ///健康豆个数
-    static let healthBeansAPI = "makeMoney/getBeans.php";
+    static let healthBeansAPI = "tpiot/app/getBeans";
     
     ///健康豆记录
-    static let healthBeansRecordAPI = "user/beansDetail.php"
+    static let healthBeansRecordAPI = "tpiot/app/beansDetail"
     
     ///健康豆兑换余额
-    static let beansToMoneyExchangeAPI = "user/exchange.php"
+    static let beansToMoneyExchangeAPI = "tpiot/app/exchange"
     
     ///健康豆换余额比率
     static let beansToMoneyExchangeRateAPI = "user/exchange.php"
