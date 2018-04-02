@@ -341,7 +341,8 @@ extension MMLAllList:UITableViewDataSource{
         view.titleLabel.text = model.orderStateTitle;
         
         if !(model.orderTime?.isEmpty)!{
-            view.timeLabel.text = timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
+            view.timeLabel.text = model.orderTime!
+				//timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
         }
         return view;
         

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -45,14 +45,10 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxg-S1-yNi">
-                                    <rect key="frame" x="232" y="21.5" width="20" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxg-S1-yNi">
+                                    <rect key="frame" x="231" y="20.5" width="21" height="22"/>
                                     <state key="normal" image="selected_img_m"/>
                                     <state key="selected" image="selected_img"/>
-                                    <connections>
-                                        <action selector="weChatPayAction:" destination="-1" eventType="touchUpInside" id="Otr-88-H3W"/>
-                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVr-vT-AoN">
                                     <rect key="frame" x="0.0" y="61.5" width="267" height="1"/>
@@ -62,6 +58,8 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="Xxg-S1-yNi" firstAttribute="centerY" secondItem="0Mg-j1-OED" secondAttribute="centerY" id="RsN-3D-j44"/>
+                                <constraint firstAttribute="trailing" secondItem="Xxg-S1-yNi" secondAttribute="trailing" constant="15" id="fpe-x4-J1O"/>
                                 <constraint firstAttribute="height" constant="62.5" id="o7R-5B-JuP"/>
                             </constraints>
                         </view>
@@ -75,9 +73,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNx-vz-7Wl">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNx-vz-7Wl">
                                     <rect key="frame" x="232" y="21.5" width="20" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="selected_img_m"/>
                                     <state key="selected" image="selected_img"/>
                                     <connections>
@@ -97,6 +94,8 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="62.5" id="C2E-4C-Ldm"/>
+                                <constraint firstItem="vNx-vz-7Wl" firstAttribute="centerY" secondItem="LTw-aV-6TS" secondAttribute="centerY" id="F9h-DT-ub2"/>
+                                <constraint firstAttribute="trailing" secondItem="vNx-vz-7Wl" secondAttribute="trailing" constant="15" id="Ns8-We-Fhd"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d6U-Hy-0zC">

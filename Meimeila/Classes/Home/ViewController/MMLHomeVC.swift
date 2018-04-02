@@ -55,16 +55,17 @@ class MMLHomeVC: DDBaseViewController {
     
     // MARK: - Private method
     private func setupNavBar() {
-        navigationItem.titleView = searchView
-        addNavBarBackButton(imageName: "home_scan") { [weak self](btn) in
-            // 扫码
-            self?.navigationController?.pushViewController(MMLScanCodeVC(), animated: true)
-        }
-        
-        addNavBarRightButton(imageName: "home_message") { [weak self](btn) in
-            // 消息
-            self?.navigationController?.pushViewController(MMLSystemMessageListVC(), animated: true)
-        }
+		navigationItem.title = "奧蓝雅"
+//        navigationItem.titleView = searchView
+//        addNavBarBackButton(imageName: "home_scan") { [weak self](btn) in
+//            // 扫码
+//            self?.navigationController?.pushViewController(MMLScanCodeVC(), animated: true)
+//        }
+//
+//        addNavBarRightButton(imageName: "home_message") { [weak self](btn) in
+//            // 消息
+//            self?.navigationController?.pushViewController(MMLSystemMessageListVC(), animated: true)
+//        }
     }
     
     // 首次加载

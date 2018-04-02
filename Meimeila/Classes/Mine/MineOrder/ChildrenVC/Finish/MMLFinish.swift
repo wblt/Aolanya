@@ -170,7 +170,9 @@ extension MMLFinish:UITableViewDataSource{
         
         let view = SectionHeadView.init(frame: CGRect.zero);
         view.titleLabel.text = "交易完成"
-        view.timeLabel.text = timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);        return view;
+        view.timeLabel.text = model.orderTime!
+			//timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
+		return view;
         
     }
     

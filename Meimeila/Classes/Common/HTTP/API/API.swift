@@ -26,22 +26,22 @@ extension API {
     static let homeData = "tpiot/app/shoptop"
     
     // 签到红包
-    static let addSignRed = "makeMoney/addSignRed.php"
+    static let addSignRed = "tpiot/app/addSignRed"
     
     // 提现记录
-    static let getWithdrawalsInfo = "makeMoney/getWithdrawalsInfo.php"
+    static let getWithdrawalsInfo = "tpiot/app/getwithdrawalsinfo"
     
     // 提现申请
-    static let  addWithdrawals = "makeMoney/addWithdrawals.php"
+    static let  addWithdrawals = "tpiot/app/addwithdrawals"
     
     // 系统消息
-    static let  getSystemNotice = "notice/getSystemNotice.php"
+    static let  getSystemNotice = "tpiot/app/getsystemnotice"
 }
 
 // MARK: - 发现
 extension API {
     
-    static let getFoundBrand = "shoping/getFoundBrand.php"
+    static let getFoundBrand = "tpiot/app/getfoundbrand"
 }
 
 // MARK: - 硬件相关
@@ -68,7 +68,7 @@ extension API {
     static let isCollection = "shoping/isCollection.php"
     
     // 添加到购物车
-    static let addShoppingCart = "shoping/addShoppingCart.php"
+    static let addShoppingCart = "tpiot/app/addshoppingcart"
     
     // 商品评价点赞
     static let addShopFabulous = "shoping/addShopFabulous.php"
@@ -80,10 +80,10 @@ extension API {
     static let getEvaluation = "tpiot/app/getEvaluation"
     
     // 商品搜索
-    static let searchProduct = "shoping/getQueryShopping.php"
+    static let searchProduct = "tpiot/app/getQueryShopping"
     
     // 热搜
-    static let hotSearchKeyword = "shoping/getHot.php"
+    static let hotSearchKeyword = "tpiot/app/getHot"
     
     /// 商品结算页相关
     // 支付宝支付
@@ -93,7 +93,7 @@ extension API {
     static let getWechapayOrders = "wechaPay/getWechapayOrders.php"
     
     // 获取默认地址
-    static let getDefaultAddress = "shoping/getDefaultAddress.php"
+    static let getDefaultAddress = "tpiot/app/getDefaultAddress"
     
     
     /// 购物车相关
@@ -184,7 +184,7 @@ extension API {
     static let reimburseFinishAPI = "tpiot/app/selectPaymentOrder"
     
     //删除订单
-    static let deleteOrderAPI = "shoping/delOrder.php"
+    static let deleteOrderAPI = "tpiot/app/delOrder"
     
     //取消订单
     static let cancleOrderAPI =  "shoping/cancelOrders.php"

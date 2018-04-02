@@ -36,7 +36,8 @@ class MMLDetailCellTableViewCell: UITableViewCell {
             
             cellTitle.text = detailModel?.remarks;
             
-            time.text = timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: detailModel?.createTime ?? "0");
+            time.text = detailModel?.createTime ?? "0"
+				//timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: detailModel?.createTime ?? "0");
             
             money.text = " + " + (detailModel?.amount)!;
             
@@ -56,7 +57,9 @@ class MMLDetailCellTableViewCell: UITableViewCell {
             
             cellTitle.text = beasnModel?.remarks;
             
-            time.text = timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: beasnModel?.addtime ?? "0");
+            time.text = beasnModel?.addtime ?? "0"
+				
+				//timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: beasnModel?.addtime ?? "0");
             
             money.text = "总共" + (beasnModel?.banlance)!;
 

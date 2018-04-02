@@ -19,6 +19,7 @@
                 <outlet property="amountView" destination="5v9-Wn-zUc" id="uSv-kd-PLb"/>
                 <outlet property="payMethodButton" destination="jMG-OO-nwo" id="Ldn-88-Lsg"/>
                 <outlet property="payMethodView" destination="rZt-Ck-tHx" id="0fi-hi-an4"/>
+                <outlet property="payStackView" destination="qM7-FI-xmO" id="AC9-Rl-jv8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,9 +58,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMG-OO-nwo">
-                                    <rect key="frame" x="110" y="3" width="30" height="29"/>
+                                    <rect key="frame" x="110" y="3" width="43" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" title="微信">
+                                    <state key="normal" title="支付宝">
                                         <color key="titleColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>

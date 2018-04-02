@@ -78,7 +78,12 @@ class ShopOrderModel{
         
         invoice = json["invoice"].stringValue
         remarks = json["remarks"].stringValue
-        deliveryTime = json["deliveryTime"].stringValue
+		
+		if json["deliveryTime"].isEmpty {
+			deliveryTime = "时间"
+		}else{
+			deliveryTime = json["deliveryTime"].stringValue
+		}
         orderTime = json["orderTime"].stringValue
         money = json["money"].stringValue
         expressCompany = json["expressCompany"].stringValue

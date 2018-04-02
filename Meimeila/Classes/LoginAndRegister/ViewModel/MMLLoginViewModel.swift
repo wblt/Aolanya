@@ -27,9 +27,9 @@ class MMLLoginViewModel {
             let uid = jsonResult["data"]["uid"].stringValue
             let token = jsonResult["data"]["token"].stringValue
            // DDUDManager.share.saveUserID(uid: uid)
-			DDUDManager.share.saveUserID(uid: "673") // 先存死的
+			DDUDManager.share.saveUserID(uid: "710") // 先存死的
           //  DDUDManager.share.saveUserToken(token)
-			DDUDManager.share.saveUserToken("673")
+			DDUDManager.share.saveUserToken("710")
             BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
             DDDeviceManager.shared.saveLoginStatue(isLogin: true);
@@ -135,6 +135,7 @@ class MMLLoginViewModel {
             BFunction.shared.showToastMessge(json["message"].stringValue);
             
             DDUDManager.share.saveUserToken("");
+			DDUDManager.share.saveUserID(uid: "")
             DDDeviceManager.shared.saveLoginStatue(isLogin: false);
             
             outSucceed();

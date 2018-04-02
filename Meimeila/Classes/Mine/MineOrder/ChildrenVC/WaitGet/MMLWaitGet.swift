@@ -176,7 +176,10 @@ extension MMLWaitGet:UITableViewDataSource{
         
         let view = SectionHeadView.init(frame: CGRect.zero);
         view.titleLabel.text = stateText;
-        view.timeLabel.text = timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);        return view;
+        view.timeLabel.text = model.orderTime!
+			
+			//timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
+		return view;
         
     }
     

@@ -85,6 +85,21 @@ extension DayTaskVC:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
         print(indexPath.row);
+		let dayTaskModel = vm.modelArr[indexPath.row]
+		if dayTaskModel.type == "1" {
+			let vc = MMLProductDetailsVC()
+			vc.shoppingID = dayTaskModel.shopingID
+			navigationController?.pushViewController(vc, animated: true)
+		}else if dayTaskModel.type == "2" {
+			let VC = DDSmartmaskVC()
+			navigationController?.pushViewController(VC, animated: true)
+			//navigationController?.pushViewController(MMLSmartHardwareVC(), animated: true)
+		}else if dayTaskModel.type == "3" {
+			navigationController?.popToRootViewController(animated: true)
+			UIApplication.sharedDelegate().window?.rootViewController = DDTabBarViewController();
+
+		}
+		
     }
 }
 

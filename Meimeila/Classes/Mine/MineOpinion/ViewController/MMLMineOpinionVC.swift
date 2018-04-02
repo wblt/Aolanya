@@ -10,7 +10,10 @@ import UIKit
 
 class MMLMineOpinionVC: DDBaseViewController {
 
-    @IBOutlet weak var phoneTF: UITextField!
+	 var titleMsg: String!
+	
+	@IBOutlet weak var titleBtn: UIButton!
+	@IBOutlet weak var phoneTF: UITextField!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -50,7 +53,8 @@ class MMLMineOpinionVC: DDBaseViewController {
     }
 
     override func setupUI() {
-        self.title = "意见反馈";
+       // self.title = "意见反馈";
+		titleBtn.setTitle(titleMsg, for: UIControlState.normal)
         sendBt.layer.cornerRadius = 15;
     }
 

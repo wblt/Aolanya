@@ -178,10 +178,15 @@ extension MMLMineVC:UITableViewDelegate{
                 
             }else if indexPath.row == 2 {
                 
-                let vc = MMLPocketVC()
-                vc.title = "我的健康豆"
-                vc.isHealthBean = true;
-                navigationController?.pushViewController(vc, animated: true);
+//                let vc = MMLPocketVC()
+//                vc.title = "我的健康豆"
+//                vc.isHealthBean = true;
+//                navigationController?.pushViewController(vc, animated: true);
+
+				let vc = MMLBeansToMonayVC()
+				vc.title = "健康豆兑换";
+				self.navigationController?.pushViewController(vc, animated: true);
+				
                 
             }
         
@@ -213,6 +218,8 @@ extension MMLMineVC:UITableViewDelegate{
             
             if indexPath.row == 0{
                 let vc = MMLMineOpinionVC();
+				vc.title = "商家入驻洽谈"
+				vc.titleMsg = "* 请输入入驻平台的商品名，联系人"
                 navigationController?.pushViewController(vc, animated: true);
                 
             }else if indexPath.row == 1 {
@@ -222,8 +229,8 @@ extension MMLMineVC:UITableViewDelegate{
                 let vc = MMLMineOpinionVC();
                 navigationController?.pushViewController(vc, animated: true);
             }else if indexPath.row == 3 {
-                let vc = MMLMineOpinionVC();
-                navigationController?.pushViewController(vc, animated: true);
+				let vc = MMLMineOpinionVC();
+				navigationController?.pushViewController(vc, animated: true);
             }
         }
         

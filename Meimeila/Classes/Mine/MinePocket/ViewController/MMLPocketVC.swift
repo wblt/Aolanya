@@ -141,11 +141,13 @@ extension MMLPocketVC:UITableViewDelegate {
             navigationController?.pushViewController(vc, animated: true);
         
         }else if indexPath.row == 2 {
-            
-            let vc = MMLBeansToMonayVC()
-            vc.title = "健康豆兑换";
-            self.navigationController?.pushViewController(vc, animated: true);
-            
+			
+			let vc = MMLWithdrawVC()
+			 self.navigationController?.pushViewController(vc, animated: true);
+//            let vc = MMLBeansToMonayVC()
+//            vc.title = "健康豆兑换";
+//            self.navigationController?.pushViewController(vc, animated: true);
+			
         }
         
         

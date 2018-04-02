@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FDStackView
 
 class MMLWithdrawChildVC: DDBaseViewController {
-    
-    // 支付方式
+	
+	@IBOutlet weak var payStackView: FDStackView!
+	// 支付方式
     @IBOutlet weak var payMethodButton: UIButton!
     @IBOutlet weak var payMethodView: UIView!
     
@@ -24,7 +26,7 @@ class MMLWithdrawChildVC: DDBaseViewController {
     @IBOutlet weak var amountView: UIView!
     @IBOutlet weak var amountLabel: UILabel!
     
-    private var type: Int = 1 // 0 是支付宝
+    private var type: Int = 0 // 0 是支付宝
     private var moneyAmount: Double = 0
     
     // 如果不写这个方法，iOS8会崩溃
@@ -127,11 +129,16 @@ extension MMLWithdrawChildVC: MMLWithdrawalwayVCDelegate {
             self.type = 0
             aliPayAcountView.isHidden = false
             aliPayNameView.isHidden = false
+			payStackView.insertArrangedSubview(aliPayAcountView, at: 1)
+			payStackView.insertArrangedSubview(aliPayNameView, at: 2)
             payMethodButton.setTitle("支付宝", for: .normal)
         }else { // 微信红包提现
             self.type = 1
             aliPayAcountView.isHidden = true
             aliPayNameView.isHidden = true
+			payStackView.removeArrangedSubview(aliPayAcountView)
+			payStackView.removeArrangedSubview(aliPayNameView)
+			
             payMethodButton.setTitle("微信", for: .normal)
         }
     }

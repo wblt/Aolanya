@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isHaveNetwork: Bool = true
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		test();
+
         jq_application(application, didFinishLaunchingWithOptions: launchOptions)
         // 注册极光推送
         JPush_register(launchOptions: launchOptions)
@@ -156,21 +156,6 @@ extension AppDelegate {
             currentNav.pushViewController(VC, animated: true)
         }
     }
-	
-	func test(){
-		let urlString = "http://yg.welcare-tech.com.cn/tpiot/app/getTask"
-		var parameters = [String: Any]()
-		parameters["timestamp"] = "1522394295";
-		parameters["token"] = "673";
-		parameters["uid"] = "673";
-		parameters["sign"] = "770A04737484F531C2AAEF3D35EC2E70";
-		BFunction.shared.showLoading()
-		Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
-			BFunction.shared.hideLoadingMessage()
-		}
-		
-	}
-    
     
 }
 

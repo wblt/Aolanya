@@ -64,7 +64,7 @@ extension PayImmediatelyViewModel{
         ///下单时间
         let orderTime = Int(shopModel?.orderTime ?? "0")!
         ///到期时间
-        let overTime = effectiveTime + orderTime;
+		let overTime = effectiveTime + orderTime;
         
         ///当前时间
         let now = Date()

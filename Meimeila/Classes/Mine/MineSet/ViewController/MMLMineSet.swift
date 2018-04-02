@@ -119,6 +119,9 @@ extension MMLMineSet:UITableViewDelegate {
 			
 		}else {
 			let vc = MMLMineOpinionVC();
+			vc.title = "意见反馈"
+			//* 问题描述(5~200字)
+			vc.titleMsg = "* 问题描述(5~200字)"
 			navigationController?.pushViewController(vc, animated: true);
 		}
     }
