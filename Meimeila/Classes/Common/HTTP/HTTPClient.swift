@@ -96,8 +96,8 @@ class HTTPClient {
         
         // 2.自定义头部
         let headers: HTTPHeaders = [
-            "Accept": "application/json"
-        ]
+         //   "Accept": "application/json"
+			:]
         
         debugLog("请求链接:\(r.host + r.path)")
         debugLog("请求参数:\( r.parameters ?? [:] )")

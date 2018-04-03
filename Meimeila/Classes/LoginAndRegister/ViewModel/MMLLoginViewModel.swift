@@ -26,10 +26,8 @@ class MMLLoginViewModel {
             let jsonResult = JSON.init(responds)
             let uid = jsonResult["data"]["uid"].stringValue
             let token = jsonResult["data"]["token"].stringValue
-           // DDUDManager.share.saveUserID(uid: uid)
-			DDUDManager.share.saveUserID(uid: "710") // 先存死的
-          //  DDUDManager.share.saveUserToken(token)
-			DDUDManager.share.saveUserToken("710")
+            DDUDManager.share.saveUserID(uid: uid)
+            DDUDManager.share.saveUserToken(token)
             BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
             DDDeviceManager.shared.saveLoginStatue(isLogin: true);
@@ -162,7 +160,7 @@ class MMLLoginViewModel {
         
         let r = LoginAPI.weChatLogin(openid: openid, login_type: 1, name: name, gender: gender, iconurl: iconurl)
         
-        DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
             
             print(responds);
             // 保存用户的uid和token

@@ -45,27 +45,27 @@ class MMLLoginVC: DDBaseViewController {
     
     //微信登录
     @IBAction func weChatBtAction(_ sender: Any) {
-        
+		
         let installed = DDWechatLogin.shared.isWXAppInstalled()
-        
+
         if installed{
-            
+
             DDWechatLogin.shared.loginAction(callBack: {[weak self] (openid, access_token, result) in
-                
+
                 let json = JSON.init(result )
                 let model = DDWechatLoginResultModel.init(from: json)
                 MMLLoginViewModel.shared.loginWeChatAction(openid: openid, name: model.nickname!, gender: model.sex!, iconurl: model.headimgurl!, succeed: {
-                    
+
                     self?.perform(#selector(self?.succeedLogin), with: nil, afterDelay: 1.0);
-                    
+
                 })
-            
+
             })
         }else{
-            
+
             BFunction.shared.showErrorMessage("未安装微信,无法登录!")
         }
-    
+		
     }
     
 	@IBAction func qqBtLogin(_ sender: Any) {
