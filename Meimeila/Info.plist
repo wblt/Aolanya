@@ -50,10 +50,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>qq</string>
+			<string>QQ</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ41f860ac</string>
+				<string>QQ091783ef</string>
 			</array>
 		</dict>
 		<dict>
@@ -63,7 +63,7 @@
 			<string>tencent</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent1106796716</string>
+				<string>tencent1106801768</string>
 			</array>
 		</dict>
 		<dict>
