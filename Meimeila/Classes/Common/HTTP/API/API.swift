@@ -122,7 +122,7 @@ extension API {
 	static let login = "tpiot/app/login"
     
     //微信登录
-    static let login_weChat = "user/login_weixin_qq.php"
+    static let login_weChat = "tpiot/app/otherLogin"
     
     // 用户注册
     static let register = "tpiot/app/register"

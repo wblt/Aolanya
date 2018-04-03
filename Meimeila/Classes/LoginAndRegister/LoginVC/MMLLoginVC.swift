@@ -68,7 +68,13 @@ class MMLLoginVC: DDBaseViewController {
     
     }
     
-    //登录
+	@IBAction func qqBtLogin(_ sender: Any) {
+	}
+	
+	@IBAction func weiboBtLogin(_ sender: Any) {
+	}
+	
+	//登录
     @IBAction func loginBtAction(_ sender: Any) {
    
         TFoutFistResponds()

@@ -160,7 +160,7 @@ class MMLLoginViewModel {
     ///微信登录
     func loginWeChatAction(openid:String ,name:String,gender:String,iconurl:String ,succeed:@escaping () -> Void) {
         
-        let r = LoginAPI.weChatLogin(openid: openid, login_type: 0, name: name, gender: gender, iconurl: iconurl)
+        let r = LoginAPI.weChatLogin(openid: openid, login_type: 1, name: name, gender: gender, iconurl: iconurl)
         
         DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
             
