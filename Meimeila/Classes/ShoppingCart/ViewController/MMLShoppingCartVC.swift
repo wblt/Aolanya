@@ -198,7 +198,8 @@ class MMLShoppingCartVC: DDBaseViewController {
     
     // MARK: - event respose
     private func viewBindEvent() {
-        setupRefresh(tableView, headerCallback: {[weak self] in
+		
+        setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
             self?.shoppingcarViewModel.numberPages = 0
             self?.requestCarListData()
             

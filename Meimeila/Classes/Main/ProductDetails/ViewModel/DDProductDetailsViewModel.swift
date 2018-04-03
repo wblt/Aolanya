@@ -63,7 +63,7 @@ class DDProductDetailsViewModel {
     
     // 添加到购物车
     func productIncrease(shoppingID: String, number: String, successBlock: @escaping () -> ()) {
-        DDHTTPRequest.requestWithJsonCoding(r: ProductDetailsAPI.addProductToCar(shoppingID: shoppingID, shoppingNumber: number), requestSuccess: { (result) in
+        DDHTTPRequest.request(r: ProductDetailsAPI.addProductToCar(shoppingID: shoppingID, shoppingNumber: number), requestSuccess: { (result) in
             self.addCarModel = DDProductDetailsAddCarModel.init(fromJson:JSON.init(result))
             if let _ = self.addCarModel {
                 BFunction.shared.showMessage(self.addCarModel!.message)

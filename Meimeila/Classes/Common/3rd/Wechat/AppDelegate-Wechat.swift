@@ -14,8 +14,8 @@
 
 import Foundation
 
-let WX_APPID = ""
-let WX_APPSecret = ""
+let WX_APPID = "wx6fdf5584e43cd85f"
+let WX_APPSecret = "d6f630f4b765c67922d2e865385227e9"
 
 // 微信相关
 extension AppDelegate {

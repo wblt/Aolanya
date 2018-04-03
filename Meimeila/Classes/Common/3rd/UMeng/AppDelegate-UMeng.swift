@@ -8,13 +8,13 @@
 
 import Foundation
 
-private let UMengAppkey = "5a139a8fb27b0a33b5000044"
+private let UMengAppkey =   "5ac325e8a40fa34a15000060" //"5a139a8fb27b0a33b5000044"
 private let UmSocialAppSecret = ""
 private let kWebsiteLinks = "http://nnddkj.com"
 
 // QQ
-private let QQ_AppId = "1106420525"
-private let QQ_APPSecret = "E2ivF5s0hgPQsuVX"
+private let QQ_AppId = "1106796716"
+private let QQ_APPSecret = "V4LrtZINyfujzxKW"
 
 // sina
 private let Sina_AppId = "3921700954"

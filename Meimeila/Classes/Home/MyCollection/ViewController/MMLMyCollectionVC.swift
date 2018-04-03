@@ -27,7 +27,7 @@ class MMLMyCollectionVC: DDBaseViewController {
     
     // MARK: - Private methods
     private func viewBindEvents() {
-        setupRefresh(tableView, headerCallback: { [weak self] in
+        setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: { [weak self] in
             self?.myCollectionViewModel.numberPages = 0
             self?.requestCollectionData()
         }) {[weak self] in

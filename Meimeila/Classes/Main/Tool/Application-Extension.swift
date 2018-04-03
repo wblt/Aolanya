@@ -26,7 +26,7 @@ extension AppDelegate {
         //UIApplication.shared.statusBarStyle = .lightContent;
         configImages()
         // 初始化友盟推送
-//        UMeng_Setup()
+        UMeng_Setup()
         // 初始化微信配置
         wechat_setup()
     
