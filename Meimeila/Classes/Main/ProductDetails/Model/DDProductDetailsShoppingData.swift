@@ -30,6 +30,7 @@ class DDProductDetailsShoppingData {
     var specifications : String!
     var totalCollection : String!
     var market_value : Double!
+	var shoppingCartNumber : String!
     
     
     /**
@@ -58,6 +59,7 @@ class DDProductDetailsShoppingData {
         specifications = json["specifications"].stringValue
         totalCollection = json["totalCollection"].stringValue
         market_value = json["market_value"].doubleValue
+		shoppingCartNumber = json["shoppingCartNumber"].stringValue
     }
     
 }

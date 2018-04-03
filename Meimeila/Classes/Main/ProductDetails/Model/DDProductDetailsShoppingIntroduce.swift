@@ -16,7 +16,6 @@ class DDProductDetailsShoppingIntroduce {
     var shoppingID : String!
     var shoppingIntroduceID : String!
     
-    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */

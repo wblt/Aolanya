@@ -42,6 +42,38 @@ class DDHTTPRequest {
         }
         
     }
+	
+	// 避免需要做很多的改动       JsonCoding
+	class func requestWithJsonCoding(r: Request, requestSuccess: @escaping RequestSucceed, requestError: @escaping RequestError, requestFailure: @escaping RequestFailure) {
+		
+		DispatchQueue.main.async {
+			UIApplication.shared.isNetworkActivityIndicatorVisible = true
+		}
+		
+		HTTPClient.sharedInstance.sendWithJsonCoding(r, success: { (result) in
+			DispatchQueue.main.async {
+				UIApplication.shared.isNetworkActivityIndicatorVisible = false
+			}
+			debugLog("result====>" + "\(result)")
+			interceptResponse(r: r, response: result, requestSuccess: requestSuccess, requestError: requestError, requestFailure: requestFailure)
+		}, failure: { (error) in
+			DispatchQueue.main.async {
+				UIApplication.shared.isNetworkActivityIndicatorVisible = false
+			}
+			debugLog("error====>" + "\(error)")
+			requestFailure(error)
+			if r.isCheckNetStatus {
+				check(netWork: error)
+			}
+		}) { (response, errorModel) in
+			DispatchQueue.main.async {
+				UIApplication.shared.isNetworkActivityIndicatorVisible = false
+			}
+			requestError(response, errorModel)
+			debugLog("未知错误")
+		}
+		
+	}
     
     
     // 图片上传网络请求

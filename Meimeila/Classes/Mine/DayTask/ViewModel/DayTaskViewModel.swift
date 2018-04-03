@@ -29,7 +29,7 @@ extension DayTaskViewModel{
     func getDayTaskRequest(succeeds:@escaping requestSucceeds,falses:@escaping requestFalse) {
         
         let r = DayTaskAPI.dayTask
-        DDHTTPRequest.request(r: r, requestSuccess: {[weak self] (responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
             let json = JSON.init(responds);
             print(json)
             

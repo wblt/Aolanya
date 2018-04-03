@@ -101,6 +101,16 @@ class DDUDManager {
         UserDefaults.ServerInfo.set(value: uid, forKey: .userID)
         UserDefaults.standard.synchronize()
     }
+	
+	
+	/**
+	删除用户id
+	*/
+	func removeUserID() -> Bool {
+		UserDefaults.ServerInfo.removeObject(forkey: .userID)
+		return UserDefaults.standard.synchronize()
+	}
+	
     
     // 获取用户id
     func getUserID() -> String {

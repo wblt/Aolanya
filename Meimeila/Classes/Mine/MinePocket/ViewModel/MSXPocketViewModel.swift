@@ -25,7 +25,7 @@ class MSXPocketViewModel{
         
         let r = PocketMonayAPI.moneyBalance
         
-        DDHTTPRequest.request(r: r, requestSuccess: { [weak self](responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { [weak self](responds) in
             
             let json = JSON.init(responds);
             let model = PocketModel.init(form: json["data"]);

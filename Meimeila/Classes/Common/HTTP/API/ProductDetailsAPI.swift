@@ -58,6 +58,8 @@ extension ProductDetailsAPI: Request {
         case .productDetails(let shopingID):
             var params = postParameters()
             params["shopingID"] = shopingID
+			let uid = DDUDManager.share.getUserID()
+			params["uid"] = uid
             return DDIntegrationOfTheParameter(params: params)
             
         case .productCollection(let shopingID):

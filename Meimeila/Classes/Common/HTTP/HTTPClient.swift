@@ -90,7 +90,7 @@ class HTTPClient {
     static var sharedInstance = HTTPClient()
 
     
-    // 普通的网络请求
+    // 普通的网络请求  URLEncoding编码
     func send(_ r: Request, success: @escaping RequestSucceed, failure: @escaping RequestFailure, requestError: @escaping RequestError) {
         if r.hud {}
         
@@ -101,8 +101,7 @@ class HTTPClient {
         
         debugLog("请求链接:\(r.host + r.path)")
         debugLog("请求参数:\( r.parameters ?? [:] )")
-		
-		sessionManager.request(r.host + r.path, method: r.method, parameters: r.parameters,encoding:JSONEncoding.default,headers: headers).downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+		sessionManager.request(r.host + r.path, method: r.method, parameters: r.parameters,encoding:URLEncoding.default,headers: headers).downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
                 debugLog("Progress: \(progress.fractionCompleted)")
             
             }
@@ -126,6 +125,42 @@ class HTTPClient {
         }
     }
 
+	// 由于部分接口需要用 JSONEncoding 编码才会有正常数据，增加此方法
+	func sendWithJsonCoding(_ r: Request, success: @escaping RequestSucceed, failure: @escaping RequestFailure, requestError: @escaping RequestError) {
+		if r.hud {}
+		
+		// 2.自定义头部
+		let headers: HTTPHeaders = [
+			"Accept": "application/json"
+		]
+		
+		debugLog("请求链接:\(r.host + r.path)")
+		debugLog("请求参数:\( r.parameters ?? [:] )")
+		// URLEncoding  JSONEncoding
+		sessionManager.request(r.host + r.path, method: r.method, parameters: r.parameters,encoding:JSONEncoding.default,headers: headers).downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+			debugLog("Progress: \(progress.fractionCompleted)")
+			
+			}
+			.validate { request, response, data in
+				return .success
+			}
+			.responseJSON { response in
+				switch response.result{
+				case .success(_):
+					//debugLog(response.result.value)
+					if let value = response.result.value as? [String: AnyObject] {
+						success(value)
+						return
+					}
+					// 未知错误
+					let m = DDErrorModel(status: -11211, message: "未知的错误")
+					requestError([:], m)
+				case .failure(let error):
+					failure(error)
+				}
+		}
+	}
+	
 
     // 图片上传
     func upload(_ r: Request, success: @escaping RequestSucceed, failure: @escaping RequestFailure, requestError: @escaping RequestError) {

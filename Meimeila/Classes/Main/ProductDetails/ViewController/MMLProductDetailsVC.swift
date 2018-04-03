@@ -164,7 +164,16 @@ class MMLProductDetailsVC: DDBaseViewController {
         markPriceLabel.text = "￥" + "\(shoppingData?.market_value! ?? 0.00)"
         markPriceLabel.sizeToFit()
         redPButton.isHidden = shoppingData?.discount == 1 ? false : true
-        
+		collectionButton.isSelected = shoppingData?.totalCollection == "1" ?true:false
+		//设置小红点
+		let number = shoppingData?.shoppingCartNumber
+		if number != "0" {
+			shoppingCartButton.showRedpointOffset(x: 40, y: 3, value: number)
+			DDShoppingCarTool.shared.shakeAnimation(shakeView: (shoppingCartButton.imageView)!)
+			shoppingCartButton.resumeAnimate()
+		}
+		
+		
         // 设置评论信息
         evaluateData = productDetailsViewModel.productDetailsModel?.evaluateData
         if let _ = evaluateData {
@@ -194,6 +203,8 @@ class MMLProductDetailsVC: DDBaseViewController {
             //webDetailsHeightCons.constant = CGFloat(introduceImgs.count * 400)
             introduceTableView.reloadData()
         }
+		
+		// 设置是否收藏
         
     }
     

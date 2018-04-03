@@ -133,9 +133,12 @@ class MMLLoginViewModel {
             
             let json = JSON.init(responds);
             BFunction.shared.showToastMessge(json["message"].stringValue);
-            
-            DDUDManager.share.saveUserToken("");
-			DDUDManager.share.saveUserID(uid: "")
+			
+//			DDUDManager.share.removeUserToken();
+//			DDUDManager.share.removeUserID();
+			DDUDManager.share.saveUserID(uid: "0");
+			DDUDManager.share.saveUserToken("0")
+			
             DDDeviceManager.shared.saveLoginStatue(isLogin: false);
             
             outSucceed();
