@@ -13,8 +13,8 @@ private let UmSocialAppSecret = ""
 private let kWebsiteLinks = "http://nnddkj.com"
 
 // QQ
-private let QQ_AppId = "1106796716"
-private let QQ_APPSecret = "V4LrtZINyfujzxKW"
+private let QQ_AppId = "1106801768"
+private let QQ_APPSecret = "5hEFrwsyf10WcSnj"
 
 // sina
 private let Sina_AppId = "3921700954"
