@@ -111,7 +111,9 @@ extension MMLMineVC{
 			
             self?.tableHeadView.headIconBt.jq_setButtonImage(url: URL.init(string: self?.uservm.infoModel?.picture ?? ""), placeholder: "icon_defaultHeadIcon", state: UIControlState.normal);
 			
-            self?.tableHeadView.nickNameLabel.text = self?.uservm.infoModel?.name ?? self?.uservm.infoModel?.uid!
+			self?.tableHeadView.nickNameLabel.text = self?.uservm.infoModel?.name ?? DDUDManager.share.getUserID()
+			
+			
         }
     }
     

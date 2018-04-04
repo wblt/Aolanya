@@ -10,6 +10,7 @@ import UIKit
 import FSPagerView
 import Kingfisher
 import AVFoundation
+import Alamofire
 
 class MMLProductDetailsVC: DDBaseViewController {
 
@@ -69,6 +70,7 @@ class MMLProductDetailsVC: DDBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+		 requestProductDeatailsData()
         //navigationController?.setNavigationBarHidden(true, animated: false)
       //  requestQueryGoodsIsCollectionData()
     }
@@ -81,7 +83,7 @@ class MMLProductDetailsVC: DDBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBindEvents()
-        requestProductDeatailsData()
+//        requestProductDeatailsData()
 
     }
     
@@ -171,6 +173,8 @@ class MMLProductDetailsVC: DDBaseViewController {
 			shoppingCartButton.showRedpointOffset(x: 40, y: 3, value: number)
 			DDShoppingCarTool.shared.shakeAnimation(shakeView: (shoppingCartButton.imageView)!)
 			shoppingCartButton.resumeAnimate()
+		}else {
+			shoppingCartButton.removeRedpoint()
 		}
 		
 		
@@ -227,6 +231,7 @@ class MMLProductDetailsVC: DDBaseViewController {
     
     // 添加商品到购物车
     private func requestAddProductToCar() {
+		//test(shoppingID:shoppingID);
         productDetailsViewModel.productIncrease(shoppingID: shoppingID, number: "1") {[weak self] in
             //debugLog("添加成功")
             if let _ = self?.productDetailsViewModel.addCarModel {
@@ -235,10 +240,26 @@ class MMLProductDetailsVC: DDBaseViewController {
                 DDShoppingCarTool.shared.shakeAnimation(shakeView: (self?.shoppingCartButton.imageView)!)
                 self?.shoppingCartButton.resumeAnimate()
             }
-            
+
         }
-        
+		
     }
+	
+	func test(shoppingID: String){
+		let urlString = "http://yg.welcare-tech.com.cn/tpiot/app/addshoppingcart"
+		var parameters = [String: Any]()
+		parameters["timestamp"] = "1522808538439";
+		parameters["token"] = "710";
+		parameters["uid"] = "710";
+		parameters["sign"] = "90DE873C8A72FB31152648BC0895530F";
+		parameters["shopingID"] = shoppingID;
+		parameters["shoppingNumber"] = "1";
+		BFunction.shared.showLoading()
+		Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+			BFunction.shared.hideLoadingMessage()
+		}
+		
+	}
     
     // 查询商品是否已经收藏
     private func requestQueryGoodsIsCollectionData() {

@@ -91,27 +91,24 @@ extension MMLMineSet:UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true);
         
-        if indexPath.row == 0{
-          
-//            let vc = MMLMoneyPaySetPWVC()
-//            vc.title = "设置支付密码"
-//            navigationController?.pushViewController(vc, animated: true);
+		if indexPath.row == 0{
+			let vc = MMLMoneyPaySetPWVC()
+			vc.title = "设置支付密码"
+			navigationController?.pushViewController(vc, animated: true);
+		}else if indexPath.row == 1{
 			
 			let vc = MMLBindPhoneVC()
 			vc.title = "绑定手机号"
 			navigationController?.pushViewController(vc, animated: true);
 		
 			
-        }else if indexPath.row == 1 {
-//            let vc = MMLBindPhoneVC()
-//            vc.title = "绑定手机号"
-//            navigationController?.pushViewController(vc, animated: true);
+        }else if indexPath.row == 2 {
 			
 			let vc = MMLBindPhoneVC()
 			vc.title = "解除绑定"
 			vc.isBindPhone = false;
 			navigationController?.pushViewController(vc, animated: true);
-        }else if indexPath.row == 2{
+        }else if indexPath.row == 3{
 			//地址
 			let vc = MMLMineAddressVC()
 			vc.isEdit = true;

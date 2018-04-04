@@ -73,7 +73,7 @@ extension ProductDetailsAPI: Request {
             return DDIntegrationOfTheParameter(params: params, isNeedLogin: true)
         case .addProductToCar(let shoppingID, let shoppingNumber):
             var params = postParameters()
-            params["shoppingID"] = shoppingID
+            params["shopingID"] = shoppingID
             params["shoppingNumber"] = shoppingNumber
             return DDIntegrationOfTheParameter(params: params, isNeedLogin: true)
         case .addShopFabulous(let shoppingID, let evaluateID):

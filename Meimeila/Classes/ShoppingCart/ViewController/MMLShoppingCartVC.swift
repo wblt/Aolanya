@@ -41,13 +41,14 @@ class MMLShoppingCartVC: DDBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barStyle = .black
+		requestCarListData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "购物车"
         viewBindEvent()
-        requestCarListData()
+     //   requestCarListData()
     }
     
     override func setupUI() {
@@ -143,15 +144,25 @@ class MMLShoppingCartVC: DDBaseViewController {
                 needDeletedIndexArray.append(index)
             }
         }
+		
+		var shopIdArray = Array<Any>()
+		
         // 拼接要删除的商品ID
         for i in 0..<needDeletedArray.count {
             let model = needDeletedArray[i]
+			var shopid = [String:String]()
+			shopid["shoppingId"] = model.shopingID
+			shopIdArray.append(shopid)
             if i != needDeletedArray.count - 1 {
                 deletedShoppingID += model.shopingID + "##"
             }else {
                 deletedShoppingID += model.shopingID
             }
         }
+		
+		let data = try?JSONSerialization.data(withJSONObject: shopIdArray, options: JSONSerialization.WritingOptions.prettyPrinted)
+		deletedShoppingID = String.init(data: data!, encoding:String.Encoding(rawValue: String.Encoding.utf8.rawValue) )!
+		
         return deletedShoppingID
         
     }
@@ -181,9 +192,14 @@ class MMLShoppingCartVC: DDBaseViewController {
     // 商品删除
     fileprivate func requestProductDeletedData(shoppingID: String) {
         shoppingcarViewModel.productDeleted(shoppingID: shoppingID) {[weak self] in
-            self?.needDeletedIndexArray.forEach({ (index) in
-                self?.shoppingcarViewModel.shoppingCarListDatas.remove(at: index)
-            })
+			
+//			self?.needDeletedIndexArray.forEach({ (index) in
+//                self?.shoppingcarViewModel.shoppingCarListDatas.remove(at: index)
+//            })
+			
+			self?.shoppingcarViewModel.numberPages = 0
+			self?.requestCarListData()
+			
             // 设置数量
             let count = self?.shoppingcarViewModel.shoppingCarListDatas.count ?? 0
             if count == 0 {
@@ -289,10 +305,10 @@ extension MMLShoppingCartVC: DDShoppingCarBottomViewDlegate {
         case .deletedType:
             let deletedShoppingID =  getDeletedShoppingID()
             debugLog("将要删除的shoppingID===>" + deletedShoppingID)
-            if !(deletedShoppingID == "") {
-                requestProductDeletedData(shoppingID: deletedShoppingID)
-            }
-            // 删除
+			// 删除
+			requestProductDeletedData(shoppingID: deletedShoppingID)
+			
+			
             break
         case .tosettleaccountsType:
             

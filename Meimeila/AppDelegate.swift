@@ -157,21 +157,21 @@ extension AppDelegate {
         }
     }
 	
-//	func test(){
-//		let urlString = "http://yg.welcare-tech.com.cn/tpiot/app/addshoppingcart"
-//		var parameters = [String: Any]()
-//		parameters["timestamp"] = "1522808538439";
-//		parameters["token"] = "710";
-//		parameters["uid"] = "710";
-//		parameters["sign"] = "90DE873C8A72FB31152648BC0895530F";
-//		parameters["shopingID"] = "5";
-//		parameters["shoppingNumber"] = "1";
-//		BFunction.shared.showLoading()
-//		Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-//			BFunction.shared.hideLoadingMessage()
-//		}
-//
-//	}
+	func test(){
+		let urlString = "http://yg.welcare-tech.com.cn/tpiot/app/addshoppingcart"
+		var parameters = [String: Any]()
+		parameters["timestamp"] = "1522808538439";
+		parameters["token"] = "710";
+		parameters["uid"] = "710";
+		parameters["sign"] = "90DE873C8A72FB31152648BC0895530F";
+		parameters["shopingID"] = "5";
+		parameters["shoppingNumber"] = "1";
+		BFunction.shared.showLoading()
+		Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+			BFunction.shared.hideLoadingMessage()
+		}
+
+	}
 	
 }
 

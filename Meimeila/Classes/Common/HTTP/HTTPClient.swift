@@ -88,7 +88,6 @@ class HTTPClient {
 
     // 创建单例
     static var sharedInstance = HTTPClient()
-
     
     // 普通的网络请求  URLEncoding编码
     func send(_ r: Request, success: @escaping RequestSucceed, failure: @escaping RequestFailure, requestError: @escaping RequestError) {

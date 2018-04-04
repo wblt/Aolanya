@@ -26,10 +26,8 @@ class MMLLoginViewModel {
             let jsonResult = JSON.init(responds)
             let uid = jsonResult["data"]["uid"].stringValue
             let token = jsonResult["data"]["token"].stringValue
-//            DDUDManager.share.saveUserID(uid: uid)
-//            DDUDManager.share.saveUserToken(token)
-			DDUDManager.share.saveUserID(uid: "710")
-			DDUDManager.share.saveUserToken("710")
+            DDUDManager.share.saveUserID(uid: uid)
+            DDUDManager.share.saveUserToken(token)
 			BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
             DDDeviceManager.shared.saveLoginStatue(isLogin: true);
@@ -169,10 +167,8 @@ class MMLLoginViewModel {
             let jsonResult = JSON.init(responds)
             let uid = jsonResult["data"]["uid"].stringValue
             let token = jsonResult["data"]["token"].stringValue
-//            DDUDManager.share.saveUserID(uid: uid)
-//            DDUDManager.share.saveUserToken(token)
-			DDUDManager.share.saveUserID(uid: "718")
-			DDUDManager.share.saveUserToken("718")
+            DDUDManager.share.saveUserID(uid: uid)
+            DDUDManager.share.saveUserToken(token)
             BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
             DDDeviceManager.shared.saveLoginStatue(isLogin: true);

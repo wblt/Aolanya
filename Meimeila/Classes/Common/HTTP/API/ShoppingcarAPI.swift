@@ -46,13 +46,13 @@ extension ShoppingcarAPI: Request {
             
         case .productIncrease(let shoppingID, let number):
             var params = postParameters()
-            params["shoppingID"] = shoppingID
+            params["shopingID"] = shoppingID
             params["number"] = number
             return DDIntegrationOfTheParameter(params: params, isNeedLogin: true)
             
         case .productDeIncrease(let shoppingID, let number):
             var params = postParameters()
-            params["shoppingID"] = shoppingID
+            params["shopingID"] = shoppingID
             params["number"] = number
             return DDIntegrationOfTheParameter(params: params, isNeedLogin: true)
             

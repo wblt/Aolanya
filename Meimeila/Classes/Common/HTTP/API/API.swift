@@ -87,10 +87,10 @@ extension API {
     
     /// 商品结算页相关
     // 支付宝支付
-    static let getAlipayOrders = "alipay/getAlipayOrders.php"
+    static let getAlipayOrders = "tpiot/alipay/getAlipayOrders"
     
     // 微信支付
-    static let getWechapayOrders = "wechaPay/getWechapayOrders.php"
+    static let getWechapayOrders = "tpiot/app/wechaPay/getWechapayOrders"
     
     // 获取默认地址
     static let getDefaultAddress = "tpiot/app/getDefaultAddress"
@@ -290,7 +290,7 @@ extension API {
     static let moneyPayHealthBeanAPI = "tpiot/app/banlancePay"
     
     ///设置或修改余额支付密码
-    static let moneyPay_PW_API = "user/payment_pwd.php"
+    static let moneyPay_PW_API = "tpiot/app/paymentpwd"
     
     ///绑定手机号
     static let moneyPayBindPhoneAPI = "tpiot/app/bindphone"
