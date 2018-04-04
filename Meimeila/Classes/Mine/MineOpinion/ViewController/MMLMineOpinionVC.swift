@@ -23,9 +23,15 @@ class MMLMineOpinionVC: DDBaseViewController {
     @IBAction func sendBtAction(_ sender: Any) {
         
         if verifyInPut() {
-            
-            
-            vm.submit(feedbackMessage: textView.text , feedbackPhone: phoneTF.text, feedbackAdress: nil, feedbackType: "0", succeeds: {
+			
+			var type = ""
+			if self.title == "意见反馈" {
+				type = "0"
+			}else {
+				type = "1"
+			}
+			
+            vm.submit(feedbackMessage: textView.text , feedbackPhone: phoneTF.text, feedbackAdress: nil, feedbackType: type, succeeds: {
                 
             }) {
                 
