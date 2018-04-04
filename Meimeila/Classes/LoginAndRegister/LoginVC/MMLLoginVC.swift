@@ -92,7 +92,7 @@ class MMLLoginVC: DDBaseViewController {
         if let _ = delegate {
             delegate?.loginVCFinish()
         }
-        jPsuhViewModel.upLoadJPushRegistID()
+      //  jPsuhViewModel.upLoadJPushRegistID()
         self.navigationController?.popViewController(animated: true);
         
     }

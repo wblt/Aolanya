@@ -55,7 +55,7 @@ class MMLHomeVC: DDBaseViewController {
     
     // MARK: - Private method
     private func setupNavBar() {
-		navigationItem.title = "奧蓝雅"
+		navigationItem.title = "奧蓝雅商城"
 //        navigationItem.titleView = searchView
 //        addNavBarBackButton(imageName: "home_scan") { [weak self](btn) in
 //            // 扫码

@@ -158,14 +158,16 @@ extension AppDelegate {
     }
 	
 //	func test(){
-//		let urlString = "http://yg.welcare-tech.com.cn/tpiot/app/getTask"
+//		let urlString = "http://yg.welcare-tech.com.cn/tpiot/app/addshoppingcart"
 //		var parameters = [String: Any]()
-//		parameters["timestamp"] = "1522394295";
-//		parameters["token"] = "673";
-//		parameters["uid"] = "673";
-//		parameters["sign"] = "770A04737484F531C2AAEF3D35EC2E70";
+//		parameters["timestamp"] = "1522808538439";
+//		parameters["token"] = "710";
+//		parameters["uid"] = "710";
+//		parameters["sign"] = "90DE873C8A72FB31152648BC0895530F";
+//		parameters["shopingID"] = "5";
+//		parameters["shoppingNumber"] = "1";
 //		BFunction.shared.showLoading()
-//		Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+//		Alamofire.request(urlString, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
 //			BFunction.shared.hideLoadingMessage()
 //		}
 //

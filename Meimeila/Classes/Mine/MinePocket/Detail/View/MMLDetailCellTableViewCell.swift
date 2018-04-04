@@ -34,7 +34,8 @@ class MMLDetailCellTableViewCell: UITableViewCell {
         
         didSet{
             
-            cellTitle.text = detailModel?.remarks;
+            //cellTitle.text = detailModel?.remarks;
+			cellTitle.text = detailModel?.amountSource;
             
             time.text = detailModel?.createTime ?? "0"
 				//timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: detailModel?.createTime ?? "0");

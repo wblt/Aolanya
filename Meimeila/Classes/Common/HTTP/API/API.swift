@@ -110,7 +110,7 @@ extension API {
     static let productDeleted = "tpiot/app/delshoppingcart"
     
     // 分享
-    static let share = "shoping/share.php"
+    static let share = "tpiot/app/share"
 }
 
 // MARK: - 我的相关
@@ -146,7 +146,7 @@ extension API {
     static let userLogout = "tpiot/app/loginout"
     
     //修改头像
-    static let feedbackImg = "user/feedbackImg.php"
+    static let feedbackImg = "tpiot/app/feedbackimg"
     
     //用户资料
     static let userInfoAPI = "tpiot/app/getuserinfo"
@@ -254,7 +254,7 @@ extension API {
     
     ////面膜
     ///上传面膜测试数据
-    static let maskDataupLoadAPI = "smart/getMaskData.php"
+    static let maskDataupLoadAPI = "tpiot/app/getmask"
     
     ///面膜数据列表
     static let maskDataListAPI = "tpiot/app/getUserMaskData"
@@ -284,10 +284,10 @@ extension API {
     static let moneyPayRecordAPI = "makeMoney/getMoneyRecord.php"
     
     ///余额支付商品订单
-    static let momeyPayOrderAPI = "shoping/banlancePay.php"
+    static let momeyPayOrderAPI = "tpiot/app/banlancePay"
     
     ///健康豆充值
-    static let moneyPayHealthBeanAPI = "shoping/banlancePay.php"
+    static let moneyPayHealthBeanAPI = "tpiot/app/banlancePay"
     
     ///设置或修改余额支付密码
     static let moneyPay_PW_API = "user/payment_pwd.php"
