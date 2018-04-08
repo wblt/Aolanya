@@ -11,9 +11,14 @@ import UIKit
 class DDTabBarViewController: UITabBarController {
     
     public var homeVC = MMLHomeVC()
-    public var hardwareVC = MMLFoundVC()
+    //public var hardwareVC = MMLFoundVC()
+	public var agentVC = ALYAgentViewController()
     public var mallVC = MMLShoppingCartVC()
     public var mineVC = MMLMineVC()
+	
+	public var agentLevelVC = ALYAgentlevelVC()
+	public var agentMsgInputVC = ALYAgentMsgInputVC()
+	public var agentcheckVC = ALYAgentCheckVC()
     
     // 当前选中的索引值
     fileprivate var indexFlag:Int! = 0
@@ -40,7 +45,8 @@ class DDTabBarViewController: UITabBarController {
      */
     private func addChildViewControllers() {
         addChildViewController(childController: homeVC, title: "首页", imageName: "home")
-        addChildViewController(childController: hardwareVC, title: "发现", imageName: "found")
+      //  addChildViewController(childController: hardwareVC, title: "发现", imageName: "found")
+		addChildViewController(childController: agentVC, title: "代理", imageName: "found")
         addChildViewController(childController: mallVC, title: "购物车", imageName: "shoppingcart")
         addChildViewController(childController: mineVC, title: "我的", imageName: "mine")
     }
@@ -99,6 +105,31 @@ class DDTabBarViewController: UITabBarController {
         indexFlag = index
         
     }
+	
+	func setAgentLevelPage(){
+		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
+		agentLevelVC.tabBarItem.image = UIImage(named: "found")
+		agentLevelVC.tabBarItem.selectedImage = UIImage(named: "found" + "_h")
+		agentLevelVC.title = "我要赚钱"
+		navC.setViewControllers([agentLevelVC], animated: true)
+	}
+	
+	func setAgentMsgInputPage(){
+		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
+		agentMsgInputVC.tabBarItem.image = UIImage(named: "found")
+		agentMsgInputVC.tabBarItem.selectedImage = UIImage(named: "found" + "_h")
+		agentMsgInputVC.title = "我要赚钱"
+		navC.setViewControllers([agentMsgInputVC], animated: true)
+	}
+	
+	func setAgentCheckPage(){
+		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
+		agentcheckVC.tabBarItem.image = UIImage(named: "found")
+		agentcheckVC.tabBarItem.selectedImage = UIImage(named: "found" + "_h")
+		agentcheckVC.title = "我要赚钱"
+		navC.setViewControllers([agentcheckVC], animated: true)
+	}
+	
 }
 
 extension DDTabBarViewController: UITabBarControllerDelegate {
@@ -107,6 +138,13 @@ extension DDTabBarViewController: UITabBarControllerDelegate {
         if indexFlag != index {
             animationWithIndex(index: index)
         }
+		
+		// 登录状态判断 用户是申请成为代理
+		if  DDDeviceManager.shared.loginStatue() && index == 1{
+			
+			
+		}
+		
     }
     
     // 设置当前的item是否可以选中

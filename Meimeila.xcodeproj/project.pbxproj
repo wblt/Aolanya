@@ -606,6 +606,14 @@
 		66F568CE1FA03EB700D727AC /* MMLEvaluateListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F568CC1FA03EB700D727AC /* MMLEvaluateListModel.swift */; };
 		66F568CF1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F568CD1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift */; };
 		DF3FB64A9EFBA0350FA6E551 /* Pods_Meimeila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */; };
+		F83CF8C22079AE3E00FA9423 /* ALYAgentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8C02079AE3E00FA9423 /* ALYAgentViewController.swift */; };
+		F83CF8C32079AE3E00FA9423 /* ALYAgentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8C12079AE3E00FA9423 /* ALYAgentViewController.xib */; };
+		F83CF8C62079C80500FA9423 /* ALYAgentlevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8C42079C80500FA9423 /* ALYAgentlevelVC.swift */; };
+		F83CF8C72079C80500FA9423 /* ALYAgentlevelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8C52079C80500FA9423 /* ALYAgentlevelVC.xib */; };
+		F83CF8CA2079CC2200FA9423 /* ALYAgentMsgInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8C82079CC2200FA9423 /* ALYAgentMsgInputVC.swift */; };
+		F83CF8CB2079CC2200FA9423 /* ALYAgentMsgInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */; };
+		F83CF8D2207A1BD500FA9423 /* ALYAgentCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */; };
+		F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1244,6 +1252,14 @@
 		66F568CD1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLEvaluateListEvaluateData.swift; sourceTree = "<group>"; };
 		745E089CA2D9A0319C6A03CB /* Pods-Meimeila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meimeila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meimeila/Pods-Meimeila.debug.xcconfig"; sourceTree = "<group>"; };
 		E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meimeila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83CF8C02079AE3E00FA9423 /* ALYAgentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentViewController.swift; sourceTree = "<group>"; };
+		F83CF8C12079AE3E00FA9423 /* ALYAgentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentViewController.xib; sourceTree = "<group>"; };
+		F83CF8C42079C80500FA9423 /* ALYAgentlevelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentlevelVC.swift; sourceTree = "<group>"; };
+		F83CF8C52079C80500FA9423 /* ALYAgentlevelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentlevelVC.xib; sourceTree = "<group>"; };
+		F83CF8C82079CC2200FA9423 /* ALYAgentMsgInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentMsgInputVC.swift; sourceTree = "<group>"; };
+		F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentMsgInputVC.xib; sourceTree = "<group>"; };
+		F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentCheckVC.swift; sourceTree = "<group>"; };
+		F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentCheckVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2793,6 +2809,7 @@
 				661FDCC91F94B6000045ED98 /* Found */,
 				661FDCC81F94B5E30045ED98 /* Mine */,
 				661FDCC71F94B5D10045ED98 /* Main */,
+				F83CF8BE2079ADB200FA9423 /* Agent */,
 				661FDCC61F94B5C20045ED98 /* Home */,
 			);
 			path = Classes;
@@ -4176,6 +4193,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F83CF8BE2079ADB200FA9423 /* Agent */ = {
+			isa = PBXGroup;
+			children = (
+				F83CF8BF2079ADE400FA9423 /* ViewController */,
+			);
+			path = Agent;
+			sourceTree = "<group>";
+		};
+		F83CF8BF2079ADE400FA9423 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F83CF8C02079AE3E00FA9423 /* ALYAgentViewController.swift */,
+				F83CF8C12079AE3E00FA9423 /* ALYAgentViewController.xib */,
+				F83CF8C42079C80500FA9423 /* ALYAgentlevelVC.swift */,
+				F83CF8C52079C80500FA9423 /* ALYAgentlevelVC.xib */,
+				F83CF8C82079CC2200FA9423 /* ALYAgentMsgInputVC.swift */,
+				F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */,
+				F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */,
+				F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -4322,6 +4362,7 @@
 				221575101F99E41700BC94EF /* MMLRegisterVC.xib in Resources */,
 				224351F71FC57B8700F039D6 /* CheckLogisticsVC.xib in Resources */,
 				2208309A1FC51CFB00C7B779 /* MMLAddressSelectVC.xib in Resources */,
+				F83CF8CB2079CC2200FA9423 /* ALYAgentMsgInputVC.xib in Resources */,
 				6659DE211F9D8280009367C0 /* MMLWithdrawalwayVC.xib in Resources */,
 				2215750F1F99E40B00BC94EF /* MMLLoginVC.xib in Resources */,
 				22D790AF1FC664F800C150AB /* ProductCell.xib in Resources */,
@@ -4335,6 +4376,7 @@
 				668B5C4F1F98583100D276AE /* MMLSettlementProductListCell.xib in Resources */,
 				22DA88DE1FCD633C00F68576 /* flexslider-icon.svg in Resources */,
 				22DA88F71FCD633C00F68576 /* jquery.mmenu.min.all.js in Resources */,
+				F83CF8C32079AE3E00FA9423 /* ALYAgentViewController.xib in Resources */,
 				22DA890D1FCD677C00F68576 /* ReasonTFCell.xib in Resources */,
 				22DA88EA1FCD633C00F68576 /* style.css in Resources */,
 				22463CA41FE7938F00D15B91 /* DayTaskCell.xib in Resources */,
@@ -4348,6 +4390,7 @@
 				662C53F51F9AD9BE00AD4C1E /* MMLPayResultVC.xib in Resources */,
 				22DA88DA1FCD633C00F68576 /* bootstrap.min.css in Resources */,
 				22DA88FC1FCD633C00F68576 /* operation.html in Resources */,
+				F83CF8C72079C80500FA9423 /* ALYAgentlevelVC.xib in Resources */,
 				22F146C01FCFF5C500B78B0F /* MMLReportTitleCell.xib in Resources */,
 				22FF14DA1FC90CC0000C76FE /* SelectPictureVC.xib in Resources */,
 				22D790CC1FC66AC500C150AB /* DDPopupWindowVC.xib in Resources */,
@@ -4414,6 +4457,7 @@
 				22D790CA1FC66AC500C150AB /* DDPopAlterVC.xib in Resources */,
 				224EE5A71FFB5A1C003A9817 /* MMLExchangeGiftAddressVC.xib in Resources */,
 				22052C1A1F9B2F1100483E59 /* MMLAddNewAddressVC.xib in Resources */,
+				F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */,
 				22DA88FA1FCD633C00F68576 /* code.photoswipe.jquery-3.0.4.min.js in Resources */,
 				2242D8431FD931120008A16F /* MMLMoneyPayKeyBoardVC.xib in Resources */,
 				22DA88F61FCD633C00F68576 /* jquery.min.js in Resources */,
@@ -4644,6 +4688,7 @@
 				22F146BB1FCFF22200B78B0F /* MMLReportWaterAndOilCell.swift in Sources */,
 				66D803F91F94D2A80022FEAE /* DDRefreshNormalHeader.swift in Sources */,
 				66D803FA1F94D2A80022FEAE /* AppDelegate-JPush.swift in Sources */,
+				F83CF8C62079C80500FA9423 /* ALYAgentlevelVC.swift in Sources */,
 				665660FA1F9B478100629064 /* Tool.swift in Sources */,
 				668B5C561F98624700D276AE /* MMLHomeDataModular.swift in Sources */,
 				22FF14C81FC90396000C76FE /* MMLPocketDetailVC.swift in Sources */,
@@ -4741,6 +4786,7 @@
 				668B5C491F9847ED00D276AE /* MMLPictureViewCell.swift in Sources */,
 				66D8040D1F94D2A80022FEAE /* JQUIDevice-Extension.swift in Sources */,
 				66D8040E1F94D2A80022FEAE /* JQUIImage-Extension.swift in Sources */,
+				F83CF8C22079AE3E00FA9423 /* ALYAgentViewController.swift in Sources */,
 				22052C141F9B2C8300483E59 /* MMLAddressCell.swift in Sources */,
 				666FADB01FB998B80011CBBF /* DDLuckdrawVC.swift in Sources */,
 				66059BEA1F99A458001AA0AA /* MMLSearchViewModel.swift in Sources */,
@@ -4894,6 +4940,7 @@
 				66C93B9B1F98A121005EB4E3 /* MMLContentDetailsVC.swift in Sources */,
 				66D8043B1F94D2A80022FEAE /* DDXAxisValueFormatter.swift in Sources */,
 				6645A76B1FC4029400B3280A /* DDSmartmaskVC.swift in Sources */,
+				F83CF8CA2079CC2200FA9423 /* ALYAgentMsgInputVC.swift in Sources */,
 				663AB2621F9982FB009AD44B /* MMLRedenvelopeCell.swift in Sources */,
 				66D130B11F973962002C8BE8 /* DDShoppingCarViewModel.swift in Sources */,
 				22B8FB941F9D7D80001638A2 /* MMLEditeUserInfoVC.swift in Sources */,
@@ -4993,6 +5040,7 @@
 				66D803E81F94D10D0022FEAE /* MMLShoppingCartVC.swift in Sources */,
 				6645A7621FC4029400B3280A /* deviceSearchView.swift in Sources */,
 				6645A76A1FC4029400B3280A /* SmartmaskChartsDataView.swift in Sources */,
+				F83CF8D2207A1BD500FA9423 /* ALYAgentCheckVC.swift in Sources */,
 				663AB2671F998B97009AD44B /* MMLMyCollectionListCell.swift in Sources */,
 				661FDC971F94B50A0045ED98 /* AppDelegate.swift in Sources */,
 				66EFC3D11F9CE7AB0010A244 /* JQAnimationContoller.swift in Sources */,
