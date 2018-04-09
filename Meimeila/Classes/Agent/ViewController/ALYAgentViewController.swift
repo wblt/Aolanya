@@ -38,12 +38,30 @@ class ALYAgentViewController: DDBaseViewController {
     
 
 	@IBAction func applyWithInvitationCodeClick(_ sender: Any) {
+		
+		let loginStatue = DDDeviceManager.shared.loginStatue();
+		if !loginStatue {
+			let vc = MMLLoginVC()
+			self.navigationController?.pushViewController(vc, animated: true);
+			
+			return;
+		}
+		
 		let vc = ALYAgentlevelVC();
 		self.navigationController?.pushViewController(vc, animated: true);
 		
 	}
 	
 	@IBAction func applyClick(_ sender: Any) {
+		
+		let loginStatue = DDDeviceManager.shared.loginStatue();
+		if !loginStatue {
+			let vc = MMLLoginVC()
+			self.navigationController?.pushViewController(vc, animated: true);
+			
+			return;
+		}
+		
 		let vc = ALYAgentlevelVC();
 		self.navigationController?.pushViewController(vc, animated: true);
 		

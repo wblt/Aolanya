@@ -31,8 +31,8 @@ class ALYAgentlevelVC: DDBaseViewController {
         super.viewDidLoad()
 		self.title = "我要赚钱"
         // Do any additional setup after loading the view.
-		setup()
 		
+		setup()
 		cardDataViewModel.getCardData {
 			self.collectionView.reloadData()
 		}

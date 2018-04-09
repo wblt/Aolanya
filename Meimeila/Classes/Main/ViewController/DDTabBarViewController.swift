@@ -15,9 +15,7 @@ class DDTabBarViewController: UITabBarController {
 	public var agentVC = ALYAgentViewController()
     public var mallVC = MMLShoppingCartVC()
     public var mineVC = MMLMineVC()
-	
-	public var agentLevelVC = ALYAgentlevelVC()
-	public var agentMsgInputVC = ALYAgentMsgInputVC()
+
 	public var agentcheckVC = ALYAgentCheckVC()
 	
     // 当前选中的索引值
@@ -112,21 +110,6 @@ class DDTabBarViewController: UITabBarController {
         
     }
 	
-	func setAgentLevelPage(){
-		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
-		agentLevelVC.tabBarItem.image = UIImage(named: "found")
-		agentLevelVC.tabBarItem.selectedImage = UIImage(named: "found" + "_h")
-		agentLevelVC.title = "我要赚钱"
-		navC.setViewControllers([agentLevelVC], animated: true)
-	}
-	
-	func setAgentMsgInputPage(){
-		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
-		agentMsgInputVC.tabBarItem.image = UIImage(named: "found")
-		agentMsgInputVC.tabBarItem.selectedImage = UIImage(named: "found" + "_h")
-		agentMsgInputVC.title = "我要赚钱"
-		navC.setViewControllers([agentMsgInputVC], animated: true)
-	}
 	
 	func setAgentCheckPage(){
 		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
@@ -153,12 +136,10 @@ extension DDTabBarViewController: UITabBarControllerDelegate {
 			uservm.getUserInfo {[weak self] in
 				// 无等级 就是代理页面
 				if !(self?.uservm.infoModel?.level?.isEmpty)! {
-					self?.setAgentLevelPage()
+					self?.setAgentCheckPage()
 				}
 				
 			}
-			
-			
 		}
 		
     }

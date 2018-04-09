@@ -64,4 +64,38 @@ class UserInfoModel{
         statue = json["statue"].stringValue;
         uid = json["uid"].stringValue;
     }
+//-----------------------------------处理归档解档---------------------------------
+//	// MARK:- 处理需要归档的字段
+//	func encode(with aCoder:NSCoder) {
+//		aCoder.encode(phone, forKey:"phone")
+//		aCoder.encode(level, forKey:"level")
+//	}
+//
+//	// MARK:- 处理需要解档的字段
+//	required init(coder aDecoder:NSCoder) {
+//		level = aDecoder.decodeObject(forKey:"nickname")as?String
+//		phone = aDecoder.decodeObject(forKey:"phone")as?String
+//	}
+//
+//	//归档保存
+//	func saveUserInfo(userModel:UserInfoModel) {
+//		let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
+//													   FileManager.SearchPathDomainMask.userDomainMask,true).first!
+//		let userAccountPath = "\(path)/userAccount.archive"
+//		NSKeyedArchiver.archiveRootObject(userModel, toFile: userAccountPath)
+//	}
+//	//获取用户的手机以及 等级信息
+//	func getUserInfoFormDB() -> UserInfoModel {
+//		let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
+//													   FileManager.SearchPathDomainMask.userDomainMask,true).first!
+//		let userAccountPath = "\(path)/userAccount.archive"
+//		let userModel = UserInfoModel()
+//		if NSKeyedUnarchiver.unarchiveObject(withFile:userAccountPath) != nil {
+//
+//			userModel = NSKeyedUnarchiver.unarchiveObject(withFile:userAccountPath)as? UserInfoModel
+//			return userModel!
+//		}
+//		return userModel
+//	}
+	
 }
