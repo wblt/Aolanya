@@ -26,7 +26,7 @@ extension MMLMoneyPayViewModel{
         
         let r = MoneyPayAPI.moneyPay_OrderAPI(payment_pwd: payment_pwd, orderID: orderID, orders: orders, orderType: orderType, adressID: adressID,invoice: invoice)
         
-        DDHTTPRequest.request(r: r, requestSuccess: {[weak self] (responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
             
             let json = JSON.init(responds);
             
@@ -93,7 +93,7 @@ extension MMLMoneyPayViewModel{
     func moneyPayBindPhone(code:String,type:String = "1",phone:String,succeeds:@escaping ()->(),fails:@escaping ()->()) {
         
         let r = MoneyPayAPI.moneyPay_BindPhone(code: code, type: type, phone: phone)
-        DDHTTPRequest.request(r: r, requestSuccess: {[weak self] (responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
             
             let json = JSON.init(responds);
             
@@ -114,7 +114,7 @@ extension MMLMoneyPayViewModel{
        
         let r = MoneyPayAPI.moneyPay_SetPwdAPI(payment_pwd: payment_pwd,code: code)
         
-        DDHTTPRequest.request(r: r, requestSuccess: {[weak self] (responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
             
             let json = JSON.init(responds);
             

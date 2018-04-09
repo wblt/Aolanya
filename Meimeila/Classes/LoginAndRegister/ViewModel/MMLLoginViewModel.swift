@@ -28,6 +28,7 @@ class MMLLoginViewModel {
             let token = jsonResult["data"]["token"].stringValue
             DDUDManager.share.saveUserID(uid: uid)
             DDUDManager.share.saveUserToken(token)
+
 			BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
             DDDeviceManager.shared.saveLoginStatue(isLogin: true);

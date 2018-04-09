@@ -19,10 +19,16 @@ class DDTabBarViewController: UITabBarController {
 	public var agentLevelVC = ALYAgentlevelVC()
 	public var agentMsgInputVC = ALYAgentMsgInputVC()
 	public var agentcheckVC = ALYAgentCheckVC()
-    
+	
     // 当前选中的索引值
     fileprivate var indexFlag:Int! = 0
 
+	lazy var uservm:MMLUserInfoViewModel = {[weak self] in
+		let vm = MMLUserInfoViewModel.init();
+		return vm;
+		}()
+	
+	
     // MARK: - System methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,6 +136,8 @@ class DDTabBarViewController: UITabBarController {
 		navC.setViewControllers([agentcheckVC], animated: true)
 	}
 	
+	
+	
 }
 
 extension DDTabBarViewController: UITabBarControllerDelegate {
@@ -141,6 +149,14 @@ extension DDTabBarViewController: UITabBarControllerDelegate {
 		
 		// 登录状态判断 用户是申请成为代理
 		if  DDDeviceManager.shared.loginStatue() && index == 1{
+			
+			uservm.getUserInfo {[weak self] in
+				// 无等级 就是代理页面
+				if !(self?.uservm.infoModel?.level?.isEmpty)! {
+					self?.setAgentLevelPage()
+				}
+				
+			}
 			
 			
 		}

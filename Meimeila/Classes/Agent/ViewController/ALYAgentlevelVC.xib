@@ -82,20 +82,20 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBu-9W-atS">
-                    <rect key="frame" x="0.0" y="117" width="375" height="150"/>
+                    <rect key="frame" x="0.0" y="117" width="375" height="180"/>
                     <color key="backgroundColor" red="0.1247767857" green="0.75691964290000002" blue="0.64433593749999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="u7F-GS-aRl"/>
+                        <constraint firstAttribute="height" constant="180" id="u7F-GS-aRl"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前可选等级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frs-yU-caR">
-                    <rect key="frame" x="10" y="291" width="92" height="18"/>
+                    <rect key="frame" x="10" y="321" width="92" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="代理说明：共分为5个等级，作呕滑动可以切换，点击卡片选择：大区、联合创始人、合伙人、总裁、VIP，每个级别首次进货门槛不同，拿货价也不同。所选等级不得高于邀请人等级" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROS-6t-jwN">
-                    <rect key="frame" x="10" y="323" width="355" height="70"/>
+                    <rect key="frame" x="10" y="353" width="355" height="70"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="qaA-4d-wsM"/>
                     </constraints>

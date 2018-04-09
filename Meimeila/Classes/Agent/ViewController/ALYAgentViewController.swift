@@ -27,7 +27,7 @@ class ALYAgentViewController: DDBaseViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.title = "我要赚钱"
+		self.navigationItem.title = "我要赚钱"
         // Do any additional setup after loading the view.
     }
 
@@ -38,9 +38,15 @@ class ALYAgentViewController: DDBaseViewController {
     
 
 	@IBAction func applyWithInvitationCodeClick(_ sender: Any) {
+		let vc = ALYAgentlevelVC();
+		self.navigationController?.pushViewController(vc, animated: true);
+		
 	}
 	
 	@IBAction func applyClick(_ sender: Any) {
+		let vc = ALYAgentlevelVC();
+		self.navigationController?.pushViewController(vc, animated: true);
+		
 	}
 	
 	/*

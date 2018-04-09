@@ -37,9 +37,9 @@ class DDHomeDataViewModel {
             successBlock()
         }, requestError: { (result, errorModel) in
             
-            self.endRefresh(isNomore: true)
+			
         }) { (error) in
-            self.endRefresh(isNomore: true)
+            
         }
     }
     

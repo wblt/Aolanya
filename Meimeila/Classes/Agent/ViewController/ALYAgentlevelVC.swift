@@ -11,26 +11,86 @@ import UIKit
 class ALYAgentlevelVC: DDBaseViewController {
 
 	@IBOutlet weak var levelBgView: UIView!
+	var collectionView: UICollectionView!
+	
+	private lazy var cardDataViewModel: LevelCardDataViewModel = {[weak self] in
+		let viewModel = LevelCardDataViewModel.init()
+		return viewModel
+		}()
+	
+	init() {
+		super.init(nibName: String.init(describing: ALYAgentlevelVC.self), bundle: nil)
+		
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = "我要赚钱"
         // Do any additional setup after loading the view.
+		setup()
+		
+		cardDataViewModel.getCardData {
+			self.collectionView.reloadData()
+		}
     }
 
+	func setup() {
+		let layout = CardLayout()
+		layout.scale = 0.9
+		layout.itemSize = CGSize(width: levelBgView.width-100, height: 180)
+		
+		collectionView = UICollectionView(frame: levelBgView.bounds, collectionViewLayout: layout)
+		collectionView.backgroundColor = view.backgroundColor
+		collectionView.dataSource = self
+		collectionView.showsVerticalScrollIndicator = false
+		collectionView.showsHorizontalScrollIndicator = false
+		
+		collectionView.register(UINib.init(nibName: String.init(describing: ALYLevelCardColCell.self), bundle: nil), forCellWithReuseIdentifier: String.init(describing: ALYLevelCardColCell.self));
+		
+		levelBgView.addSubview(collectionView)
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		collectionView.frame = levelBgView.bounds
+	}
+	
+	override var prefersStatusBarHidden: Bool {
+		return true
+	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension ALYAgentlevelVC: UICollectionViewDataSource{
+	
+	func numberOfSections(in collectionView: UICollectionView) -> Int {
+		return 1
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return self.cardDataViewModel.cardListArr.count
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		 let cell:ALYLevelCardColCell = collectionView.dequeueReusableCell(withReuseIdentifier: String.init(describing: ALYLevelCardColCell.self), for: indexPath) as! ALYLevelCardColCell;
+		
+		let model = self.cardDataViewModel.cardListArr[indexPath.row];
+		cell.cardDataModel = model
+		cell.layer.cornerRadius = 5
+		cell.layer.masksToBounds = true
+		
+		return cell
+	}
+	
 }
