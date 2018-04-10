@@ -69,19 +69,21 @@ class UserInfoModel{
 //	func encode(with aCoder:NSCoder) {
 //		aCoder.encode(phone, forKey:"phone")
 //		aCoder.encode(level, forKey:"level")
+//		aCoder.encode(name, forKey:"name")
 //	}
 //
 //	// MARK:- 处理需要解档的字段
 //	required init(coder aDecoder:NSCoder) {
-//		level = aDecoder.decodeObject(forKey:"nickname")as?String
+//		level = aDecoder.decodeObject(forKey:"level")as?String
 //		phone = aDecoder.decodeObject(forKey:"phone")as?String
+//		name = aDecoder.decodeObject(forKey:"name")as?String
 //	}
-//
+
 //	//归档保存
 //	func saveUserInfo(userModel:UserInfoModel) {
 //		let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,
-//													   FileManager.SearchPathDomainMask.userDomainMask,true).first!
-//		let userAccountPath = "\(path)/userAccount.archive"
+//				archive									   FileManager.SearchPathDomainMask.userDomainMask,true).first!
+//		let userAccountPath = "\(path)/userAccount.data"
 //		NSKeyedArchiver.archiveRootObject(userModel, toFile: userAccountPath)
 //	}
 //	//获取用户的手机以及 等级信息

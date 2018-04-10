@@ -13,7 +13,10 @@ class LevelCardDataViewModel: NSObject {
 	
 	var cardListArr = [LevelCardModel]()
 	
+	//获取 代理级别信息
 	func getCardData(successBlock:@escaping () -> Void) {
+		
+		
 		DDHTTPRequest.request(r: UserInfoAPI.userMemberLv, requestSuccess: { (result) in
 			
 			print(result);
@@ -24,7 +27,6 @@ class LevelCardDataViewModel: NSObject {
 				self.cardListArr.append(model);
 			}
 			
-			BFunction.shared.showToastMessge(json["message"].stringValue)
 			successBlock()
 			
 		}, requestError: { (result, errorModel) in
@@ -35,4 +37,25 @@ class LevelCardDataViewModel: NSObject {
 			
 		}
 	}
+	
+	// 验证邀请码是否正确
+	func checkInvitationCode(Code:String ,successBlock:@escaping () -> Void) {
+		
+		DDHTTPRequest.request(r: AgentApplyAPI.invitationCodeAPI(code: Code), requestSuccess: { (result) in
+			
+			print(result);
+		//	let json = JSON.init(result);
+			
+			successBlock()
+			
+		}, requestError: { (result, errorModel) in
+			
+			BFunction.shared.showToastMessge(errorModel.message);
+			
+		}) { (error) in
+			
+		}
+		
+	}
+	
 }

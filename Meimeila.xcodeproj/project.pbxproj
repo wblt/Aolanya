@@ -619,6 +619,7 @@
 		F83CF8CB2079CC2200FA9423 /* ALYAgentMsgInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */; };
 		F83CF8D2207A1BD500FA9423 /* ALYAgentCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */; };
 		F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */; };
+		F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1270,6 +1271,7 @@
 		F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentMsgInputVC.xib; sourceTree = "<group>"; };
 		F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentCheckVC.swift; sourceTree = "<group>"; };
 		F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentCheckVC.xib; sourceTree = "<group>"; };
+		F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentApplyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -3924,6 +3926,7 @@
 				22CFFF5F1FCBAD2700319A6B /* MusicAPI.swift */,
 				22D483841FCC15DE00172A2D /* MMLDetailAPI.swift */,
 				229542CE1FDA654700629205 /* MoneyPayAPI.swift */,
+				F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -4811,6 +4814,7 @@
 				66D804081F94D2A80022FEAE /* JQStoreboard.swift in Sources */,
 				221012A31FC955750074ED03 /* MMLAboutUsViewModel.swift in Sources */,
 				225195C31FF4CDD0006A1611 /* MMLserviceCell.swift in Sources */,
+				F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */,
 				225A30521FCE46330084F802 /* MMLModifedPasswordVC.swift in Sources */,
 				22463CA81FE7938F00D15B91 /* DayTaskViewModel.swift in Sources */,
 				6607F8A91F9B390A0083C1E4 /* MMLRedenvelopeViewModel.swift in Sources */,

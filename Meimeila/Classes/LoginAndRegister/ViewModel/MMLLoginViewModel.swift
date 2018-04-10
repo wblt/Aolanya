@@ -26,8 +26,10 @@ class MMLLoginViewModel {
             let jsonResult = JSON.init(responds)
             let uid = jsonResult["data"]["uid"].stringValue
             let token = jsonResult["data"]["token"].stringValue
+			let level = jsonResult["data"]["level"].stringValue
             DDUDManager.share.saveUserID(uid: uid)
             DDUDManager.share.saveUserToken(token)
+			DDUDManager.share.saveUserLevel(level)
 
 			BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             

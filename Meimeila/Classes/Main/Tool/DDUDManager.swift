@@ -19,6 +19,7 @@ extension UserDefaults {
             case systemUUID
             case userToken
             case userID
+			case level
         }
     }
 }
@@ -154,4 +155,34 @@ class DDUDManager {
             return ""
         }
     }
+	
+	/**
+	 保存用户等级Level
+	*/
+	func saveUserLevel(_ level:String) {
+		UserDefaults.ServerInfo.set(value: level, forKey: .level)
+		UserDefaults.standard.synchronize()
+	}
+	
+	/**
+	删除用户等级Level
+	*/
+	func removeUserLevel() -> Bool {
+		
+		UserDefaults.ServerInfo.removeObject(forkey: .level)
+		//NotificationCenter.default.post(name: cNDidLogout, object: nil)
+		return UserDefaults.standard.synchronize()
+	}
+	
+	/**
+	读取用户等级Level
+	*/
+	func getUserLevel() -> String {
+		
+		if let level = UserDefaults.ServerInfo.string(forKey: .level) {
+			return level
+		}else{
+			return ""
+		}
+	}
 }

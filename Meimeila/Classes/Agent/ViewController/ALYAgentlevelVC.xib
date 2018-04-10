@@ -153,7 +153,7 @@
                 <constraint firstItem="HLz-O4-d9k" firstAttribute="top" secondItem="brL-lN-iaJ" secondAttribute="bottom" constant="15" id="yAz-jN-ra5"/>
                 <constraint firstItem="gRe-Vy-imd" firstAttribute="centerY" secondItem="MZv-EH-nyh" secondAttribute="centerY" id="yJ6-5q-cOf"/>
             </constraints>
-            <point key="canvasLocation" x="40.5" y="-3.5"/>
+            <point key="canvasLocation" x="-142" y="-68"/>
         </view>
     </objects>
     <resources>

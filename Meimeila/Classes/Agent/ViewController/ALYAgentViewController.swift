@@ -11,6 +11,11 @@ import UIKit
 class ALYAgentViewController: DDBaseViewController {
 	@IBOutlet weak var invitTextField: UITextField!
 	
+	private lazy var cardDataViewModel: LevelCardDataViewModel = {[weak self] in
+		let viewModel = LevelCardDataViewModel.init()
+		return viewModel
+		}()
+	
 	init() {
 		super.init(nibName: String.init(describing: ALYAgentViewController.self), bundle: nil)
 		
@@ -47,8 +52,14 @@ class ALYAgentViewController: DDBaseViewController {
 			return;
 		}
 		
-		let vc = ALYAgentlevelVC();
-		self.navigationController?.pushViewController(vc, animated: true);
+//		let vc = ALYAgentlevelVC();
+//		self.navigationController?.pushViewController(vc, animated: true);
+		self.cardDataViewModel.checkInvitationCode(Code: "719") {
+			
+			
+			
+		}
+		
 		
 	}
 	

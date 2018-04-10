@@ -133,13 +133,12 @@ extension DDTabBarViewController: UITabBarControllerDelegate {
 		// 登录状态判断 用户是申请成为代理
 		if  DDDeviceManager.shared.loginStatue() && index == 1{
 			
-			uservm.getUserInfo {[weak self] in
-				// 无等级 就是代理页面
-				if !(self?.uservm.infoModel?.level?.isEmpty)! {
-					self?.setAgentCheckPage()
-				}
-				
+			let level = DDUDManager.share.getUserLevel() as String
+			// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+			if level != "" {
+				self.setAgentCheckPage()
 			}
+			
 		}
 		
     }

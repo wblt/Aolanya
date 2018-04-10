@@ -88,7 +88,7 @@ extension MMLTestReportVC:MMLShareVCDelegate{
             }
         }
         let model = MMLShareWebpageObject()
-        model.title = "美谷健面膜测试"
+        model.title = "奥蓝雅面膜测试"
         model.desStr = "智能面膜"
         model.webpageUrl = downloadUrl
        ////////

@@ -329,3 +329,8 @@ extension API{
     static let contactServiceAPI = "tpiot/app/contact"
     
 }
+
+extension API {
+	///检查邀请码
+	static let checkInvitatiobCodeAPI = "tpiot/app/checkInvitationCode"
+}
