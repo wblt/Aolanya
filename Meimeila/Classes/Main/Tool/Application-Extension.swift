@@ -18,7 +18,7 @@ extension AppDelegate {
             // 适配iOS 11的系统
            UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
         }
-        IQKeyboardManager.sharedManager().enable = false
+        IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = .red

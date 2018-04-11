@@ -46,6 +46,7 @@ class ALYAgentlevelVC: DDBaseViewController {
 		collectionView = UICollectionView(frame: levelBgView.bounds, collectionViewLayout: layout)
 		collectionView.backgroundColor = view.backgroundColor
 		collectionView.dataSource = self
+        collectionView.delegate = self
 		collectionView.showsVerticalScrollIndicator = false
 		collectionView.showsHorizontalScrollIndicator = false
 		
@@ -72,7 +73,7 @@ class ALYAgentlevelVC: DDBaseViewController {
 
 }
 
-extension ALYAgentlevelVC: UICollectionViewDataSource{
+extension ALYAgentlevelVC: UICollectionViewDataSource,UICollectionViewDelegate{
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
@@ -92,5 +93,12 @@ extension ALYAgentlevelVC: UICollectionViewDataSource{
 		
 		return cell
 	}
-	
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let vc = ALYAgentMsgInputVC()
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

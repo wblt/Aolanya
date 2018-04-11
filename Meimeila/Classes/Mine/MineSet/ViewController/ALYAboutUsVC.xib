@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALYAboutUsVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0RN-9Q-1TB">
+                    <rect key="frame" x="147.5" y="40" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="4XG-a8-UvT"/>
+                        <constraint firstAttribute="height" constant="80" id="MGw-Sy-JdP"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奥蓝雅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqX-Qv-Hwg">
+                    <rect key="frame" x="161.5" y="153" width="52" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本：1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeC-XP-DUJ">
+                    <rect key="frame" x="154.5" y="179" width="66" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版权所有@2018 河南宝强智能科技有限公司保留一切权利" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWc-ou-e4j">
+                    <rect key="frame" x="10" y="595" width="355" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="zWe-Oc-56Q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝强智能奥蓝雅用户协议和宝强智能隐私政策" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inw-Pk-J6F">
+                    <rect key="frame" x="30" y="544" width="315" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="EeN-2d-qm0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.39751649057690719" green="1" blue="0.15887272746968273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于：www.wuyanliuse.com.cn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-C9-VqC">
+                    <rect key="frame" x="20" y="566" width="335" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.39751649059999999" green="1" blue="0.1588727275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="inw-Pk-J6F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="6cM-Kn-xiq"/>
+                <constraint firstAttribute="bottom" secondItem="GWc-ou-e4j" secondAttribute="bottom" constant="30" id="BlL-b9-tN2"/>
+                <constraint firstItem="vqX-Qv-Hwg" firstAttribute="top" secondItem="0RN-9Q-1TB" secondAttribute="bottom" constant="33" id="FVw-yX-X7A"/>
+                <constraint firstItem="AeC-XP-DUJ" firstAttribute="centerX" secondItem="vqX-Qv-Hwg" secondAttribute="centerX" id="FqG-cC-bsc"/>
+                <constraint firstItem="AeC-XP-DUJ" firstAttribute="top" secondItem="vqX-Qv-Hwg" secondAttribute="bottom" constant="5" id="LdL-T9-evN"/>
+                <constraint firstAttribute="bottom" secondItem="GWc-ou-e4j" secondAttribute="bottom" constant="30" id="M6e-ce-qlZ"/>
+                <constraint firstItem="inw-Pk-J6F" firstAttribute="centerX" secondItem="GWc-ou-e4j" secondAttribute="centerX" id="P5C-YS-Sq2"/>
+                <constraint firstItem="GWc-ou-e4j" firstAttribute="top" secondItem="zsa-C9-VqC" secondAttribute="bottom" constant="8" id="UHW-pc-CEr"/>
+                <constraint firstItem="zsa-C9-VqC" firstAttribute="centerX" secondItem="GWc-ou-e4j" secondAttribute="centerX" id="VOU-SO-vGd"/>
+                <constraint firstItem="0RN-9Q-1TB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y69-iR-8tY"/>
+                <constraint firstItem="0RN-9Q-1TB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="afj-ZK-5RG"/>
+                <constraint firstAttribute="trailing" secondItem="zsa-C9-VqC" secondAttribute="trailing" constant="20" id="ax2-nH-tbF"/>
+                <constraint firstAttribute="trailing" secondItem="inw-Pk-J6F" secondAttribute="trailing" constant="30" id="dN9-u7-gzI"/>
+                <constraint firstItem="zsa-C9-VqC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gkd-Z1-QOU"/>
+                <constraint firstItem="vqX-Qv-Hwg" firstAttribute="centerX" secondItem="0RN-9Q-1TB" secondAttribute="centerX" id="hOt-im-Y8z"/>
+                <constraint firstItem="zsa-C9-VqC" firstAttribute="top" secondItem="inw-Pk-J6F" secondAttribute="bottom" constant="1" id="jjR-yI-X4T"/>
+                <constraint firstItem="GWc-ou-e4j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="nn5-j6-xE6"/>
+                <constraint firstItem="GWc-ou-e4j" firstAttribute="centerX" secondItem="vqX-Qv-Hwg" secondAttribute="centerX" id="ucf-EO-78Y"/>
+            </constraints>
+            <point key="canvasLocation" x="37" y="49"/>
+        </view>
+    </objects>
+</document>

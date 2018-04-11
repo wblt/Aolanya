@@ -12,7 +12,7 @@ class DDTabBarViewController: UITabBarController {
     
     public var homeVC = MMLHomeVC()
     //public var hardwareVC = MMLFoundVC()
-	public var agentVC = ALYAgentViewController()
+	public var agentVC = ALYAgentApplyVC()
     public var mallVC = MMLShoppingCartVC()
     public var mineVC = MMLMineVC()
 
@@ -50,7 +50,7 @@ class DDTabBarViewController: UITabBarController {
     private func addChildViewControllers() {
         addChildViewController(childController: homeVC, title: "首页", imageName: "home")
       //  addChildViewController(childController: hardwareVC, title: "发现", imageName: "found")
-		addChildViewController(childController: agentVC, title: "代理", imageName: "found")
+		addChildViewController(childController: agentVC, title: "我要赚钱", imageName: "found")
         addChildViewController(childController: mallVC, title: "购物车", imageName: "shoppingcart")
         addChildViewController(childController: mineVC, title: "我的", imageName: "mine")
     }
@@ -136,7 +136,7 @@ extension DDTabBarViewController: UITabBarControllerDelegate {
 			let level = DDUDManager.share.getUserLevel() as String
 			// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
 			if level != "" {
-				self.setAgentCheckPage()
+			//	self.setAgentCheckPage()
 			}
 			
 		}

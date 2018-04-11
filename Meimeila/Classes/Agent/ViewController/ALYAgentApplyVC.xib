@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALYAgentApplyVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeQ-ZP-7eG">
+                    <rect key="frame" x="25" y="150" width="325" height="40"/>
+                    <color key="backgroundColor" red="0.39751649059999999" green="1" blue="0.1588727275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="RXi-wp-l17"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="省级合伙人">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="firstBtnClick:" destination="-1" eventType="touchUpInside" id="Qzy-zf-kyV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTv-N2-YTg">
+                    <rect key="frame" x="25" y="270" width="325" height="40"/>
+                    <color key="backgroundColor" red="0.39751649059999999" green="1" blue="0.1588727275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="申请代理">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="thridBtnClick:" destination="-1" eventType="touchUpInside" id="mch-md-90E"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzn-s7-dnl">
+                    <rect key="frame" x="25" y="210" width="325" height="40"/>
+                    <color key="backgroundColor" red="0.39751649059999999" green="1" blue="0.1588727275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="市级合伙人">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="secondBtnClick:" destination="-1" eventType="touchUpInside" id="vRH-2k-Opb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dzn-s7-dnl" firstAttribute="height" secondItem="UeQ-ZP-7eG" secondAttribute="height" id="0Hf-Ly-6RM"/>
+                <constraint firstItem="yTv-N2-YTg" firstAttribute="height" secondItem="dzn-s7-dnl" secondAttribute="height" id="9SR-xM-fOf"/>
+                <constraint firstItem="dzn-s7-dnl" firstAttribute="centerX" secondItem="UeQ-ZP-7eG" secondAttribute="centerX" id="OPI-tN-6Lg"/>
+                <constraint firstItem="dzn-s7-dnl" firstAttribute="width" secondItem="UeQ-ZP-7eG" secondAttribute="width" id="Qb6-9a-a2d"/>
+                <constraint firstItem="yTv-N2-YTg" firstAttribute="top" secondItem="dzn-s7-dnl" secondAttribute="bottom" constant="20" id="S91-fj-XoK"/>
+                <constraint firstAttribute="trailing" secondItem="UeQ-ZP-7eG" secondAttribute="trailing" constant="25" id="UKN-XV-EqA"/>
+                <constraint firstItem="UeQ-ZP-7eG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="fas-cp-kiJ"/>
+                <constraint firstItem="yTv-N2-YTg" firstAttribute="width" secondItem="dzn-s7-dnl" secondAttribute="width" id="giX-6x-keo"/>
+                <constraint firstItem="UeQ-ZP-7eG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="icU-0T-Flk"/>
+                <constraint firstItem="yTv-N2-YTg" firstAttribute="centerX" secondItem="dzn-s7-dnl" secondAttribute="centerX" id="tqK-2W-3Ux"/>
+                <constraint firstItem="UeQ-ZP-7eG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="xXD-t0-GdE"/>
+                <constraint firstItem="dzn-s7-dnl" firstAttribute="top" secondItem="UeQ-ZP-7eG" secondAttribute="bottom" constant="20" id="yFY-5N-Uku"/>
+            </constraints>
+            <point key="canvasLocation" x="45" y="-3"/>
+        </view>
+    </objects>
+</document>

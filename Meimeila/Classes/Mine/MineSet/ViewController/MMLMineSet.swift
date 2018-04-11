@@ -114,13 +114,17 @@ extension MMLMineSet:UITableViewDelegate {
 			vc.isEdit = true;
 			navigationController?.pushViewController(vc, animated: true);
 			
-		}else {
+		}else if indexPath.row == 4{
 			let vc = MMLMineOpinionVC();
 			vc.title = "意见反馈"
 			//* 问题描述(5~200字)
 			vc.titleMsg = "* 问题描述(5~200字)"
 			navigationController?.pushViewController(vc, animated: true);
-		}
+        }else {
+            let vc = ALYAboutUsVC()
+            vc.title = "关于"
+            navigationController?.pushViewController(vc, animated: true);
+        }
     }
 }
 

@@ -605,6 +605,10 @@
 		66EFC3D11F9CE7AB0010A244 /* JQAnimationContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFC3CF1F9CE7AA0010A244 /* JQAnimationContoller.swift */; };
 		66F568CE1FA03EB700D727AC /* MMLEvaluateListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F568CC1FA03EB700D727AC /* MMLEvaluateListModel.swift */; };
 		66F568CF1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F568CD1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift */; };
+		CF6986F7207E608E006E15CB /* ALYAboutUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6986F5207E608E006E15CB /* ALYAboutUsVC.xib */; };
+		CF6986F9207E6452006E15CB /* ALYAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6986F8207E6452006E15CB /* ALYAboutUsVC.swift */; };
+		CF6986FC207E65C4006E15CB /* ALYAgentApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6986FA207E65C4006E15CB /* ALYAgentApplyVC.swift */; };
+		CF6986FD207E65C4006E15CB /* ALYAgentApplyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6986FB207E65C4006E15CB /* ALYAgentApplyVC.xib */; };
 		DF3FB64A9EFBA0350FA6E551 /* Pods_Meimeila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */; };
 		F83477C2207B044E00E4F926 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C1207B044E00E4F926 /* CardLayout.swift */; };
 		F83477C5207B0D3B00E4F926 /* ALYLevelCardColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C3207B0D3B00E4F926 /* ALYLevelCardColCell.swift */; };
@@ -1257,6 +1261,10 @@
 		66F568CC1FA03EB700D727AC /* MMLEvaluateListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLEvaluateListModel.swift; sourceTree = "<group>"; };
 		66F568CD1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLEvaluateListEvaluateData.swift; sourceTree = "<group>"; };
 		745E089CA2D9A0319C6A03CB /* Pods-Meimeila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meimeila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meimeila/Pods-Meimeila.debug.xcconfig"; sourceTree = "<group>"; };
+		CF6986F5207E608E006E15CB /* ALYAboutUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAboutUsVC.xib; sourceTree = "<group>"; };
+		CF6986F8207E6452006E15CB /* ALYAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAboutUsVC.swift; sourceTree = "<group>"; };
+		CF6986FA207E65C4006E15CB /* ALYAgentApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentApplyVC.swift; sourceTree = "<group>"; };
+		CF6986FB207E65C4006E15CB /* ALYAgentApplyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentApplyVC.xib; sourceTree = "<group>"; };
 		E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meimeila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83477C1207B044E00E4F926 /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		F83477C3207B0D3B00E4F926 /* ALYLevelCardColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYLevelCardColCell.swift; sourceTree = "<group>"; };
@@ -1860,6 +1868,8 @@
 			children = (
 				22268A8F1FDBD1AD001A9146 /* MMLMineSet.swift */,
 				22268A901FDBD1AD001A9146 /* MMLMineSet.xib */,
+				CF6986F8207E6452006E15CB /* ALYAboutUsVC.swift */,
+				CF6986F5207E608E006E15CB /* ALYAboutUsVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4254,6 +4264,8 @@
 				F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */,
 				F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */,
 				F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */,
+				CF6986FA207E65C4006E15CB /* ALYAgentApplyVC.swift */,
+				CF6986FB207E65C4006E15CB /* ALYAgentApplyVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4437,6 +4449,7 @@
 				22FF14DA1FC90CC0000C76FE /* SelectPictureVC.xib in Resources */,
 				22D790CC1FC66AC500C150AB /* DDPopupWindowVC.xib in Resources */,
 				66EEA9961FCD814C00159065 /* MMLSystemMessageListCell.xib in Resources */,
+				CF6986FD207E65C4006E15CB /* ALYAgentApplyVC.xib in Resources */,
 				22DA88F51FCD633C00F68576 /* jquery.flexslider.js in Resources */,
 				22FF14C11FC9001E000C76FE /* PocketRechargeStateVC.xib in Resources */,
 				66D130BC1F9751F9002C8BE8 /* MMLShareCollectionViewCell.xib in Resources */,
@@ -4492,6 +4505,7 @@
 				224352081FC5819400F039D6 /* MMLMusicCell.xib in Resources */,
 				22D483831FCC001F00172A2D /* MMLMusicSearchVC.xib in Resources */,
 				2230A3411F98909100F6EF8F /* MMLHeadBtCell.xib in Resources */,
+				CF6986F7207E608E006E15CB /* ALYAboutUsVC.xib in Resources */,
 				22DA88EC1FCD633C00F68576 /* glyphicons-halflings-regular.svg in Resources */,
 				22DA88F11FCD633C00F68576 /* bootstrap.min.js in Resources */,
 				22D790DB1FC67AA500C150AB /* MMLOrderDetailVC.xib in Resources */,
@@ -4587,7 +4601,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		74F8E9000E6B8B59EE721EE0 /* [CP] Embed Pods Frameworks */ = {
@@ -4807,6 +4821,7 @@
 				6645A77E1FC417B100B3280A /* JPushAPI.swift in Sources */,
 				6645A7631FC4029400B3280A /* TTLineXAxisStyle.swift in Sources */,
 				224DD5FD1FF3A70E00D1AD67 /* MMLRightVC.swift in Sources */,
+				CF6986FC207E65C4006E15CB /* ALYAgentApplyVC.swift in Sources */,
 				22F67EC31FC69FD3009BC04D /* MMLOrderDetailSectionTwoCell.swift in Sources */,
 				66EAE8951FCE4AF700BC6806 /* JQDownLoadService.swift in Sources */,
 				66D804071F94D2A80022FEAE /* JQCell-Extension.swift in Sources */,
@@ -4858,6 +4873,7 @@
 				666FADA41FB9862C0011CBBF /* DDLineChartBaseConfig.swift in Sources */,
 				66D804141F94D2A80022FEAE /* NSData-Extension.swift in Sources */,
 				66D804151F94D2A80022FEAE /* UIApplication-Extension.swift in Sources */,
+				CF6986F9207E6452006E15CB /* ALYAboutUsVC.swift in Sources */,
 				22F146B51FCFEAB300B78B0F /* MMLTestReportVC.swift in Sources */,
 				22D790B21FC664F800C150AB /* ListView.swift in Sources */,
 				66D804161F94D2A80022FEAE /* UIButton-Extension.swift in Sources */,
