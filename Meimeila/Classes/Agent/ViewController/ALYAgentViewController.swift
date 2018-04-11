@@ -48,7 +48,6 @@ class ALYAgentViewController: DDBaseViewController {
 		if !loginStatue {
 			let vc = MMLLoginVC()
 			self.navigationController?.pushViewController(vc, animated: true);
-			
 			return;
 		}
 		

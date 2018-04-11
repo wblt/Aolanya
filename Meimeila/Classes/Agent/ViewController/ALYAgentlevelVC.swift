@@ -32,10 +32,10 @@ class ALYAgentlevelVC: DDBaseViewController {
 		self.title = "我要赚钱"
         // Do any additional setup after loading the view.
 		
-		setup()
-		cardDataViewModel.getCardData {
-			self.collectionView.reloadData()
-		}
+        setup()
+        cardDataViewModel.getCardData {
+            self.collectionView.reloadData()
+        }
     }
 
 	func setup() {
@@ -61,7 +61,7 @@ class ALYAgentlevelVC: DDBaseViewController {
 	}
 	
 	override var prefersStatusBarHidden: Bool {
-		return true
+		return false
 	}
 	
     override func didReceiveMemoryWarning() {

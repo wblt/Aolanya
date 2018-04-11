@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 注册融云推送
         RongCloud_register(application: application)
         window?.rootViewController = baseTabBar
-		
         return true
     }
     
