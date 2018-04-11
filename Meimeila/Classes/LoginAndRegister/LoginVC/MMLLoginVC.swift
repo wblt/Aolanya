@@ -69,9 +69,11 @@ class MMLLoginVC: DDBaseViewController {
     }
     
 	@IBAction func qqBtLogin(_ sender: Any) {
+		BFunction.shared.showErrorMessage("开发中!")
 	}
 	
 	@IBAction func weiboBtLogin(_ sender: Any) {
+		BFunction.shared.showErrorMessage("开发中!")
 	}
 	
 	//登录
