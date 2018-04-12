@@ -27,13 +27,13 @@ class ALYAgentApplyVC: DDBaseViewController {
 
     @IBAction func firstBtnClick(_ sender: Any) {
         let vc = ALYAgentMsgInputVC()
-        
+        vc.areaType = "1"
         navigationController?.pushViewController(vc, animated: true)
         
     }
     @IBAction func secondBtnClick(_ sender: Any) {
         let vc = ALYAgentMsgInputVC()
-        
+         vc.areaType = "2"
         navigationController?.pushViewController(vc, animated: true)
     }
     

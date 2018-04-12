@@ -624,6 +624,8 @@
 		F83CF8D2207A1BD500FA9423 /* ALYAgentCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */; };
 		F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */; };
 		F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */; };
+		F8EFF462207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */; };
+		F8EFF464207F00E800DFD3A1 /* ALYProvinceSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1280,6 +1282,8 @@
 		F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentCheckVC.swift; sourceTree = "<group>"; };
 		F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentCheckVC.xib; sourceTree = "<group>"; };
 		F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentApplyAPI.swift; sourceTree = "<group>"; };
+		F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYProvinceSelectVC.xib; sourceTree = "<group>"; };
+		F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYProvinceSelectVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1392,6 +1396,8 @@
 			children = (
 				220830971FC51CFB00C7B779 /* MMLAddressSelectVC.swift */,
 				220830981FC51CFB00C7B779 /* MMLAddressSelectVC.xib */,
+				F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */,
+				F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */,
 			);
 			path = AddressSelector;
 			sourceTree = "<group>";
@@ -4440,6 +4446,7 @@
 				22F146B61FCFEAB300B78B0F /* MMLTestReportVC.xib in Resources */,
 				22463CA61FE7938F00D15B91 /* DayTaskVC.xib in Resources */,
 				22FF14C91FC90396000C76FE /* MMLPocketDetailVC.xib in Resources */,
+				F8EFF462207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib in Resources */,
 				22DA89111FCD677C00F68576 /* SectionTwoCell.xib in Resources */,
 				662C53F51F9AD9BE00AD4C1E /* MMLPayResultVC.xib in Resources */,
 				22DA88DA1FCD633C00F68576 /* bootstrap.min.css in Resources */,
@@ -4775,6 +4782,7 @@
 				2230A3371F98806900F6EF8F /* MMLMineViewModel.swift in Sources */,
 				2230A3431F98941D00F6EF8F /* MMLMineHeadView.swift in Sources */,
 				66EAE8941FCE4AF700BC6806 /* JQDownLoadDataTool.swift in Sources */,
+				F8EFF464207F00E800DFD3A1 /* ALYProvinceSelectVC.swift in Sources */,
 				666FAD911FB985960011CBBF /* YLPhotoBrowser.swift in Sources */,
 				66D804001F94D2A80022FEAE /* DDWechatLogin.swift in Sources */,
 				666FADA71FB9862C0011CBBF /* DDLineChartRightYAxisStyle.swift in Sources */,
