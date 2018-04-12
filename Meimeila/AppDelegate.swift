@@ -19,7 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isHaveNetwork: Bool = true
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+//        let adImageJPGUrl = "http://img.ui.cn/data/file/3/4/6/210643.gif"
+//        let _ = AdvertisementView.init(adUrl: adImageJPGUrl, isIgnoreCache: false, didClickAdViewCompletion: {
+//
+//        })
+        
 		//test()
+        // Bugly
+        //Bugly.startWithAppId("此处替换为你的AppId")
+        
         jq_application(application, didFinishLaunchingWithOptions: launchOptions)
         // 注册极光推送
         JPush_register(launchOptions: launchOptions)

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class DDHomeDataViewModel {
     
@@ -15,6 +16,11 @@ class DDHomeDataViewModel {
     var numberPages: Int = 0
     var productListDatas: [MMLHomeDataShoping] =  [MMLHomeDataShoping]()
     var homeDataModel: MMLHomeDataModel?
+    
+    var imgurl :String!
+    var imglink :String!
+    var type :String!   // 升级类型,0=不需要升级，1=可选升级，2=强制升级
+    var downurl :String!  //下载地址
     
     // 获取首页的数据
     func getHomeData(successBlock:@escaping () -> ()) {
@@ -40,6 +46,21 @@ class DDHomeDataViewModel {
 			
         }) { (error) in
             
+        }
+    }
+    
+    //获取广告 以及更新信息
+    func requestSplah(successBlock:@escaping () -> Void) {
+        let url =   API.baseServer + API.splashData
+        
+        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            
+            let jsonRequest = JSON.init(response.result.value as![String:Any]);
+            self.imgurl = jsonRequest["splash"]["imgurl"].stringValue
+            self.imglink = jsonRequest["splash"]["imgurl"].stringValue
+            self.imglink = jsonRequest["upgrade"]["type"].stringValue
+            self.imglink = jsonRequest["upgrade"]["downurl"].stringValue
+            successBlock()
         }
     }
     

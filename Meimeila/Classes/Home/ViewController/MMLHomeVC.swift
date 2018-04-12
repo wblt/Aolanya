@@ -33,8 +33,6 @@ class MMLHomeVC: DDBaseViewController {
         }
         requestHomeData()
         addNotifications()
-        
-
     }
     
     override func setupUI() {
@@ -120,6 +118,28 @@ class MMLHomeVC: DDBaseViewController {
             debugLog(self?.homeDataViewModel.homeDataModel?.banner)
             // 2.设置资讯 和 设置推荐商品
             self?.tableView.reloadData()
+        }
+        
+        homeDataViewModel.requestSplah() {[weak self] in
+            //
+            if (self?.homeDataViewModel.imgurl != nil) {
+                // 弹出广告
+            }
+            
+            if self?.homeDataViewModel.type == "1" {
+                // 可选升级
+                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", ontherBtnTitle: "更新", ontherBtnAction: {
+                    //跳转 下载地址
+                    
+                })
+            } else if self?.homeDataViewModel.type == "2" {
+                // 强制升级
+                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", cancelBtnTitle: "更新", cancelBtnAction: {
+                    //跳转 下载地址
+                    
+                })
+                
+            }
         }
     }
     

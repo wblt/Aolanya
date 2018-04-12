@@ -33,4 +33,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 
 #import <StreamingKit/STKAudioPlayer.h>
+//bugly
+#import <Bugly/Bugly.h>
+
 #endif /* Meimeila_bridge_h */

@@ -76,7 +76,7 @@ class ALYAgentMsgInputVC: DDBaseViewController {
     }
 	
 	override func setupUI() {
-		
+		// 隐藏部分ui
 		if areaType == "1" || areaType == "2" {
 			lab1.isHidden = true
 			lab4.isHidden = true
@@ -146,37 +146,43 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 	//提交
 	@IBAction func sureBtnClick(_ sender: Any) {
 		
-		if JQValidate.phoneNum(phoneTextField.text!).isRight == false{
-			 BFunction.shared.showToastMessge("请输入正确的手机号码");
-			return;
-		}
+//        if JQValidate.phoneNum(phoneTextField.text!).isRight == false{
+//             BFunction.shared.showToastMessge("请输入正确的手机号码");
+//            return;
+//        }
+//
+//        if nameTextField.text == "" || phoneTextField.text == "" || codeTextField.text == "" || weixinNumTextField.text == "" || addressLab.text == "请选择您的代理区域地址"{
+//             BFunction.shared.showToastMessge("请将信息填写完整");
+//            return
+//        }
+//
+//        if areaType == "3" {
+//
+//            if zhifubaoimgView == nil {
+//                BFunction.shared.showToastMessge("请上传支付宝收款码");
+//                return
+//            }
+//
+//            if weixinImgView == nil {
+//                BFunction.shared.showToastMessge("请上传微信收款码");
+//                return
+//            }
+//        }
+//        var regionLevel = "0"
+//        if areaType == "1" { // 省 合伙人
+//            regionLevel = "2"
+//            self.agentViewModel.writeRegionApply(uid:DDUDManager.share.getUserID(), realName: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, regionAdress: addressLab.text!, temporaryRegionLevel: regionLevel) {
+//
+//
+//            }
+//        }else if areaType == "2" {// 市合伙人
+//
+//        }else if areaType == "3" { //直接申请  两种：有邀请吗， 无邀请码
+//
+//        }
 		
-		if nameTextField.text == "" || phoneTextField.text == "" || codeTextField.text == "" || weixinNumTextField.text == "" || addressLab.text == "请选择您的代理区域地址"{
-			 BFunction.shared.showToastMessge("请将信息填写完整");
-			return
-		}
-		
-		if areaType == "3" {
-			
-			if zhifubaoimgView == nil {
-				BFunction.shared.showToastMessge("请上传支付宝收款码");
-				return
-			}
-			
-			if weixinImgView == nil {
-				BFunction.shared.showToastMessge("请上传微信收款码");
-				return
-			}
-		}
-		var regionLevel = "0"
-		if areaType == "1" {
-			regionLevel = "2"
-		}
-		
-		self.agentViewModel.writeRegionApply(uid:DDUDManager.share.getUserID(), realName: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, regionAdress: addressLab.text!, temporaryRegionLevel: regionLevel) {
-			
-			
-		}
+		let vc = ALYAgentManagerVC()
+        navigationController?.pushViewController(vc, animated: true)
 		
 		
 		

@@ -605,6 +605,8 @@
 		66EFC3D11F9CE7AB0010A244 /* JQAnimationContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFC3CF1F9CE7AA0010A244 /* JQAnimationContoller.swift */; };
 		66F568CE1FA03EB700D727AC /* MMLEvaluateListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F568CC1FA03EB700D727AC /* MMLEvaluateListModel.swift */; };
 		66F568CF1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F568CD1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift */; };
+		CF083B7C207FC9A00037C840 /* ALYAgentManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF083B7A207FC9A00037C840 /* ALYAgentManagerVC.swift */; };
+		CF083B7D207FC9A00037C840 /* ALYAgentManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF083B7B207FC9A00037C840 /* ALYAgentManagerVC.xib */; };
 		CF6986F7207E608E006E15CB /* ALYAboutUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6986F5207E608E006E15CB /* ALYAboutUsVC.xib */; };
 		CF6986F9207E6452006E15CB /* ALYAboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6986F8207E6452006E15CB /* ALYAboutUsVC.swift */; };
 		CF6986FC207E65C4006E15CB /* ALYAgentApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6986FA207E65C4006E15CB /* ALYAgentApplyVC.swift */; };
@@ -1264,6 +1266,8 @@
 		66F568CC1FA03EB700D727AC /* MMLEvaluateListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLEvaluateListModel.swift; sourceTree = "<group>"; };
 		66F568CD1FA03EB700D727AC /* MMLEvaluateListEvaluateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMLEvaluateListEvaluateData.swift; sourceTree = "<group>"; };
 		745E089CA2D9A0319C6A03CB /* Pods-Meimeila.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meimeila.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meimeila/Pods-Meimeila.debug.xcconfig"; sourceTree = "<group>"; };
+		CF083B7A207FC9A00037C840 /* ALYAgentManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentManagerVC.swift; sourceTree = "<group>"; };
+		CF083B7B207FC9A00037C840 /* ALYAgentManagerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentManagerVC.xib; sourceTree = "<group>"; };
 		CF6986F5207E608E006E15CB /* ALYAboutUsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAboutUsVC.xib; sourceTree = "<group>"; };
 		CF6986F8207E6452006E15CB /* ALYAboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAboutUsVC.swift; sourceTree = "<group>"; };
 		CF6986FA207E65C4006E15CB /* ALYAgentApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentApplyVC.swift; sourceTree = "<group>"; };
@@ -4275,6 +4279,8 @@
 				F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */,
 				CF6986FA207E65C4006E15CB /* ALYAgentApplyVC.swift */,
 				CF6986FB207E65C4006E15CB /* ALYAgentApplyVC.xib */,
+				CF083B7A207FC9A00037C840 /* ALYAgentManagerVC.swift */,
+				CF083B7B207FC9A00037C840 /* ALYAgentManagerVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4515,6 +4521,7 @@
 				224352081FC5819400F039D6 /* MMLMusicCell.xib in Resources */,
 				22D483831FCC001F00172A2D /* MMLMusicSearchVC.xib in Resources */,
 				2230A3411F98909100F6EF8F /* MMLHeadBtCell.xib in Resources */,
+				CF083B7D207FC9A00037C840 /* ALYAgentManagerVC.xib in Resources */,
 				CF6986F7207E608E006E15CB /* ALYAboutUsVC.xib in Resources */,
 				22DA88EC1FCD633C00F68576 /* glyphicons-halflings-regular.svg in Resources */,
 				22DA88F11FCD633C00F68576 /* bootstrap.min.js in Resources */,
@@ -4713,6 +4720,7 @@
 				225195BF1FF4CC8F006A1611 /* MMLContactServiceVC.swift in Sources */,
 				225A30551FCE87630084F802 /* MMLMusicSQManger.swift in Sources */,
 				66D803EE1F94D2A80022FEAE /* BabyBluetooth.m in Sources */,
+				CF083B7C207FC9A00037C840 /* ALYAgentManagerVC.swift in Sources */,
 				225195B21FF489BE006A1611 /* MMLGiftRecordCell.swift in Sources */,
 				F83477CB207B16A500E4F926 /* LevelCardModel.swift in Sources */,
 				22604B6B1FC42FCE001935C1 /* MMLRechargeCashVC.swift in Sources */,
