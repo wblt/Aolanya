@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class LevelCardDataViewModel: NSObject {
 	
+	var invitationCodeIsRight = false
 	var cardListArr = [LevelCardModel]()
 	
 	//获取 代理级别信息
@@ -44,13 +45,14 @@ class LevelCardDataViewModel: NSObject {
 		DDHTTPRequest.request(r: AgentApplyAPI.invitationCodeAPI(code: Code), requestSuccess: { (result) in
 			
 			print(result);
-		//	let json = JSON.init(result);
+			_ = JSON.init(result);
+			self.invitationCodeIsRight = true
 			
 			successBlock()
 			
 		}, requestError: { (result, errorModel) in
-			
-			BFunction.shared.showToastMessge(errorModel.message);
+			self.invitationCodeIsRight = false
+			//BFunction.shared.showToastMessge(errorModel.message);
 			
 		}) { (error) in
 			

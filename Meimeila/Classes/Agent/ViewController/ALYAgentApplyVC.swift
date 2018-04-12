@@ -39,7 +39,6 @@ class ALYAgentApplyVC: DDBaseViewController {
     
     @IBAction func thridBtnClick(_ sender: Any) {
         let vc = ALYAgentViewController()
-        
         navigationController?.pushViewController(vc, animated: true)
         
     }

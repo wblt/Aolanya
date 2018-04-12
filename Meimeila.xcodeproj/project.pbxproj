@@ -626,6 +626,7 @@
 		F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */; };
 		F8EFF462207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */; };
 		F8EFF464207F00E800DFD3A1 /* ALYProvinceSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */; };
+		F8EFF466207F170300DFD3A1 /* AgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFF465207F170300DFD3A1 /* AgentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1284,6 +1285,7 @@
 		F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentApplyAPI.swift; sourceTree = "<group>"; };
 		F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYProvinceSelectVC.xib; sourceTree = "<group>"; };
 		F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYProvinceSelectVC.swift; sourceTree = "<group>"; };
+		F8EFF465207F170300DFD3A1 /* AgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4236,6 +4238,7 @@
 			isa = PBXGroup;
 			children = (
 				F83477C8207B166800E4F926 /* LevelCardDataViewModel.swift */,
+				F8EFF465207F170300DFD3A1 /* AgentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -4812,6 +4815,7 @@
 				666FADA51FB9862C0011CBBF /* DDLineChartXAxisValueFormatter.swift in Sources */,
 				66D804051F94D2A80022FEAE /* Date-Extension.swift in Sources */,
 				F83477C9207B166800E4F926 /* LevelCardDataViewModel.swift in Sources */,
+				F8EFF466207F170300DFD3A1 /* AgentViewModel.swift in Sources */,
 				224351F61FC57B8700F039D6 /* CheckLogisticsVC.swift in Sources */,
 				22F67EBC1FC67CF3009BC04D /* MMLOrderDetailHeadView.swift in Sources */,
 				66D804061F94D2A80022FEAE /* DDUtility.swift in Sources */,

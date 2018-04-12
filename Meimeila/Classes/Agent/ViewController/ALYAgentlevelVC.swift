@@ -9,7 +9,7 @@
 import UIKit
 
 class ALYAgentlevelVC: DDBaseViewController {
-
+	
 	@IBOutlet weak var levelBgView: UIView!
 	var collectionView: UICollectionView!
 	

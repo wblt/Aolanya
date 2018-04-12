@@ -55,11 +55,15 @@ class ALYAgentViewController: DDBaseViewController {
 //		self.navigationController?.pushViewController(vc, animated: true);
 		self.cardDataViewModel.checkInvitationCode(Code: "719") {
 			
-			
+			if !self.cardDataViewModel.invitationCodeIsRight {
+				BFunction.shared.showMessage("邀请码不存在")
+			}else {
+				let vc = ALYAgentlevelVC();
+				
+				self.navigationController?.pushViewController(vc, animated: true);
+			}
 			
 		}
-		
-		
 	}
 	
 	@IBAction func applyClick(_ sender: Any) {

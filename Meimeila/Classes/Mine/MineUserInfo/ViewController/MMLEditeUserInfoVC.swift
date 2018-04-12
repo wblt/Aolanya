@@ -197,7 +197,10 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
                 }else if indexPath.row == 2 {
                     vc.title = "邮箱";
 
-                }
+				}else if indexPath.row == 3 {
+					vc.title = "手机号";
+					
+				}
                 navigationController?.pushViewController(vc, animated: true);
             }else{
                 

@@ -10,6 +10,20 @@ import UIKit
 
 class ALYAgentCheckVC: DDBaseViewController {
 
+	
+	@IBOutlet weak var lab1: UILabel!
+	@IBOutlet weak var lab2: UILabel!
+	@IBOutlet weak var lab3: UILabel!
+	@IBOutlet weak var lab4: UILabel!
+	@IBOutlet weak var img1: UIImageView!
+	@IBOutlet weak var img2: UIImageView!
+	@IBOutlet weak var img3: UIImageView!
+	@IBOutlet weak var img4: UIImageView!
+	@IBOutlet weak var line1: UIView!
+	@IBOutlet weak var line3: UIView!
+	
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -14,11 +14,24 @@
                 <outlet property="addressLab" destination="KbL-xY-TA1" id="h1y-1Q-3Tf"/>
                 <outlet property="codeBtn" destination="Rrq-Ul-AzC" id="VcZ-DW-INr"/>
                 <outlet property="codeTextField" destination="8ue-j9-fBp" id="F8Z-5K-Rua"/>
+                <outlet property="img1" destination="TzW-zr-bew" id="HpQ-st-U9D"/>
+                <outlet property="img2" destination="4CL-lZ-37h" id="IKu-9p-Qg1"/>
+                <outlet property="img3" destination="eYe-hM-nK0" id="czO-x1-NN8"/>
+                <outlet property="img4" destination="QHj-DX-kdQ" id="gSv-v7-aiH"/>
+                <outlet property="lab1" destination="jMg-q2-0Af" id="RWF-bJ-Hk8"/>
+                <outlet property="lab2" destination="cax-QQ-9S0" id="Mey-U5-FZN"/>
+                <outlet property="lab3" destination="ABC-hU-f93" id="TFc-om-EXf"/>
+                <outlet property="lab4" destination="2Bn-p1-6Y3" id="rIr-Kj-6bW"/>
+                <outlet property="line1" destination="5ej-gq-j2m" id="SKT-aA-wKL"/>
+                <outlet property="line3" destination="E50-G1-LcT" id="wIv-gM-Xl8"/>
                 <outlet property="nameTextField" destination="gMK-wl-yxa" id="ifa-0d-0bw"/>
                 <outlet property="phoneTextField" destination="LxW-tp-daa" id="BzG-if-gL6"/>
+                <outlet property="stackbgView" destination="yor-pt-Vpv" id="IO7-IE-zmo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weixinBgView" destination="hfe-7K-gAX" id="RWO-zm-bhM"/>
                 <outlet property="weixinImgView" destination="j3T-9c-yF2" id="b9t-vu-3Cy"/>
                 <outlet property="weixinNumTextField" destination="DKk-s1-LoR" id="ZYS-cf-urZ"/>
+                <outlet property="zhifubaoBgView" destination="ZIN-W7-beV" id="HZe-cc-Vjj"/>
                 <outlet property="zhifubaoimgView" destination="JLn-pq-ZdJ" id="Cuz-wh-Oxb"/>
             </connections>
         </placeholder>
@@ -224,7 +237,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-Ul-AzC">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-Ul-AzC" customClass="DDCountDownButton" customModule="Meimeila" customModuleProvider="target">
                                             <rect key="frame" x="275" y="15.5" width="80" height="30"/>
                                             <color key="backgroundColor" red="0.1247767857" green="0.75691964290000002" blue="0.64433593749999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -375,7 +388,7 @@
                                                 <action selector="uploadZhifubaoAction:" destination="-1" eventType="touchUpInside" id="AXV-vo-iaS"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PictureFile.png" translatesAutoresizingMaskIntoConstraints="NO" id="JLn-pq-ZdJ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLn-pq-ZdJ">
                                             <rect key="frame" x="255" y="5" width="100" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="RFp-CU-znS"/>
@@ -395,7 +408,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfe-7K-gAX">
                                     <rect key="frame" x="0.0" y="480" width="375" height="100"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PictureFile.png" translatesAutoresizingMaskIntoConstraints="NO" id="j3T-9c-yF2">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j3T-9c-yF2">
                                             <rect key="frame" x="255" y="5" width="100" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="8CL-fY-EHs"/>
@@ -534,11 +547,10 @@
                 <constraint firstItem="cax-QQ-9S0" firstAttribute="leading" secondItem="jMg-q2-0Af" secondAttribute="trailing" id="yMT-MU-vcW"/>
                 <constraint firstAttribute="trailing" secondItem="sVv-Yx-s5C" secondAttribute="trailing" id="zP9-VF-W2v"/>
             </constraints>
-            <point key="canvasLocation" x="-88.5" y="235.5"/>
+            <point key="canvasLocation" x="-102" y="119"/>
         </view>
     </objects>
     <resources>
-        <image name="PictureFile.png" width="150" height="150"/>
         <image name="img_fail" width="255" height="255"/>
         <image name="img_success" width="255" height="255"/>
     </resources>

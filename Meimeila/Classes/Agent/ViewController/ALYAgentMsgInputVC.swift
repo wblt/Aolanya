@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FDStackView
 
 class ALYAgentMsgInputVC: DDBaseViewController {
 	
@@ -23,12 +24,36 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 	@IBOutlet weak var zhifubaoimgView: UIImageView!
 	@IBOutlet weak var weixinImgView: UIImageView!
 	
+	@IBOutlet weak var lab1: UILabel!
+	
+	@IBOutlet weak var lab2: UILabel!
+	
+	@IBOutlet weak var lab3: UILabel!
+	@IBOutlet weak var lab4: UILabel!
+	@IBOutlet weak var img1: UIImageView!
+	@IBOutlet weak var img2: UIImageView!
+	@IBOutlet weak var img3: UIImageView!
+	@IBOutlet weak var img4: UIImageView!
+	
+	@IBOutlet weak var line1: UIView!
+	@IBOutlet weak var line3: UIView!
+	
+	@IBOutlet weak var zhifubaoBgView: UIView!
+	
+	@IBOutlet weak var weixinBgView: UIView!
+	
+	@IBOutlet weak var stackbgView: FDStackView!
 	
 	lazy var photoManger:DDPhotoLibraryManager = {[weak self] in
-		let manger = DDPhotoLibraryManager.shared;
+		let manger = DDPhotoLibraryManager.shared
 		manger.delegate = self
 		return manger;
 		}()
+	
+	lazy var agentViewModel: AgentViewModel = {
+		let agVM = AgentViewModel()
+		return agVM
+	}()
 	
 	lazy var alter:UIAlertView =  {[weak self] in
 		let view = UIAlertView.init(title:"图片来源", message: "", delegate: self, cancelButtonTitle: "取消");
@@ -41,7 +66,34 @@ class ALYAgentMsgInputVC: DDBaseViewController {
         super.viewDidLoad()
 		self.title = "我要赚钱"
         // Do any additional setup after loading the view.
+		
+		
+		agentViewModel.getToExamineoneUid {
+			
+			print(self.agentViewModel.examineoneUid)
+			
+		}
     }
+	
+	override func setupUI() {
+		
+		if areaType == "1" || areaType == "2" {
+			lab1.isHidden = true
+			lab4.isHidden = true
+			img1.isHidden = true
+			img4.isHidden = true
+			line1.isHidden = true
+			line3.isHidden = true
+			
+			lab2.text = "填写合伙人信息"
+			lab3.text = "等待审核"
+			
+			zhifubaoBgView.isHidden = true
+			weixinBgView.isHidden = true
+			stackbgView.removeArrangedSubview(zhifubaoBgView)
+			stackbgView.removeArrangedSubview(weixinBgView)
+		}
+	}
 	
 	//获取验证码
 	@IBAction func getCodeAction(_ sender: Any) {
@@ -90,6 +142,7 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 		self.imageType = "2"
 		 alter.show();
 	}
+	
 	//提交
 	@IBAction func sureBtnClick(_ sender: Any) {
 		
@@ -103,15 +156,28 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 			return
 		}
 		
-		if zhifubaoimgView == nil {
-			BFunction.shared.showToastMessge("请上传支付宝收款码");
-			return
+		if areaType == "3" {
+			
+			if zhifubaoimgView == nil {
+				BFunction.shared.showToastMessge("请上传支付宝收款码");
+				return
+			}
+			
+			if weixinImgView == nil {
+				BFunction.shared.showToastMessge("请上传微信收款码");
+				return
+			}
+		}
+		var regionLevel = "0"
+		if areaType == "1" {
+			regionLevel = "2"
 		}
 		
-		if weixinImgView == nil {
-			BFunction.shared.showToastMessge("请上传微信收款码");
-			return
+		self.agentViewModel.writeRegionApply(uid:DDUDManager.share.getUserID(), realName: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, regionAdress: addressLab.text!, temporaryRegionLevel: regionLevel) {
+			
+			
 		}
+		
 		
 		
 	}

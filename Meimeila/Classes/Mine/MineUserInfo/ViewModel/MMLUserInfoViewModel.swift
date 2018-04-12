@@ -15,7 +15,7 @@ class MMLUserInfoViewModel{
     var userInfoCellTitleArr = [[""],
                                 ["账号"],
                                 ["昵称","性别","所在地","个性签名"],
-                                ["职业","年龄","邮箱"]
+                                ["职业","年龄","邮箱","手机号"]
                                 ];
     
     var userInfoCellDetailArr = [[String]]()
@@ -81,7 +81,7 @@ class MMLUserInfoViewModel{
             sectionThree.append(userModel.occupation ?? "未设置");
             sectionThree.append(userModel.birth ?? "未设置");
             sectionThree.append(userModel.email ?? "未设置");
-            sectionThree.append("");
+            sectionThree.append(userModel.phone ?? "未设置");
             
             self.userInfoCellDetailArr.append(sectionZero);
             self.userInfoCellDetailArr.append(sectionOne);
