@@ -15,6 +15,9 @@ enum PocketMonayAPI {
     // 支付宝
     case moneyRecharge_aliPay(orderID: String?, orderPrice: String,type:Int,invoice:String?)
     case moneyRecharge_weChatPay(orderID: String?, orderPrice: String,type:Int,invoice:String?)
+	
+	case wechatPayForPack(moneyNum: String)
+	
 }
 
 extension PocketMonayAPI:Request{
@@ -28,6 +31,9 @@ extension PocketMonayAPI:Request{
             
         case . moneyRecharge_weChatPay:
             return API.moneyRechargeAPI
+			
+		case .wechatPayForPack(moneyNum: _):
+			return API.getWechapayOrders
         }
     }
     
@@ -74,7 +80,13 @@ extension PocketMonayAPI:Request{
             params["orderSource"] = "iOS APP"
             params["orderPrice"] = orderPrice
             return DDIntegrationOfTheParameter(params: params, isNeedLogin: true)
-            
+			
+		case .wechatPayForPack(let moneyNum):
+			var params = postParameters()
+			params["orderPrice"] = moneyNum
+			params["orderType"] = "2"
+			params["orderSource"] = "iOS APP"
+			return DDIntegrationOfTheParameter(params: params, isNeedLogin: true)
         }
         
     }

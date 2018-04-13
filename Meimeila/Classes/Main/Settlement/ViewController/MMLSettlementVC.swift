@@ -8,7 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-
+import SwiftyJSON
 class MMLSettlementVC: DDBaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -118,7 +118,8 @@ class MMLSettlementVC: DDBaseViewController {
     ///转json字符串
     func jsonString() -> String{
         var dic = [String:String]()
-        dic["invoiceTitle"] = "个人";
+        //dic["invoiceTitle"] = "个人";
+		dic["invoiceName"] = "放弃发票";
         dic["invoiceType"] = "纸质发票";
         let data = try? JSONSerialization.data(withJSONObject: dic, options: JSONSerialization.WritingOptions.init(rawValue: 0));
         let js = String.init(data: data!, encoding: String.Encoding.utf8)
@@ -221,13 +222,19 @@ extension MMLSettlementVC {
             var dict = [String: String]()
             dict["shoppingID"] = data.shopingID
             dict["shoppingNumber"] = data.shoppingCartNumber
+			dict["price"] = data.price
             orders.append(dict)
         }
+		
+		let str = totalPriceLabel.text!
+		let index = str.index(str.startIndex, offsetBy:4)//获取字符d的索引
+		let result = str.substring(from: index)
+		
         // 转换成json字符串
         let data = try? JSONSerialization.data(withJSONObject: orders, options: JSONSerialization.WritingOptions.init(rawValue: 0))
         let strJson = String(data: data!, encoding: String.Encoding.utf8)
        
-        settlementViewModel.placeAliPayOrder(orders: strJson!, addressID: addressID,invoice: invoiceJson ?? jsonString()) {[weak self] in
+        settlementViewModel.placeAliPayOrder(orders: strJson!, addressID: addressID,invoice: invoiceJson ?? jsonString(),total:result) {[weak self] in
             self?.aliPayAction()
         }
         
@@ -235,18 +242,23 @@ extension MMLSettlementVC {
     
     // 微信下单
     private func requestWechatOrderData() {
-        
         var orders = [[String: String]]()
         productInfoModel.productList.forEach { (data) in
             var dict = [String: String]()
             dict["shoppingID"] = data.shopingID
             dict["shoppingNumber"] = data.shoppingCartNumber
+			dict["price"] = data.price
             orders.append(dict)
         }
+		
+		let str = totalPriceLabel.text!
+		let index = str.index(str.startIndex, offsetBy:4)//获取字符d的索引
+		let result = str.substring(from: index)
+	
         // 转换成json字符串
         let data = try? JSONSerialization.data(withJSONObject: orders, options: JSONSerialization.WritingOptions.init(rawValue: 0))
         let strJson = String(data: data!, encoding: String.Encoding.utf8)
-        settlementViewModel.placewechatPayOrder(orders: strJson!, addressID: addressID,invoice: invoiceJson ?? jsonString()) {[weak self] in
+        settlementViewModel.placewechatPayOrder(orders: strJson!, addressID: addressID,invoice: invoiceJson ?? jsonString(),total: result) {[weak self] in
             self?.wechatPayAction()
         }
     }
@@ -327,8 +339,14 @@ extension MMLSettlementVC {
     // 支付宝支付的结果
     @objc func aliPayResultNotification(noti: Notification) {
         debugLog(noti.object)
-        guard let result = noti.object as? [String: String] else {return}
-        let index = Int(result["resultStatus"]!)
+		/*
+		guard  let result: [String: Any] = noti.object as? [String : Any] else {return};
+		
+		let index = Int(result["resultStatus"])
+		*/
+        guard let result = noti.object as? [String: AnyObject] else {
+			return}
+		let index = result["resultStatus"] as! Int
         let isPaySuccess: Bool = index == 9000 ? true : false
         if !isHaveToPay {
             isHaveToPay = true
@@ -382,10 +400,10 @@ extension MMLSettlementVC {
     
     // 发票相关
     @objc func invoiceAction(tap: UITapGestureRecognizer) {
-//        BFunction.shared.showToastMessge("暂不支持开具发票，有需要请联系客服！")
-        let VC = MMInvoiceVC()
-        VC.delegate = self
-        navigationController?.pushViewController(VC, animated: true)
+        BFunction.shared.showToastMessge("暂不支持开具发票，有需要请联系客服！")
+//        let VC = MMInvoiceVC()
+//        VC.delegate = self
+//        navigationController?.pushViewController(VC, animated: true)
     }
     
     // 去付款

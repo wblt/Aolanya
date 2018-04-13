@@ -36,7 +36,9 @@
 			<key>CFBundleURLName</key>
 			<string>alipay</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>com.welcare.aolaiya</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>

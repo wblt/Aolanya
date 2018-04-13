@@ -218,10 +218,14 @@ extension MMLRechargeCashVC{
             
             if DDWechatPay.shared.isWXAppInstalled(){
                 
-                vm.reChargeMoneyWith_weChatPay(price: cash ?? "1", orderID: nil,type:0, invoice: nil,succeeds: {[weak self] in
-                    
-                    DDWechatPay.shared.payAction(payModel: (self?.vm.WechatPayModel)!);
-                })
+//                vm.reChargeMoneyWith_weChatPay(price: cash ?? "1", orderID: nil,type:0, invoice: nil,succeeds: {[weak self] in
+//
+//                    DDWechatPay.shared.payAction(payModel: (self?.vm.WechatPayModel)!);
+//                })
+				vm.newReChargeMoneyWith_weChatPay(price: cash ?? "1",succeeds: {[weak self] in
+					
+					DDWechatPay.shared.payAction(payModel: (self?.vm.WechatPayModel)!);
+				})
             }else{
                 
                 BFunction.shared.showErrorMessage("未安装微信，无法支付！")

@@ -15,7 +15,7 @@ class DDAliPay {
     
     // 支付宝支付
     func payAction(orderStr: String, successBlock:@escaping (_ result: [AnyHashable: Any]) -> ()) {
-        AlipaySDK.defaultService().payOrder(orderStr, fromScheme: "") { (response) in
+        AlipaySDK.defaultService().payOrder(orderStr, fromScheme: "com.welcare.aolaiya") { (response) in
             successBlock(response ?? [AnyHashable: Any]())
         }
     

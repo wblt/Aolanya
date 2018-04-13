@@ -23,7 +23,7 @@ extension AppDelegate {
     func wechat_setup() {
         // 注册微信(为防止与第三方含有sdk冲突)
         //WXApi.registerApp(WX_APPID)
-        WXApi.registerApp(WX_APPID, enableMTA: true)
+        //WXApi.registerApp(WX_APPID, enableMTA: true)
     }
     
     // 支付回调

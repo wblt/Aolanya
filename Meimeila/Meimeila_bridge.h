@@ -36,4 +36,8 @@
 //bugly
 #import <Bugly/Bugly.h>
 
+#import <PgySDK/PgyManager.h>
+#import <PgyUpdate/PgyUpdateManager.h>
+
+
 #endif /* Meimeila_bridge_h */

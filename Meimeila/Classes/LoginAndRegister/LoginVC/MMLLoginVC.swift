@@ -49,18 +49,21 @@ class MMLLoginVC: DDBaseViewController {
         let installed = DDWechatLogin.shared.isWXAppInstalled()
 
         if installed{
-
-            DDWechatLogin.shared.loginAction(callBack: {[weak self] (openid, access_token, result) in
-
-                let json = JSON.init(result )
-                let model = DDWechatLoginResultModel.init(from: json)
-                MMLLoginViewModel.shared.loginWeChatAction(openid: openid, name: model.nickname!, gender: model.sex!, iconurl: model.headimgurl!, succeed: {
-
-                    self?.perform(#selector(self?.succeedLogin), with: nil, afterDelay: 1.0);
-
-                })
-
-            })
+			
+			UMSocialManager.default().getUserInfo(with: UMSocialPlatformType.wechatSession, currentViewController: nil, completion: { (result, error) in
+				
+				if (error != nil) {
+					
+				}else {
+					let resp = result as! UMSocialUserInfoResponse
+					
+					MMLLoginViewModel.shared.loginWeChatAction(openid: resp.openid!, name: resp.name!, gender: resp.unionGender!, iconurl: resp.iconurl!, succeed: {
+	
+						self.perform(#selector(self.succeedLogin), with: nil, afterDelay: 1.0);
+	
+					})
+				}
+			})
         }else{
 
             BFunction.shared.showErrorMessage("未安装微信,无法登录!")

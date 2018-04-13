@@ -60,8 +60,8 @@ class MMLMineOrderVC: DDBaseViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+		self.title = "我的订单"
     }
 
     override func viewWillAppear(_ animated: Bool) {

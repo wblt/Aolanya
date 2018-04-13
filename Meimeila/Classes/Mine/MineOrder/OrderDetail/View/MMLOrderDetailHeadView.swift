@@ -48,12 +48,13 @@ class MMLOrderDetailHeadView: UIView {
             if orderState == "0" {
                 ///等待时间
                 let effectiveTime = Int(setModel?.effectiveTime ?? "0")!
-                ///下单时间
-                let orderTime = Int(setModel?.orderTime ?? "0")!
-                ///到期时间
-                let overTime = effectiveTime + orderTime;
+//                ///下单时间
+//                let orderTime = Int(setModel?.orderTime ?? "0")!
+//                ///到期时间
+//                let overTime = effectiveTime + orderTime;
                 
-                let time = timestampToDate(format:  "HH:mm", timestamp:"\(overTime)")
+                let time =  effectiveTime
+				//timestampToDate(format:  "HH:mm", timestamp:"\(overTime)")
                 
                 timeLabel.text = "请在\(time)之前完成支付，逾期订单将关闭"
                 

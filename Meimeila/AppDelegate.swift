@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        let adImageJPGUrl = "http://img.ui.cn/data/file/3/4/6/210643.gif"
-//        let _ = AdvertisementView.init(adUrl: adImageJPGUrl, isIgnoreCache: false, didClickAdViewCompletion: {
-//
-//        })
-        
 		//test()
         // Bugly
         //Bugly.startWithAppId("此处替换为你的AppId")
+		// 蒲公英
+		//启动基本SDK
+		//[[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
+		//启动更新检查SDK
+		//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
         
         jq_application(application, didFinishLaunchingWithOptions: launchOptions)
         // 注册极光推送
@@ -103,11 +103,11 @@ extension AppDelegate {
         if url.host == "safepay" {
             // 支付宝支付
             alipay_application(app, open: url, options: options)
-        }else if (url.host == "pay" || url.host == "oauth") { // 微信
+        }else if (url.host == "pay") { // 微信  // if url.host == "oauth" 登录授权的
             return wechat_application(app, handleOpen: url)
         }else if (url.host?.hasPrefix("shopingID"))!{
             openProductDetails(url: url.host)
-        }else{ // 友盟推送
+        }else { // 友盟推送
             return UMeng_handleOpenURL(url: url, options: options)
             
         }
@@ -119,7 +119,7 @@ extension AppDelegate {
         if url.host == "safepay" {
             // 支付宝支付
             alipay_application(application, open: url, options: [:])
-        }else if (url.host == "pay" || url.host == "oauth") { // 微信
+        }else if (url.host == "pay" ) { // 微信 || url.host == "oauth"
             return wechat_application(application, handleOpen: url)
         }else if (url.host?.hasPrefix("shopingID"))!{
             openProductDetails(url: url.host)
@@ -134,7 +134,7 @@ extension AppDelegate {
         if url.host == "safepay" {
             // 支付宝支付
             alipay_application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-        } else if (url.host == "pay" || url.host == "oauth") {
+        } else if (url.host == "pay" ) { // || url.host == "oauth"
             return wechat_application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         }else if (url.host?.hasPrefix("shopingID"))!{
             openProductDetails(url: url.host)

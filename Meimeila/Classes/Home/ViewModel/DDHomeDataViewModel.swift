@@ -52,7 +52,7 @@ class DDHomeDataViewModel {
     //获取广告 以及更新信息
     func requestSplah(successBlock:@escaping () -> Void) {
         let url =   API.baseServer + API.splashData
-        
+		
         Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             
             let jsonRequest = JSON.init(response.result.value as![String:Any]);

@@ -25,8 +25,18 @@ extension AppDelegate {
     fileprivate func alipay_processOrderPaymentResult(url: URL) {
         AlipaySDK.defaultService().processOrder(withPaymentResult: url) { (result) in
             debugLog(result)
+			
+			debugLog("支付宝支付11111")
             Barista.post(notification: .aliPayResult, object: result as AnyObject)
         }
+		
+//		AlipaySDK.defaultService().processOrder(withPaymentResult: url) { (result) in
+//			debugLog(result)
+//
+//			debugLog("支付宝支付11111")
+//			Barista.post(notification: .aliPayResult, object: result as AnyObject)
+//		}
+		
 
         AlipaySDK.defaultService().processAuth_V2Result(url) { (result) in
             // 解析 auth code
@@ -43,6 +53,7 @@ extension AppDelegate {
                     }
                 }
                 debugLog("result = " + authCode)
+				debugLog("支付宝支付2222")
                 Barista.post(notification: .aliPayResult, object: result as AnyObject)
             }
 

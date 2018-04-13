@@ -32,8 +32,8 @@ class MMLSettlementViewModel {
     }
     
     // 支付宝下单
-    func placeAliPayOrder(orders: String, addressID: String, invoice: String,successBlock: @escaping () -> ()) {
-        let request = SettlementAPI.aliPay(orders: orders, addressID: addressID,invoice: invoice)
+    func placeAliPayOrder(orders: String, addressID: String, invoice: String,total:String,successBlock: @escaping () -> ()) {
+		let request = SettlementAPI.aliPay(orders: orders, addressID: addressID,invoice: invoice, total: total)
         DDHTTPRequest.request(r: request, requestSuccess: { (result) in
             
             print(result);
@@ -48,8 +48,8 @@ class MMLSettlementViewModel {
     }
     
     // 微信下单
-    func placewechatPayOrder(orders: String, addressID: String,invoice:String, successBlock: @escaping () -> ()) {
-        let request = SettlementAPI.wechatPay(orders: orders, addressID: addressID,invoice: invoice)
+	func placewechatPayOrder(orders: String, addressID: String,invoice:String,total:String, successBlock: @escaping () -> ()) {
+		let request = SettlementAPI.wechatPay(orders: orders, addressID: addressID,invoice: invoice, total: total)
         DDHTTPRequest.request(r: request, requestSuccess: { (result) in
             let jsonData = JSON.init(result)["getWechaPay"]
             self.wechatPayModel = DDWechatPayModel.init(fromJson: jsonData)

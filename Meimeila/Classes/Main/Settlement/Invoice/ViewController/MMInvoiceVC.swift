@@ -88,7 +88,7 @@ class MMInvoiceVC: DDBaseViewController {
     ///转json字符串
     func jsonString() -> String{
         var dic = [String:String]()
-        dic["invoiceTitle"] = invoiceTitle;
+        dic["invoiceName"] = invoiceTitle;
         dic["invoiceType"] = invoiceType;
         
         let data = try? JSONSerialization.data(withJSONObject: dic, options: JSONSerialization.WritingOptions.init(rawValue: 0));

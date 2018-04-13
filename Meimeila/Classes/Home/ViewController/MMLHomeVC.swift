@@ -95,7 +95,7 @@ class MMLHomeVC: DDBaseViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true // 手势有效设置为YES  无效为NO
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         
-        setupRefresh(tableView, headerCallback: { [weak self] in
+        setupRefresh(tableView,isNeedFooterRefresh:false, headerCallback: { [weak self] in
             self?.homeDataViewModel.numberPages = 0
             self?.requestHomeData()
         }) {  [weak self] in
@@ -120,27 +120,27 @@ class MMLHomeVC: DDBaseViewController {
             self?.tableView.reloadData()
         }
         
-        homeDataViewModel.requestSplah() {[weak self] in
-            //
-            if (self?.homeDataViewModel.imgurl != nil) {
-                // 弹出广告
-            }
-            
-            if self?.homeDataViewModel.type == "1" {
-                // 可选升级
-                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", ontherBtnTitle: "更新", ontherBtnAction: {
-                    //跳转 下载地址
-                    
-                })
-            } else if self?.homeDataViewModel.type == "2" {
-                // 强制升级
-                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", cancelBtnTitle: "更新", cancelBtnAction: {
-                    //跳转 下载地址
-                    
-                })
-                
-            }
-        }
+//        homeDataViewModel.requestSplah() {[weak self] in
+//            //
+//            if (self?.homeDataViewModel.imgurl != nil) {
+//                // 弹出广告
+//            }
+//
+//            if self?.homeDataViewModel.type == "1" {
+//                // 可选升级
+//                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", ontherBtnTitle: "更新", ontherBtnAction: {
+//                    //跳转 下载地址
+//
+//                })
+//            } else if self?.homeDataViewModel.type == "2" {
+//                // 强制升级
+//                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", cancelBtnTitle: "更新", cancelBtnAction: {
+//                    //跳转 下载地址
+//
+//                })
+//
+//            }
+//        }
     }
     
     // 是否需要登录

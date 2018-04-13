@@ -126,6 +126,9 @@ extension DDHTTPRequest {
 //		case 1:
 //			requestSuccess(response)
 //			break
+		case 100: // 请求成功
+			requestSuccess(response)
+		break
 		default:
 			let m = DDErrorModel(status: status, message: msg)
 			requestError(response, m)
