@@ -204,13 +204,22 @@ extension MMLRechargeCashVC{
             
         case 2:
             
-            vm.reChargeMoneyWith_alipay(price: cash ?? "1", orderID: nil,type:0, invoice:nil,succeeds: {[weak self] in
-                
+//            vm.reChargeMoneyWith_alipay(price: cash ?? "1", orderID: nil,type:0, invoice:nil,succeeds: {[weak self] in
+//
+//                DDAliPay.shared.payAction(orderStr: (self?.vm.aliPayModel.getAlipay)!, successBlock: { (result) in
+//
+//                    Barista.post(notification: .aliPayResult, object: result as AnyObject)
+//
+//                })
+//            })
+//
+            vm.newReChargeMoneyWith_aliPay(price: cash ?? "1",succeeds: {[weak self] in
                 DDAliPay.shared.payAction(orderStr: (self?.vm.aliPayModel.getAlipay)!, successBlock: { (result) in
                     
                     Barista.post(notification: .aliPayResult, object: result as AnyObject)
                     
                 })
+                //DDWechatPay.shared.payAction(payModel: (self?.vm.WechatPayModel)!);
             })
             
         case 1:

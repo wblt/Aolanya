@@ -344,10 +344,14 @@ extension MMLSettlementVC {
 		
 		let index = Int(result["resultStatus"])
 		*/
-        guard let result = noti.object as? [String: AnyObject] else {
-			return}
-		let index = result["resultStatus"] as! Int
-        let isPaySuccess: Bool = index == 9000 ? true : false
+//        guard let result : [String: Any] = noti.object as? [String: Any] else {
+//            return}
+//        let index = result["resultStatus"]).IntValue
+        guard let result: [String: Any] = noti.object as! [String : Any] else {return};
+        
+        let index :NSString  = (result["resultStatus"] as? NSString)!
+        
+        let isPaySuccess: Bool = index == "9000"  ? true : false
         if !isHaveToPay {
             isHaveToPay = true
             // 跳转到结算页

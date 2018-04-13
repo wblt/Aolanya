@@ -155,6 +155,34 @@ class MSXPocketViewModel{
 		}
 		
 	}
+    
+    ///钱包充值_微信  新版本
+    func  newReChargeMoneyWith_aliPay(price:String,succeeds:@escaping ()->()) {
+        
+        let r = PocketMonayAPI.aliPayForPack(moneyNum: price)
+        
+        DDHTTPRequest.request(r: r, requestSuccess: { [weak self](responds) in
+            
+            let json = JSON.init(responds);
+            
+            
+            self?.WechatPayModel = DDWechatPayModel.init(fromJson: json["getWechaPay"]);
+            
+            self?.stopMJRefresh();
+            
+            BFunction.shared.showMessage(json["message"].stringValue);
+            succeeds();
+            }, requestError: {[weak self] (responds, errorModel) in
+                self?.stopMJRefresh();
+                
+        }) {[weak self] (error) in
+            self?.stopMJRefresh();
+            
+            
+        }
+        
+    }
+    
 	
     
     func stopMJRefresh() {
