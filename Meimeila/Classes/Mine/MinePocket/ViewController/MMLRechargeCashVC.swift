@@ -204,14 +204,14 @@ extension MMLRechargeCashVC{
             
         case 2:
             
-//            vm.reChargeMoneyWith_alipay(price: cash ?? "1", orderID: nil,type:0, invoice:nil,succeeds: {[weak self] in
-//
-//                DDAliPay.shared.payAction(orderStr: (self?.vm.aliPayModel.getAlipay)!, successBlock: { (result) in
-//
-//                    Barista.post(notification: .aliPayResult, object: result as AnyObject)
-//
-//                })
-//            })
+            vm.reChargeMoneyWith_alipay(price: cash ?? "1", orderID: nil,type:0, invoice:nil,succeeds: {[weak self] in
+
+                DDAliPay.shared.payAction(orderStr: (self?.vm.aliPayModel.getAlipay)!, successBlock: { (result) in
+
+                    Barista.post(notification: .aliPayResult, object: result as AnyObject)
+
+                })
+            })
 //
             vm.newReChargeMoneyWith_aliPay(price: cash ?? "1",succeeds: {[weak self] in
                 DDAliPay.shared.payAction(orderStr: (self?.vm.aliPayModel.getAlipay)!, successBlock: { (result) in
@@ -282,9 +282,9 @@ extension MMLRechargeCashVC{
     // 支付宝支付的结果
     @objc func aliPayResultNotification(noti: Notification) {
         debugLog(noti.object)
-        guard let result = noti.object as? [String: String] else {return}
-        let index = Int(result["resultStatus"]!)
-        let isPaySuccess: Bool = index == 9000 ? true : false
+        guard let result: [String: Any] = noti.object as! [String : Any] else {return};
+        let index :NSString  = (result["resultStatus"] as? NSString)!
+        let isPaySuccess: Bool = index == "9000"  ? true : false
         if !isHaveToPay {
             isHaveToPay = true
             // 跳转到结算页

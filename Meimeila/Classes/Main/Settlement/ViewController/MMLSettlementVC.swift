@@ -339,14 +339,6 @@ extension MMLSettlementVC {
     // 支付宝支付的结果
     @objc func aliPayResultNotification(noti: Notification) {
         debugLog(noti.object)
-		/*
-		guard  let result: [String: Any] = noti.object as? [String : Any] else {return};
-		
-		let index = Int(result["resultStatus"])
-		*/
-//        guard let result : [String: Any] = noti.object as? [String: Any] else {
-//            return}
-//        let index = result["resultStatus"]).IntValue
         guard let result: [String: Any] = noti.object as! [String : Any] else {return};
         
         let index :NSString  = (result["resultStatus"] as? NSString)!

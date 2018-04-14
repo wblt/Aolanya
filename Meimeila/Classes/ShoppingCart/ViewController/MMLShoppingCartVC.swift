@@ -46,7 +46,7 @@ class MMLShoppingCartVC: DDBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "购物车"
+        title = "购物车结算"
         viewBindEvent()
      //   requestCarListData()
     }
@@ -181,7 +181,7 @@ class MMLShoppingCartVC: DDBaseViewController {
             // 设置数量
             let count = self?.shoppingcarViewModel.shoppingCarListDatas.count ?? 0
             if count == 0 {
-                self?.title = "购物车"
+                self?.title = "购物车结算"
             }else {
                 self?.title = "购物车(\(count))"
             }
@@ -203,7 +203,7 @@ class MMLShoppingCartVC: DDBaseViewController {
             // 设置数量
             let count = self?.shoppingcarViewModel.shoppingCarListDatas.count ?? 0
             if count == 0 {
-                self?.title = "购物车"
+                self?.title = "购物车结算"
             }else {
                 self?.title = "购物车(\(count))"
             }

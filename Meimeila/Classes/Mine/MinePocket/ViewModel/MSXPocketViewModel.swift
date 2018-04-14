@@ -156,7 +156,7 @@ class MSXPocketViewModel{
 		
 	}
     
-    ///钱包充值_微信  新版本
+    ///钱包充值_支付宝  新版本
     func  newReChargeMoneyWith_aliPay(price:String,succeeds:@escaping ()->()) {
         
         let r = PocketMonayAPI.aliPayForPack(moneyNum: price)
@@ -165,8 +165,9 @@ class MSXPocketViewModel{
             
             let json = JSON.init(responds);
             
+            print(json)
             
-            self?.WechatPayModel = DDWechatPayModel.init(fromJson: json["getWechaPay"]);
+            self?.aliPayModel = MMLSettlementAlipayModel.init(fromJson: json);
             
             self?.stopMJRefresh();
             
