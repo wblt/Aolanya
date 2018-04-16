@@ -98,4 +98,36 @@ extension ALYAreaCheckViewController:UITableViewDataSource {
 		return cell!;
 	}
 	
+	func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+		let bgView = UIView()
+		bgView.frame = CGRect.init(x: 0, y: 0, width: self.view.width, height: 50)
+		bgView.backgroundColor = UIColor.clear
+		
+		let confuseBtn = UIButton()
+		confuseBtn.frame = CGRect.init(x: 20, y: 5, width: (self.view.width-60)/2, height: 40)
+		confuseBtn.setTitle("拒绝", for: UIControlState.normal)
+		confuseBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+		confuseBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+		confuseBtn.backgroundColor = DDGlobalNavTitleColor();
+		confuseBtn.setCornerBorderWithCornerRadii(20, width: 0.1, color: UIColor.clear)
+		
+		let agreenBtn = UIButton()
+		agreenBtn.frame = CGRect.init(x: self.view.width/2+10, y: 5, width: (self.view.width-60)/2, height: 40)
+		agreenBtn.setTitle("同意", for: UIControlState.normal)
+		agreenBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+		agreenBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+		agreenBtn.backgroundColor = DDGlobalNavBarColor();
+		agreenBtn.setCornerBorderWithCornerRadii(20, width: 0.1, color: UIColor.clear)
+		
+		bgView.addSubview(confuseBtn)
+		bgView.addSubview(agreenBtn)
+		
+		
+		return bgView
+	}
+	
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 50
+	}
+	
 }
