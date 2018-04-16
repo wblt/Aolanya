@@ -342,5 +342,6 @@ extension API {
 	static let writeApplyMsgAPI = "tpiot/app/writeJoin"
 	// 获取默认邀请码
 	static let getToExamineoneUidAPI = "tpiot/app/getToExamineoneUid"
-	
+	//获取代理管理数据
+    static let getAgentManageData = "tpiot/app/getAgentManage"
 }

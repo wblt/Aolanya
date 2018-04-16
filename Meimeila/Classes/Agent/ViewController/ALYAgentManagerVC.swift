@@ -36,21 +36,21 @@ class ALYAgentManagerVC: DDBaseViewController {
 	
 	@IBOutlet weak var AreaBgCheckView: UIView!
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    lazy var uservm:MMLUserInfoViewModel = {[weak self] in
+        let vm = MMLUserInfoViewModel.init();
+        return vm;
+        }()
+    
+    lazy var agentVm:AgentManagerViewModel  = {
+        let vm = AgentManagerViewModel.init();
+        return vm;
+    }()
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        requestAgentData()
+        requestUserInfo()
     }
 	
 	override func setupUI() {
@@ -70,9 +70,23 @@ class ALYAgentManagerVC: DDBaseViewController {
 		ArebgView.addGestureRecognizer(tap5)
 		let tap6  = UITapGestureRecognizer.init(target: self, action: #selector(areaCheckTap))
 		AreaBgCheckView.addGestureRecognizer(tap6)
-		
 	}
-	
+    //获取代理人信息
+    func requestAgentData() {
+        
+        //agentVm.getAgentManagerData(uid: [], successBlock: <#T##() -> Void#>)
+    }
+    
+	// 获取用户信息
+    func requestUserInfo() {
+        uservm.getUserInfo {[weak self] in
+            
+            self?.headImgView.jq_setImage(imageUrl: self?.uservm.infoModel?.picture ?? "", placeholder: "icon_defaultHeadIcon", isShowIndicator: false, isNeedForceRefresh: false)
+            
+            self?.nameLab.text = self?.uservm.infoModel?.name ?? DDUDManager.share.getUserID()
+            
+        }
+    }
 	
 	@objc func lastAgentTap(){
 		let vc = ALYLastAgentVC()

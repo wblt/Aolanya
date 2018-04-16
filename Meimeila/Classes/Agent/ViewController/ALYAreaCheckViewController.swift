@@ -108,7 +108,7 @@ extension ALYAreaCheckViewController:UITableViewDataSource {
 		confuseBtn.setTitle("拒绝", for: UIControlState.normal)
 		confuseBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
 		confuseBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-		confuseBtn.backgroundColor = DDGlobalNavTitleColor();
+		confuseBtn.backgroundColor = DDGlobalNavBarColor();
 		confuseBtn.setCornerBorderWithCornerRadii(20, width: 0.1, color: UIColor.clear)
 		
 		let agreenBtn = UIButton()
@@ -129,5 +129,9 @@ extension ALYAreaCheckViewController:UITableViewDataSource {
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 50
 	}
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
 	
 }

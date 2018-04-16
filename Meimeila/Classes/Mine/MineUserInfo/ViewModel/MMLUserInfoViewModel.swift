@@ -50,9 +50,7 @@ class MMLUserInfoViewModel{
         DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
             
             let jsonResult = JSON.init(responds);
-           
             print(jsonResult);
-
             self.userInfoCellDetailArr.removeAll();
 
             var sectionZero = [String]();
@@ -67,7 +65,6 @@ class MMLUserInfoViewModel{
             var iconUrl = userModel.picture ?? "0";
             
             if !iconUrl.hasPrefix("http"){
-                
                 iconUrl = kPrefixLink + iconUrl;
                 self.infoModel?.picture = iconUrl;
             }
@@ -112,9 +109,7 @@ class MMLUserInfoViewModel{
                 
             }
         }
-        
     }
-    
     
     //上传用户信息
     func userInfoUp(name: String?, sex: String?, age: String?, email: String?, qq: String?, address: String?, personalizedSignature: String?, occupation: String?) {
