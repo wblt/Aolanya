@@ -22,7 +22,8 @@ class MineCollectCell: UITableViewCell {
     
     @IBOutlet weak var count: UILabel!
     
-    override func awakeFromNib() {
+	@IBOutlet weak var specificationsLab: UILabel!
+	override func awakeFromNib() {
         super.awakeFromNib()
 
         iconBGView.layer.borderWidth = 0.5;
@@ -54,6 +55,7 @@ class MineCollectCell: UITableViewCell {
             price.text = "￥" + setOrderInfoData.price!
             count.text = "X" + setOrderInfoData.shoppingNumber!
             iconView.jq_setImage(imageUrl:kPrefixLink + setOrderInfoData.shopingImg!, placeholder: "http_error", isShowIndicator: false);
+			specificationsLab.text = setOrderInfoData.specifications
         }
     }
     

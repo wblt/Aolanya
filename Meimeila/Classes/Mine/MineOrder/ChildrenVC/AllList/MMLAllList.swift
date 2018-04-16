@@ -32,13 +32,13 @@ class MMLAllList: DDBaseViewController {
         super.viewDidLoad()
         setUI();
         bindMJRefresh();
-        vm.tableView = tableView;
+        vm.tableView = self.tableView;
         requestDataList();
     }
     
     ///MJ
     func bindMJRefresh() {
-        setupRefresh(tableView, isNeedFooterRefresh: true, headerCallback: {[weak self] in
+        setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
             
             self?.vm.numberPage = 0;
             self?.requestDataList();
@@ -70,13 +70,13 @@ class MMLAllList: DDBaseViewController {
     
    func setTableView(){
     
-        tableView.delegate = self;
-        tableView.dataSource = self;
-        tableView.rowHeight = 105;
-        tableView.tableFooterView = UIView.init();
-        tableView.backgroundColor = DDGlobalBGColor();
-        tableView.showsVerticalScrollIndicator = false;
-        tableView.register(UINib.init(nibName: String.init(describing: MineCollectCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: MineCollectCell.self));        
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        self.tableView.rowHeight = 105;
+        self.tableView.tableFooterView = UIView.init();
+        self.tableView.backgroundColor = DDGlobalBGColor();
+        self.tableView.showsVerticalScrollIndicator = false;
+        self.tableView.register(UINib.init(nibName: String.init(describing: MineCollectCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: MineCollectCell.self));
     }
     
     
@@ -384,9 +384,18 @@ extension MMLAllList:UITableViewDataSource{
         view.modifyMessageBt.addTarget(self, action: #selector(modifyBtAction(bt:)), for: UIControlEvents.touchUpInside);
         
         let price = model.orderPrice ?? "0";
-        let num = model.orderInfoNumber ?? "0";
-        let post = model.postage ?? "0"
-        let text = "共\(num)件商品 合计:￥\(price)(含运费￥:\(post))"
+//        let num = model.orderInfoNumber ?? "0";
+//        let post = model.postage ?? "0"
+//        let text = "共\(num)件商品 合计:￥\(price)(含运费￥:\(post))"
+		var totalNum = 0
+		for infoModel:ShopOrderInfoModel in model.orderInfo! {
+			totalNum = totalNum + Int(infoModel.shoppingNumber!)!
+		}
+		if totalNum == 0 {
+			totalNum = 1
+		}
+		
+		let text = "共\(totalNum)件商品 合计:￥\(price)"
         view.titleLabel.text = text;
         
         return view;

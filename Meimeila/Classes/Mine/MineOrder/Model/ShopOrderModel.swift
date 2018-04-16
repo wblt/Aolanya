@@ -55,11 +55,7 @@ class ShopOrderModel{
         uid = json["uid"].stringValue
         postage = json["postage"].stringValue;
         
-        let  orderInfoString = json["orderInfo"].stringValue
-    
-        let js = JSON.init(parseJSON: orderInfoString);
-        print(orderInfoString);
-        let arr = js.arrayValue;
+        let  arr = json["orderInfo"].arrayValue
         
         orderInfo = [ShopOrderInfoModel]()
         for item in arr {

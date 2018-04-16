@@ -33,7 +33,8 @@ class MMLMessageCell: UITableViewCell {
             
             title.text = messageModel?.msgTitle;
             body.text = messageModel?.msgBody;
-            time.text = timestampToDate(format: "YY-HH-dd HH:mm:ss", timestamp: messageModel?.msgAddTime ?? "");
+            time.text = messageModel?.msgAddTime ?? ""
+				//timestampToDate(format: "YY-HH-dd HH:mm:ss", timestamp: messageModel?.msgAddTime ?? "");
         }
     }
 }

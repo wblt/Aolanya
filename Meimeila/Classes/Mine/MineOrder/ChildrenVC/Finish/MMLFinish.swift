@@ -49,7 +49,7 @@ class MMLFinish: DDBaseViewController {
     
     ///MJ
     func bindMJRefresh() {
-        setupRefresh(tableView, isNeedFooterRefresh: true, headerCallback: {[weak self] in
+        setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
             
             self?.vm.numberPage = 0;
             self?.requestDataList();
@@ -211,11 +211,20 @@ extension MMLFinish:UITableViewDataSource{
 
         
         let price = model.orderPrice;
-        let num = model.orderInfoNumber;
-        
-        let post = model.postage ?? "0"
-        let text = "共\(num!)件商品 合计:￥\(price!)(含运费￥:\(post))"
-        
+//        let num = model.orderInfoNumber;
+//
+		var totalNum = 0
+		for infoModel:ShopOrderInfoModel in model.orderInfo! {
+			totalNum = totalNum + Int(infoModel.shoppingNumber!)!
+		}
+		if totalNum == 0 {
+			totalNum = 1
+		}
+		let text = "共\(totalNum)件商品 合计:￥\(price!)"
+//
+//        let post = model.postage ?? "0"
+//        let text = "共\(num!)件商品 合计:￥\(price!)(含运费￥:\(post))"
+//
         view.titleLabel.text = text;
         return view;
         

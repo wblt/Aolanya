@@ -35,7 +35,7 @@ class MMLDetailCellTableViewCell: UITableViewCell {
         didSet{
             
             //cellTitle.text = detailModel?.remarks;
-			cellTitle.text = detailModel?.amountSource;
+			//cellTitle.text = detailModel?.amountSource;
             
             time.text = detailModel?.createTime ?? "0"
 				//timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: detailModel?.createTime ?? "0");
@@ -43,12 +43,18 @@ class MMLDetailCellTableViewCell: UITableViewCell {
             money.text = " + " + (detailModel?.amount)!;
             
             if detailModel?.isPay == 1 {
-                
                 money.textColor = UIColor.black;
             }else{
                 
                 money.textColor = APPgreenColor;
             }
+			if  detailModel?.payType == "3" {
+				cellTitle.text = "签到红包获得";
+			} else if detailModel?.payType == "5" {
+				cellTitle.text = "余额付款";
+			}else {
+				cellTitle.text = detailModel?.amountSource;
+			}
         }
     }
     

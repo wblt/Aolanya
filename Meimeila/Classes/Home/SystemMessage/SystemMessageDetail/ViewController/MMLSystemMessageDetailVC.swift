@@ -31,7 +31,8 @@ class MMLSystemMessageDetailVC: DDBaseViewController {
         super.viewDidLoad()
         title = "消息详情"
         titleLabel.text = data?.msgTitle
-        timeLabel.text = timestampToDate(format: "yyyy-mm-dd HH:mm", timestamp: (data?.msgAddTime)!)
+        timeLabel.text = (data?.msgAddTime)!
+			//timestampToDate(format: "yyyy-mm-dd HH:mm", timestamp: (data?.msgAddTime)!)
         contentLabel.text = data?.msgBody
 
     }

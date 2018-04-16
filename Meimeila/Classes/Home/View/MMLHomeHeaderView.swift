@@ -229,7 +229,7 @@ class MMLHomeHeaderView: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        layout.itemSize = CGSize.init(width: (Screen.width - 30) / 4.0, height: CGFloat(kHomefunction))
+        layout.itemSize = CGSize.init(width: (Screen.width - 30) / 3.0, height: CGFloat(kHomefunction))
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         //layout.sectionInset = UIEdgeInsets.init(top: 10, left: 0, bottom: 15, right: 0)
@@ -327,7 +327,7 @@ class MMLHomeHeaderView: UIView {
         datas.append(["title":"签到红包","iconName":"home_signinrede"])
         datas.append(["title":"我的收藏","iconName":"home_collection"])
         datas.append(["title":"智能硬件","iconName":"home_withdrawal"])
-        datas.append(["title":"奖品来了","iconName":"home_makemoney"])
+       // datas.append(["title":"奖品来了","iconName":"home_makemoney"])
         return datas as! [Dictionary<String, String>]
     }()
     
