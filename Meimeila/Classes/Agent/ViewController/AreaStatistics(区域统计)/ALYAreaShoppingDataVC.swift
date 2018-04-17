@@ -1,21 +1,22 @@
 //
-//  ALYLastAgentVC.swift
+//  ALYAreaShoppingDataVC.swift
 //  Meimeila
 //
-//  Created by yanghuan on 2018/4/16.
+//  Created by yanghuan on 2018/4/17.
 //  Copyright © 2018年 HJQ. All rights reserved.
 //
 
 import UIKit
 
-class ALYLastAgentVC: DDBaseViewController {
-	var superiorAgentModel:AgentInfoDataModel?
+class ALYAreaShoppingDataVC: DDBaseViewController {
 	
-    @IBOutlet weak var tableView: UITableView!
+	var shoppingDataArray = [ShoppingDataModel]()
+	
+	@IBOutlet weak var tableView: UITableView!
 	
 	//iOS8用到XIB必须写这两个方法
 	init() {
-		super.init(nibName: String.init(describing: ALYLastAgentVC.self), bundle: nil)
+		super.init(nibName: String.init(describing: ALYAreaShoppingDataVC.self), bundle: nil)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -24,11 +25,8 @@ class ALYLastAgentVC: DDBaseViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-		self.navigationItem.title = "上级代理"
-		bindMJRefresh()
-		
+		self.navigationItem.title = "区域统计"
     }
 
 	override func setupUI() {
@@ -37,20 +35,9 @@ class ALYLastAgentVC: DDBaseViewController {
 		self.tableView.rowHeight = 105;
 		self.tableView.tableFooterView = UIView.init();
 		self.tableView.backgroundColor = DDGlobalBGColor();
+		self.tableView.separatorColor = UIColor.black;
 		self.tableView.showsVerticalScrollIndicator = false;
-		self.tableView.separatorColor = UIColor.clear;
-		self.tableView.register(UINib.init(nibName: String.init(describing: ALYAgentCardTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYAgentCardTabCell.self));
-	}
-	
-	///MJ
-	func bindMJRefresh() {
-		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
-			
-		
-		}) {[weak self] in
-			
-			
-		}
+		self.tableView.register(UINib.init(nibName: String.init(describing: ALYAreaShoppingTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYAreaShoppingTabCell.self));
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -71,7 +58,7 @@ class ALYLastAgentVC: DDBaseViewController {
 
 }
 
-extension ALYLastAgentVC:UITableViewDelegate{
+extension ALYAreaShoppingDataVC:UITableViewDelegate{
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
@@ -79,10 +66,10 @@ extension ALYLastAgentVC:UITableViewDelegate{
 	
 }
 
-extension ALYLastAgentVC:UITableViewDataSource {
+extension ALYAreaShoppingDataVC:UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
+		return shoppingDataArray.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,12 +77,20 @@ extension ALYLastAgentVC:UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 195
+		return 112
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 0.01;
+	}
+	
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 0.01;
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		var cell:ALYAgentCardTabCell? = tableView.dequeueReusableCell(withIdentifier: String.init(describing: ALYAgentCardTabCell.self)) as? ALYAgentCardTabCell;
+		var cell:ALYAreaShoppingTabCell? = tableView.dequeueReusableCell(withIdentifier: String.init(describing: ALYAreaShoppingTabCell.self)) as? ALYAreaShoppingTabCell;
 		cell?.separatorInset.left = 0;
 		cell?.selectionStyle = .none;
 		cell?.backgroundColor =  UIColor.RGB(r: 245, g: 245, b: 245)
@@ -103,9 +98,9 @@ extension ALYLastAgentVC:UITableViewDataSource {
 			
 		}else{
 			
-			cell = Bundle.main.loadNibNamed(String.init(describing: ALYAgentCardTabCell.self), owner: nil, options: nil)?.last as? ALYAgentCardTabCell;
+			cell = Bundle.main.loadNibNamed(String.init(describing: ALYAreaShoppingTabCell.self), owner: nil, options: nil)?.last as? ALYAreaShoppingTabCell;
 		}
-		cell?.data = self.superiorAgentModel
+		cell?.data = shoppingDataArray[indexPath.section];
 		
 		return cell!;
 	}

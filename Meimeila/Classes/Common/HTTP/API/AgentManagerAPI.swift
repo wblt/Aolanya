@@ -12,8 +12,8 @@ enum AgentManageAPI {
     //提交代理申请信息
     
     case getAgentManageAPI(uid:String)
-    
-    
+    case getAllRegionShoopingAPI(uid:String)
+    case getSubordinateShopping(uid:String)
 }
 
 extension AgentManageAPI:Request{
@@ -23,7 +23,12 @@ extension AgentManageAPI:Request{
         switch self {
         case .getAgentManageAPI(uid: _):
             return API.getAgentManageData
-        }
+		case .getAllRegionShoopingAPI(uid: _):
+			return API.getAllRegionShoppingData
+		
+		case .getSubordinateShopping(uid: _):
+			return API.getSubordinateShoppingData
+		}
     }
     
     
@@ -34,7 +39,16 @@ extension AgentManageAPI:Request{
            var p = [String : Any]();
            p["uid"] = uid
           return  p
-        }
+			
+		case .getAllRegionShoopingAPI(let uid):
+			var p = [String : Any]();
+			p["uid"] = uid
+			return  p
+		case .getSubordinateShopping(let uid):
+			var p = [String : Any]();
+			p["uid"] = uid
+			return  p
+		}
         
     }
 }

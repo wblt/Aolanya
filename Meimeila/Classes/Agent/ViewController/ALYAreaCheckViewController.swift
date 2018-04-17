@@ -9,7 +9,19 @@
 import UIKit
 
 class ALYAreaCheckViewController: DDBaseViewController {
+	
+	var toBeAuditedArray = [AgentInfoDataModel]()
+	
 	@IBOutlet weak var tableView: UITableView!
+	
+	//iOS8用到XIB必须写这两个方法
+	init() {
+		super.init(nibName: String.init(describing: ALYAreaCheckViewController.self), bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +82,7 @@ extension ALYAreaCheckViewController:UITableViewDelegate{
 extension ALYAreaCheckViewController:UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 10
+		return self.toBeAuditedArray.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +105,7 @@ extension ALYAreaCheckViewController:UITableViewDataSource {
 			
 			cell = Bundle.main.loadNibNamed(String.init(describing: ALYAgentCardTabCell.self), owner: nil, options: nil)?.last as? ALYAgentCardTabCell;
 		}
-		cell?.addresstitleLab.text = "申请区域："
+		cell?.data1 = self.toBeAuditedArray[indexPath.section]
 		
 		return cell!;
 	}

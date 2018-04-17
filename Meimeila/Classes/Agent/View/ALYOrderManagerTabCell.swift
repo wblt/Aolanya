@@ -19,9 +19,27 @@ class ALYOrderManagerTabCell: UITableViewCell {
 	@IBOutlet weak var totalPriceLab: UILabel!
 	
 	
-	
-	
-	
+	var data: SubordinateShoopingModel? {
+		didSet {
+			//leveTitlelab.text = data?.realName
+			nameLab.text = data?.realName
+			
+			if data?.level == "5" {
+				levelLab.text = "联合创始人"
+			}else if data?.level == "4" {
+				levelLab.text = "联合股东"
+			}else if data?.level == "3" {
+				levelLab.text = "大区"
+			}else if data?.level == "2" {
+				levelLab.text = "金牌会员"
+			}else  { //1
+				levelLab.text = "零售"
+			}
+			
+			numLab.text = data?.dataCount ?? ""
+			totalPriceLab.text = data?.dataCount ?? "0.00"
+		}
+	}
 	
 	
     override func awakeFromNib() {

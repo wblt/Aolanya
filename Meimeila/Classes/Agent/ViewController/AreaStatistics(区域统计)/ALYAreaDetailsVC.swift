@@ -1,21 +1,25 @@
 //
-//  ALYLastAgentVC.swift
+//  ALYAreaDetailsVC.swift
 //  Meimeila
 //
-//  Created by yanghuan on 2018/4/16.
+//  Created by yanghuan on 2018/4/17.
 //  Copyright © 2018年 HJQ. All rights reserved.
 //
 
 import UIKit
+import SwiftyJSON
 
-class ALYLastAgentVC: DDBaseViewController {
-	var superiorAgentModel:AgentInfoDataModel?
+class ALYAreaDetailsVC: DDBaseViewController {
 	
-    @IBOutlet weak var tableView: UITableView!
+	var areaDetails:[ShopDataModel]?
+	var provice: String?
+	var city:String?
+	
+	@IBOutlet weak var tableView: UITableView!
 	
 	//iOS8用到XIB必须写这两个方法
 	init() {
-		super.init(nibName: String.init(describing: ALYLastAgentVC.self), bundle: nil)
+		super.init(nibName: String.init(describing: ALYAreaDetailsVC.self), bundle: nil)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -26,9 +30,7 @@ class ALYLastAgentVC: DDBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		self.navigationItem.title = "上级代理"
-		bindMJRefresh()
-		
+		self.navigationItem.title = "区域统计"
     }
 
 	override func setupUI() {
@@ -39,20 +41,9 @@ class ALYLastAgentVC: DDBaseViewController {
 		self.tableView.backgroundColor = DDGlobalBGColor();
 		self.tableView.showsVerticalScrollIndicator = false;
 		self.tableView.separatorColor = UIColor.clear;
-		self.tableView.register(UINib.init(nibName: String.init(describing: ALYAgentCardTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYAgentCardTabCell.self));
-	}
-	
-	///MJ
-	func bindMJRefresh() {
-		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
-			
+		self.tableView.register(UINib.init(nibName: String.init(describing: ALYAreaDetailsTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYAreaDetailsTabCell.self));
 		
-		}) {[weak self] in
-			
-			
-		}
 	}
-	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,18 +62,34 @@ class ALYLastAgentVC: DDBaseViewController {
 
 }
 
-extension ALYLastAgentVC:UITableViewDelegate{
+extension ALYAreaDetailsVC:UITableViewDelegate{
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
+		let model:ShopDataModel = areaDetails![indexPath.row]
+		
+		let json = model.shoppingDate
+		
+		var ary = [ShoppingDataModel]()
+		for item in json! {
+			let shoppingData:ShoppingDataModel = ShoppingDataModel.init(fromJson:item as! JSON)
+			ary.append(shoppingData)
+		}
+		
+		if ary.count == 0 {
+			return
+		}
+		let vc = ALYAreaShoppingDataVC()
+		vc.shoppingDataArray = ary
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
 }
 
-extension ALYLastAgentVC:UITableViewDataSource {
+extension ALYAreaDetailsVC:UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
+		return (areaDetails?.count)!
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,12 +97,20 @@ extension ALYLastAgentVC:UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 195
+		return 140
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 0.01;
+	}
+	
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 0.01;
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		var cell:ALYAgentCardTabCell? = tableView.dequeueReusableCell(withIdentifier: String.init(describing: ALYAgentCardTabCell.self)) as? ALYAgentCardTabCell;
+		var cell:ALYAreaDetailsTabCell? = tableView.dequeueReusableCell(withIdentifier: String.init(describing: ALYAreaDetailsTabCell.self)) as? ALYAreaDetailsTabCell;
 		cell?.separatorInset.left = 0;
 		cell?.selectionStyle = .none;
 		cell?.backgroundColor =  UIColor.RGB(r: 245, g: 245, b: 245)
@@ -103,11 +118,14 @@ extension ALYLastAgentVC:UITableViewDataSource {
 			
 		}else{
 			
-			cell = Bundle.main.loadNibNamed(String.init(describing: ALYAgentCardTabCell.self), owner: nil, options: nil)?.last as? ALYAgentCardTabCell;
+			cell = Bundle.main.loadNibNamed(String.init(describing: ALYAreaDetailsTabCell.self), owner: nil, options: nil)?.last as? ALYAreaDetailsTabCell;
 		}
-		cell?.data = self.superiorAgentModel
+		cell?.proviceLab.text = provice
+		cell?.cityLab.text = city
+		cell?.monthLab.text = areaDetails![indexPath.section].time
 		
 		return cell!;
 	}
 	
 }
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALYOrderManagerListVC" customModule="Meimeila" customModuleProvider="target">
+            <connections>
+                <outlet property="btBGView" destination="m7T-PJ-VOZ" id="sBO-Px-TUp"/>
+                <outlet property="collectionView" destination="RyT-75-iDm" id="VDY-RK-5cK"/>
+                <outlet property="finshBtn" destination="WoD-18-yBP" id="O01-Fj-OPP"/>
+                <outlet property="notReceiveBtn" destination="oae-EY-WYb" id="EJ7-Gt-0gt"/>
+                <outlet property="notSendBtn" destination="BfI-7b-roS" id="rtM-VI-OS5"/>
+                <outlet property="notSureBtn" destination="drx-YZ-SUW" id="DQG-Gk-7qD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7T-PJ-VOZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drx-YZ-SUW">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="未确认">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="noSureAction:" destination="-1" eventType="touchUpInside" id="VZG-KZ-HYe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfI-7b-roS">
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="未发货">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="notSendAction:" destination="-1" eventType="touchUpInside" id="qxz-Kz-8Av"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oae-EY-WYb">
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="未收货">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="notReceiveAction:" destination="-1" eventType="touchUpInside" id="5Qx-57-Jhs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoD-18-yBP">
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="已完成">
+                                <color key="titleColor" red="0.45497938989999998" green="0.45497032999999998" blue="0.45497646930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="finishAction:" destination="-1" eventType="touchUpInside" id="bdZ-wD-lRZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="WoD-18-yBP" firstAttribute="width" secondItem="drx-YZ-SUW" secondAttribute="width" id="RGL-hJ-0Zv"/>
+                        <constraint firstAttribute="height" constant="44" id="ni5-Gg-5JK"/>
+                        <constraint firstItem="BfI-7b-roS" firstAttribute="width" secondItem="drx-YZ-SUW" secondAttribute="width" id="prz-zD-ggp"/>
+                        <constraint firstItem="oae-EY-WYb" firstAttribute="width" secondItem="drx-YZ-SUW" secondAttribute="width" id="tSc-hE-gkI"/>
+                    </constraints>
+                </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RyT-75-iDm">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ij2-uF-KmH">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RyT-75-iDm" secondAttribute="trailing" id="HdM-T3-jwh"/>
+                <constraint firstItem="m7T-PJ-VOZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Iqz-1O-P0o"/>
+                <constraint firstItem="RyT-75-iDm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RCk-OH-TUu"/>
+                <constraint firstItem="m7T-PJ-VOZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SJ9-Gx-yW3"/>
+                <constraint firstItem="RyT-75-iDm" firstAttribute="top" secondItem="m7T-PJ-VOZ" secondAttribute="bottom" id="YeO-Nh-oTY"/>
+                <constraint firstAttribute="trailing" secondItem="m7T-PJ-VOZ" secondAttribute="trailing" id="gvi-sj-sCh"/>
+                <constraint firstItem="RyT-75-iDm" firstAttribute="top" secondItem="m7T-PJ-VOZ" secondAttribute="bottom" id="nPb-xM-kmD"/>
+                <constraint firstAttribute="bottom" secondItem="RyT-75-iDm" secondAttribute="bottom" id="oew-Ik-z2v"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

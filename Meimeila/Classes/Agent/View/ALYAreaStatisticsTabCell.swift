@@ -19,6 +19,17 @@ class ALYAreaStatisticsTabCell: UITableViewCell {
 	
 	@IBOutlet weak var cityPeoLab: UILabel!
 	
+	
+	
+	var data: RegionShoppingModel? {
+		didSet {
+			provinceLab.text = data?.regionProvince
+			cityLab.text = data?.regionCity
+			provincePeoLab.text = "此省无合伙人"
+			cityPeoLab.text = "此市无合伙人"
+		}
+	}
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

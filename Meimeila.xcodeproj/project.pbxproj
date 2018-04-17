@@ -629,6 +629,28 @@
 		F83CF8D2207A1BD500FA9423 /* ALYAgentCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */; };
 		F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */; };
 		F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */; };
+		F8968E5020859EFC003F7D00 /* RegionShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */; };
+		F8968E522085A9CB003F7D00 /* SubordinateShoopingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */; };
+		F8968E562085D2DE003F7D00 /* ALYAreaDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E542085D2DE003F7D00 /* ALYAreaDetailsVC.swift */; };
+		F8968E572085D2DE003F7D00 /* ALYAreaDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E552085D2DE003F7D00 /* ALYAreaDetailsVC.xib */; };
+		F8968E5A2085D328003F7D00 /* ALYAreaShoppingDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E582085D328003F7D00 /* ALYAreaShoppingDataVC.swift */; };
+		F8968E5B2085D328003F7D00 /* ALYAreaShoppingDataVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E592085D328003F7D00 /* ALYAreaShoppingDataVC.xib */; };
+		F8968E5E2085D378003F7D00 /* ALYAreaDetailsTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E5C2085D378003F7D00 /* ALYAreaDetailsTabCell.swift */; };
+		F8968E5F2085D378003F7D00 /* ALYAreaDetailsTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E5D2085D378003F7D00 /* ALYAreaDetailsTabCell.xib */; };
+		F8968E622085D394003F7D00 /* ALYAreaShoppingTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E602085D394003F7D00 /* ALYAreaShoppingTabCell.swift */; };
+		F8968E632085D394003F7D00 /* ALYAreaShoppingTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E612085D394003F7D00 /* ALYAreaShoppingTabCell.xib */; };
+		F8968E652085D9E6003F7D00 /* ShoppingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E642085D9E6003F7D00 /* ShoppingDataModel.swift */; };
+		F8968E672085E080003F7D00 /* ShopDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E662085E080003F7D00 /* ShopDataModel.swift */; };
+		F8968E6B2085F161003F7D00 /* ALYOrderManagerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E692085F161003F7D00 /* ALYOrderManagerListVC.swift */; };
+		F8968E6C2085F161003F7D00 /* ALYOrderManagerListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E6A2085F161003F7D00 /* ALYOrderManagerListVC.xib */; };
+		F8968E6F2085F74A003F7D00 /* ALYNotSureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E6D2085F74A003F7D00 /* ALYNotSureVC.swift */; };
+		F8968E702085F74A003F7D00 /* ALYNotSureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E6E2085F74A003F7D00 /* ALYNotSureVC.xib */; };
+		F8968E732085F760003F7D00 /* ALYNotSendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E712085F760003F7D00 /* ALYNotSendVC.swift */; };
+		F8968E742085F760003F7D00 /* ALYNotSendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E722085F760003F7D00 /* ALYNotSendVC.xib */; };
+		F8968E772085F77E003F7D00 /* ALYNotRecivedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E752085F77E003F7D00 /* ALYNotRecivedVC.swift */; };
+		F8968E782085F77E003F7D00 /* ALYNotRecivedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E762085F77E003F7D00 /* ALYNotRecivedVC.xib */; };
+		F8968E7B2085F790003F7D00 /* AYLFinishVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E792085F790003F7D00 /* AYLFinishVCViewController.swift */; };
+		F8968E7C2085F790003F7D00 /* AYLFinishVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8968E7A2085F790003F7D00 /* AYLFinishVCViewController.xib */; };
 		F8D5ACD5208453D900100C9F /* ALYLastAgentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5ACD3208453D900100C9F /* ALYLastAgentVC.swift */; };
 		F8D5ACD6208453D900100C9F /* ALYLastAgentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D5ACD4208453D900100C9F /* ALYLastAgentVC.xib */; };
 		F8D5ACD92084547000100C9F /* ALYAgentCardTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5ACD72084547000100C9F /* ALYAgentCardTabCell.swift */; };
@@ -1313,6 +1335,28 @@
 		F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentCheckVC.swift; sourceTree = "<group>"; };
 		F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentCheckVC.xib; sourceTree = "<group>"; };
 		F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentApplyAPI.swift; sourceTree = "<group>"; };
+		F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionShoppingModel.swift; sourceTree = "<group>"; };
+		F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubordinateShoopingModel.swift; sourceTree = "<group>"; };
+		F8968E542085D2DE003F7D00 /* ALYAreaDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAreaDetailsVC.swift; sourceTree = "<group>"; };
+		F8968E552085D2DE003F7D00 /* ALYAreaDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAreaDetailsVC.xib; sourceTree = "<group>"; };
+		F8968E582085D328003F7D00 /* ALYAreaShoppingDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAreaShoppingDataVC.swift; sourceTree = "<group>"; };
+		F8968E592085D328003F7D00 /* ALYAreaShoppingDataVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAreaShoppingDataVC.xib; sourceTree = "<group>"; };
+		F8968E5C2085D378003F7D00 /* ALYAreaDetailsTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAreaDetailsTabCell.swift; sourceTree = "<group>"; };
+		F8968E5D2085D378003F7D00 /* ALYAreaDetailsTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAreaDetailsTabCell.xib; sourceTree = "<group>"; };
+		F8968E602085D394003F7D00 /* ALYAreaShoppingTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAreaShoppingTabCell.swift; sourceTree = "<group>"; };
+		F8968E612085D394003F7D00 /* ALYAreaShoppingTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAreaShoppingTabCell.xib; sourceTree = "<group>"; };
+		F8968E642085D9E6003F7D00 /* ShoppingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingDataModel.swift; sourceTree = "<group>"; };
+		F8968E662085E080003F7D00 /* ShopDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataModel.swift; sourceTree = "<group>"; };
+		F8968E692085F161003F7D00 /* ALYOrderManagerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYOrderManagerListVC.swift; sourceTree = "<group>"; };
+		F8968E6A2085F161003F7D00 /* ALYOrderManagerListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYOrderManagerListVC.xib; sourceTree = "<group>"; };
+		F8968E6D2085F74A003F7D00 /* ALYNotSureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYNotSureVC.swift; sourceTree = "<group>"; };
+		F8968E6E2085F74A003F7D00 /* ALYNotSureVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYNotSureVC.xib; sourceTree = "<group>"; };
+		F8968E712085F760003F7D00 /* ALYNotSendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYNotSendVC.swift; sourceTree = "<group>"; };
+		F8968E722085F760003F7D00 /* ALYNotSendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYNotSendVC.xib; sourceTree = "<group>"; };
+		F8968E752085F77E003F7D00 /* ALYNotRecivedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYNotRecivedVC.swift; sourceTree = "<group>"; };
+		F8968E762085F77E003F7D00 /* ALYNotRecivedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYNotRecivedVC.xib; sourceTree = "<group>"; };
+		F8968E792085F790003F7D00 /* AYLFinishVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AYLFinishVCViewController.swift; sourceTree = "<group>"; };
+		F8968E7A2085F790003F7D00 /* AYLFinishVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AYLFinishVCViewController.xib; sourceTree = "<group>"; };
 		F8D5ACD3208453D900100C9F /* ALYLastAgentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYLastAgentVC.swift; sourceTree = "<group>"; };
 		F8D5ACD4208453D900100C9F /* ALYLastAgentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYLastAgentVC.xib; sourceTree = "<group>"; };
 		F8D5ACD72084547000100C9F /* ALYAgentCardTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentCardTabCell.swift; sourceTree = "<group>"; };
@@ -4289,6 +4333,10 @@
 				F8D5ACDC208474A900100C9F /* ALYOrderManagerTabCell.xib */,
 				F8D5ACDF20847A4100100C9F /* ALYAreaStatisticsTabCell.swift */,
 				F8D5ACE020847A4100100C9F /* ALYAreaStatisticsTabCell.xib */,
+				F8968E5C2085D378003F7D00 /* ALYAreaDetailsTabCell.swift */,
+				F8968E5D2085D378003F7D00 /* ALYAreaDetailsTabCell.xib */,
+				F8968E602085D394003F7D00 /* ALYAreaShoppingTabCell.swift */,
+				F8968E612085D394003F7D00 /* ALYAreaShoppingTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4308,6 +4356,10 @@
 			children = (
 				F83477CA207B16A500E4F926 /* LevelCardModel.swift */,
 				CF71654F2084E82D0092692F /* AgentInfoDataModel.swift */,
+				F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */,
+				F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */,
+				F8968E642085D9E6003F7D00 /* ShoppingDataModel.swift */,
+				F8968E662085E080003F7D00 /* ShopDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4326,6 +4378,8 @@
 		F83CF8BF2079ADE400FA9423 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F8968E682085EFCA003F7D00 /* OrderManager(订单管理) */,
+				F8968E532085D28A003F7D00 /* AreaStatistics(区域统计) */,
 				F83CF8C02079AE3E00FA9423 /* ALYAgentViewController.swift */,
 				F83CF8C12079AE3E00FA9423 /* ALYAgentViewController.xib */,
 				F83CF8C42079C80500FA9423 /* ALYAgentlevelVC.swift */,
@@ -4344,14 +4398,42 @@
 				F8D5ACEC20849CD300100C9F /* ALYNextAgentManagerVC.xib */,
 				F8D5ACEF20849D9600100C9F /* ALYAgentCheckManagerVC.swift */,
 				F8D5ACF020849D9600100C9F /* ALYAgentCheckManagerVC.xib */,
-				F8D5ACF320849DB100100C9F /* ALYOrderManagerVC.swift */,
-				F8D5ACF420849DB100100C9F /* ALYOrderManagerVC.xib */,
-				F8D5ACF720849DCD00100C9F /* ALYAreaVC.swift */,
-				F8D5ACF820849DCD00100C9F /* ALYAreaVC.xib */,
 				F8D5ACFB20849DE500100C9F /* ALYAreaCheckViewController.swift */,
 				F8D5ACFC20849DE500100C9F /* ALYAreaCheckViewController.xib */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F8968E532085D28A003F7D00 /* AreaStatistics(区域统计) */ = {
+			isa = PBXGroup;
+			children = (
+				F8D5ACF720849DCD00100C9F /* ALYAreaVC.swift */,
+				F8D5ACF820849DCD00100C9F /* ALYAreaVC.xib */,
+				F8968E542085D2DE003F7D00 /* ALYAreaDetailsVC.swift */,
+				F8968E552085D2DE003F7D00 /* ALYAreaDetailsVC.xib */,
+				F8968E582085D328003F7D00 /* ALYAreaShoppingDataVC.swift */,
+				F8968E592085D328003F7D00 /* ALYAreaShoppingDataVC.xib */,
+			);
+			path = "AreaStatistics(区域统计)";
+			sourceTree = "<group>";
+		};
+		F8968E682085EFCA003F7D00 /* OrderManager(订单管理) */ = {
+			isa = PBXGroup;
+			children = (
+				F8D5ACF320849DB100100C9F /* ALYOrderManagerVC.swift */,
+				F8D5ACF420849DB100100C9F /* ALYOrderManagerVC.xib */,
+				F8968E692085F161003F7D00 /* ALYOrderManagerListVC.swift */,
+				F8968E6A2085F161003F7D00 /* ALYOrderManagerListVC.xib */,
+				F8968E6D2085F74A003F7D00 /* ALYNotSureVC.swift */,
+				F8968E6E2085F74A003F7D00 /* ALYNotSureVC.xib */,
+				F8968E712085F760003F7D00 /* ALYNotSendVC.swift */,
+				F8968E722085F760003F7D00 /* ALYNotSendVC.xib */,
+				F8968E752085F77E003F7D00 /* ALYNotRecivedVC.swift */,
+				F8968E762085F77E003F7D00 /* ALYNotRecivedVC.xib */,
+				F8968E792085F790003F7D00 /* AYLFinishVCViewController.swift */,
+				F8968E7A2085F790003F7D00 /* AYLFinishVCViewController.xib */,
+			);
+			path = "OrderManager(订单管理)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4478,7 +4560,9 @@
 				22DA88F81FCD633C00F68576 /* jquery.mobile-1.0rc2.min.js in Resources */,
 				22268A841FDBC791001A9146 /* MMLBindPhoneVC.xib in Resources */,
 				22052C231F9B399500483E59 /* SelectAddressVC.xib in Resources */,
+				F8968E632085D394003F7D00 /* ALYAreaShoppingTabCell.xib in Resources */,
 				22B8FBA91F9DE65B001638A2 /* MMLEditeInfoVC.xib in Resources */,
+				F8968E5F2085D378003F7D00 /* ALYAreaDetailsTabCell.xib in Resources */,
 				6668F7511F9DD39600CDF74A /* MMLWithdrawalRecordCell.xib in Resources */,
 				22F146BC1FCFF22200B78B0F /* MMLReportWaterAndOilCell.xib in Resources */,
 				229EB5651FCBE94E003F18C3 /* MMLMusicVC.xib in Resources */,
@@ -4511,6 +4595,7 @@
 				22DA88E61FCD633C00F68576 /* photoswipe-icons.png in Resources */,
 				668B5C441F9840B500D276AE /* MMLProductCommentCell.xib in Resources */,
 				221575401F99EBDC00BC94EF /* MMLPocketVC.xib in Resources */,
+				F8968E782085F77E003F7D00 /* ALYNotRecivedVC.xib in Resources */,
 				221012A71FC956B70074ED03 /* MMLAboutUsCell.xib in Resources */,
 				225195C01FF4CC8F006A1611 /* MMLContactServiceVC.xib in Resources */,
 				668B5C4F1F98583100D276AE /* MMLSettlementProductListCell.xib in Resources */,
@@ -4547,8 +4632,10 @@
 				66D130901F96F3C4002C8BE8 /* MMLSearchVC.xib in Resources */,
 				666971351F99F92000A30598 /* MMLWithdrawVC.xib in Resources */,
 				66E3C9F81FCED32D00B034EA /* MMLNewsWelfareVC.xib in Resources */,
+				F8968E5B2085D328003F7D00 /* ALYAreaShoppingDataVC.xib in Resources */,
 				22052C091F9ADD4000483E59 /* MMLWaitPay.xib in Resources */,
 				22DA88DB1FCD633C00F68576 /* flexslider.css in Resources */,
+				F8968E742085F760003F7D00 /* ALYNotSendVC.xib in Resources */,
 				226158EE1FDE877A00CF46F8 /* MMHealthBeansCell.xib in Resources */,
 				F8D5ACEA2084992A00100C9F /* ALYagentManagerTabCell.xib in Resources */,
 				224DD5F51FF39D6500D1AD67 /* MMLLuckGiftVC.xib in Resources */,
@@ -4600,8 +4687,10 @@
 				CF083B7D207FC9A00037C840 /* ALYAgentManagerVC.xib in Resources */,
 				F8D5ACF220849D9600100C9F /* ALYAgentCheckManagerVC.xib in Resources */,
 				CF6986F7207E608E006E15CB /* ALYAboutUsVC.xib in Resources */,
+				F8968E702085F74A003F7D00 /* ALYNotSureVC.xib in Resources */,
 				22DA88EC1FCD633C00F68576 /* glyphicons-halflings-regular.svg in Resources */,
 				22DA88F11FCD633C00F68576 /* bootstrap.min.js in Resources */,
+				F8968E7C2085F790003F7D00 /* AYLFinishVCViewController.xib in Resources */,
 				22D790DB1FC67AA500C150AB /* MMLOrderDetailVC.xib in Resources */,
 				22052C2A1F9B48FA00483E59 /* MMLSetHeadIconVC.xib in Resources */,
 				22D790CA1FC66AC500C150AB /* DDPopAlterVC.xib in Resources */,
@@ -4636,6 +4725,7 @@
 				221F1EF31FF1DB18001F36B1 /* MMLLuckDrawRecoardVC.xib in Resources */,
 				66C93B9C1F98A121005EB4E3 /* MMLContentDetailsVC.xib in Resources */,
 				66D130941F96F3F2002C8BE8 /* MMLProductListVC.xib in Resources */,
+				F8968E572085D2DE003F7D00 /* ALYAreaDetailsVC.xib in Resources */,
 				2230A33B1F98877F00F6EF8F /* MMLMineCell.xib in Resources */,
 				22DA88EB1FCD633C00F68576 /* glyphicons-halflings-regular.eot in Resources */,
 				66C93B8C1F9895A2005EB4E3 /* MMLProductIntroduceCell.xib in Resources */,
@@ -4657,6 +4747,7 @@
 				224351F51FC57B8700F039D6 /* CheckLogisticsCell.xib in Resources */,
 				6614E7411F9596B70061EDCE /* MMLFoundTableViewCell.xib in Resources */,
 				22DA88E31FCD633C00F68576 /* foundation.css in Resources */,
+				F8968E6C2085F161003F7D00 /* ALYOrderManagerListVC.xib in Resources */,
 				22DA88E71FCD633C00F68576 /* photoswipe-icons_402x.png in Resources */,
 				6643450E1F95E81E00450EF7 /* MMLProductDetailsVC.xib in Resources */,
 				22052C051F9ADD1E00483E59 /* MMLWaitGet.xib in Resources */,
@@ -4830,8 +4921,10 @@
 				66D803F61F94D2A80022FEAE /* BabyToy.m in Sources */,
 				66EAE89E1FCE4AF700BC6806 /* String-JQDownLoader.swift in Sources */,
 				22D790DA1FC67AA500C150AB /* MMLOrderDetailVC.swift in Sources */,
+				F8968E672085E080003F7D00 /* ShopDataModel.swift in Sources */,
 				6645A7461FC3FF1800B3280A /* WelcomeVC.swift in Sources */,
 				66D130AB1F973962002C8BE8 /* DDShoppingCarListData.swift in Sources */,
+				F8968E5E2085D378003F7D00 /* ALYAreaDetailsTabCell.swift in Sources */,
 				66D803F71F94D2A80022FEAE /* BannerHoverView.swift in Sources */,
 				22268A941FDBD803001A9146 /* MMLMineSetViewModel.swift in Sources */,
 				6623D6E61FBA8E79008BB067 /* MSXAddressVM.swift in Sources */,
@@ -4891,6 +4984,7 @@
 				666FADA21FB9862C0011CBBF /* DDLineChartLineDataSetStyle.swift in Sources */,
 				666FAD8C1FB985960011CBBF /* YLAnimatedTransition.swift in Sources */,
 				66D804031F94D2A80022FEAE /* DDWechatShare.swift in Sources */,
+				F8968E622085D394003F7D00 /* ALYAreaShoppingTabCell.swift in Sources */,
 				666FAD8E1FB985960011CBBF /* YLExtension.swift in Sources */,
 				225195C61FF4D0AC006A1611 /* MMLServiceViewModel.swift in Sources */,
 				6645A7731FC4037200B3280A /* BlueToothEntity.swift in Sources */,
@@ -4959,9 +5053,11 @@
 				F8D5ACED20849CD300100C9F /* ALYNextAgentManagerVC.swift in Sources */,
 				22052C191F9B2F1100483E59 /* MMLAddNewAddressVC.swift in Sources */,
 				66D130AD1F973962002C8BE8 /* DDProductAddOrSubtractView.swift in Sources */,
+				F8968E562085D2DE003F7D00 /* ALYAreaDetailsVC.swift in Sources */,
 				22FF14DB1FC90CC0000C76FE /* MakeCommentViewModel.swift in Sources */,
 				66D8040F1F94D2A80022FEAE /* JQUIImageView-Extension.swift in Sources */,
 				66D804101F94D2A80022FEAE /* JQUIView-Extension.swift in Sources */,
+				F8968E5A2085D328003F7D00 /* ALYAreaShoppingDataVC.swift in Sources */,
 				66BBD7EE1FCBFECB001C2ACD /* MMLMyMessageVC.swift in Sources */,
 				66EEA9951FCD814C00159065 /* MMLSystemMessageListCell.swift in Sources */,
 				2230A3401F98909100F6EF8F /* MMLHeadBtCell.swift in Sources */,
@@ -4991,6 +5087,7 @@
 				66EFC3D01F9CE7AB0010A244 /* JQNavigationController.swift in Sources */,
 				221F1EFD1FF2201A001F36B1 /* MMLLuckDrawRecordViewModel.swift in Sources */,
 				22DA88A41FCD437000F68576 /* MSXMessageVM.swift in Sources */,
+				F8968E6B2085F161003F7D00 /* ALYOrderManagerListVC.swift in Sources */,
 				226158E81FDE849A00CF46F8 /* BeansRechargeVC.swift in Sources */,
 				22D790B11FC664F800C150AB /* SectionHeadView.swift in Sources */,
 				6645A7741FC4037200B3280A /* PeripheralInfo.swift in Sources */,
@@ -5016,11 +5113,13 @@
 				22EF70381FC01F8D00BFCC99 /* MSXVersionViewModel.swift in Sources */,
 				22DA890C1FCD677C00F68576 /* ReasonTFCell.swift in Sources */,
 				22D790C31FC66A2C00C150AB /* PayImmediatelyViewModel.swift in Sources */,
+				F8968E7B2085F790003F7D00 /* AYLFinishVCViewController.swift in Sources */,
 				F8D5ACDD208474A900100C9F /* ALYOrderManagerTabCell.swift in Sources */,
 				221012A61FC956B70074ED03 /* MMLAboutUsCell.swift in Sources */,
 				66D804201F94D2A80022FEAE /* SearchProductAPI.swift in Sources */,
 				66D804211F94D2A80022FEAE /* ShopCollectAPI.swift in Sources */,
 				6607F8A61F9B35030083C1E4 /* MMLMyCollectionListModel.swift in Sources */,
+				F8968E732085F760003F7D00 /* ALYNotSendVC.swift in Sources */,
 				66D804221F94D2A80022FEAE /* ShoppingcarAPI.swift in Sources */,
 				66EAE89B1FCE4AF700BC6806 /* JQAudioTool.swift in Sources */,
 				66D804241F94D2A80022FEAE /* DDErrorModel.swift in Sources */,
@@ -5080,6 +5179,7 @@
 				22F146BF1FCFF5C500B78B0F /* MMLReportTitleCell.swift in Sources */,
 				22D790B01FC664F800C150AB /* ListBGView.swift in Sources */,
 				66A061D71F9B10FE0055F25E /* MMLDefaultAddressData.swift in Sources */,
+				F8968E772085F77E003F7D00 /* ALYNotRecivedVC.swift in Sources */,
 				66A061D81F9B10FE0055F25E /* MMLDefaultAddressModel.swift in Sources */,
 				6659DE291F9DC31B009367C0 /* MMLWithdrawViewModel.swift in Sources */,
 				66D804321F94D2A80022FEAE /* UIView-RedPointExtension.swift in Sources */,
@@ -5111,6 +5211,7 @@
 				66C93B9B1F98A121005EB4E3 /* MMLContentDetailsVC.swift in Sources */,
 				66D8043B1F94D2A80022FEAE /* DDXAxisValueFormatter.swift in Sources */,
 				6645A76B1FC4029400B3280A /* DDSmartmaskVC.swift in Sources */,
+				F8968E652085D9E6003F7D00 /* ShoppingDataModel.swift in Sources */,
 				F83CF8CA2079CC2200FA9423 /* ALYAgentMsgInputVC.swift in Sources */,
 				663AB2621F9982FB009AD44B /* MMLRedenvelopeCell.swift in Sources */,
 				66D130B11F973962002C8BE8 /* DDShoppingCarViewModel.swift in Sources */,
@@ -5131,6 +5232,8 @@
 				66D804401F94D2A80022FEAE /* DDCountDownButton.swift in Sources */,
 				66C93B901F989D8F005EB4E3 /* MMLRedenvelopeVC.swift in Sources */,
 				663C1C951F987923006C6E21 /* DDProductDetailsBanner.swift in Sources */,
+				F8968E5020859EFC003F7D00 /* RegionShoppingModel.swift in Sources */,
+				F8968E6F2085F74A003F7D00 /* ALYNotSureVC.swift in Sources */,
 				22B8FBA21F9D99C3001638A2 /* MMLEditeUserCell.swift in Sources */,
 				668B5C461F9846EF00D276AE /* MMLStatusPictureView.swift in Sources */,
 				22D790CE1FC66B3400C150AB /* MSXPocketViewModel.swift in Sources */,
@@ -5155,6 +5258,7 @@
 				22D4837F1FCBF3FD00172A2D /* MMLMusicPlayer.swift in Sources */,
 				66D804441F94D2A80022FEAE /* DDSearchLabel.swift in Sources */,
 				66D804451F94D2A80022FEAE /* DDShareActionSheetView.swift in Sources */,
+				F8968E522085A9CB003F7D00 /* SubordinateShoopingModel.swift in Sources */,
 				6607F8A31F9B320E0083C1E4 /* MMLMyCollectionViewModel.swift in Sources */,
 				665660F11F9B3D7300629064 /* MMLMakeMoneyTableViewCell.swift in Sources */,
 				66D804461F94D2A80022FEAE /* DDShareButtonView.swift in Sources */,

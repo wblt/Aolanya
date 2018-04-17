@@ -36,6 +36,15 @@ class ALYAgentManagerVC: DDBaseViewController {
 	
 	@IBOutlet weak var AreaBgCheckView: UIView!
 	
+	//iOS8用到XIB必须写这两个方法
+	init() {
+		super.init(nibName: String.init(describing: ALYAgentManagerVC.self), bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
     lazy var uservm:MMLUserInfoViewModel = {[weak self] in
         let vm = MMLUserInfoViewModel.init();
         return vm;
@@ -49,7 +58,7 @@ class ALYAgentManagerVC: DDBaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        requestAgentData()
+		
         requestUserInfo()
     }
 	
@@ -73,8 +82,15 @@ class ALYAgentManagerVC: DDBaseViewController {
 	}
     //获取代理人信息
     func requestAgentData() {
-        
-        //agentVm.getAgentManagerData(uid: [], successBlock: <#T##() -> Void#>)
+		
+		let uid = DDUDManager.share.getUserID()
+		agentVm.getAgentManagerData(uid: uid) {[weak self] in
+			
+			self?.nameLab.text = self?.agentVm.superiorAgentModel?.realName ?? self?.uservm.infoModel?.name
+			let num = self?.agentVm.lowerAgentArray.count as! Int
+			self?.numLab.text = "下级代理\(num)人"
+		};
+		
     }
     
 	// 获取用户信息
@@ -83,18 +99,20 @@ class ALYAgentManagerVC: DDBaseViewController {
             
             self?.headImgView.jq_setImage(imageUrl: self?.uservm.infoModel?.picture ?? "", placeholder: "icon_defaultHeadIcon", isShowIndicator: false, isNeedForceRefresh: false)
             
-            self?.nameLab.text = self?.uservm.infoModel?.name ?? DDUDManager.share.getUserID()
-            
+            //self?.nameLab.text = self?.uservm.infoModel?.name ?? DDUDManager.share.getUserID()
+			self?.requestAgentData()
         }
     }
 	
 	@objc func lastAgentTap(){
 		let vc = ALYLastAgentVC()
+		vc.superiorAgentModel = self.agentVm.superiorAgentModel
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	@objc func agentManagerTap() {
 		let vc = ALYNextAgentManagerVC()
+		vc.lowerAgentArray = self.agentVm.lowerAgentArray
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
@@ -112,6 +130,7 @@ class ALYAgentManagerVC: DDBaseViewController {
 	}
 	@objc func areaCheckTap() {
 		let vc = ALYAreaCheckViewController()
+		vc.toBeAuditedArray = self.agentVm.toBeAuditedArray
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	

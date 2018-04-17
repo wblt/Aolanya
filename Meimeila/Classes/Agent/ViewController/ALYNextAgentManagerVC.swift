@@ -10,13 +10,29 @@ import UIKit
 
 class ALYNextAgentManagerVC: DDBaseViewController {
 
+	var lowerAgentArray = [AgentInfoDataModel]()
+	
 	@IBOutlet weak var tableView: UITableView!
+	
+	//iOS8用到XIB必须写这两个方法
+	init() {
+		super.init(nibName: String.init(describing: ALYNextAgentManagerVC.self), bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	lazy var agentVm:AgentManagerViewModel  = {
+		let vm = AgentManagerViewModel.init();
+		return vm;
+	}()
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 		self.navigationItem.title = "代理管理"
-		bindMJRefresh()
     }
 
 	override func setupUI() {
@@ -28,17 +44,6 @@ class ALYNextAgentManagerVC: DDBaseViewController {
 		self.tableView.showsVerticalScrollIndicator = false;
 		self.tableView.separatorColor = UIColor.clear;
 		self.tableView.register(UINib.init(nibName: String.init(describing: ALYagentManagerTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYagentManagerTabCell.self));
-	}
-	
-	///MJ
-	func bindMJRefresh() {
-		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
-			
-			
-		}) {[weak self] in
-			
-			
-		}
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -70,7 +75,7 @@ extension ALYNextAgentManagerVC:UITableViewDelegate{
 extension ALYNextAgentManagerVC:UITableViewDataSource {
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 10
+		return self.lowerAgentArray.count
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,9 +98,24 @@ extension ALYNextAgentManagerVC:UITableViewDataSource {
 			
 			cell = Bundle.main.loadNibNamed(String.init(describing: ALYagentManagerTabCell.self), owner: nil, options: nil)?.last as? ALYagentManagerTabCell;
 		}
-		
+		cell?.data = self.lowerAgentArray[indexPath.section]
+		cell?.delegate = self
 		return cell!;
 	}
 	
 }
 
+extension ALYNextAgentManagerVC:ALYagentManagerTabCellDelegate {
+	func looklowerAgent(model: AgentInfoDataModel?) {
+		
+		agentVm.getAgentManagerData(uid: (model?.uid)!) {[weak self] in
+			if self?.agentVm.lowerAgentArray.count == 0 {
+				BFunction.shared.showMessage("暂无下级代理人")
+				return
+			}
+			let vc = ALYNextAgentManagerVC()
+			vc.lowerAgentArray = (self?.agentVm.lowerAgentArray)!
+			self?.navigationController?.pushViewController(vc, animated: true)
+		}
+	}
+}

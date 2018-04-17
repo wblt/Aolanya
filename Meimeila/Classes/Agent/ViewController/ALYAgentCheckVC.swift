@@ -22,7 +22,14 @@ class ALYAgentCheckVC: DDBaseViewController {
 	@IBOutlet weak var line1: UIView!
 	@IBOutlet weak var line3: UIView!
 	
+	//iOS8用到XIB必须写这两个方法
+	init() {
+		super.init(nibName: String.init(describing: ALYAgentCheckVC.self), bundle: nil)
+	}
 	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()

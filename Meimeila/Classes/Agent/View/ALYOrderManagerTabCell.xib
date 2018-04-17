@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IiI-6A-al0">
-                        <rect key="frame" x="21" y="16" width="321" height="128"/>
+                        <rect key="frame" x="21" y="13" width="321" height="136"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blu-wK-hMW">
                                 <rect key="frame" x="10" y="10" width="50" height="21"/>
@@ -132,17 +132,12 @@
                             <constraint firstItem="wMp-rt-k8h" firstAttribute="top" secondItem="IiI-6A-al0" secondAttribute="top" constant="10" id="nD8-FK-eHr"/>
                             <constraint firstItem="wex-1q-xai" firstAttribute="top" secondItem="5ne-9z-67J" secondAttribute="bottom" constant="10" id="sUf-8h-Dgt"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="IiI-6A-al0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="2JY-FF-HKf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="IiI-6A-al0" secondAttribute="bottom" constant="5" id="66u-Xo-7Dw"/>
-                    <constraint firstItem="IiI-6A-al0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="AnM-xv-9Bj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IiI-6A-al0" secondAttribute="bottom" id="66u-Xo-7Dw"/>
+                    <constraint firstItem="IiI-6A-al0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="AnM-xv-9Bj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IiI-6A-al0" secondAttribute="trailing" constant="5" id="SjH-C4-BYD"/>
                 </constraints>
             </tableViewCellContentView>

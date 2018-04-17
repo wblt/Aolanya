@@ -20,6 +20,7 @@ class AgentInfoDataModel {
     
     //上级代理人拥有的属性
     var regionAdress : String!
+	
     var temporaryRegionLevel : String!
     var aoLanYaAdmin : String!
     
@@ -38,7 +39,11 @@ class AgentInfoDataModel {
         phone = json["phone"].stringValue
         weChat = json["weChat"].stringValue
         address = json["address"].stringValue
-        
+		
+		regionAdress = json["regionAdress"].stringValue
+		temporaryRegionLevel = json["temporaryRegionLevel"].stringValue
+		aoLanYaAdmin = json["aoLanYaAdmin"].stringValue
+		
         inviter = json["inviter"].stringValue
         weChatPayment = json["weChatPayment"].stringValue
         alipayPayment = json["alipayPayment"].stringValue

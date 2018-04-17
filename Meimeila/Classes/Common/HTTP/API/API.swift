@@ -344,4 +344,14 @@ extension API {
 	static let getToExamineoneUidAPI = "tpiot/app/getToExamineoneUid"
 	//获取代理管理数据
     static let getAgentManageData = "tpiot/app/getAgentManage"
+	//获取 区域统计数据
+	static let getAllRegionShoppingData = "tpiot/app/getAllRegionShopping"
+	
+	//获取订单管理数据
+	static let getSubordinateShoppingData = "tpiot/app/getSubordinateShopping"
+	
+	// 同意/ 拒绝代理 、
+	static let agreeAgent = "tpiot/app/agreeAgent"
+	
+	
 }
