@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -56,14 +56,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-TX-Yrd">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-TX-Yrd">
                     <rect key="frame" x="35.5" y="49" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="IfR-m9-QEv"/>
                         <constraint firstAttribute="width" constant="25" id="kDj-Xc-c3w"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="6kA-mE-lxN">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="6kA-mE-lxN">
                     <rect key="frame" x="129" y="49" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="W5a-Ru-Knq"/>
@@ -72,14 +72,14 @@
                         <constraint firstAttribute="width" constant="25" id="yW0-gn-WCk"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="VvW-XF-8ZY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="VvW-XF-8ZY">
                     <rect key="frame" x="222.5" y="49" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="8u4-lE-p5t"/>
                         <constraint firstAttribute="width" constant="25" id="P6c-mg-kzb"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_success" translatesAutoresizingMaskIntoConstraints="NO" id="pXg-VG-6Sw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="pXg-VG-6Sw">
                     <rect key="frame" x="316" y="49" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="iGY-52-Csq"/>
@@ -173,7 +173,7 @@
         </view>
     </objects>
     <resources>
-        <image name="img_fail" width="255" height="255"/>
-        <image name="img_success" width="255" height="255"/>
+        <image name="no_select_agent_progress" width="28" height="28"/>
+        <image name="select_agent_progress" width="28" height="28"/>
     </resources>
 </document>

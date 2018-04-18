@@ -24,7 +24,7 @@ class MMLMineSetViewModel{
 				   ["name":"解除手机号绑定","icon":"icon_Lpass"],
 				   ["name":"收货地址","icon":"icon_mineAddress"],
 				   ["name":"意见反馈","icon":"icon_opinion"],
-                   ["name":"关于","icon":"icon_opinion"]]
+                   ["name":"关于","icon":"icon_aboutUs"]]
         return arr;
     }()
 

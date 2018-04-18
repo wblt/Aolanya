@@ -101,7 +101,7 @@ extension PayImmediatelyVC{
         tableView.rowHeight = 54;
         tableView.delegate = self;
         tableView.dataSource = self;
-        tableView.tableHeaderView = headView;
+       // tableView.tableHeaderView = headView;
         tableView.separatorInset.left = 0;
         tableView.bounces = false;
         tableView.tableFooterView = UIView.init();

@@ -35,6 +35,7 @@ class ALYAgentCheckVC: DDBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "我要赚钱"
     }
 
     override func didReceiveMemoryWarning() {

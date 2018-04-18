@@ -108,7 +108,9 @@ extension MMLMyMessageVC:UITableViewDataSource{
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true);
-		
+		let vc  = ALYMessageDetailsVC()
+        vc.model =  vm.userMessageArr[indexPath.row];
+        self.navigationController?.pushViewController(vc, animated: true);
 		debugLog("消息跳转-\(indexPath.row)");
 	}
 }

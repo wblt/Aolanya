@@ -614,6 +614,8 @@
 		CF71654C2084E3F40092692F /* AgentManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71654B2084E3F40092692F /* AgentManagerViewModel.swift */; };
 		CF71654E2084E59B0092692F /* AgentManagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71654D2084E59B0092692F /* AgentManagerAPI.swift */; };
 		CF7165502084E82D0092692F /* AgentInfoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71654F2084E82D0092692F /* AgentInfoDataModel.swift */; };
+		CF82FDFF2087B55E006EF9B6 /* ALYMessageDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDFD2087B55E006EF9B6 /* ALYMessageDetailsVC.swift */; };
+		CF82FE002087B55E006EF9B6 /* ALYMessageDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDFE2087B55E006EF9B6 /* ALYMessageDetailsVC.xib */; };
 		DF3FB64A9EFBA0350FA6E551 /* Pods_Meimeila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */; };
 		F83477C2207B044E00E4F926 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C1207B044E00E4F926 /* CardLayout.swift */; };
 		F83477C5207B0D3B00E4F926 /* ALYLevelCardColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C3207B0D3B00E4F926 /* ALYLevelCardColCell.swift */; };
@@ -1320,6 +1322,8 @@
 		CF71654B2084E3F40092692F /* AgentManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentManagerViewModel.swift; sourceTree = "<group>"; };
 		CF71654D2084E59B0092692F /* AgentManagerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentManagerAPI.swift; sourceTree = "<group>"; };
 		CF71654F2084E82D0092692F /* AgentInfoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentInfoDataModel.swift; sourceTree = "<group>"; };
+		CF82FDFD2087B55E006EF9B6 /* ALYMessageDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYMessageDetailsVC.swift; sourceTree = "<group>"; };
+		CF82FDFE2087B55E006EF9B6 /* ALYMessageDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYMessageDetailsVC.xib; sourceTree = "<group>"; };
 		E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meimeila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83477C1207B044E00E4F926 /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		F83477C3207B0D3B00E4F926 /* ALYLevelCardColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYLevelCardColCell.swift; sourceTree = "<group>"; };
@@ -1728,6 +1732,8 @@
 			children = (
 				66BBD7EC1FCBFECB001C2ACD /* MMLMyMessageVC.swift */,
 				66BBD7ED1FCBFECB001C2ACD /* MMLMyMessageVC.xib */,
+				CF82FDFD2087B55E006EF9B6 /* ALYMessageDetailsVC.swift */,
+				CF82FDFE2087B55E006EF9B6 /* ALYMessageDetailsVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4633,6 +4639,7 @@
 				666971351F99F92000A30598 /* MMLWithdrawVC.xib in Resources */,
 				66E3C9F81FCED32D00B034EA /* MMLNewsWelfareVC.xib in Resources */,
 				F8968E5B2085D328003F7D00 /* ALYAreaShoppingDataVC.xib in Resources */,
+				CF82FE002087B55E006EF9B6 /* ALYMessageDetailsVC.xib in Resources */,
 				22052C091F9ADD4000483E59 /* MMLWaitPay.xib in Resources */,
 				22DA88DB1FCD633C00F68576 /* flexslider.css in Resources */,
 				F8968E742085F760003F7D00 /* ALYNotSendVC.xib in Resources */,
@@ -4984,6 +4991,7 @@
 				666FADA21FB9862C0011CBBF /* DDLineChartLineDataSetStyle.swift in Sources */,
 				666FAD8C1FB985960011CBBF /* YLAnimatedTransition.swift in Sources */,
 				66D804031F94D2A80022FEAE /* DDWechatShare.swift in Sources */,
+				CF82FDFF2087B55E006EF9B6 /* ALYMessageDetailsVC.swift in Sources */,
 				F8968E622085D394003F7D00 /* ALYAreaShoppingTabCell.swift in Sources */,
 				666FAD8E1FB985960011CBBF /* YLExtension.swift in Sources */,
 				225195C61FF4D0AC006A1611 /* MMLServiceViewModel.swift in Sources */,

@@ -44,20 +44,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="HLz-O4-d9k">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="HLz-O4-d9k">
                     <rect key="frame" x="35.5" y="51" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="5Kq-Sc-q6U"/>
                         <constraint firstAttribute="width" constant="25" id="xHR-I3-R7G"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="YuD-O9-3iG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="YuD-O9-3iG">
                     <rect key="frame" x="221.5" y="51" width="25" height="25"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_success" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-EH-nyh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-EH-nyh">
                     <rect key="frame" x="128.5" y="51" width="25" height="25"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="VLp-eK-Nnz">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="VLp-eK-Nnz">
                     <rect key="frame" x="315" y="51" width="25" height="25"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-Xm-O2c">
@@ -157,7 +157,7 @@
         </view>
     </objects>
     <resources>
-        <image name="img_fail" width="255" height="255"/>
-        <image name="img_success" width="255" height="255"/>
+        <image name="no_select_agent_progress" width="28" height="28"/>
+        <image name="select_agent_progress" width="28" height="28"/>
     </resources>
 </document>

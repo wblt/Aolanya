@@ -92,36 +92,35 @@ class MMLWaitPay: DDBaseViewController {
     //取消订单
     @objc func leftBtAction(_ bt:UIButton) {
         print(bt.tag)
-        let model = vm.orderListArr[bt.tag - 1000];
-        
-        vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
-            
-            self?.requestDataList();
-        })
+
+        let nav = self.parent?.navigationController;
+        let orderModel = vm.orderListArr[bt.tag - 1000];
+        let vc = MMLMineAddressVC();
+        vc.shopModel = orderModel;
+        nav?.pushViewController(vc, animated: true);
     }
     
     //立即付款
     @objc func rightBtAction(_ bt:UIButton) {
         print(bt.tag)
+        
         let nav = self.parent?.navigationController;
         let orderModel = vm.orderListArr[bt.tag - 1000];
         let vc = PayImmediatelyVC()
         vc.shopOrderModel = orderModel;
         nav?.pushViewController(vc, animated: true);
+        
+        
     }
     
     
     
     @objc func modifyBtAction(bt:UIButton){
-        
-        let nav = self.parent?.navigationController;
-        
-        let orderModel = vm.orderListArr[bt.tag - 1000];
-        
-        let vc = MMLMineAddressVC();
-        vc.shopModel = orderModel;
-        nav?.pushViewController(vc, animated: true);
-                
+        let model = vm.orderListArr[bt.tag - 1000];
+        vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
+            
+            self?.requestDataList();
+        })
         
     }
     
@@ -207,9 +206,14 @@ extension MMLWaitPay:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view:SecctionFootView = SecctionFootView.init(frame: CGRect.zero);
-        view.btLeft.setTitle("取消订单", for: .normal)
+//        view.btLeft.setTitle("取消订单", for: .normal)
+//        view.btRight.setTitle("立即付款", for: .normal)
+//        view.modifyMessageBt.setTitle("修改信息", for: UIControlState.normal);
+        
+        view.btLeft.setTitle("修改信息", for: .normal)
         view.btRight.setTitle("立即付款", for: .normal)
-        view.modifyMessageBt.setTitle("修改信息", for: UIControlState.normal);
+        view.modifyMessageBt.setTitle("取消订单", for: UIControlState.normal);
+        
         
         view.btLeft.tag = section + 1000;
         view.btRight.tag = section + 1000;

@@ -83,27 +83,36 @@ class MMLWaitGet: DDBaseViewController {
         
     }
     
-    //查看物流
+    //查看物流   ---- 再次购买
     @objc func leftBtAction(_ bt:UIButton) {
         print(bt.tag)
         let model = vm.orderListArr[bt.tag - 1000];
+//
+//        let vc = CheckLogisticsVC();
+//        vc.model = model;
+//        let nav = parent?.navigationController;
+//        nav?.pushViewController(vc, animated: true);
+        let nav = self.parent?.navigationController;
+        let vc = MMLProductDetailsVC()
+        let mod = model.orderInfo![0] as! ShopOrderInfoModel
+        vc.shoppingID = mod.shopingID;
+        nav?.pushViewController(vc, animated: true)
         
-        let vc = CheckLogisticsVC();
-        vc.model = model;
-        let nav = parent?.navigationController;
-        nav?.pushViewController(vc, animated: true);
     }
     
-    //确认收货
+    //确认收货   ---- 修改信息
     @objc func rightBtAction(_ bt:UIButton) {
         print(bt.tag)
-        
+        let nav = self.parent?.navigationController;
         let model = vm.orderListArr[bt.tag - 1000];
         
-        vm.verifyTakeGoods(orderID:model.orderID ?? "0", succeeds: {[weak self] in
-            
-            self?.requestDataList();
-        })
+//        vm.verifyTakeGoods(orderID:model.orderID ?? "0", succeeds: {[weak self] in
+//
+//            self?.requestDataList();
+//        })
+        let vc = MMLMineAddressVC();
+        vc.shopModel = model;
+        nav?.pushViewController(vc, animated: true);
     }
 }
 
@@ -162,7 +171,7 @@ extension MMLWaitGet:UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let model = vm.orderListArr[section];
         
-        var stateText = "商家未发货";
+        var stateText = "待发货";
         
         if let _ = model.orderState {
             
@@ -194,8 +203,11 @@ extension MMLWaitGet:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view:SecctionFootView = SecctionFootView.init(frame: CGRect.zero);
-        view.btLeft.setTitle("查看物流", for: .normal)
-        view.btRight.setTitle("确认收货", for: .normal)
+//        view.btLeft.setTitle("查看物流", for: .normal)
+//        view.btRight.setTitle("确认收货", for: .normal)
+        view.btLeft.setTitle("再次购买", for: .normal)
+        view.btRight.setTitle("修改信息", for: .normal)
+        
         view.modifyMessageBt.isHidden = true;
         
         view.btLeft.tag = section + 1000;

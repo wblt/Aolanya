@@ -59,9 +59,6 @@ class MMLAllList: DDBaseViewController {
         
     }
     
-    
-    
- 
     func setUI() {
         
         setTableView();
@@ -98,18 +95,20 @@ class MMLAllList: DDBaseViewController {
 //
 //                    self?.requestDataList();
 //                })
-				let vc = MMLMineAddressVC();
-				vc.shopModel = model;
-				nav?.pushViewController(vc, animated: true);
-				
+
+                let vc = MMLMineAddressVC();
+                vc.shopModel = model;
+                nav?.pushViewController(vc, animated: true);
+                
             }else if type == 1{ //待发货- 再次购买 wy
                 
 //                let vc = ApplyForAfterSellVC();
 //                vc.model = model;
 //                navigationController?.pushViewController(vc, animated: true);
 				let vc = MMLProductDetailsVC()
-				vc.shoppingID = model.id
-				navigationController?.pushViewController(vc, animated: true)
+                let mod = model.orderInfo![0] as! ShopOrderInfoModel
+                vc.shoppingID = mod.shopingID;
+				nav?.pushViewController(vc, animated: true)
 				
             }else if type == 2{ //交易成功-删除订单
                 vm.deleteOrderLister(ordetID: model.orderID!, orderState: "2", succeeds: {[weak self] in
@@ -161,16 +160,12 @@ class MMLAllList: DDBaseViewController {
             let type = Int(state);
             print(type ?? 999)
             if type == 0{       //待付款-立即付款
-				
-				let vc = MMLMineAddressVC();
-				vc.shopModel = orderModel;
-				nav?.pushViewController(vc, animated: true);
-				
-//                let nav = self.parent?.navigationController;
-//                let orderModel = vm.orderListArr[bt.tag - 1000];
-//                let vc = PayImmediatelyVC()
-//                vc.shopOrderModel = orderModel;
-//                nav?.pushViewController(vc, animated: true);
+                
+                let nav = self.parent?.navigationController;
+                let orderModel = vm.orderListArr[bt.tag - 1000];
+                let vc = PayImmediatelyVC()
+                vc.shopOrderModel = orderModel;
+                nav?.pushViewController(vc, animated: true);
 				
             }else if type == 1{ //待发货-修改信息 （地址）wy
                 // http://yg.welcare-tech.com.cn/tpiot/app/updateOrder  // 更新地址

@@ -336,7 +336,7 @@ extension API{
 extension API {
 	///检查邀请码
 	static let checkInvitatiobCodeAPI = "tpiot/app/checkInvitationCode"
-	// 省级合伙人
+	// 省/市/级合伙人
 	static let writeRegionAPI = "tpiot/app/writeRegion"
 	// 提交申请资料
 	static let writeApplyMsgAPI = "tpiot/app/writeJoin"

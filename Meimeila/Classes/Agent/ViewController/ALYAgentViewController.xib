@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -44,20 +44,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_success" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-6n-KOL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-6n-KOL">
                     <rect key="frame" x="35" y="51" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="SDT-D8-3iS"/>
                         <constraint firstAttribute="height" constant="25" id="omD-dI-YFb"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="ujc-Bh-NWc">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="ujc-Bh-NWc">
                     <rect key="frame" x="128.5" y="51" width="25" height="25"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="WMn-xb-Apb">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="WMn-xb-Apb">
                     <rect key="frame" x="222" y="51" width="25" height="25"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="dQb-gF-e6P">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_select_agent_progress" translatesAutoresizingMaskIntoConstraints="NO" id="dQb-gF-e6P">
                     <rect key="frame" x="314.5" y="51" width="25" height="25"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgk-LR-dUJ">
@@ -101,7 +101,7 @@
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6B-LP-ttr">
                     <rect key="frame" x="112.5" y="195" width="150" height="35"/>
-                    <color key="backgroundColor" red="0.1247767857" green="0.75691964290000002" blue="0.64433593749999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.74208090790000003" blue="0.25431315100000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="CqV-ss-oRe"/>
                         <constraint firstAttribute="height" constant="35" id="elB-U0-wM1"/>
@@ -112,7 +112,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMi-hC-yUe">
                     <rect key="frame" x="20" y="274" width="335" height="40"/>
-                    <color key="backgroundColor" red="0.1247767857" green="0.75691964290000002" blue="0.64433593749999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.74208090790000003" blue="0.25431315100000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="O4w-qP-mSS"/>
                     </constraints>
@@ -126,7 +126,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-Ie-O0Q">
                     <rect key="frame" x="20" y="334" width="335" height="40"/>
-                    <color key="backgroundColor" red="0.1247767857" green="0.75691964290000002" blue="0.64433593749999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.74208090790000003" blue="0.25431315100000002" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="无邀请码">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,7 +196,7 @@
         </view>
     </objects>
     <resources>
-        <image name="img_fail" width="255" height="255"/>
-        <image name="img_success" width="255" height="255"/>
+        <image name="no_select_agent_progress" width="28" height="28"/>
+        <image name="select_agent_progress" width="28" height="28"/>
     </resources>
 </document>

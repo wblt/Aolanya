@@ -26,7 +26,7 @@ class MMLMineViewModel{
 							 ["name":"个人资料","icon":"icon_mineDate"],
 							// ["name":"我的邀请码:","icon":"icon_Linviter"],
 							 ["name":"健康豆","icon":"icon_bean"]],
-							[["name":"每日任务","icon":"icon_dayTask"],
-							 ["name":"在线客服","icon":"icon_dayTask"]],
-							[["name":"商家入驻洽谈","icon":"icon_dayTask"]]]
+							[["name":"每日任务","icon":"img_assignment"],
+							 ["name":"在线客服","icon":"customer_service"]],
+							[["name":"商家入驻洽谈","icon":"shopjoin"]]]
 }

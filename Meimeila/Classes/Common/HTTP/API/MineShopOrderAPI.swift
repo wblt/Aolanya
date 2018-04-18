@@ -89,27 +89,27 @@ extension MineShopOrderAPI:Request{
         case .waitPayOrder(let numberPage):
             var param = postParameters()
             param["numberPages"] = numberPage
-            param["orderType"] = "0"
+            param["orderStates"] = "0"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
         case .waitSendOrder(let numberPage):
             
             var param = postParameters()
             param["numberPages"] = numberPage
-            param["orderType"] = "1"
+            param["orderStates"] = "1"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
         case .waitGetOrder(let numberPage): //  待收货
             var param = postParameters()
             param["numberPages"] = numberPage
-            param["orderType"] = "1,2"
+            param["orderStates"] = "1,2"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
             
         case .waitCommentOrder(let numberPage): // 已完成
             var param = postParameters()
             param["numberPages"] = numberPage
-            param["orderType"] = "3,4"
+            param["orderStates"] = "3,4"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
         case .reimburseNowOrder(let numberPage):
