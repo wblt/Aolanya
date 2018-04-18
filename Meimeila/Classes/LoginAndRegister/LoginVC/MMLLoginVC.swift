@@ -76,7 +76,21 @@ class MMLLoginVC: DDBaseViewController {
 	}
 	
 	@IBAction func weiboBtLogin(_ sender: Any) {
-		BFunction.shared.showErrorMessage("开发中!")
+		//BFunction.shared.showErrorMessage("开发中!")
+		UMSocialManager.default().getUserInfo(with: UMSocialPlatformType.sina, currentViewController: nil, completion: { (result, error) in
+			
+			if (error != nil) {
+				
+			}else {
+				let resp = result as! UMSocialUserInfoResponse
+				
+				MMLLoginViewModel.shared.loginWeChatAction(openid: resp.uid!, name: resp.name!, gender: resp.unionGender!, iconurl: resp.iconurl!, succeed: {
+					
+					self.perform(#selector(self.succeedLogin), with: nil, afterDelay: 1.0);
+					
+				})
+			}
+		})
 	}
 	
 	//登录

@@ -105,15 +105,21 @@ class ShopOrderModel{
             
             
             //以下是全部订单的列表状态
-            if type == 0{//待付款
-                orderStateTitle = "待付款"
-                leftBtTitle = "取消订单"
-                rightBtTitle = "立即付款"
-                modifyBtTitle = "修改信息"
+            if type == 0{//待付款    // 待审核
+//                orderStateTitle = "待审核"
+//                leftBtTitle = "取消订单"
+//                rightBtTitle = "立即付款"
+//                modifyBtTitle = "修改信息"
+				orderStateTitle = "待审核"
+				leftBtTitle = "修改信息"
+				rightBtTitle = "待审核"
+				modifyBtTitle = "取消订单"
             }else if type == 1{//已付款
-                orderStateTitle = "等待商家发货"
-                leftBtTitle = "退换退货"
-                rightBtTitle = "确认收货"
+                orderStateTitle = "待发货"
+//                leftBtTitle = "退换退货"
+//                rightBtTitle = "确认收货"
+				leftBtTitle = "再次购买"
+				rightBtTitle = "修改信息"
 
             }else if type == 2{//交易成功
                 orderStateTitle = "交易成功"

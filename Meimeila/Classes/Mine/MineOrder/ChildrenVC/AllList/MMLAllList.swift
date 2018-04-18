@@ -92,19 +92,25 @@ class MMLAllList: DDBaseViewController {
         if let state = model.orderState {
             let type = Int(state);
             print(type ?? 999)
-            if type == 0{       //待付款-取消订单
+            if type == 0{       //待审核-   修改收货地址
                 
-                vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
-                    
-                    self?.requestDataList();
-                })
+//                vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
+//
+//                    self?.requestDataList();
+//                })
+				let vc = MMLMineAddressVC();
+				vc.shopModel = model;
+				nav?.pushViewController(vc, animated: true);
+				
+            }else if type == 1{ //待发货- 再次购买 wy
                 
-            }else if type == 1{ //待发货-退换退货
-                
-                let vc = ApplyForAfterSellVC();
-                vc.model = model;
-                navigationController?.pushViewController(vc, animated: true);
-                
+//                let vc = ApplyForAfterSellVC();
+//                vc.model = model;
+//                navigationController?.pushViewController(vc, animated: true);
+				let vc = MMLProductDetailsVC()
+				vc.shoppingID = model.id
+				navigationController?.pushViewController(vc, animated: true)
+				
             }else if type == 2{ //交易成功-删除订单
                 vm.deleteOrderLister(ordetID: model.orderID!, orderState: "2", succeeds: {[weak self] in
                     
@@ -138,8 +144,7 @@ class MMLAllList: DDBaseViewController {
                 nav?.pushViewController(vc, animated: true);
                 
             }
-            
-            
+			
         }
         
     }
@@ -156,20 +161,37 @@ class MMLAllList: DDBaseViewController {
             let type = Int(state);
             print(type ?? 999)
             if type == 0{       //待付款-立即付款
-              
-                let nav = self.parent?.navigationController;
-                let orderModel = vm.orderListArr[bt.tag - 1000];
-                let vc = PayImmediatelyVC()
-                vc.shopOrderModel = orderModel;
-                nav?.pushViewController(vc, animated: true);
-                
-            }else if type == 1{ //待发货-确认收货
-                
-                vm.verifyTakeGoods(orderID: orderModel.orderID ?? "0", succeeds: {[weak self] in
-                    
-                    self?.requestDataList();
-                })
-                
+				
+				let vc = MMLMineAddressVC();
+				vc.shopModel = orderModel;
+				nav?.pushViewController(vc, animated: true);
+				
+//                let nav = self.parent?.navigationController;
+//                let orderModel = vm.orderListArr[bt.tag - 1000];
+//                let vc = PayImmediatelyVC()
+//                vc.shopOrderModel = orderModel;
+//                nav?.pushViewController(vc, animated: true);
+				
+            }else if type == 1{ //待发货-修改信息 （地址）wy
+                // http://yg.welcare-tech.com.cn/tpiot/app/updateOrder  // 更新地址
+//				uid	55
+//				orderID	041815415256909
+//				sign	B57AC53F5FDFDB266E3DFE084ACC586E
+//				adressID	1
+//				token	0
+//				orderState	1
+//				timestamp	1524038313
+				
+				
+//                vm.verifyTakeGoods(orderID: orderModel.orderID ?? "0", succeeds: {[weak self] in
+//
+//                    self?.requestDataList();
+//                })
+				
+				let vc = MMLMineAddressVC();
+				vc.shopModel = orderModel;
+				nav?.pushViewController(vc, animated: true);
+				
             }else if type == 2{ //交易成功-查看订单
                 
                 let model = orderModel;
@@ -228,9 +250,10 @@ class MMLAllList: DDBaseViewController {
                 
                 print("0")
 
-                let vc = MMLMineAddressVC();
-                vc.shopModel = orderModel;
-                nav?.pushViewController(vc, animated: true);
+				vm.deleteOrderLister(ordetID: orderModel.orderID!, orderState: "0", succeeds: {[weak self] in
+					
+					self?.requestDataList();
+				})
                 
                 
             }else if type == 1{//待付款-修改信息

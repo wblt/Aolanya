@@ -10,15 +10,16 @@ import Foundation
 
 private let UMengAppkey =   "5ac325e8a40fa34a15000060" //"5a139a8fb27b0a33b5000044"
 private let UmSocialAppSecret = ""
-private let kWebsiteLinks = "http://nnddkj.com"
+private let kWebsiteLinks = "http://sns.whalecloud.com/sina2/callback"
 
 // QQ
 private let QQ_AppId = "1106801768"
 private let QQ_APPSecret = "5hEFrwsyf10WcSnj"
 
 // sina
-private let Sina_AppId = "3921700954"
-private let Sina_APPSecret = "04b48b094faeb16683c32669824ebdad"
+private let Sina_AppId = "205741529" //"3921700954"
+private let Sina_APPSecret = "a410042a4a5ed03259026a9949790ab6"
+//"04b48b094faeb16683c32669824ebdad"
 
 extension AppDelegate {
     

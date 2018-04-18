@@ -46,7 +46,9 @@
 			<key>CFBundleURLName</key>
 			<string>sina</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>wb205741529</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>

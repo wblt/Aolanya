@@ -82,7 +82,7 @@ extension MineShopOrderAPI:Request{
         switch self {
         case .allOrder(let numberPage):
             
-            var param = postParameters()
+            var param = postParameters() // 所有订单
             param["numberPages"] = numberPage
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
 
@@ -99,17 +99,17 @@ extension MineShopOrderAPI:Request{
             param["orderType"] = "1"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
-        case .waitGetOrder(let numberPage):
+        case .waitGetOrder(let numberPage): //  待收货
             var param = postParameters()
             param["numberPages"] = numberPage
-            param["orderType"] = "3"
+            param["orderType"] = "1,2"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
             
-        case .waitCommentOrder(let numberPage):
+        case .waitCommentOrder(let numberPage): // 已完成
             var param = postParameters()
             param["numberPages"] = numberPage
-            param["orderType"] = "4"
+            param["orderType"] = "3,4"
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true)
             
         case .reimburseNowOrder(let numberPage):
