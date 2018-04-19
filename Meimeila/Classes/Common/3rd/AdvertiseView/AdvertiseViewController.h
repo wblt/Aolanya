@@ -11,5 +11,7 @@
 @interface AdvertiseViewController : UIViewController
 
 @property (nonatomic, copy) NSString *adUrl;
-
+- (BOOL)isFileExistWithFilePath:(NSString *)filePath;
+- (NSString *)getFilePathWithImageName:(NSString *)imageName;
+- (void)getAdvertisingImage:(NSString *)imageUrl;
 @end

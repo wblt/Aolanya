@@ -119,24 +119,24 @@ class MMLHomeVC: DDBaseViewController {
             // 2.设置资讯 和 设置推荐商品
             self?.tableView.reloadData()
         }
-		
-		
-			// 弹出广告
-		let filePath = self.getFilePathWithImageName(imageName: (UserDefaults.standard.string(forKey: "avderImage") ?? ""))
-			
-			let isExist = self.isFileExistWithFilePath(filePath: filePath) as! Bool
-			
-			if isExist {
-				let view = AdvertiseView.init(frame: (self.view.bounds))
-				view.filePath = filePath
-				view.show()
-			}
-		
-		
+        
+            //检测本地是否有广告页   弹出广告
+        let filePath = self.getFilePathWithImageName(imageName: (UserDefaults.standard.string(forKey: "avderImage") ?? ""))
+
+            let isExist = self.isFileExistWithFilePath(filePath: filePath) as! Bool
+
+            if isExist {
+                let window = UIApplication.shared.keyWindow
+                let view = AdvertiseView.init(frame: (window?.bounds)!)
+                view.filePath = filePath
+                view.show()
+            }
+
+
         homeDataViewModel.requestSplah() {[weak self] in
             //
             if (self?.homeDataViewModel.imgurl != "") {
-				// 下载图片
+				// 下载广告图片 图片
 				self?.getAdvertisingImage(imgUrl: (self?.homeDataViewModel.imgurl)!)
             }
 
@@ -238,64 +238,64 @@ class MMLHomeVC: DDBaseViewController {
         return button
     }()
 	
-	// 判断文件是否存在
-	func isFileExistWithFilePath(filePath:String) -> Bool {
-		let fileManager = FileManager.default
-		//var isDirectory = false
-		return fileManager.fileExists(atPath: filePath, isDirectory: nil)
-	}
-	
-	func getAdvertisingImage(imgUrl:String) {
-		let stringArr = imgUrl.components(separatedBy: "/")
-		let imageName  = stringArr.last
-		
-		let filePath = self.getFilePathWithImageName(imageName: imageName!)
-		let isExist = self.isFileExistWithFilePath(filePath: filePath)
-		
-		if !isExist {
-			self.downloadAdImageWithUrl(imageUrl: imgUrl, imageName: imageName!)
-		}
-	}
-	
-	func downloadAdImageWithUrl(imageUrl:String,imageName:String) {
-		DispatchQueue.global(qos: .default).async {
-			//处理耗时操作的代码块...
-			let data = try? Data.init(contentsOf: URL.init(string: imageUrl)!)
-			
-			let image = UIImage.init(data: data!)
-			let filePath = self.getFilePathWithImageName(imageName: imageName)// 保存文件名
-			
-			let file = UIImagePNGRepresentation(image!)!  as NSData
-			
-			if file.write(toFile: filePath, atomically: true){
-				self.deleteOldImage()
-				UserDefaults.standard.set(imageName, forKey: "avderImage")
-				UserDefaults.standard.synchronize()
-			}else {
-				
-			}
-		}
-		
-	}
-	
-	func deleteOldImage()  {
-		let imageName = UserDefaults.standard.string(forKey: "avderImage")
-		if (imageName != nil) {
-			let filePath = self.getFilePathWithImageName(imageName: imageName!)
-			do {
-				try FileManager.default.removeItem(atPath: filePath)
-			}catch {
-				
-			}
-		}
-	}
-	
-	//根据图片名拼接文件路径
-	func getFilePathWithImageName(imageName:String) -> String {
-			let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as NSString
-			let filePath = paths.appendingPathComponent(imageName)
-			return filePath as String
-	}
+    // 判断文件是否存在
+    func isFileExistWithFilePath(filePath:String) -> Bool {
+        let fileManager = FileManager.default
+        //var isDirectory = false
+        return fileManager.fileExists(atPath: filePath, isDirectory: nil)
+    }
+    // 获取广告页
+    func getAdvertisingImage(imgUrl:String) {
+        let stringArr = imgUrl.components(separatedBy: "/")
+        let imageName  = stringArr.last
+
+        let filePath = self.getFilePathWithImageName(imageName: imageName!)
+        let isExist = self.isFileExistWithFilePath(filePath: filePath)
+
+        if !isExist {
+            self.downloadAdImageWithUrl(imageUrl: imgUrl, imageName: imageName!)
+        }
+    }
+    //下载图片
+    func downloadAdImageWithUrl(imageUrl:String,imageName:String) {
+        DispatchQueue.global(qos: .default).async {
+            //处理耗时操作的代码块...
+            let data = try? Data.init(contentsOf: URL.init(string: imageUrl)!)
+
+            let image = UIImage.init(data: data!)
+            let filePath = self.getFilePathWithImageName(imageName: imageName)// 保存文件名
+
+            let file = UIImagePNGRepresentation(image!)!  as NSData
+
+            if file.write(toFile: filePath, atomically: true){
+                self.deleteOldImage()
+                UserDefaults.standard.set(imageName, forKey: "avderImage")
+                UserDefaults.standard.synchronize()
+            }else {
+
+            }
+        }
+
+    }
+
+    func deleteOldImage()  {
+        let imageName = UserDefaults.standard.string(forKey: "avderImage")
+        if (imageName != nil) {
+            let filePath = self.getFilePathWithImageName(imageName: imageName!)
+            do {
+                try FileManager.default.removeItem(atPath: filePath)
+            }catch {
+
+            }
+        }
+    }
+
+    //根据图片名拼接文件路径
+    func getFilePathWithImageName(imageName:String) -> String {
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! as NSString
+            let filePath = paths.appendingPathComponent(imageName)
+            return filePath as String
+    }
 	
 	
 }
