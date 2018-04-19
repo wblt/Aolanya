@@ -52,14 +52,55 @@ class DDHomeDataViewModel {
     //获取广告 以及更新信息
     func requestSplah(successBlock:@escaping () -> Void) {
         let url =   API.baseServer + API.splashData
+		var p = [String:Any]()
+		p["osversion"] = "android7.0"
+		p["sign"] = "2CED2E5DB0BDF8EA444A369BF019EF58"
+		p["longitude"] = "112.984986"
+		p["package"] = "com.welcare.aolaiya"
+		p["version"] = "9"
+		p["latitude"] = "28.175034"
+		p["timestamp"] = "1524122646"
+		p["ostype"] = "M5 Note"
+		p["manufactory"] = "Meizu"
+		p["maptype"] = "2"
+		p["devicesid"] = "862841036387482"
+		/*
+		"osversion": "android7.0",
+		"sign": "2CED2E5DB0BDF8EA444A369BF019EF58",
+		"longitude": "112.984986",
+		"package": "com.welcare.aolaiya",
+		"version": "9",
+		"latitude": "28.175034",
+		"timestamp": "1524122646",
+		"ostype": "M5 Note",
+		"manufactory": "Meizu",
+		"maptype": "2",
+		"devicesid": "862841036387482"
+		*/
+//		let sysVersion = UIDevice.current.systemVersion
+//		p["osversion"] = sysVersion
+//		p["sign"] = "2CED2E5DB0BDF8EA444A369BF019EF58"
+//		p["longitude"] = "112.984986"
+//		p["package"] = "com.welcare.aolaiya"
+//		p["version"] = "9"
+//		p["latitude"] = "28.175034"
+//		p["timestamp"] = "1524122646"
+//		let deviceModel = UIDevice.current.model
+//		p["ostype"] = deviceModel
+//		let sysName = UIDevice.current.systemName
+//		p["manufactory"] = sysName
+//		p["maptype"] = "2"
+//		let deviceUUID = UIDevice.current.identifierForVendor?.uuidString //identifierForVendor.UUIDString
+//		p["devicesid"] = deviceUUID
 		
-        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-            
+        Alamofire.request(url, method: .post, parameters: p, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+			print(response);
+			
             let jsonRequest = JSON.init(response.result.value as![String:Any]);
-            self.imgurl = jsonRequest["splash"]["imgurl"].stringValue
-            self.imglink = jsonRequest["splash"]["imgurl"].stringValue
-            self.imglink = jsonRequest["upgrade"]["type"].stringValue
-            self.imglink = jsonRequest["upgrade"]["downurl"].stringValue
+            self.imgurl = jsonRequest["splash"]["imgurl"].stringValue ?? ""
+            self.imglink = jsonRequest["splash"]["imgurl"].stringValue ?? ""
+            self.imglink = jsonRequest["upgrade"]["type"].stringValue ?? ""
+            self.imglink = jsonRequest["upgrade"]["downurl"].stringValue ?? ""
             successBlock()
         }
     }

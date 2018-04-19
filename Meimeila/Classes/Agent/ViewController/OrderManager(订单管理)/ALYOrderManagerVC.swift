@@ -20,7 +20,7 @@ class ALYOrderManagerVC: DDBaseViewController {
 
         // Do any additional setup after loading the view.
 		self.navigationItem.title = "订单管理"
-		//bindMJRefresh()
+		bindMJRefresh()
 		requestOrderData()
     }
 	
@@ -37,9 +37,8 @@ class ALYOrderManagerVC: DDBaseViewController {
 	
 	func requestOrderData()  {
 		let uid = DDUDManager.share.getUserID()
-		
-		
 		agentVm.getSubordinateShoppingData(uid: uid) {[weak self] in
+			self?.tableView.mj_header.endRefreshing()
 			self?.tableView.reloadData()
 		}
 	}
@@ -47,8 +46,9 @@ class ALYOrderManagerVC: DDBaseViewController {
 	///MJ
 	func bindMJRefresh() {
 		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
-			
-			
+			self?.agentVm.subordinateShoppingArray.removeAll()
+			self?.tableView.reloadData()
+			self?.requestOrderData()
 		}) {[weak self] in
 			
 			

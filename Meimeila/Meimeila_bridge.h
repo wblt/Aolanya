@@ -39,5 +39,15 @@
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
 
+// 模拟微信弹框
+#import "HCPopupCommon.h"
+#import "HCBasePopupViewController.h"
+#import "HCBottomPopupAction.h"
+#import "HCBottomPopupViewController.h"
+#import "HCCenterPopAlertViewController.h"
+
+//广告页
+#import "AdvertiseView.h"
+#import "AdvertiseViewController.h"
 
 #endif /* Meimeila_bridge_h */

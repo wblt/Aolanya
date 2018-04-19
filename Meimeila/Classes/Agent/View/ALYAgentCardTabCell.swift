@@ -51,12 +51,20 @@ class ALYAgentCardTabCell: UITableViewCell {
 	// 区域审核代理人
 	var data1: AgentInfoDataModel? {
 		didSet {
-			levelTitleLab.text = data1?.level
+			
+			if data1?.temporaryRegionLevel == "1" {
+				levelTitleLab.text = "市级合伙人"
+			} else if data1?.temporaryRegionLevel == "2"{
+				levelTitleLab.text = "省级合伙人"
+			}else {
+				levelTitleLab.text = data1?.level
+			}
 			nameLab.text = data1?.realName
 			phoneLab.text = data1?.phone
 			weixinLab.text = data1?.weChat ?? ""
 			adddressLab.text = data1?.regionAdress
 			addresstitleLab.text = "申请区域："
+			
 		}
 	}
 	

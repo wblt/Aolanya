@@ -350,8 +350,10 @@ extension API {
 	//获取订单管理数据
 	static let getSubordinateShoppingData = "tpiot/app/getSubordinateShopping"
 	
-	// 同意/ 拒绝代理 、
+	// 拒绝代理 、
 	static let agreeAgent = "tpiot/app/agreeAgent"
 	
+	// 同意
+	static let agreeRegion = "tpiot/app/agreeRegion"
 	
 }

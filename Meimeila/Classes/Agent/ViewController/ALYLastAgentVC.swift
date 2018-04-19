@@ -22,6 +22,11 @@ class ALYLastAgentVC: DDBaseViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	lazy var agentVm:AgentManagerViewModel  = {
+		let vm = AgentManagerViewModel.init();
+		return vm;
+	}()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,11 +47,20 @@ class ALYLastAgentVC: DDBaseViewController {
 		self.tableView.register(UINib.init(nibName: String.init(describing: ALYAgentCardTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYAgentCardTabCell.self));
 	}
 	
+	func requestData() {
+		let uid = DDUDManager.share.getUserID()
+		agentVm.getAgentManagerData(uid: uid) {[weak self] in
+			self?.tableView.mj_header.endRefreshing()
+//			self?.tableView.mj_footer.endRefreshing()
+			self?.superiorAgentModel = self?.agentVm.superiorAgentModel
+			self?.tableView.reloadData()
+		};
+	}
 	///MJ
 	func bindMJRefresh() {
 		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
 			
-		
+			self?.requestData();
 		}) {[weak self] in
 			
 			

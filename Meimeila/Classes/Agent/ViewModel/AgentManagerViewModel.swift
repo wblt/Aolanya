@@ -39,6 +39,7 @@ class AgentManagerViewModel: NSObject {
 				self.toBeAuditedArray.append(model);
 			}
 			
+//			self.endRefresh(isNomore: isNomore)
 			
             BFunction.shared.showToastMessge(json["message"].stringValue);
             successBlock()
@@ -72,7 +73,7 @@ class AgentManagerViewModel: NSObject {
 			
 		}
 	}
-	
+	// 获取订单管理信息
 	func getSubordinateShoppingData(uid:String,successBlock:@escaping () -> Void ) {
 		let r = AgentManageAPI.getSubordinateShopping(uid: uid)
 		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
@@ -83,6 +84,36 @@ class AgentManagerViewModel: NSObject {
 				let model = SubordinateShoopingModel.init(fromJson: items)
 				self.subordinateShoppingArray.append(model)
 			}
+			
+			BFunction.shared.showToastMessge(json["message"].stringValue);
+			successBlock()
+		}, requestError: { (responds, ErrorModel) in
+			BFunction.shared.showToastMessge(ErrorModel.message);
+		}) { (error) in
+			
+		}
+	}
+	
+	// 拒绝申请
+	func confuseAgent(uid: String, targetUid: String, remarks: String, apply: String, toExamineoneUid: String,successBlock:@escaping () -> Void ) {
+		
+		let r = AgentManageAPI.agreenAgentAPI(uid: uid, targetUid: targetUid, remarks: remarks, apply: apply, toExamineoneUid: toExamineoneUid)
+		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
+			let json = JSON.init(responds);
+			
+			BFunction.shared.showToastMessge(json["message"].stringValue);
+			successBlock()
+		}, requestError: { (responds, ErrorModel) in
+			BFunction.shared.showToastMessge(ErrorModel.message);
+		}) { (error) in
+			
+		}
+	}
+	
+	func agreenRegion(uid: String, targetUid: String, apply: String, agentLevel: String, level: String, inviter: String, regionLevel: String,successBlock:@escaping () -> Void ) {
+		let r = AgentManageAPI.agreenRegionAPI(uid: uid, targetUid: targetUid, apply: apply, agentLevel: agentLevel, level: level, inviter: inviter, regionLevel: regionLevel)
+		DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
+			let json = JSON.init(responds);
 			
 			BFunction.shared.showToastMessge(json["message"].stringValue);
 			successBlock()

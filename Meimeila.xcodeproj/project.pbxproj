@@ -630,6 +630,8 @@
 		F83CF8CB2079CC2200FA9423 /* ALYAgentMsgInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */; };
 		F83CF8D2207A1BD500FA9423 /* ALYAgentCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */; };
 		F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */; };
+		F84F860C2088794F00C8B91F /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F84F86092088794E00C8B91F /* AdvertiseView.m */; };
+		F84F860D2088794F00C8B91F /* AdvertiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84F860B2088794E00C8B91F /* AdvertiseViewController.m */; };
 		F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */; };
 		F8968E5020859EFC003F7D00 /* RegionShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */; };
 		F8968E522085A9CB003F7D00 /* SubordinateShoopingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */; };
@@ -673,6 +675,10 @@
 		F8D5ACFA20849DCD00100C9F /* ALYAreaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D5ACF820849DCD00100C9F /* ALYAreaVC.xib */; };
 		F8D5ACFD20849DE500100C9F /* ALYAreaCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D5ACFB20849DE500100C9F /* ALYAreaCheckViewController.swift */; };
 		F8D5ACFE20849DE500100C9F /* ALYAreaCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D5ACFC20849DE500100C9F /* ALYAreaCheckViewController.xib */; };
+		F8E4EBEF20884A470097995B /* HCBasePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4EBE720884A470097995B /* HCBasePopupViewController.m */; };
+		F8E4EBF020884A470097995B /* HCBottomPopupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4EBE920884A470097995B /* HCBottomPopupAction.m */; };
+		F8E4EBF120884A470097995B /* HCBottomPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4EBEB20884A470097995B /* HCBottomPopupViewController.m */; };
+		F8E4EBF220884A470097995B /* HCCenterPopAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E4EBED20884A470097995B /* HCCenterPopAlertViewController.m */; };
 		F8EFF462207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */; };
 		F8EFF464207F00E800DFD3A1 /* ALYProvinceSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */; };
 		F8EFF466207F170300DFD3A1 /* AgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EFF465207F170300DFD3A1 /* AgentViewModel.swift */; };
@@ -1338,6 +1344,10 @@
 		F83CF8C92079CC2200FA9423 /* ALYAgentMsgInputVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentMsgInputVC.xib; sourceTree = "<group>"; };
 		F83CF8D0207A1BD500FA9423 /* ALYAgentCheckVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentCheckVC.swift; sourceTree = "<group>"; };
 		F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentCheckVC.xib; sourceTree = "<group>"; };
+		F84F86082088794E00C8B91F /* AdvertiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseView.h; sourceTree = "<group>"; };
+		F84F86092088794E00C8B91F /* AdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
+		F84F860A2088794E00C8B91F /* AdvertiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseViewController.h; sourceTree = "<group>"; };
+		F84F860B2088794E00C8B91F /* AdvertiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseViewController.m; sourceTree = "<group>"; };
 		F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentApplyAPI.swift; sourceTree = "<group>"; };
 		F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionShoppingModel.swift; sourceTree = "<group>"; };
 		F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubordinateShoopingModel.swift; sourceTree = "<group>"; };
@@ -1381,6 +1391,15 @@
 		F8D5ACF820849DCD00100C9F /* ALYAreaVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAreaVC.xib; sourceTree = "<group>"; };
 		F8D5ACFB20849DE500100C9F /* ALYAreaCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAreaCheckViewController.swift; sourceTree = "<group>"; };
 		F8D5ACFC20849DE500100C9F /* ALYAreaCheckViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAreaCheckViewController.xib; sourceTree = "<group>"; };
+		F8E4EBE620884A470097995B /* HCBasePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBasePopupViewController.h; sourceTree = "<group>"; };
+		F8E4EBE720884A470097995B /* HCBasePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBasePopupViewController.m; sourceTree = "<group>"; };
+		F8E4EBE820884A470097995B /* HCBottomPopupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBottomPopupAction.h; sourceTree = "<group>"; };
+		F8E4EBE920884A470097995B /* HCBottomPopupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBottomPopupAction.m; sourceTree = "<group>"; };
+		F8E4EBEA20884A470097995B /* HCBottomPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCBottomPopupViewController.h; sourceTree = "<group>"; };
+		F8E4EBEB20884A470097995B /* HCBottomPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCBottomPopupViewController.m; sourceTree = "<group>"; };
+		F8E4EBEC20884A470097995B /* HCCenterPopAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCCenterPopAlertViewController.h; sourceTree = "<group>"; };
+		F8E4EBED20884A470097995B /* HCCenterPopAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCCenterPopAlertViewController.m; sourceTree = "<group>"; };
+		F8E4EBEE20884A470097995B /* HCPopupCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCPopupCommon.h; sourceTree = "<group>"; };
 		F8EFF460207F00AF00DFD3A1 /* ALYProvinceSelectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYProvinceSelectVC.xib; sourceTree = "<group>"; };
 		F8EFF463207F00E800DFD3A1 /* ALYProvinceSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYProvinceSelectVC.swift; sourceTree = "<group>"; };
 		F8EFF465207F170300DFD3A1 /* AgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentViewModel.swift; sourceTree = "<group>"; };
@@ -3893,6 +3912,8 @@
 		66D803821F94CF2B0022FEAE /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				F84F86072088794E00C8B91F /* AdvertiseView */,
+				F8E4EBE520884A470097995B /* HCPopup */,
 				66EAE8801FCE4AC700BC6806 /* Music */,
 				66C64BED1FC507410070FB76 /* PicturesPicker */,
 				6645A7331FC3B7A500B3280A /* UMeng */,
@@ -4410,6 +4431,17 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F84F86072088794E00C8B91F /* AdvertiseView */ = {
+			isa = PBXGroup;
+			children = (
+				F84F86082088794E00C8B91F /* AdvertiseView.h */,
+				F84F86092088794E00C8B91F /* AdvertiseView.m */,
+				F84F860A2088794E00C8B91F /* AdvertiseViewController.h */,
+				F84F860B2088794E00C8B91F /* AdvertiseViewController.m */,
+			);
+			path = AdvertiseView;
+			sourceTree = "<group>";
+		};
 		F8968E532085D28A003F7D00 /* AreaStatistics(区域统计) */ = {
 			isa = PBXGroup;
 			children = (
@@ -4440,6 +4472,22 @@
 				F8968E7A2085F790003F7D00 /* AYLFinishVCViewController.xib */,
 			);
 			path = "OrderManager(订单管理)";
+			sourceTree = "<group>";
+		};
+		F8E4EBE520884A470097995B /* HCPopup */ = {
+			isa = PBXGroup;
+			children = (
+				F8E4EBE620884A470097995B /* HCBasePopupViewController.h */,
+				F8E4EBE720884A470097995B /* HCBasePopupViewController.m */,
+				F8E4EBE820884A470097995B /* HCBottomPopupAction.h */,
+				F8E4EBE920884A470097995B /* HCBottomPopupAction.m */,
+				F8E4EBEA20884A470097995B /* HCBottomPopupViewController.h */,
+				F8E4EBEB20884A470097995B /* HCBottomPopupViewController.m */,
+				F8E4EBEC20884A470097995B /* HCCenterPopAlertViewController.h */,
+				F8E4EBED20884A470097995B /* HCCenterPopAlertViewController.m */,
+				F8E4EBEE20884A470097995B /* HCPopupCommon.h */,
+			);
+			path = HCPopup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4795,7 +4843,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		74F8E9000E6B8B59EE721EE0 /* [CP] Embed Pods Frameworks */ = {
@@ -4947,6 +4995,7 @@
 				66D803FA1F94D2A80022FEAE /* AppDelegate-JPush.swift in Sources */,
 				F83CF8C62079C80500FA9423 /* ALYAgentlevelVC.swift in Sources */,
 				665660FA1F9B478100629064 /* Tool.swift in Sources */,
+				F8E4EBF120884A470097995B /* HCBottomPopupViewController.m in Sources */,
 				668B5C561F98624700D276AE /* MMLHomeDataModular.swift in Sources */,
 				22FF14C81FC90396000C76FE /* MMLPocketDetailVC.swift in Sources */,
 				666FADAA1FB9862C0011CBBF /* DDLineChartYAxisValueFormatter.swift in Sources */,
@@ -5124,6 +5173,7 @@
 				F8968E7B2085F790003F7D00 /* AYLFinishVCViewController.swift in Sources */,
 				F8D5ACDD208474A900100C9F /* ALYOrderManagerTabCell.swift in Sources */,
 				221012A61FC956B70074ED03 /* MMLAboutUsCell.swift in Sources */,
+				F8E4EBEF20884A470097995B /* HCBasePopupViewController.m in Sources */,
 				66D804201F94D2A80022FEAE /* SearchProductAPI.swift in Sources */,
 				66D804211F94D2A80022FEAE /* ShopCollectAPI.swift in Sources */,
 				6607F8A61F9B35030083C1E4 /* MMLMyCollectionListModel.swift in Sources */,
@@ -5138,6 +5188,7 @@
 				224DD5EB1FF372AF00D1AD67 /* MMLBeansToMonayVC.swift in Sources */,
 				662C53EF1F9AD66800AD4C1E /* SettlementAPI.swift in Sources */,
 				66D1309A1F9728D0002C8BE8 /* DDMallSearchHotView.swift in Sources */,
+				F84F860C2088794F00C8B91F /* AdvertiseView.m in Sources */,
 				6645A7681FC4029400B3280A /* TTLineRightYAxisStyle.swift in Sources */,
 				22D790C11FC66A2C00C150AB /* payImmdiatelyCell.swift in Sources */,
 				66D804271F94D2A80022FEAE /* HTTPClient.swift in Sources */,
@@ -5172,6 +5223,7 @@
 				221012A91FC95EA50074ED03 /* MMLAboutUsWkwebVC.swift in Sources */,
 				6645A7801FC4181200B3280A /* DDJPushViewModel.swift in Sources */,
 				66D8042E1F94D2A80022FEAE /* DDPhotoLibraryManager.swift in Sources */,
+				F8E4EBF020884A470097995B /* HCBottomPopupAction.m in Sources */,
 				F8D5ACF120849D9600100C9F /* ALYAgentCheckManagerVC.swift in Sources */,
 				66D8042F1F94D2A80022FEAE /* DDShoppingCarTool.swift in Sources */,
 				66D804301F94D2A80022FEAE /* DDUDManager.swift in Sources */,
@@ -5229,6 +5281,7 @@
 				663C1C9C1F987C05006C6E21 /* MMLProductDetailsEvaluateData.swift in Sources */,
 				666FAD951FB985F20011CBBF /* DDWKWebViewDelegateVC.swift in Sources */,
 				22D483851FCC15DE00172A2D /* MMLDetailAPI.swift in Sources */,
+				F84F860D2088794F00C8B91F /* AdvertiseViewController.m in Sources */,
 				66D8043D1F94D2A80022FEAE /* DDAddDeletedLineLabel.swift in Sources */,
 				6607F8A71F9B35030083C1E4 /* MMLMyCollectionListData.swift in Sources */,
 				666FADA81FB9862C0011CBBF /* DDLineChartXAxisStyle.swift in Sources */,
@@ -5340,6 +5393,7 @@
 				22463CA31FE7938F00D15B91 /* DayTaskCell.swift in Sources */,
 				221F1EF71FF1E016001F36B1 /* MMLLuckDrawModel.swift in Sources */,
 				220F967A1FC031C7001D1D07 /* OpinionFeedbackAPI.swift in Sources */,
+				F8E4EBF220884A470097995B /* HCCenterPopAlertViewController.m in Sources */,
 				663C1C981F987923006C6E21 /* DDProductDetailsShoppingData.swift in Sources */,
 				6614E7461F95A4D40061EDCE /* MMLHomeHeaderView.swift in Sources */,
 				2215753C1F99E92300BC94EF /* MMLPocketHeadView.swift in Sources */,

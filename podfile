@@ -46,7 +46,7 @@ target 'Meimeila' do
 	pod 'Pgyer'
 	pod 'PgyUpdate'
     #广告页
-    #pod 'AdvertisementView'
+	#pod 'AdvertisementView'
 end
 
 post_install do |installer|

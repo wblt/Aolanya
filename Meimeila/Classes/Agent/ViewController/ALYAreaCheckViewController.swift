@@ -14,6 +14,11 @@ class ALYAreaCheckViewController: DDBaseViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
+	lazy var agentVm:AgentManagerViewModel  = {
+		let vm = AgentManagerViewModel.init();
+		return vm;
+	}()
+	
 	//iOS8用到XIB必须写这两个方法
 	init() {
 		super.init(nibName: String.init(describing: ALYAreaCheckViewController.self), bundle: nil)
@@ -42,16 +47,119 @@ class ALYAreaCheckViewController: DDBaseViewController {
 		self.tableView.register(UINib.init(nibName: String.init(describing: ALYAgentCardTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYAgentCardTabCell.self));
 	}
 	
+	func requestData()  {
+		let uid = DDUDManager.share.getUserID()
+		agentVm.getAgentManagerData(uid: uid) {[weak self] in
+			self?.tableView.mj_header.endRefreshing()
+//			self?.tableView.mj_footer.endRefreshing()
+			self?.toBeAuditedArray = (self?.agentVm.toBeAuditedArray)!
+			self?.tableView.reloadData()
+		};
+	}
+	
 	///MJ
 	func bindMJRefresh() {
 		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
-			
-			
+			 self?.requestData()
 		}) {[weak self] in
 			
 			
 		}
 	}
+	
+	
+	
+	@objc func confuseBtnAction(btn:UIButton)  {
+		
+		let index = btn.tag-10000;
+		let model:AgentInfoDataModel = self.toBeAuditedArray[index]
+		let uid = DDUDManager.share.getUserID()
+		
+		agentVm.confuseAgent(uid: uid, targetUid: model.uid, remarks: "", apply: "false", toExamineoneUid: uid) {
+			
+		}
+		
+	}
+	
+	@objc func agreenBtnAction(btn:UIButton)  {
+		
+		let index = btn.tag-20000;
+		
+		let model:AgentInfoDataModel = self.toBeAuditedArray[index]
+		let uid = DDUDManager.share.getUserID()
+		
+		BFunction.shared.showAlert(title: "温馨提示", subTitle: "您确定此用户的资料是否填写正确吗?", ontherBtnTitle: "是,选择代理等级") {
+			// 弹框选择 等级
+			let pc = HCBottomPopupViewController()
+			let act1 =  HCBottomPopupAction.init(title: "零售", withSelectedBlock: {
+				
+				self.dismiss(animated: true, completion: {
+				
+					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "1", level: "1", inviter: uid, regionLevel: model.temporaryRegionLevel) {
+			
+					}
+				})
+				
+			}, with: HCBottomPopupActionSelectItemType.default)
+			
+			let act2 =  HCBottomPopupAction.init(title: "金牌会员", withSelectedBlock: {
+				
+				self.dismiss(animated: true, completion: {
+					
+					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "2", level: "2", inviter: uid, regionLevel: model.temporaryRegionLevel) {
+						
+					}
+					
+				})
+				
+				
+			}, with: HCBottomPopupActionSelectItemType.default)
+			let act3 =  HCBottomPopupAction.init(title: "大区", withSelectedBlock: {
+				self.dismiss(animated: true, completion: {
+					
+					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "3", level: "3", inviter: uid, regionLevel: model.temporaryRegionLevel) {
+						
+					}
+					
+				})
+				
+			}, with: HCBottomPopupActionSelectItemType.default)
+			let act4 =  HCBottomPopupAction.init(title: "联合股东", withSelectedBlock: {
+				self.dismiss(animated: true, completion: {
+					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "4", level: "4", inviter: uid, regionLevel: model.temporaryRegionLevel) {
+						
+					}
+				})
+				
+			}, with: HCBottomPopupActionSelectItemType.default)
+			let act5 =  HCBottomPopupAction.init(title: "联合创始人", withSelectedBlock: {
+				self.dismiss(animated: true, completion: {
+					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "5", level: "5", inviter: uid, regionLevel: model.temporaryRegionLevel) {
+						
+					}
+				})
+				
+			}, with: HCBottomPopupActionSelectItemType.default)
+			
+			let act6 = HCBottomPopupAction.init(title: "取消", withSelectedBlock: {
+				self.dismiss(animated: true, completion: {
+					
+				})
+				
+			}, with: HCBottomPopupActionSelectItemType.cancel)
+			
+			pc.add(act1)
+			pc.add(act2)
+			pc.add(act3)
+			pc.add(act4)
+			pc.add(act5)
+			pc.add(act6)
+			
+			self.present(pc, animated: true, completion: nil);
+		}
+		
+	}
+	
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,6 +230,8 @@ extension ALYAreaCheckViewController:UITableViewDataSource {
 		confuseBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
 		confuseBtn.backgroundColor = DDGlobalNavBarColor();
 		confuseBtn.setCornerBorderWithCornerRadii(20, width: 0.1, color: UIColor.clear)
+		confuseBtn.tag = 10000 + section
+		confuseBtn.addTarget(self, action: #selector(confuseBtnAction(btn:)) , for: UIControlEvents.touchUpInside)
 		
 		let agreenBtn = UIButton()
 		agreenBtn.frame = CGRect.init(x: self.view.width/2+10, y: 5, width: (self.view.width-60)/2, height: 40)
@@ -129,7 +239,9 @@ extension ALYAreaCheckViewController:UITableViewDataSource {
 		agreenBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
 		agreenBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
 		agreenBtn.backgroundColor = DDGlobalNavBarColor();
+		agreenBtn.tag = 20000 + section
 		agreenBtn.setCornerBorderWithCornerRadii(20, width: 0.1, color: UIColor.clear)
+		agreenBtn.addTarget(self, action: #selector(agreenBtnAction(btn:)) , for: UIControlEvents.touchUpInside)
 		
 		bgView.addSubview(confuseBtn)
 		bgView.addSubview(agreenBtn)

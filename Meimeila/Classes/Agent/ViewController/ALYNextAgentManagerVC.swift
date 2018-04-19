@@ -33,6 +33,7 @@ class ALYNextAgentManagerVC: DDBaseViewController {
 
         // Do any additional setup after loading the view.
 		self.navigationItem.title = "代理管理"
+		bindMJRefresh()
     }
 
 	override func setupUI() {
@@ -44,6 +45,28 @@ class ALYNextAgentManagerVC: DDBaseViewController {
 		self.tableView.showsVerticalScrollIndicator = false;
 		self.tableView.separatorColor = UIColor.clear;
 		self.tableView.register(UINib.init(nibName: String.init(describing: ALYagentManagerTabCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ALYagentManagerTabCell.self));
+	}
+	
+	func requestData() {
+		let uid = DDUDManager.share.getUserID()
+		agentVm.getAgentManagerData(uid: uid) {[weak self] in
+			self?.tableView.mj_header.endRefreshing()
+			//self?.tableView.mj_footer.endRefreshing()
+			self?.lowerAgentArray = (self?.agentVm.lowerAgentArray)!
+			self?.tableView.reloadData()
+		};
+		
+	}
+	
+	///MJ
+	func bindMJRefresh() {
+		setupRefresh(tableView, isNeedFooterRefresh: false, headerCallback: {[weak self] in
+			
+			self?.requestData();
+		}) {[weak self] in
+			
+			
+		}
 	}
 	
     override func didReceiveMemoryWarning() {
