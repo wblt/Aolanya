@@ -99,6 +99,11 @@ class ALYAgentManagerVC: DDBaseViewController {
             
             self?.headImgView.jq_setImage(imageUrl: self?.uservm.infoModel?.picture ?? "", placeholder: "icon_defaultHeadIcon", isShowIndicator: false, isNeedForceRefresh: false)
             
+            if self?.uservm.infoModel?.aoLanYaAdmin == "1" {
+                self?.AreaBgCheckView.isHidden = false
+            }else {
+                 self?.AreaBgCheckView.isHidden = true
+            }
             //self?.nameLab.text = self?.uservm.infoModel?.name ?? DDUDManager.share.getUserID()
 			self?.requestAgentData()
         }

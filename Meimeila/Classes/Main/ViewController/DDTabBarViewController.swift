@@ -51,7 +51,7 @@ class DDTabBarViewController: UITabBarController {
     private func addChildViewControllers() {
         addChildViewController(childController: homeVC, title: "首页", imageName: "home")
       //  addChildViewController(childController: hardwareVC, title: "发现", imageName: "found")
-		addChildViewController(childController: agentManagerVC, title: "我要赚钱", imageName: "found")
+		addChildViewController(childController: agentVC, title: "我要赚钱", imageName: "found")
         addChildViewController(childController: mallVC, title: "购物车结算", imageName: "shoppingcart")
         addChildViewController(childController: mineVC, title: "我的", imageName: "mine")
     }

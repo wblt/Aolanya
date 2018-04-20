@@ -266,9 +266,8 @@ class MMLHomeVC: DDBaseViewController {
             let filePath = self.getFilePathWithImageName(imageName: imageName)// 保存文件名
 
             let file = UIImagePNGRepresentation(image!)!  as NSData
-
+            self.deleteOldImage()
             if file.write(toFile: filePath, atomically: true){
-                self.deleteOldImage()
                 UserDefaults.standard.set(imageName, forKey: "avderImage")
                 UserDefaults.standard.synchronize()
             }else {

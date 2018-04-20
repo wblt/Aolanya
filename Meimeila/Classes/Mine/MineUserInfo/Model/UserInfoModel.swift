@@ -32,6 +32,13 @@ class UserInfoModel{
     var statue:String?;
     var uid:String?;
     
+    var temporaryRegionLevel:String?
+    var regionAdress:String?
+    var regionLevel:String?
+    var aoLanYaAdmin:String?
+    
+    
+    
     init(formJson json:JSON) {
         if json.isEmpty {
             return;
@@ -63,6 +70,12 @@ class UserInfoModel{
         realmName = json["realmName"].stringValue;
         statue = json["statue"].stringValue;
         uid = json["uid"].stringValue;
+        
+        temporaryRegionLevel = json["temporaryRegionLevel"].stringValue;
+        regionAdress = json["regionAdress"].stringValue;
+        regionLevel = json["regionLevel"].stringValue;
+        aoLanYaAdmin = json["aoLanYaAdmin"].stringValue;
+    
     }
 //-----------------------------------处理归档解档---------------------------------
 //	// MARK:- 处理需要归档的字段

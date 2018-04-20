@@ -224,7 +224,7 @@ class MMLAddressSelectVC: DDBaseViewController,UIPickerViewDelegate, UIPickerVie
 //        let message = "索引：\(provinceIndex)-\(cityIndex)-\(areaIndex)\n"
 //            + "值：\(province) - \(city) - \(area)"
         
-        let address = "\(province)\(city)\(area)";
+        let address = "\(province)-\(city)-\(area)";
         
         return address;
     }

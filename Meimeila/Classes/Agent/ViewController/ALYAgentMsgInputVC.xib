@@ -37,7 +37,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="代理资质" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-q2-0Af">
@@ -102,7 +102,7 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVv-Yx-s5C">
-                    <rect key="frame" x="0.0" y="96" width="375" height="754"/>
+                    <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yor-pt-Vpv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="640"/>
@@ -139,7 +139,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="AQ4-Jr-L6a">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_mine" translatesAutoresizingMaskIntoConstraints="NO" id="AQ4-Jr-L6a">
                                             <rect key="frame" x="10" y="36" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="25" id="MW4-Yn-J2Y"/>
@@ -181,7 +181,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhi-cn-6Bu">
                                     <rect key="frame" x="0.0" y="140" width="375" height="60"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="O8d-Zu-EGF">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_Lphone" translatesAutoresizingMaskIntoConstraints="NO" id="O8d-Zu-EGF">
                                             <rect key="frame" x="10" y="18" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="QHs-EN-tJA"/>
@@ -221,7 +221,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMq-s8-cOz">
                                     <rect key="frame" x="0.0" y="200" width="375" height="60"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-cV-SY1">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_idetify_code" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-cV-SY1">
                                             <rect key="frame" x="10" y="18" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="9df-fh-x1R"/>
@@ -277,7 +277,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rn-Na-eLd">
                                     <rect key="frame" x="0.0" y="260" width="375" height="60"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-RI-TDC">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wenxin_ico" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-RI-TDC">
                                             <rect key="frame" x="10" y="17.5" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="7lv-58-kDH"/>
@@ -317,7 +317,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRX-Z4-s4I">
                                     <rect key="frame" x="0.0" y="320" width="375" height="60"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_fail" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-Pt-RU9">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="address" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-Pt-RU9">
                                             <rect key="frame" x="10" y="18" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="25" id="7qP-Lz-eIp"/>
@@ -551,8 +551,12 @@
         </view>
     </objects>
     <resources>
-        <image name="img_fail" width="255" height="255"/>
+        <image name="address" width="24" height="24"/>
+        <image name="icon_Lphone" width="22" height="22"/>
+        <image name="img_idetify_code" width="34" height="34"/>
+        <image name="main_mine" width="19" height="19"/>
         <image name="no_select_agent_progress" width="28" height="28"/>
         <image name="select_agent_progress" width="28" height="28"/>
+        <image name="wenxin_ico" width="75" height="75"/>
     </resources>
 </document>
