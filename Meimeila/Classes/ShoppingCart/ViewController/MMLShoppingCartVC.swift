@@ -183,8 +183,9 @@ class MMLShoppingCartVC: DDBaseViewController {
             if count == 0 {
                 self?.title = "购物车结算"
             }else {
-                self?.title = "购物车(\(count))"
-            }
+              //  self?.title = "购物车(\(count))"
+				self?.title = "购物车结算"
+			}
             
         }
     }
@@ -205,7 +206,8 @@ class MMLShoppingCartVC: DDBaseViewController {
             if count == 0 {
                 self?.title = "购物车结算"
             }else {
-                self?.title = "购物车(\(count))"
+               // self?.title = "购物车(\(count))"
+				self?.title = "购物车结算"
             }
             self?.tableView.reloadData()
             self?.calculationTotalPrice()
