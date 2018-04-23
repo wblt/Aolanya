@@ -32,6 +32,7 @@ class MMLHomeVC: DDBaseViewController {
             setupShowNewsWelfare()
         }
         requestHomeData()
+        requestAdData()
         addNotifications()
     }
     
@@ -119,41 +120,43 @@ class MMLHomeVC: DDBaseViewController {
             // 2.设置资讯 和 设置推荐商品
             self?.tableView.reloadData()
         }
-        
-            //检测本地是否有广告页   弹出广告
+    }
+    
+    func requestAdData()  {
+        //检测本地是否有广告页   弹出广告
         let filePath = self.getFilePathWithImageName(imageName: (UserDefaults.standard.string(forKey: "avderImage") ?? ""))
-
-            let isExist = self.isFileExistWithFilePath(filePath: filePath) as! Bool
-
-            if isExist {
-                let window = UIApplication.shared.keyWindow
-                let view = AdvertiseView.init(frame: (window?.bounds)!)
-                view.filePath = filePath
-                view.show()
-            }
-
-
+        
+        let isExist = self.isFileExistWithFilePath(filePath: filePath) as! Bool
+        
+        if isExist {
+            let window = UIApplication.shared.keyWindow
+            let view = AdvertiseView.init(frame: (window?.bounds)!)
+            view.filePath = filePath
+            view.show()
+        }
+        
+        
         homeDataViewModel.requestSplah() {[weak self] in
             //
             if (self?.homeDataViewModel.imgurl != "") {
-				// 下载广告图片 图片
-				self?.getAdvertisingImage(imgUrl: (self?.homeDataViewModel.imgurl)!)
+                // 下载广告图片 图片
+                self?.getAdvertisingImage(imgUrl: (self?.homeDataViewModel.imgurl)!)
             }
-
-//            if self?.homeDataViewModel.type == "1" {
-//                // 可选升级
-//                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", ontherBtnTitle: "更新", ontherBtnAction: {
-//                    //跳转 下载地址
-//
-//                })
-//            } else if self?.homeDataViewModel.type == "2" {
-//                // 强制升级
-//                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", cancelBtnTitle: "更新", cancelBtnAction: {
-//                    //跳转 下载地址
-//
-//                })
-//
-//            }
+            
+            //            if self?.homeDataViewModel.type == "1" {
+            //                // 可选升级
+            //                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", ontherBtnTitle: "更新", ontherBtnAction: {
+            //                    //跳转 下载地址
+            //
+            //                })
+            //            } else if self?.homeDataViewModel.type == "2" {
+            //                // 强制升级
+            //                BFunction.shared.showAlert(title: "温馨提示", subTitle: "系统升级", cancelBtnTitle: "更新", cancelBtnAction: {
+            //                    //跳转 下载地址
+            //
+            //                })
+            //
+            //            }
         }
     }
     
