@@ -23,6 +23,7 @@ class DDProductDetailsViewModel {
     // 评价列表
     var evaluetionListDatas: [MMLProductDetailsEvaluateData] = [MMLProductDetailsEvaluateData]()
     
+    
     // 获取商品详情
     func getProductDetails(shoppingID: String, successBlock: @escaping () -> (), failBlock: @escaping () -> ()) {
         DDHTTPRequest.request(r: ProductDetailsAPI.productDetails(shopingID: shoppingID), requestSuccess: { (result) in

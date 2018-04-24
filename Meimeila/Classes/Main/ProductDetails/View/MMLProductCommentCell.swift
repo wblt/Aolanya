@@ -42,8 +42,13 @@ class MMLProductCommentCell: UITableViewCell {
 			
 			// timeLabel.text = timestampToDate(format: "yyyy-mm-dd", timestamp: (evaluateData?.evaluateTime)!)
             contentLabel.text = evaluateData?.evaluateMessage
-            
-            shopFabulousButton.isSelected = (evaluateData?.totalFabulous) > 0 ? true : false
+            // totalFabulous;      // 0是不点赞，1是点赞
+            if evaluateData?.totalFabulous == 0 {
+                shopFabulousButton.isSelected = false;
+            }else {
+                  shopFabulousButton.isSelected = true;
+            }
+          //  shopFabulousButton.isSelected = (evaluateData?.totalFabulous) > 0 ? true : false
             shopFabulousButton.setTitle( " " + (evaluateData?.fabulous)!, for: .normal)
             shopFabulousButton.setTitle( " " + (evaluateData?.fabulous)!, for: .selected)
             

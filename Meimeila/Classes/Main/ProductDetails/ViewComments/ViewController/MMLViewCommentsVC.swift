@@ -57,7 +57,7 @@ class MMLViewCommentsVC: DDBaseViewController {
     
     // 添加上下拉刷新
     private func viewBindEvents() {
-        setupRefresh(tableView, headerCallback: {[weak self] in
+        setupRefresh(tableView,isNeedFooterRefresh:false, headerCallback: {[weak self] in
             self?.productDetailsViewModel.numberPages = 0
             self?.requestEvalueListData()
         }) {[weak self] in
@@ -69,6 +69,16 @@ class MMLViewCommentsVC: DDBaseViewController {
     // 获取商品评价列表数据
     private func requestEvalueListData() {
         productDetailsViewModel.getEvalutionList(shoppingID: shoppingID) {[weak self] in
+
+            var ok = 0
+            self?.productDetailsViewModel.evaluetionListDatas.forEach({ (model) in
+                if model.score == "5"{
+                     ok = ok + 1
+                }
+            })
+            let okk = Int(ok/(self?.productDetailsViewModel.evaluetionListDatas.count)!)*100
+            self?.satisfactionLabel.text = "\(okk)"
+            
             self?.tableView.reloadData()
         }
     }
@@ -107,12 +117,14 @@ extension MMLViewCommentsVC: UITableViewDataSource {
                 self?.productDetailsViewModel.delShopFabulous(shoppingID: (self?.shoppingID)!, evaluateID: (model.evaluateID)! , successBlock: {[weak self] in
                     tempModel?.fabulous = "\(Int((tempModel?.fabulous)!)! - 1)"
                     button.isSelected = false
+                    model.totalFabulous = 0;
                     self?.tableView.reloadRows(at: [indexPath], with: .none)
                 })
             }else {
                 self?.productDetailsViewModel.addShopFabulous(shoppingID: (self?.shoppingID)!, evaluateID: (model.evaluateID)!, successBlock: {[weak self] in
                     tempModel?.fabulous = "\(Int((tempModel?.fabulous)!)! + 1)"
                     button.isSelected = true
+                    model.totalFabulous = 1;
                     self?.tableView.reloadRows(at: [indexPath], with: .none)
                 })
             }
@@ -148,6 +160,8 @@ extension MMLViewCommentsVC: UITableViewDelegate {
 extension MMLViewCommentsVC: MMLProductCommentCellDelegate {
     // 评论点赞
     func productCommentCellShopFabulous(button: UIButton, currentIndex: Int) {
+//        self.productDetailsViewModel.numberPages = 0
+//        self.requestEvalueListData()
     }
     
     func viewCommentImages(contentImags: [String], currentIndex: Int) {

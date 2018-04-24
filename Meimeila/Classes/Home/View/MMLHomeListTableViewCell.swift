@@ -19,6 +19,7 @@ class MMLHomeListTableViewCell: UITableViewCell {
             saleLabel.text = (shoppingData?.salesCount)! + "人已付款"
             marketpriceLabel.text = "￥" + (shoppingData?.market_value)!
             marketpriceLabel.sizeToFit()
+            marketpriceLabel.textColor = UIColor.orange
         }
     }
     

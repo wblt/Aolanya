@@ -74,10 +74,10 @@ extension API {
     static let addShoppingCart = "tpiot/app/addshoppingcart"
     
     // 商品评价点赞
-    static let addShopFabulous = "shoping/addShopFabulous.php"
+    static let addShopFabulous = "tpiot/app/addShopFabulous"
     
     // 取消商品评价点赞
-    static let delShopFabulous = "shoping/delShopFabulous.php"
+    static let delShopFabulous = "tpiot/app/delShopFabulous"
     
     // 获取商品评价列表
     static let getEvaluation = "tpiot/app/getEvaluation"

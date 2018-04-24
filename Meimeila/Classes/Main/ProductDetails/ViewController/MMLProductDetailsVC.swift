@@ -124,6 +124,12 @@ class MMLProductDetailsVC: DDBaseViewController {
     }
     
     private func viewBindEvents() {
+        
+        if evaluateData?.evaluetionNum == 0 {
+            BFunction.shared.showToastMessge("暂无评价")
+            return
+        }
+        
         let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(viewCommentsAction))
         commentView.addGestureRecognizer(tapGes)
     }
@@ -181,16 +187,18 @@ class MMLProductDetailsVC: DDBaseViewController {
         // 设置评论信息
         evaluateData = productDetailsViewModel.productDetailsModel?.evaluateData
         if let _ = evaluateData {
-            commentCountLabel.text = "用户评价(" + evaluateData!.fabulous + ")"
-            var images = (evaluateData?.evaluateImg.components(separatedBy: ","))!
-            if evaluateData?.evaluateImg == "" {
-                images.removeAll()
-            }
-            let column = 3
-            let row = images.count % column == 0 ? images.count / column : (images.count / column) + 1
-            let itemWH = (UIScreen.main.bounds.width - 30 - 10) / 3.0
-            let collectionViewH =  CGFloat(Int(itemWH) * row + (5 * (row)))
-            contentHeightCons.constant = 96.0 + collectionViewH
+            commentCountLabel.text = "用户评价(" + "\(evaluateData!.evaluetionNum)" + ")"
+//            var images = (evaluateData?.evaluateImg.components(separatedBy: ","))!
+//            if evaluateData?.evaluateImg == "" {
+//                images.removeAll()
+//            }
+//            let column = 3
+//            let row = images.count % column == 0 ? images.count / column : (images.count / column) + 1
+//            let itemWH = (UIScreen.main.bounds.width - 30 - 10) / 3.0
+//            let collectionViewH =  CGFloat(Int(itemWH) * row + (5 * (row)))
+//            contentHeightCons.constant = 96.0 + collectionViewH
+//
+             contentHeightCons.constant = 0
         }else {
             commentCountLabel.text = "用户评价(" + "0" + ")"
             contentHeightCons.constant = 0

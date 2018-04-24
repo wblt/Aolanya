@@ -25,7 +25,8 @@ class MMLProductDetailsEvaluateData{
     var shoppingID : String!
     var totalFabulous : Int = 0
     var uid : String!
-    
+    // 评价数量
+    var evaluetionNum :Int = 0;
     
     /**
      * Instantiate the instance using the passed json values to set the properties values
@@ -48,6 +49,8 @@ class MMLProductDetailsEvaluateData{
         shoppingID = json["shoppingID"].stringValue
         totalFabulous = json["totalFabulous"].intValue
         uid = json["uid"].stringValue
+        
+        evaluetionNum = json["evaluateNumber"].intValue
     }
     
 }

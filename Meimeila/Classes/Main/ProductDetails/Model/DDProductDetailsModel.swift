@@ -54,6 +54,7 @@ class DDProductDetailsModel {
             let value = DDProductDetailsShoppingIntroduce.init(fromJson: shoppingIntroduceJson)
             shoppingIntroduce.append(value)
         }
+        
     }
     
 }
