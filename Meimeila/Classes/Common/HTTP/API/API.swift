@@ -35,7 +35,7 @@ extension API {
     static let getWithdrawalsInfo = "tpiot/app/getwithdrawalsinfo"
     
     // 提现申请
-    static let  addWithdrawals = "tpiot/app/addwithdrawals"
+    static let  addWithdrawals = "tpiot/app/addWithdrawals"
     
     // 系统消息
     static let  getSystemNotice = "tpiot/app/getsystemnotice"

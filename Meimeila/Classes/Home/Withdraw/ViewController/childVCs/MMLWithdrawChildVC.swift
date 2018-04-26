@@ -25,10 +25,24 @@ class MMLWithdrawChildVC: DDBaseViewController {
     // 提现金额
     @IBOutlet weak var amountView: UIView!
     @IBOutlet weak var amountLabel: UILabel!
-    
-    private var type: Int = 0 // 0 是支付宝
+	
+	private var receiveImage: UIImage?
+    private var type: Int = 6 // 6 是支付宝
     private var moneyAmount: Double = 0
-    
+	
+	lazy var photoManger:DDPhotoLibraryManager = {[weak self] in
+		let manger = DDPhotoLibraryManager.shared;
+		manger.delegate = self;
+		return manger;
+		}()
+	
+	lazy var alter:UIAlertView =  {[weak self] in
+		let view = UIAlertView.init(title:"图片来源", message: "", delegate: self, cancelButtonTitle: "取消");
+		view.addButton(withTitle: "图库");
+		view.addButton(withTitle: "相机");
+		return view;
+		}()
+	
     // 如果不写这个方法，iOS8会崩溃
     init() {
         super.init(nibName: String.init(describing: MMLWithdrawChildVC.self), bundle: nil)
@@ -66,21 +80,34 @@ class MMLWithdrawChildVC: DDBaseViewController {
         let money = Double(amountLabel.text!)
         let account = aliPayAcountTF.text!.trimmingCharacters(in: .whitespaces)
         let name = aliPayNameTF.text!.trimmingCharacters(in: .whitespaces)
-        
-        if type == 0 { // 支付宝提现
-            if account.count == 0 {
-                BFunction.shared.showToastMessge("请输入支付宝账号")
-                return
-            }
-            if name.count == 0 {
-                BFunction.shared.showToastMessge("请输入姓名")
-                return
-            }
-        }
+		
+		if account.count == 0 {
+			BFunction.shared.showToastMessge("请输入注册账号")
+			return
+		}
+		if name.count == 0 {
+			BFunction.shared.showToastMessge("请输入姓名")
+			return
+		}
+		
+		if receiveImage == nil {
+			BFunction.shared.showToastMessge("请上传收款二维码")
+			return
+		}
 
-        
-        withdrawViewModel.withdraw(type: type, money: money!, alipay: account, realName: name) {
+//		uid	55
+//		realName	QWERTY
+//		alipay	wert
+//		money	30
+//		source	Android App
+//		type	7
+//		payImg	1524156069981save.png
+		
+		withdrawViewModel.withdraw(type: type, money: money!, alipay: account, realName: name,payImg:receiveImage!) {
+			
+			
         }
+		
     }
 
     
@@ -100,7 +127,11 @@ class MMLWithdrawChildVC: DDBaseViewController {
         VC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         present(VC, animated: false, completion: nil)
     }
-    
+	// 上传收款图片
+	@IBAction func uploadImageAction(_ sender: Any) {
+		  alter.show();
+	}
+	
     // 确认提现
     @IBAction func sureWithdrawAction(_ sender: Any) {
         requestWithdrawData()
@@ -125,21 +156,46 @@ extension MMLWithdrawChildVC: MMLWithdrawalamountVCDelegate {
 // MARK: - MMLWithdrawalwayVCDelegate
 extension MMLWithdrawChildVC: MMLWithdrawalwayVCDelegate {
     func withdrawalway(type: Int) {
-        if type == 0 { // 支付宝提现
-            self.type = 0
-            aliPayAcountView.isHidden = false
-            aliPayNameView.isHidden = false
-			payStackView.insertArrangedSubview(aliPayAcountView, at: 1)
-			payStackView.insertArrangedSubview(aliPayNameView, at: 2)
+        if type == 6 { // 支付宝提现
+            self.type = 6
+//            aliPayAcountView.isHidden = false
+//            aliPayNameView.isHidden = false
+//			payStackView.insertArrangedSubview(aliPayAcountView, at: 1)
+//			payStackView.insertArrangedSubview(aliPayNameView, at: 2)
             payMethodButton.setTitle("支付宝", for: .normal)
         }else { // 微信红包提现
-            self.type = 1
-            aliPayAcountView.isHidden = true
-            aliPayNameView.isHidden = true
-			payStackView.removeArrangedSubview(aliPayAcountView)
-			payStackView.removeArrangedSubview(aliPayNameView)
+            self.type = 7
+//            aliPayAcountView.isHidden = true
+//            aliPayNameView.isHidden = true
+//			payStackView.removeArrangedSubview(aliPayAcountView)
+//			payStackView.removeArrangedSubview(aliPayNameView)
 			
             payMethodButton.setTitle("微信", for: .normal)
         }
+		receiveImage = nil
     }
+}
+
+extension MMLWithdrawChildVC:UIAlertViewDelegate{
+	
+	func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+		
+		if buttonIndex == 1 {
+			photoManger.browseFromLibrary();
+		}else if buttonIndex == 2{
+			photoManger.browseFromCamera();
+		}
+	}
+}
+
+extension MMLWithdrawChildVC:DDPhotoLibraryManagerDelegate {
+	
+	func delegatePhotoLibraryManager(_ manager: DDPhotoLibraryManager, didPickedImage image: UIImage?) {
+		
+		receiveImage = image;
+		
+//		upLoadPic(image: image!);
+	}
+	
+	
 }

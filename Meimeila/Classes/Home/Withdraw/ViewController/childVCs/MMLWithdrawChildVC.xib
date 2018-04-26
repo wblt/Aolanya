@@ -96,7 +96,7 @@
                                         <constraint firstAttribute="height" constant="0.5" id="eJy-o3-Xnk"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tU-06-t4U">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tU-06-t4U">
                                     <rect key="frame" x="15" y="9.5" width="80" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="Ea9-S6-MCH"/>
@@ -105,7 +105,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的支付宝账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-oV-bAq">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的注册账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJc-oV-bAq">
                                     <rect key="frame" x="110" y="0.0" width="250" height="34.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -144,7 +144,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的支付宝认证真实姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8K5-4x-IJy">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的认证真实姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8K5-4x-IJy">
                                     <rect key="frame" x="110" y="0.0" width="250" height="35"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -218,7 +218,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTu-9L-QvH">
-                    <rect key="frame" x="25" y="196" width="325" height="40"/>
+                    <rect key="frame" x="25" y="246" width="325" height="40"/>
                     <color key="backgroundColor" red="0.0078431372550000003" green="0.70196078429999997" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="QGf-ZA-qFU"/>
@@ -234,7 +234,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现须知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-r5-U6g">
-                    <rect key="frame" x="15" y="261" width="345" height="21"/>
+                    <rect key="frame" x="15" y="311" width="345" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="raG-o1-cCi"/>
                     </constraints>
@@ -243,13 +243,30 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-bY-Jxx">
-                    <rect key="frame" x="15" y="292" width="345" height="375"/>
+                    <rect key="frame" x="15" y="342" width="345" height="325"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <string key="text">1.目前支持微信红包和支付宝两种方式提现                              2.微信红包提现关注微信公众号：美美啦                              3.支付宝需要填写的经过实名认证的名字                                  4.三个工作日到账（节假日顺延）                                         5.最低提现为30元</string>
+                    <string key="text">1.目前支持微信红包和支付宝两种方式提现                              2.微信红包提现关注微信公众号：奧蓝雅                            3.支付宝需要填写的经过实名认证的名字                                  4.三个工作日到账（节假日顺延）                                         5.最低提现为30元</string>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bww-Al-UmG">
+                    <rect key="frame" x="97.5" y="194" width="180" height="40"/>
+                    <color key="backgroundColor" red="0.0078431372550000003" green="0.70196078429999997" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="173-VH-qzz"/>
+                        <constraint firstAttribute="height" constant="40" id="NZo-WA-joW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="请上传收款二维码截图"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="uploadImageAction:" destination="-1" eventType="touchUpInside" id="4bv-Ve-7oF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -258,15 +275,17 @@
                 <constraint firstItem="nu1-J0-nze" firstAttribute="top" secondItem="qM7-FI-xmO" secondAttribute="bottom" constant="10" id="LGW-W3-dGr"/>
                 <constraint firstItem="EfL-bY-Jxx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="M9Z-og-8vv"/>
                 <constraint firstItem="z0F-r5-U6g" firstAttribute="top" secondItem="TTu-9L-QvH" secondAttribute="bottom" constant="25" id="RPW-ij-5IF"/>
+                <constraint firstItem="bww-Al-UmG" firstAttribute="centerX" secondItem="nu1-J0-nze" secondAttribute="centerX" id="V3n-tu-YXX"/>
                 <constraint firstItem="qM7-FI-xmO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="VPv-OF-N9j"/>
                 <constraint firstAttribute="trailing" secondItem="qM7-FI-xmO" secondAttribute="trailing" id="ZSh-3g-uKV"/>
                 <constraint firstAttribute="trailing" secondItem="TTu-9L-QvH" secondAttribute="trailing" constant="25" id="aKu-C1-Thd"/>
-                <constraint firstItem="TTu-9L-QvH" firstAttribute="top" secondItem="nu1-J0-nze" secondAttribute="bottom" constant="10" id="aXO-T6-pc3"/>
+                <constraint firstItem="TTu-9L-QvH" firstAttribute="top" secondItem="nu1-J0-nze" secondAttribute="bottom" constant="60" id="aXO-T6-pc3"/>
                 <constraint firstAttribute="trailing" secondItem="z0F-r5-U6g" secondAttribute="trailing" constant="15" id="cyN-x9-doB"/>
                 <constraint firstAttribute="trailing" secondItem="nu1-J0-nze" secondAttribute="trailing" constant="15" id="fbA-SH-XnQ"/>
                 <constraint firstItem="EfL-bY-Jxx" firstAttribute="top" secondItem="z0F-r5-U6g" secondAttribute="bottom" constant="10" id="fsK-pM-SLe"/>
                 <constraint firstItem="z0F-r5-U6g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="iYJ-xg-TbK"/>
                 <constraint firstItem="qM7-FI-xmO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mZY-pP-KJW"/>
+                <constraint firstItem="bww-Al-UmG" firstAttribute="top" secondItem="nu1-J0-nze" secondAttribute="bottom" constant="8" id="qkf-Pb-9qM"/>
                 <constraint firstItem="TTu-9L-QvH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="qlS-zD-VIq"/>
                 <constraint firstItem="nu1-J0-nze" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="tq2-IO-vkm"/>
             </constraints>
