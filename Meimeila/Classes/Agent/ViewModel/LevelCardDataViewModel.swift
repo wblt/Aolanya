@@ -52,7 +52,7 @@ class LevelCardDataViewModel: NSObject {
 			
 		}, requestError: { (result, errorModel) in
 			self.invitationCodeIsRight = false
-			//BFunction.shared.showToastMessge(errorModel.message);
+			BFunction.shared.showToastMessge(errorModel.message);
 			
 		}) { (error) in
 			

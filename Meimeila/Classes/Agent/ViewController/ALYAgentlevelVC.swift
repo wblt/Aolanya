@@ -10,6 +10,8 @@ import UIKit
 
 class ALYAgentlevelVC: DDBaseViewController {
 	
+	var invitCode:String?
+	
 	@IBOutlet weak var levelBgView: UIView!
 	var collectionView: UICollectionView!
 	
@@ -96,9 +98,17 @@ extension ALYAgentlevelVC: UICollectionViewDataSource,UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
+		
+		let model = self.cardDataViewModel.cardListArr[indexPath.row];
+		
         let vc = ALYAgentMsgInputVC()
-        
+		if self.invitCode == "" {
+			vc.examineoneUid = ""
+		}else {
+			vc.examineoneUid = self.invitCode
+		}
+		vc.agentLevel = model.id
+		
         navigationController?.pushViewController(vc, animated: true)
     }
 }

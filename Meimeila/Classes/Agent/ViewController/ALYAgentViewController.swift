@@ -64,7 +64,7 @@ class ALYAgentViewController: DDBaseViewController {
 				BFunction.shared.showMessage("邀请码不存在")
 			}else {
 				let vc = ALYAgentlevelVC();
-				
+				vc.invitCode = self.invitTextField.text!
 				self.navigationController?.pushViewController(vc, animated: true);
 			}
 			
@@ -82,6 +82,7 @@ class ALYAgentViewController: DDBaseViewController {
 		}
 		
 		let vc = ALYAgentlevelVC();
+		vc.invitCode = ""
 		self.navigationController?.pushViewController(vc, animated: true);
 		
 	}

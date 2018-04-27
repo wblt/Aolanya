@@ -118,6 +118,23 @@ class ALYAgentManagerVC: DDBaseViewController {
 			self?.nameLab.text = self?.agentVm.superiorAgentModel?.realName ?? self?.uservm.infoModel?.name
 			let num = self?.agentVm.lowerAgentArray.count as! Int
 			self?.numLab.text = "下级代理\(num)人"
+			let level = DDUDManager.share.getUserLevel() as String
+			let admin = DDUDManager.share.getUseraoLanYaAdmin()
+			if level == "1" {
+				self?.agentLab.text = "零售"
+			}else if level == "2"{
+				self?.agentLab.text = "金牌会员"
+			}else if level == "3"{
+				self?.agentLab.text = "大区"
+			}else if level == "4"{
+				self?.agentLab.text = "联合股东"
+			}else if level == "5"{
+				self?.agentLab.text = "联合创始人"
+			}
+			
+			if admin == "1" {
+				self?.agentLab.text = "管理员"
+			}
 		};
 		
     }

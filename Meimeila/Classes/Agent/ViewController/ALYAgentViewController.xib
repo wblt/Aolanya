@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -101,7 +101,7 @@
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6B-LP-ttr">
                     <rect key="frame" x="112.5" y="195" width="150" height="35"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.74208090790000003" blue="0.25431315100000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="CqV-ss-oRe"/>
                         <constraint firstAttribute="height" constant="35" id="elB-U0-wM1"/>
@@ -112,7 +112,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMi-hC-yUe">
                     <rect key="frame" x="20" y="274" width="335" height="40"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.74208090790000003" blue="0.25431315100000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="O4w-qP-mSS"/>
                     </constraints>
@@ -126,7 +126,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-Ie-O0Q">
                     <rect key="frame" x="20" y="334" width="335" height="40"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.74208090790000003" blue="0.25431315100000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.71372549019999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="无邀请码">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -55,6 +55,8 @@ extension AgentApplyAPI:Request{
 			p["agentLevel"] = agentLevel
 			p["weChatPayment"] = weChatPayment
 			p["alipayPayment"] = alipayPayment
+			
+			
 			return  p
 		case .getToExamineoneUid:
 			return nil

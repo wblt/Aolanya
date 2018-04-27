@@ -11,6 +11,8 @@ import FDStackView
 
 class ALYAgentMsgInputVC: DDBaseViewController {
 	
+	var examineoneUid:String?
+	var agentLevel:String?
     /*
      {  市申请
      "uid": "360",
@@ -82,6 +84,9 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 		
 		
 		agentViewModel.getToExamineoneUid {
+			if self.examineoneUid == "" {
+				self.examineoneUid = self.agentViewModel.examineoneUid
+			}
 			
 			print(self.agentViewModel.examineoneUid)
 			
@@ -202,8 +207,12 @@ class ALYAgentMsgInputVC: DDBaseViewController {
                 
             }
         }else if areaType == "3" { //直接申请  两种：有邀请吗， 无邀请码
-             let vc = ALYAgentViewController()
-             navigationController?.pushViewController(vc, animated: true)
+			self.agentViewModel.applyAgentJoin(uid: DDUDManager.share.getUserID(), name: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, adress: addressLab.text!, invitationCode: examineoneUid!, agentLevel: agentLevel!, weChatPayment: weixinImgView.image!, alipayPayment: zhifubaoimgView.image!, successBlock: {[weak self] in
+				
+				let vc = ALYAgentCheckVC()
+				self?.navigationController?.pushViewController(vc, animated: true)
+			})
+			
         }
 		
 		
