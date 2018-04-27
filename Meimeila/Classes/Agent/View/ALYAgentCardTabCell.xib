@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="405" height="192"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="405" height="191.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="192"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KH-hS-pzB">
@@ -155,12 +155,12 @@
                 <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
             </tableViewCellContentView>
             <connections>
-                <outlet property="adddressLab" destination="eqx-98-chO" id="RDW-tB-cUH"/>
-                <outlet property="addresstitleLab" destination="dOq-et-6Rq" id="B52-ZS-3qF"/>
+                <outlet property="adddressLab" destination="eqx-98-chO" id="R7o-u9-u6P"/>
+                <outlet property="addresstitleLab" destination="dOq-et-6Rq" id="KDU-pt-nkJ"/>
                 <outlet property="levelTitleLab" destination="zJO-5D-wed" id="u4K-Iw-xhA"/>
-                <outlet property="nameLab" destination="9N7-c5-ye8" id="dpD-be-HUt"/>
-                <outlet property="phoneLab" destination="ci3-ES-s4b" id="RoX-dc-VE0"/>
-                <outlet property="weixinLab" destination="Ei6-OF-QkH" id="cxz-8I-Pvu"/>
+                <outlet property="nameLab" destination="9N7-c5-ye8" id="fjf-7w-vM9"/>
+                <outlet property="phoneLab" destination="ci3-ES-s4b" id="Dyi-0S-FsS"/>
+                <outlet property="weixinLab" destination="Ei6-OF-QkH" id="6MV-Mq-kC6"/>
             </connections>
             <point key="canvasLocation" x="247.5" y="91"/>
         </tableViewCell>

@@ -40,12 +40,12 @@ class AgentViewModel: NSObject {
 	// 省合伙人
 	func writeRegionApply(uid:String ,realName:String ,phone:String ,weixin:String,regionAdress:String,temporaryRegionLevel:String,successBlock:@escaping () ->Void){
 		let r = AgentApplyAPI.writeRegion(uid: uid, realName: realName, phone: phone, weixin: weixin, regionAdress: regionAdress, temporaryRegionLevel: temporaryRegionLevel)
-		DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
+		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
 			print(responds);
 			let json = JSON.init(responds);
 			
 			BFunction.shared.showToastMessge(json["message"].stringValue);
-			
+			successBlock()
 		}, requestError: { (responds, ErrorModel) in
 			BFunction.shared.showToastMessge(ErrorModel.message);
 		}) { (error) in

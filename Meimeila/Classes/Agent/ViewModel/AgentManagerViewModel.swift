@@ -98,30 +98,104 @@ class AgentManagerViewModel: NSObject {
 	func confuseAgent(uid: String, targetUid: String, remarks: String, apply: String, toExamineoneUid: String,successBlock:@escaping () -> Void ) {
 		
 		let r = AgentManageAPI.agreenAgentAPI(uid: uid, targetUid: targetUid, remarks: remarks, apply: apply, toExamineoneUid: toExamineoneUid)
-		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
-			let json = JSON.init(responds);
+		
+		DDHTTPRequest.upLoadImages(r: r, requestSuccess: { (responds) in
 			
-			BFunction.shared.showToastMessge(json["message"].stringValue);
-			successBlock()
+			let jsonRequest = JSON.init(responds);
+			BFunction.shared.showSuccessMessage(jsonRequest["message"].stringValue);
+			
+			successBlock();
+			
 		}, requestError: { (responds, ErrorModel) in
-			BFunction.shared.showToastMessge(ErrorModel.message);
+			
+			let jsonRequest = JSON.init(responds);
+			let code = jsonRequest["code"].intValue
+			var message:String?
+			switch code {
+			case 101:
+				message = "请登录"
+			case 102:
+				message = "上传出错"
+			case 103:
+				message = "图片格式不正确"
+			case 108:
+				message = "请求超时"
+			case 110:
+				message = "签名不正确"
+			case 111:
+				message = " 未知错误"
+			default:
+				message = " Error"
+			}
+			
+			//BFunction.shared.showErrorMessage(message!);
+			BFunction.shared.showToastMessge(jsonRequest["message"].stringValue)
 		}) { (error) in
 			
 		}
+		
+//		DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
+//			let json = JSON.init(responds);
+//
+//			BFunction.shared.showToastMessge(json["message"].stringValue);
+//			successBlock()
+//		}, requestError: { (responds, ErrorModel) in
+//			BFunction.shared.showToastMessge(ErrorModel.message);
+//		}) { (error) in
+//
+//		}
+		
+	
 	}
 	
 	func agreenRegion(uid: String, targetUid: String, apply: String, agentLevel: String, level: String, inviter: String, regionLevel: String,successBlock:@escaping () -> Void ) {
 		let r = AgentManageAPI.agreenRegionAPI(uid: uid, targetUid: targetUid, apply: apply, agentLevel: agentLevel, level: level, inviter: inviter, regionLevel: regionLevel)
-		DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
-			let json = JSON.init(responds);
+		
+		DDHTTPRequest.upLoadImages(r: r, requestSuccess: { (responds) in
 			
-			BFunction.shared.showToastMessge(json["message"].stringValue);
-			successBlock()
+			let jsonRequest = JSON.init(responds);
+			BFunction.shared.showSuccessMessage(jsonRequest["message"].stringValue);
+			
+			successBlock();
+			
 		}, requestError: { (responds, ErrorModel) in
-			BFunction.shared.showToastMessge(ErrorModel.message);
+			
+			let jsonRequest = JSON.init(responds);
+			let code = jsonRequest["code"].intValue
+			var message:String?
+			switch code {
+			case 101:
+				message = "请登录"
+			case 102:
+				message = "上传出错"
+			case 103:
+				message = "图片格式不正确"
+			case 108:
+				message = "请求超时"
+			case 110:
+				message = "签名不正确"
+			case 111:
+				message = " 未知错误"
+			default:
+				message = " Error"
+			}
+			
+			//BFunction.shared.showErrorMessage(message!);
+			BFunction.shared.showToastMessge(jsonRequest["message"].stringValue)
 		}) { (error) in
 			
 		}
+		
+//		DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
+//			let json = JSON.init(responds);
+//
+//			BFunction.shared.showToastMessge(json["message"].stringValue);
+//			successBlock()
+//		}, requestError: { (responds, ErrorModel) in
+//			BFunction.shared.showToastMessge(ErrorModel.message);
+//		}) { (error) in
+//
+//		}
 	}
 	
 }

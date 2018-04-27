@@ -72,7 +72,8 @@ extension AgentManageAPI:Request{
 			let jsons = String.init(data: data!, encoding:String.Encoding(rawValue: String.Encoding.utf8.rawValue) )!
 			
 			pp["jsons"] = jsons
-			
+			// 照着安卓 的要传图片,随便传的一个
+			pp["authorizeImg"] = UIImage.init(named: "address")
 			return  pp
 		case .agreenRegionAPI(let uid, let targetUid, let apply, let agentLevel, let level, let inviter, let regionLevel):
 			var p = [String : Any]();
@@ -83,7 +84,17 @@ extension AgentManageAPI:Request{
 			p["level"] = level
 			p["inviter"] = inviter
 			p["regionLevel"] = regionLevel
-			return  p
+			
+			var pp = [String : Any]();
+			
+			let data = try?JSONSerialization.data(withJSONObject: p, options: JSONSerialization.WritingOptions.prettyPrinted)
+			let jsons = String.init(data: data!, encoding:String.Encoding(rawValue: String.Encoding.utf8.rawValue) )!
+			
+			pp["jsons"] = jsons
+			// 照着安卓 的要传图片,随便传的一个
+			pp["authorizeImg"] = UIImage.init(named: "address")
+			
+			return  pp
 		}
         
     }

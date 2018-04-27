@@ -51,9 +51,14 @@ class ALYAgentViewController: DDBaseViewController {
 			return;
 		}
 		
+		if invitTextField.text == "" {
+			BFunction.shared.showToastMessge("请输入邀请码")
+			return
+		}
+		
 //		let vc = ALYAgentlevelVC();
 //		self.navigationController?.pushViewController(vc, animated: true);
-		self.cardDataViewModel.checkInvitationCode(Code: "719") {
+		self.cardDataViewModel.checkInvitationCode(Code: invitTextField.text!) {
 			
 			if !self.cardDataViewModel.invitationCodeIsRight {
 				BFunction.shared.showMessage("邀请码不存在")

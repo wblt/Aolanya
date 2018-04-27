@@ -21,7 +21,7 @@ class DDTabBarViewController: UITabBarController {
 	
     // 当前选中的索引值
     fileprivate var indexFlag:Int! = 0
-
+	
 	lazy var uservm:MMLUserInfoViewModel = {[weak self] in
 		let vm = MMLUserInfoViewModel.init();
 		return vm;
@@ -32,11 +32,11 @@ class DDTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.view.backgroundColor = .white
+		
         delegate = self
         setupUI()
     }
-    
-    
+	
     // MARK: - Private methods
     private func setupUI() {
         let tabBar = UITabBar.appearance()
@@ -51,7 +51,7 @@ class DDTabBarViewController: UITabBarController {
     private func addChildViewControllers() {
         addChildViewController(childController: homeVC, title: "首页", imageName: "home")
       //  addChildViewController(childController: hardwareVC, title: "发现", imageName: "found")
-		addChildViewController(childController: agentVC, title: "我要赚钱", imageName: "found")
+		addChildViewController(childController: agentManagerVC, title: "我要赚钱", imageName: "found")
         addChildViewController(childController: mallVC, title: "购物车结算", imageName: "shoppingcart")
         addChildViewController(childController: mineVC, title: "我的", imageName: "mine")
     }
@@ -110,18 +110,6 @@ class DDTabBarViewController: UITabBarController {
         indexFlag = index
         
     }
-	
-	
-	func setAgentCheckPage(){
-		let navC :DDNavigationViewController = self.viewControllers![1] as! DDNavigationViewController
-		agentcheckVC.tabBarItem.image = UIImage(named: "found")
-		agentcheckVC.tabBarItem.selectedImage = UIImage(named: "found" + "_h")
-		agentcheckVC.title = "我要赚钱"
-		navC.setViewControllers([agentcheckVC], animated: true)
-	}
-	
-	
-	
 }
 
 extension DDTabBarViewController: UITabBarControllerDelegate {
@@ -131,15 +119,8 @@ extension DDTabBarViewController: UITabBarControllerDelegate {
             animationWithIndex(index: index)
         }
 		
-		// 登录状态判断 用户是申请成为代理
-		if  DDDeviceManager.shared.loginStatue() && index == 1{
-			
-			let level = DDUDManager.share.getUserLevel() as String
-			// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
-			if level != "" {
-			//	self.setAgentCheckPage()
-			}
-			
+		if index == 1 {
+			Barista.post(notification: .logout);
 		}
 		
     }

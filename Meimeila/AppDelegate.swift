@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 		//test()
         // Bugly
-        //Bugly.startWithAppId("此处替换为你的AppId")
+		Bugly.start(withAppId: "321f3042db")
 		// 蒲公英
 		//启动基本SDK
 		//[[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];

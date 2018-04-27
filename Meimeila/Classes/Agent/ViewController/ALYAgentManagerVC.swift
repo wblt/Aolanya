@@ -36,6 +36,9 @@ class ALYAgentManagerVC: DDBaseViewController {
 	
 	@IBOutlet weak var AreaBgCheckView: UIView!
 	
+	
+	var agentVC = ALYAgentApplyVC()
+	
 	//iOS8用到XIB必须写这两个方法
 	init() {
 		super.init(nibName: String.init(describing: ALYAgentManagerVC.self), bundle: nil)
@@ -55,11 +58,29 @@ class ALYAgentManagerVC: DDBaseViewController {
         return vm;
     }()
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		let level = DDUDManager.share.getUserLevel() as String
+		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+		if level != "0"  && level != ""{
+			requestUserInfo()
+			agentVC.view.removeFromSuperview()
+			agentVC.removeFromParentViewController()
+		}else {
+			if self.childViewControllers.count  == 0  {
+				self.addChildViewController(agentVC)
+				agentVC.view.frame = (self.view.bounds);
+				self.view.addSubview(agentVC.view);
+			}
+		}
+		
+	}
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
-        requestUserInfo()
     }
 	
 	override func setupUI() {
@@ -79,6 +100,14 @@ class ALYAgentManagerVC: DDBaseViewController {
 		ArebgView.addGestureRecognizer(tap5)
 		let tap6  = UITapGestureRecognizer.init(target: self, action: #selector(areaCheckTap))
 		AreaBgCheckView.addGestureRecognizer(tap6)
+		
+		// 区域审核只有 管理员可以审核
+		let admin = DDUDManager.share.getUseraoLanYaAdmin()
+		if admin != "1" {
+			AreaBgCheckView.isHidden = true
+		}else {
+			AreaBgCheckView.isHidden = false
+		}
 	}
     //获取代理人信息
     func requestAgentData() {

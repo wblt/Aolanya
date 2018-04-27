@@ -57,6 +57,7 @@ extension Barista {
         case wechatPayResult
         case moneyPay
         case goSet
+		case logout
     }
 }
 

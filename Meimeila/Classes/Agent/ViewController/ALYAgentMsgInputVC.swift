@@ -98,8 +98,10 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 			line1.isHidden = true
 			line3.isHidden = true
 			
-			lab2.text = "填写合伙人信息"
+			lab2.text = "合伙人信息"
 			lab3.text = "等待审核"
+			img2.image = UIImage.init(named: "select_agent_progress")
+			img3.image = UIImage.init(named: "no_select_agent_progress")
 			
 			zhifubaoBgView.isHidden = true
 			weixinBgView.isHidden = true
@@ -183,15 +185,16 @@ class ALYAgentMsgInputVC: DDBaseViewController {
         }
         var regionLevel = "0"
         if areaType == "1" { // 省 合伙人
-            regionLevel = "2"
+            regionLevel = "1"
             self.agentViewModel.writeRegionApply(uid:DDUDManager.share.getUserID(), realName: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, regionAdress: addressLab.text!, temporaryRegionLevel: regionLevel) {[weak self] in
+				
                 let vc = ALYAgentCheckVC()
                 self?.navigationController?.pushViewController(vc, animated: true)
 
                 
             }
         }else if areaType == "2" {// 市合伙人
-           regionLevel = "1"
+           regionLevel = "2"
             self.agentViewModel.writeRegionApply(uid:DDUDManager.share.getUserID(), realName: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, regionAdress: addressLab.text!, temporaryRegionLevel: regionLevel) {[weak self] in
                 
                 let vc = ALYAgentCheckVC()

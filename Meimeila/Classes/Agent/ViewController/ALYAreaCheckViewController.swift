@@ -76,7 +76,9 @@ class ALYAreaCheckViewController: DDBaseViewController {
 		let uid = DDUDManager.share.getUserID()
 		
 		agentVm.confuseAgent(uid: uid, targetUid: model.uid, remarks: "", apply: "false", toExamineoneUid: uid) {
-			
+			self.toBeAuditedArray.removeAll();
+			self.tableView.reloadData()
+			self.requestData();
 		}
 		
 	}
@@ -96,7 +98,9 @@ class ALYAreaCheckViewController: DDBaseViewController {
 				self.dismiss(animated: true, completion: {
 				
 					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "1", level: "1", inviter: uid, regionLevel: model.temporaryRegionLevel) {
-			
+						self.toBeAuditedArray.removeAll();
+						self.tableView.reloadData()
+						self.requestData();
 					}
 				})
 				
@@ -107,7 +111,9 @@ class ALYAreaCheckViewController: DDBaseViewController {
 				self.dismiss(animated: true, completion: {
 					
 					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "2", level: "2", inviter: uid, regionLevel: model.temporaryRegionLevel) {
-						
+						self.toBeAuditedArray.removeAll();
+						self.tableView.reloadData()
+						self.requestData();
 					}
 					
 				})
@@ -118,7 +124,9 @@ class ALYAreaCheckViewController: DDBaseViewController {
 				self.dismiss(animated: true, completion: {
 					
 					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "3", level: "3", inviter: uid, regionLevel: model.temporaryRegionLevel) {
-						
+						self.toBeAuditedArray.removeAll();
+						self.tableView.reloadData()
+						self.requestData();
 					}
 					
 				})
@@ -127,7 +135,9 @@ class ALYAreaCheckViewController: DDBaseViewController {
 			let act4 =  HCBottomPopupAction.init(title: "联合股东", withSelectedBlock: {
 				self.dismiss(animated: true, completion: {
 					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "4", level: "4", inviter: uid, regionLevel: model.temporaryRegionLevel) {
-						
+						self.toBeAuditedArray.removeAll();
+						self.tableView.reloadData()
+						self.requestData();
 					}
 				})
 				
@@ -135,7 +145,9 @@ class ALYAreaCheckViewController: DDBaseViewController {
 			let act5 =  HCBottomPopupAction.init(title: "联合创始人", withSelectedBlock: {
 				self.dismiss(animated: true, completion: {
 					self.agentVm.agreenRegion(uid: uid, targetUid: model.uid, apply: "true", agentLevel: "5", level: "5", inviter: uid, regionLevel: model.temporaryRegionLevel) {
-						
+						self.toBeAuditedArray.removeAll();
+						self.tableView.reloadData()
+						self.requestData();
 					}
 				})
 				

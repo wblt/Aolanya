@@ -20,6 +20,7 @@ extension UserDefaults {
             case userToken
             case userID
 			case level
+			case aoLanYaAdmin  // 管理员  1  就是管理员
         }
     }
 }
@@ -180,6 +181,36 @@ class DDUDManager {
 	func getUserLevel() -> String {
 		
 		if let level = UserDefaults.ServerInfo.string(forKey: .level) {
+			return level
+		}else{
+			return ""
+		}
+	}
+	
+	/**
+	保存用户aoLanYaAdmin
+	*/
+	func saveUseraoLanYaAdmin(_ level:String) {
+		UserDefaults.ServerInfo.set(value: level, forKey: .aoLanYaAdmin)
+		UserDefaults.standard.synchronize()
+	}
+	
+	/**
+	删除用户aoLanYaAdmin
+	*/
+	func removeUseraoLanYaAdmin() -> Bool {
+		
+		UserDefaults.ServerInfo.removeObject(forkey: .aoLanYaAdmin)
+		//NotificationCenter.default.post(name: cNDidLogout, object: nil)
+		return UserDefaults.standard.synchronize()
+	}
+	
+	/**
+	读取用户aoLanYaAdmin
+	*/
+	func getUseraoLanYaAdmin() -> String {
+		
+		if let level = UserDefaults.ServerInfo.string(forKey: .aoLanYaAdmin) {
 			return level
 		}else{
 			return ""

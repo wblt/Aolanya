@@ -112,7 +112,10 @@ extension MMLMineVC{
             self?.tableHeadView.headIconBt.jq_setButtonImage(url: URL.init(string: self?.uservm.infoModel?.picture ?? ""), placeholder: "icon_defaultHeadIcon", state: UIControlState.normal);
 			
 			self?.tableHeadView.nickNameLabel.text = self?.uservm.infoModel?.name ?? DDUDManager.share.getUserID()
-			
+			// 保存用户等级
+			DDUDManager.share.saveUserLevel((self?.uservm.infoModel?.level)!)
+			//保存管理员信息
+			DDUDManager.share.saveUseraoLanYaAdmin((self?.uservm.infoModel?.aoLanYaAdmin)!)
 			
         }
     }

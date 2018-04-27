@@ -76,7 +76,7 @@ class MMLMineSet: DDBaseViewController {
         
         loginOut.outLoginAction {
 			DispatchQueue.main.asyncAfter(deadline:DispatchTime.now()+1.0, execute: {
-				
+				   Barista.post(notification: .logout)
 				   self.navigationController?.popViewController(animated: true);
 			})
         }
