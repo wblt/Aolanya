@@ -13,6 +13,7 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 	
 	var examineoneUid:String?
 	var agentLevel:String?
+	var toExamineone :String?
     /*
      {  市申请
      "uid": "360",
@@ -84,7 +85,7 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 		
 		
 		agentViewModel.getToExamineoneUid {
-			if self.examineoneUid == "" {
+			if self.examineoneUid == "" { // 获取邀请码
 				self.examineoneUid = self.agentViewModel.examineoneUid
 			}
 			
@@ -207,11 +208,19 @@ class ALYAgentMsgInputVC: DDBaseViewController {
                 
             }
         }else if areaType == "3" { //直接申请  两种：有邀请吗， 无邀请码
-			self.agentViewModel.applyAgentJoin(uid: DDUDManager.share.getUserID(), name: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, adress: addressLab.text!, invitationCode: examineoneUid!, agentLevel: agentLevel!, weChatPayment: weixinImgView.image!, alipayPayment: zhifubaoimgView.image!, successBlock: {[weak self] in
+			// 有可能需要 多传一个参数 toExamineone
+			
+			if self.toExamineone == "" {
+				self.agentViewModel.applyAgentJoin(uid: DDUDManager.share.getUserID(), name: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, adress: addressLab.text!, invitationCode: examineoneUid!, agentLevel: agentLevel!, weChatPayment: weixinImgView.image!, alipayPayment: zhifubaoimgView.image!, successBlock: {[weak self] in
+					
+					let vc = ALYAgentCheckVC()
+					self?.navigationController?.pushViewController(vc, animated: true)
+				})
+			}else {
 				
-				let vc = ALYAgentCheckVC()
-				self?.navigationController?.pushViewController(vc, animated: true)
-			})
+			}
+			
+			
 			
         }
 		

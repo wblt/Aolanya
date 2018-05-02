@@ -108,6 +108,7 @@ extension ALYAgentlevelVC: UICollectionViewDataSource,UICollectionViewDelegate{
 			vc.examineoneUid = self.invitCode
 		}
 		vc.agentLevel = model.id
+		vc.toExamineone = model.toExamineone
 		
         navigationController?.pushViewController(vc, animated: true)
     }

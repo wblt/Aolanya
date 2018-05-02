@@ -20,7 +20,7 @@ class LevelCardModel {
 	var money2 : String!
 	var color_bg: String!
 	var discount: String!
-	
+	var toExamineone: String!
 	init(fromJson json: JSON!){
 		if json.isEmpty{
 			return
@@ -36,6 +36,7 @@ class LevelCardModel {
 		money2 = json["money2"].stringValue
 		color_bg = json["color_bg"].stringValue
 		discount = json["discount"].stringValue
+		toExamineone = json["toExamineone"].stringValue ?? ""
 	}
 	
 }
