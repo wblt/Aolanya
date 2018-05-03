@@ -32,7 +32,7 @@ class MMLHomeVC: DDBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBindEvents()
-        setupFirstLoad()
+      //  setupFirstLoad()
         if DDDeviceManager.shared.firstLoadStatus() {
             setupShowNewsWelfare()
         }
@@ -147,7 +147,12 @@ class MMLHomeVC: DDBaseViewController {
             let window = UIApplication.shared.keyWindow
             let view = AdvertiseView.init(frame: (window?.bounds)!)
             view.filePath = filePath
-            view.show()
+			if filePath.last == "s"{
+				
+			} else {
+				 view.show()
+			}
+			
         }
         
         
