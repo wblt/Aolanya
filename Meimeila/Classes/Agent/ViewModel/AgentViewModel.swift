@@ -97,4 +97,45 @@ class AgentViewModel: NSObject {
 		}
 	}
 	
+	func applyAgentWithtoExam(uid:String ,name:String ,phone:String ,weixin:String ,adress:String ,invitationCode:String ,agentLevel:String ,weChatPayment:UIImage,alipayPayment:UIImage,toExamineone:String,successBlock:@escaping () -> Void) {
+		
+		let r = AgentApplyAPI.writeJointoWithExamineone(uid: uid, name: name, phone: phone, weixin: weixin, adress: adress, invitationCode: invitationCode, agentLevel: agentLevel, weChatPayment: weChatPayment, alipayPayment: alipayPayment,toExamineone: toExamineone)
+		
+		DDHTTPRequest.upLoadImages(r: r, requestSuccess: { (responds) in
+			
+			let jsonRequest = JSON.init(responds);
+			
+			BFunction.shared.showSuccessMessage(jsonRequest["message"].stringValue);
+			
+			successBlock();
+			
+		}, requestError: { (responds, ErrorModel) in
+			
+			let jsonRequest = JSON.init(responds);
+			let code = jsonRequest["code"].intValue
+			var message:String?
+			switch code {
+			case 101:
+				message = "请登录"
+			case 102:
+				message = "上传出错"
+			case 103:
+				message = "图片格式不正确"
+			case 108:
+				message = "请求超时"
+			case 110:
+				message = "签名不正确"
+			case 111:
+				message = " 未知错误"
+			default:
+				message = " Error"
+			}
+			
+			BFunction.shared.showErrorMessage(message!);
+			
+		}) { (error) in
+			
+		}
+	}
+	
 }

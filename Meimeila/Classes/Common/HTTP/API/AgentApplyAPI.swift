@@ -15,6 +15,8 @@ enum AgentApplyAPI {
 	
 	case writeJoin(uid:String ,name:String ,phone:String ,weixin:String ,adress:String ,invitationCode:String ,agentLevel:String  ,weChatPayment:UIImage,alipayPayment:UIImage)
 	
+	case writeJointoWithExamineone(uid:String ,name:String ,phone:String ,weixin:String ,adress:String ,invitationCode:String ,agentLevel:String  ,weChatPayment:UIImage,alipayPayment:UIImage,toExamineone:String)
+	
 	case getToExamineoneUid()
 	case writeRegion(uid:String,realName:String,phone:String,weixin:String,regionAdress:String,temporaryRegionLevel:String)
 	
@@ -34,6 +36,9 @@ extension AgentApplyAPI:Request{
 			
 		case .writeRegion(uid: _, realName: _, phone: _, weixin: _, regionAdress: _, temporaryRegionLevel: _):
 			return API.writeRegionAPI
+		case .writeJointoWithExamineone(uid: _,name:_ ,phone:_ ,weixin:_ ,adress:_ ,invitationCode:_ ,agentLevel:_  ,weChatPayment:_,alipayPayment:_,toExamineone:_):
+			
+			return API.writeApplyMsgAPI
 		}
 	}
 		
@@ -68,6 +73,20 @@ extension AgentApplyAPI:Request{
 			p["weixin"] = weixin
 			p["regionAdress"] = regionAdress
 			p["temporaryRegionLevel"] = temporaryRegionLevel
+			return  p
+		case .writeJointoWithExamineone(let uid, let name, let phone, let weixin, let adress, let invitationCode, let agentLevel, let weChatPayment, let alipayPayment, let toExamineone):
+			var p = postParameters();
+			p["uid"] = uid
+			p["name"] = name
+			p["phone"] = phone
+			p["weixin"] = weixin
+			p["adress"] = adress
+			p["invitationCode"] = invitationCode
+			p["agentLevel"] = agentLevel
+			p["weChatPayment"] = weChatPayment
+			p["alipayPayment"] = alipayPayment
+			p["toExamineone"] = toExamineone
+			
 			return  p
 		}
 	}

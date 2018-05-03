@@ -109,7 +109,7 @@ extension ALYAgentlevelVC: UICollectionViewDataSource,UICollectionViewDelegate{
 		}
 		vc.agentLevel = model.id
 		vc.toExamineone = model.toExamineone
-		
+		vc.areaType = "3"
         navigationController?.pushViewController(vc, animated: true)
     }
 }

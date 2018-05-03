@@ -217,11 +217,12 @@ class ALYAgentMsgInputVC: DDBaseViewController {
 					self?.navigationController?.pushViewController(vc, animated: true)
 				})
 			}else {
-				
+				self.agentViewModel.applyAgentWithtoExam(uid: DDUDManager.share.getUserID(), name: nameTextField.text!, phone: phoneTextField.text!, weixin: weixinNumTextField.text!, adress: addressLab.text!, invitationCode: examineoneUid!, agentLevel: agentLevel!, weChatPayment: weixinImgView.image!, alipayPayment: zhifubaoimgView.image!,toExamineone:self.toExamineone!, successBlock: {[weak self] in
+					
+					let vc = ALYAgentCheckVC()
+					self?.navigationController?.pushViewController(vc, animated: true)
+				})
 			}
-			
-			
-			
         }
 		
 		
