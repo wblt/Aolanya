@@ -27,17 +27,17 @@ class ALYAgentChectTabCell: UITableViewCell {
 	
 	@IBOutlet weak var rightImgView: UIImageView!
 	
-	// 上级代理人
+	//
 	var data: AgentInfoDataModel? {
 		didSet {
 			levelTitleLab.text = data?.level
-			if data?.level == "5" {
+			if data?.agentLevel == "5" {
 				levelTitleLab.text = "联合创始人"
-			}else if data?.level == "4" {
+			}else if data?.agentLevel == "4" {
 				levelTitleLab.text = "联合股东"
-			}else if data?.level == "3" {
+			}else if data?.agentLevel == "3" {
 				levelTitleLab.text = "大区"
-			}else if data?.level == "2" {
+			}else if data?.agentLevel == "2" {
 				levelTitleLab.text = "金牌会员"
 			}else  { //1
 				levelTitleLab.text = "零售"

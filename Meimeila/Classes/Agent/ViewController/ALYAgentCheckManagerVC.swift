@@ -129,15 +129,13 @@ extension ALYAgentCheckManagerVC:UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 300
+		return 340
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		var cell:ALYAgentChectTabCell? = tableView.dequeueReusableCell(withIdentifier: String.init(describing: ALYAgentChectTabCell.self)) as? ALYAgentChectTabCell;
-		cell?.separatorInset.left = 0;
-		cell?.selectionStyle = .none;
-		cell?.backgroundColor =  UIColor.RGB(r: 245, g: 245, b: 245)
+		
 		if let _ = cell {
 			
 		}else{
@@ -145,7 +143,10 @@ extension ALYAgentCheckManagerVC:UITableViewDataSource {
 			cell = Bundle.main.loadNibNamed(String.init(describing: ALYAgentChectTabCell.self), owner: nil, options: nil)?.last as? ALYAgentChectTabCell;
 		}
 		cell?.data = self.toBeAuditedArray[indexPath.section]
-		
+        cell?.separatorInset.left = 0;
+        cell?.selectionStyle = .none;
+		cell?.backgroundColor =  UIColor.RGB(r: 245, g: 245, b: 245)
+        
 		return cell!;
 	}
 	

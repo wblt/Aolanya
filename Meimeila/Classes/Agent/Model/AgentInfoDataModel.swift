@@ -30,7 +30,7 @@ class AgentInfoDataModel {
     var alipayPayment : String!
 	
 	var toExamineone : String!
-    
+    var agentLevel :String!
     init(fromJson json: JSON!){
         if json.isEmpty{
             return
@@ -49,7 +49,8 @@ class AgentInfoDataModel {
         inviter = json["inviter"].stringValue
         weChatPayment = json["weChatPayment"].stringValue
         alipayPayment = json["alipayPayment"].stringValue
-		toExamineone = json["toExamineone"].stringValue 
+		toExamineone = json["toExamineone"].stringValue
+        agentLevel = json["agentLevel"].stringValue
     }
     
    
