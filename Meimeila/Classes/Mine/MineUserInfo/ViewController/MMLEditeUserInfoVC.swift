@@ -171,7 +171,7 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
                 vc.title = "昵称";
                 
             }else if indexPath.row == 1 {
-                vc.title = "昵称";
+                vc.title = "性别";
 
             }else if indexPath.row == 2 {
                 vc.title = "所在地";
@@ -244,6 +244,8 @@ extension MMLEditeUserInfoVC:UITableViewDataSource{
             
             
             if indexPath.section == 2 && indexPath.row == 1{
+				
+				
                 cell?.accessoryType = .disclosureIndicator;
             }else if indexPath.section == 3 {
                 cell?.accessoryType = .disclosureIndicator;
@@ -253,7 +255,16 @@ extension MMLEditeUserInfoVC:UITableViewDataSource{
                 let section = indexPath.section;
                 let row = indexPath.row;
                 
-                let title = vm.userInfoCellDetailArr[section];
+                var title = vm.userInfoCellDetailArr[section];
+				
+				if section == 2 && row == 1 {
+					if title[row]  == "0"{
+						title[row] = "女"
+					}else {
+						title[row] = "男"
+					}
+				}
+				
                 cell?.setInfo = title[row];
             }
             return cell!

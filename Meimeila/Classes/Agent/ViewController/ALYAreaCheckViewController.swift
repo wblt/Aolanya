@@ -52,7 +52,14 @@ class ALYAreaCheckViewController: DDBaseViewController {
 		agentVm.getAgentManagerData(uid: uid) {[weak self] in
 			self?.tableView.mj_header.endRefreshing()
 //			self?.tableView.mj_footer.endRefreshing()
-			self?.toBeAuditedArray = (self?.agentVm.toBeAuditedArray)!
+			var ary = [AgentInfoDataModel]()
+			self?.agentVm.toBeAuditedArray.forEach { (model) in
+				if model.toExamineone != "1" {
+					ary.append(model)
+				}
+			}
+			
+			self?.toBeAuditedArray = ary
 			self?.tableView.reloadData()
 		};
 	}

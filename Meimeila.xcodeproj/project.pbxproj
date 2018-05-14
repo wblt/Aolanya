@@ -632,6 +632,8 @@
 		F83CF8D3207A1BD500FA9423 /* ALYAgentCheckVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8D1207A1BD500FA9423 /* ALYAgentCheckVC.xib */; };
 		F84F860C2088794F00C8B91F /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F84F86092088794E00C8B91F /* AdvertiseView.m */; };
 		F84F860D2088794F00C8B91F /* AdvertiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84F860B2088794E00C8B91F /* AdvertiseViewController.m */; };
+		F862481620A988E0009D52E1 /* ALYAgentChectTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862481420A988E0009D52E1 /* ALYAgentChectTabCell.swift */; };
+		F862481720A988E0009D52E1 /* ALYAgentChectTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F862481520A988E0009D52E1 /* ALYAgentChectTabCell.xib */; };
 		F87548E3207CA57200ACADE8 /* AgentApplyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */; };
 		F8968E5020859EFC003F7D00 /* RegionShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */; };
 		F8968E522085A9CB003F7D00 /* SubordinateShoopingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */; };
@@ -1348,6 +1350,8 @@
 		F84F86092088794E00C8B91F /* AdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
 		F84F860A2088794E00C8B91F /* AdvertiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseViewController.h; sourceTree = "<group>"; };
 		F84F860B2088794E00C8B91F /* AdvertiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseViewController.m; sourceTree = "<group>"; };
+		F862481420A988E0009D52E1 /* ALYAgentChectTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentChectTabCell.swift; sourceTree = "<group>"; };
+		F862481520A988E0009D52E1 /* ALYAgentChectTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentChectTabCell.xib; sourceTree = "<group>"; };
 		F87548E2207CA57200ACADE8 /* AgentApplyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentApplyAPI.swift; sourceTree = "<group>"; };
 		F8968E4F20859EFC003F7D00 /* RegionShoppingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionShoppingModel.swift; sourceTree = "<group>"; };
 		F8968E512085A9CB003F7D00 /* SubordinateShoopingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubordinateShoopingModel.swift; sourceTree = "<group>"; };
@@ -4364,6 +4368,8 @@
 				F8968E5D2085D378003F7D00 /* ALYAreaDetailsTabCell.xib */,
 				F8968E602085D394003F7D00 /* ALYAreaShoppingTabCell.swift */,
 				F8968E612085D394003F7D00 /* ALYAreaShoppingTabCell.xib */,
+				F862481420A988E0009D52E1 /* ALYAgentChectTabCell.swift */,
+				F862481520A988E0009D52E1 /* ALYAgentChectTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4797,6 +4803,7 @@
 				22B8FBA31F9D99C3001638A2 /* MMLEditeUserCell.xib in Resources */,
 				22DA88DC1FCD633C00F68576 /* flexslider-icon.eot in Resources */,
 				66D130B71F975031002C8BE8 /* MMLShareVC.xib in Resources */,
+				F862481720A988E0009D52E1 /* ALYAgentChectTabCell.xib in Resources */,
 				22DA88FB1FCD633C00F68576 /* klass.min.js in Resources */,
 				6614E74A1F95A4F50061EDCE /* MMLHomeListTableViewCell.xib in Resources */,
 				224351F51FC57B8700F039D6 /* CheckLogisticsCell.xib in Resources */,
@@ -4843,7 +4850,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		74F8E9000E6B8B59EE721EE0 /* [CP] Embed Pods Frameworks */ = {
@@ -5392,6 +5399,7 @@
 				66EAE8931FCE4AF700BC6806 /* JQDownLoadVoiceModel.swift in Sources */,
 				22463CA31FE7938F00D15B91 /* DayTaskCell.swift in Sources */,
 				221F1EF71FF1E016001F36B1 /* MMLLuckDrawModel.swift in Sources */,
+				F862481620A988E0009D52E1 /* ALYAgentChectTabCell.swift in Sources */,
 				220F967A1FC031C7001D1D07 /* OpinionFeedbackAPI.swift in Sources */,
 				F8E4EBF220884A470097995B /* HCCenterPopAlertViewController.m in Sources */,
 				663C1C981F987923006C6E21 /* DDProductDetailsShoppingData.swift in Sources */,

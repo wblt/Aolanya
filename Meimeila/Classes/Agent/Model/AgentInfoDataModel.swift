@@ -28,6 +28,8 @@ class AgentInfoDataModel {
     var inviter : String!
     var weChatPayment : String!
     var alipayPayment : String!
+	
+	var toExamineone : String!
     
     init(fromJson json: JSON!){
         if json.isEmpty{
@@ -47,6 +49,7 @@ class AgentInfoDataModel {
         inviter = json["inviter"].stringValue
         weChatPayment = json["weChatPayment"].stringValue
         alipayPayment = json["alipayPayment"].stringValue
+		toExamineone = json["toExamineone"].stringValue 
     }
     
    

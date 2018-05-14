@@ -169,6 +169,15 @@ class ALYAgentManagerVC: DDBaseViewController {
 	
 	@objc func agentCheckTap() {
 		let vc = ALYAgentCheckManagerVC()
+		
+		var ary = [AgentInfoDataModel]()
+		self.agentVm.toBeAuditedArray.forEach { (model) in
+			if model.toExamineone == "1" {
+				ary.append(model)
+			}
+		}
+		vc.toBeAuditedArray = ary
+		
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	@objc func orderManagerTap() {
@@ -181,7 +190,13 @@ class ALYAgentManagerVC: DDBaseViewController {
 	}
 	@objc func areaCheckTap() {
 		let vc = ALYAreaCheckViewController()
-		vc.toBeAuditedArray = self.agentVm.toBeAuditedArray
+		var ary = [AgentInfoDataModel]()
+		self.agentVm.toBeAuditedArray.forEach { (model) in
+			if model.toExamineone != "1" {
+				ary.append(model)
+			}
+		}
+		vc.toBeAuditedArray = ary    //self.agentVm.toBeAuditedArray
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	

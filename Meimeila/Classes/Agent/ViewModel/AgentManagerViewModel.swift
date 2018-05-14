@@ -20,7 +20,11 @@ class AgentManagerViewModel: NSObject {
 	
 	// 获取 上级、下级、 区域审核的数据
     func getAgentManagerData(uid:String,successBlock:@escaping () -> Void){
-        
+		self.lowerAgentArray.removeAll();
+		self.toBeAuditedArray.removeAll();
+		self.regionShoppingArray.removeAll();
+		self.subordinateShoppingArray.removeAll();
+		
         let r = AgentManageAPI.getAgentManageAPI(uid: uid)
         
         DDHTTPRequest.request(r: r, requestSuccess: { (responds) in

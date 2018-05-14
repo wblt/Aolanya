@@ -37,7 +37,7 @@ class ALYOrderManagerTabCell: UITableViewCell {
 			}
 			
 			numLab.text = data?.dataCount ?? ""
-			totalPriceLab.text = data?.dataCount ?? "0.00"
+			totalPriceLab.text = "￥:" + (data?.dataCount)!
 		}
 	}
 	
