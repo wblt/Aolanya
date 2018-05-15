@@ -30,10 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
         
         jq_application(application, didFinishLaunchingWithOptions: launchOptions)
+		
         // 注册极光推送
-        JPush_register(launchOptions: launchOptions)
+        //JPush_register(launchOptions: launchOptions)
         // 注册融云推送
-        RongCloud_register(application: application)
+        // RongCloud_register(application: application)
         window?.rootViewController = baseTabBar
         return true
     }

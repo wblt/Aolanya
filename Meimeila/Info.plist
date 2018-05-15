@@ -78,7 +78,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>2018051501</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>meimeila</string>
@@ -160,10 +160,6 @@
 	<string>是否允许此App使用语音识别？</string>
 	<key>Privacy - Calendars Usage Description </key>
 	<string>是否允许此App使用日历？</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
