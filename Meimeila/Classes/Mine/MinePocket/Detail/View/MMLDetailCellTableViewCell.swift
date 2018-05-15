@@ -61,15 +61,19 @@ class MMLDetailCellTableViewCell: UITableViewCell {
     var beasnModel:MMLBeansDetailModel?{
         
         didSet{
-            
-            cellTitle.text = beasnModel?.remarks;
+			
+			if  beasnModel?.remarks == "3" {
+				cellTitle.text = "分享"
+			} else if  beasnModel?.remarks == "2"{
+				cellTitle.text = "健康豆兑换"
+			}
             
             time.text = beasnModel?.addtime ?? "0"
 				
 				//timestampToDate(format: "yy-MM-dd HH:mm:ss", timestamp: beasnModel?.addtime ?? "0");
             
-            money.text = "总共" + (beasnModel?.banlance)!;
-
+          //  money.text = "总共" + (beasnModel?.banlance)!;
+			money.text = "+" + (beasnModel?.beans)!;
             money.textColor = APPgreenColor;
             
         }

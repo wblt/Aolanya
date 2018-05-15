@@ -54,11 +54,9 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>QQ</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>QQ091783ef</string>
-			</array>
+			<array/>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>

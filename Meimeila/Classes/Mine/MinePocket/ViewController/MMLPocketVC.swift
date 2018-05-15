@@ -89,7 +89,7 @@ class MMLPocketVC: DDBaseViewController {
     lazy var tableHeadView:MMLPocketHeadView = {[weak self] in
         let view = MMLPocketHeadView.init(frame: CGRect.init(x: 0, y: 0, width: Screen.width, height: 220));
         if (self?.isHealthBean)!{
-            view.label.text = "健康豆剩余(个)";
+            view.label.text = "健康豆剩余(颗)";
         }
         return view;
     }()

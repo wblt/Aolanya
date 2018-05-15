@@ -9,7 +9,9 @@
 import UIKit
 
 class MMLBeansToMonayVC: DDBaseViewController {
-
+	// 导航栏右边的按钮
+	fileprivate var navBarRightButton: UIButton = UIButton()
+	
     
     // 如果不写这个方法，iOS8会崩溃
     init() {
@@ -59,9 +61,25 @@ class MMLBeansToMonayVC: DDBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		setupNavBar()
+		/*
+		let vc = MMLPocketDetailVC();
+		vc.isHealBeans = self.isHealthBean;
+		navigationController?.pushViewController(vc, animated: true);
+		*/
     }
 
-    
+	
+	// MARK: - Private methods
+	private func setupNavBar() {
+		addNavBarRightButton(btnTitle: "明细", titleColor: UIColor.white) { [weak self](btn) in
+			self?.navBarRightButton = btn
+			let vc = MMLPocketDetailVC();
+			vc.isHealBeans = true;
+			self?.navigationController?.pushViewController(vc, animated: true);
+		}
+	}
+	
     override func setupUI() {
         
         getCountRequest();
@@ -82,10 +100,10 @@ extension MMLBeansToMonayVC{
             
             let countNum = Int(count);
             
-            let num = countNum! / 1000;
-            self?.num = num * 1000;
+            let num = countNum! / 100;
+            self?.num = num * 100;
             
-            self?.exchangeCountLabel.text = "可兑换\(num * 1000)个"
+            self?.exchangeCountLabel.text = "可兑换\(num * 100)颗"
             
         }
     }
