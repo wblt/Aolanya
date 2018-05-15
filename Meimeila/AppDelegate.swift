@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-		//test()
         // Bugly
 		Bugly.start(withAppId: "321f3042db")
 		// 蒲公英
@@ -41,35 +40,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-// MARK: - 推送相关
-extension AppDelegate {
-    // 上传deviceToken
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        JPush_registerDeviceToken(deviceToken: deviceToken)
-        RongCloud_registerToken(deviceToken: deviceToken)
-    }
-    
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        debugLog("远程推送注册失败")
-    }
-    
-    // 本地推送通知
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        JPush_receiveLocalNotification(notification: notification)
-    }
-    
-    // ios7及以上系统收到通知
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        JPush_receiveRemoteNotification(didReceiveRemoteNotification: userInfo)
-        RongCloud_receiveRemoteNotification(didReceiveRemoteNotification: userInfo)
-        completionHandler(UIBackgroundFetchResult.newData)
-    }
-    
-    // apns 在ios8系统中，还需要添加这个方法，通过新的api注册推送服务
-    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-        application.registerForRemoteNotifications()
-    }
-}
+//// MARK: - 推送相关
+//extension AppDelegate {
+//    // 上传deviceToken
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//       // JPush_registerDeviceToken(deviceToken: deviceToken)
+//       // RongCloud_registerToken(deviceToken: deviceToken)
+//    }
+//
+//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//       // debugLog("远程推送注册失败")
+//    }
+//
+//    // 本地推送通知
+//    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+//      //  JPush_receiveLocalNotification(notification: notification)
+//    }
+//
+//    // ios7及以上系统收到通知
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        //JPush_receiveRemoteNotification(didReceiveRemoteNotification: userInfo)
+//        //RongCloud_receiveRemoteNotification(didReceiveRemoteNotification: userInfo)
+//        completionHandler(UIBackgroundFetchResult.newData)
+//    }
+//
+//    // apns 在ios8系统中，还需要添加这个方法，通过新的api注册推送服务
+//    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+//       // application.registerForRemoteNotifications()
+//    }
+//}
 
 // MARK: - 应用生命周期相关
 extension AppDelegate {
