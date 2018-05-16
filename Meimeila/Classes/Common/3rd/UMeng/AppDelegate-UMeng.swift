@@ -26,7 +26,7 @@ extension AppDelegate {
     //  友盟的相关配置
     func UMeng_Setup() {
         
-        UMeng_SetupTrack()
+       // UMeng_SetupTrack()
         UMeng_SetupShare()
     }
     
