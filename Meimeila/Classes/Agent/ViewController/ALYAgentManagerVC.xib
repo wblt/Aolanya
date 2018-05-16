@@ -37,10 +37,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_defaultHeadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KOH-90-Ij2">
-                            <rect key="frame" x="147.5" y="10" width="80" height="80"/>
+                            <rect key="frame" x="142.5" y="10" width="90" height="90"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="80" id="TPB-B5-762"/>
-                                <constraint firstAttribute="width" constant="80" id="jt7-mU-wcf"/>
+                                <constraint firstAttribute="height" constant="90" id="TPB-B5-762"/>
+                                <constraint firstAttribute="width" constant="90" id="jt7-mU-wcf"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssy-6D-ieJ">

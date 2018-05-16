@@ -115,8 +115,8 @@ extension MMLMineVC{
 			// 保存用户等级
 			DDUDManager.share.saveUserLevel((self?.uservm.infoModel?.level)!)
 			//保存管理员信息
-			DDUDManager.share.saveUseraoLanYaAdmin((self?.uservm.infoModel?.aoLanYaAdmin)!)
-			
+		   DDUDManager.share.saveUseraoLanYaAdmin((self?.uservm.infoModel?.aoLanYaAdmin)!)
+			DDUDManager.share.saveInviter((self?.uservm.infoModel?.inviter)!)
         }
     }
     

@@ -27,7 +27,7 @@ class MMLPocketDetailVC: DDBaseViewController {
     }
 
     override func setupUI() {
-        self.title = "明细"
+        self.title = "明细列表"
         setTableView();
         bindMJ();
         httpRquest();
@@ -144,7 +144,16 @@ extension MMLPocketDetailVC:UITableViewDataSource{
 }
 
 extension MMLPocketDetailVC:UITableViewDelegate{
-    
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		 tableView.deselectRow(at: indexPath, animated: true);
+		
+		if isHealBeans{
+			let vc = ALYBeansDetailViewController();
+			vc.model = vm.beansArr[indexPath.row];
+			navigationController?.pushViewController(vc, animated: true);
+		}
+	}
     
 }
 

@@ -21,6 +21,7 @@ extension UserDefaults {
             case userID
 			case level
 			case aoLanYaAdmin  // 管理员  1  就是管理员
+			case inviter  // 邀请人
         }
     }
 }
@@ -216,4 +217,35 @@ class DDUDManager {
 			return ""
 		}
 	}
+	
+	/**
+	保存用户 的上级邀请人
+	*/
+	func saveInviter(_ level:String) {
+		UserDefaults.ServerInfo.set(value: level, forKey: .inviter)
+		UserDefaults.standard.synchronize()
+	}
+	
+	/**
+	删除用户 的上级邀请人
+	*/
+	func removeInviter() -> Bool {
+		
+		UserDefaults.ServerInfo.removeObject(forkey: .inviter)
+		//NotificationCenter.default.post(name: cNDidLogout, object: nil)
+		return UserDefaults.standard.synchronize()
+	}
+	
+	/**
+	读取用户 的上级邀请人
+	*/
+	func getInviter() -> String {
+		
+		if let inviter = UserDefaults.ServerInfo.string(forKey: .inviter) {
+			return inviter
+		}else{
+			return ""
+		}
+	}
+	
 }

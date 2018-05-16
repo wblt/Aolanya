@@ -617,6 +617,8 @@
 		CF82FDFF2087B55E006EF9B6 /* ALYMessageDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF82FDFD2087B55E006EF9B6 /* ALYMessageDetailsVC.swift */; };
 		CF82FE002087B55E006EF9B6 /* ALYMessageDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF82FDFE2087B55E006EF9B6 /* ALYMessageDetailsVC.xib */; };
 		DF3FB64A9EFBA0350FA6E551 /* Pods_Meimeila.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */; };
+		F80709D120ABC67E0058C34C /* ALYBeansDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80709CF20ABC67E0058C34C /* ALYBeansDetailViewController.swift */; };
+		F80709D220ABC67E0058C34C /* ALYBeansDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F80709D020ABC67E0058C34C /* ALYBeansDetailViewController.xib */; };
 		F83477C2207B044E00E4F926 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C1207B044E00E4F926 /* CardLayout.swift */; };
 		F83477C5207B0D3B00E4F926 /* ALYLevelCardColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C3207B0D3B00E4F926 /* ALYLevelCardColCell.swift */; };
 		F83477C6207B0D3B00E4F926 /* ALYLevelCardColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83477C4207B0D3B00E4F926 /* ALYLevelCardColCell.xib */; };
@@ -1333,6 +1335,8 @@
 		CF82FDFD2087B55E006EF9B6 /* ALYMessageDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYMessageDetailsVC.swift; sourceTree = "<group>"; };
 		CF82FDFE2087B55E006EF9B6 /* ALYMessageDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYMessageDetailsVC.xib; sourceTree = "<group>"; };
 		E39D9496929C41C1285A3C10 /* Pods_Meimeila.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meimeila.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80709CF20ABC67E0058C34C /* ALYBeansDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYBeansDetailViewController.swift; sourceTree = "<group>"; };
+		F80709D020ABC67E0058C34C /* ALYBeansDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYBeansDetailViewController.xib; sourceTree = "<group>"; };
 		F83477C1207B044E00E4F926 /* CardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
 		F83477C3207B0D3B00E4F926 /* ALYLevelCardColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYLevelCardColCell.swift; sourceTree = "<group>"; };
 		F83477C4207B0D3B00E4F926 /* ALYLevelCardColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYLevelCardColCell.xib; sourceTree = "<group>"; };
@@ -2757,6 +2761,8 @@
 			children = (
 				22FF14C61FC90396000C76FE /* MMLPocketDetailVC.swift */,
 				22FF14C71FC90396000C76FE /* MMLPocketDetailVC.xib */,
+				F80709CF20ABC67E0058C34C /* ALYBeansDetailViewController.swift */,
+				F80709D020ABC67E0058C34C /* ALYBeansDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -4661,6 +4667,7 @@
 				668B5C4F1F98583100D276AE /* MMLSettlementProductListCell.xib in Resources */,
 				22DA88DE1FCD633C00F68576 /* flexslider-icon.svg in Resources */,
 				22DA88F71FCD633C00F68576 /* jquery.mmenu.min.all.js in Resources */,
+				F80709D220ABC67E0058C34C /* ALYBeansDetailViewController.xib in Resources */,
 				F83CF8C32079AE3E00FA9423 /* ALYAgentViewController.xib in Resources */,
 				22DA890D1FCD677C00F68576 /* ReasonTFCell.xib in Resources */,
 				F8D5ACFE20849DE500100C9F /* ALYAreaCheckViewController.xib in Resources */,
@@ -4942,6 +4949,7 @@
 				6659DE1C1F9D8263009367C0 /* MMLWithdrawalamountVC.swift in Sources */,
 				22052C261F9B39CA00483E59 /* SelectAddressVC.swift in Sources */,
 				221575121F99E45000BC94EF /* MMLLoginViewModel.swift in Sources */,
+				F80709D120ABC67E0058C34C /* ALYBeansDetailViewController.swift in Sources */,
 				22268A911FDBD1AD001A9146 /* MMLMineSet.swift in Sources */,
 				221575131F99E45000BC94EF /* MMLForgetPasswordVC.swift in Sources */,
 				F8D5ACFD20849DE500100C9F /* ALYAreaCheckViewController.swift in Sources */,

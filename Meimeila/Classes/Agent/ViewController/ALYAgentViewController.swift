@@ -30,10 +30,23 @@ class ALYAgentViewController: DDBaseViewController {
 		navigationController?.navigationBar.barStyle = .black
 	}
 	
+	var money:String?
+	
+	lazy var vms:MSXPocketViewModel = {[weak self] in
+		let vm = MSXPocketViewModel();
+		return vm;
+		}()
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.navigationItem.title = "我要赚钱"
         // Do any additional setup after loading the view.
+		self.money = "0.00"
+		vms.getMoneyBalance {[weak self] in
+			// 获取 余额
+			self?.money = self?.vms.moneyModel?.money ?? "0.00";
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,6 +96,7 @@ class ALYAgentViewController: DDBaseViewController {
 		
 		let vc = ALYAgentlevelVC();
 		vc.invitCode = ""
+		vc.money = self.money
 		self.navigationController?.pushViewController(vc, animated: true);
 		
 	}

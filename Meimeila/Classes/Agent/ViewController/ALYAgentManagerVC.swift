@@ -141,6 +141,9 @@ class ALYAgentManagerVC: DDBaseViewController {
     
 	// 获取用户信息
     func requestUserInfo() {
+		self.headImgView.layer.cornerRadius = 45.0
+		self.headImgView.layer.masksToBounds = true;
+		
         uservm.getUserInfo {[weak self] in
             
             self?.headImgView.jq_setImage(imageUrl: self?.uservm.infoModel?.picture ?? "", placeholder: "icon_defaultHeadIcon", isShowIndicator: false, isNeedForceRefresh: false)

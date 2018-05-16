@@ -80,15 +80,27 @@ class ALYAgentCheckManagerVC: DDBaseViewController {
 		let model:AgentInfoDataModel = self.toBeAuditedArray[index]
 		let uid = DDUDManager.share.getUserID()
 		
-//		agentVm.confuseAgent(uid: uid, targetUid: model.uid, remarks: "", apply: "false", toExamineoneUid: uid) {
-//			self.toBeAuditedArray.removeAll();
-//			self.tableView.reloadData()
-//			self.requestData();
-//		}
+		agentVm.confuseAgent(uid: uid, targetUid: model.uid, remarks: "", apply: "false", toExamineoneUid: uid) {
+			self.toBeAuditedArray.removeAll();
+			self.tableView.reloadData()
+			self.requestData();
+		}
 		
 	}
 	
 	@objc func agreenBtnAction(btn:UIButton)  {
+		let index = btn.tag-20000;
+		
+		let model:AgentInfoDataModel = self.toBeAuditedArray[index]
+		let uid = DDUDManager.share.getUserID()
+		
+		BFunction.shared.showAlert(title: "温馨提示", subTitle: "您确定此用户的资料是否填写正确吗?", ontherBtnTitle: "确定") {
+			self.agentVm.confuseAgent(uid: uid, targetUid: model.uid, remarks: "", apply: "true", toExamineoneUid: uid) {
+				self.toBeAuditedArray.removeAll();
+				self.tableView.reloadData()
+				self.requestData();
+			}
+		}
 		
 	}
 	

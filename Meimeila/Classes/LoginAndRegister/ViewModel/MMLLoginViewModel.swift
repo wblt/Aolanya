@@ -28,10 +28,12 @@ class MMLLoginViewModel {
             let token = jsonResult["data"]["token"].stringValue
 			let level = jsonResult["data"]["level"].stringValue
 			let admin = jsonResult["data"]["aoLanYaAdmin"].stringValue
+			let inviter = jsonResult["data"]["inviter"].stringValue
             DDUDManager.share.saveUserID(uid: uid)
             DDUDManager.share.saveUserToken(token)
 			DDUDManager.share.saveUserLevel(level)
 			DDUDManager.share.saveUseraoLanYaAdmin(admin)
+			DDUDManager.share.saveInviter(inviter)
 			
 			BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
@@ -143,6 +145,7 @@ class MMLLoginViewModel {
 			DDUDManager.share.saveUserToken("0")
 			DDUDManager.share.removeUserLevel()
 			DDUDManager.share.removeUseraoLanYaAdmin()
+			DDUDManager.share.removeInviter()
 			
             DDDeviceManager.shared.saveLoginStatue(isLogin: false);
             
@@ -176,11 +179,13 @@ class MMLLoginViewModel {
             let token = jsonResult["data"]["token"].stringValue
 			let level = jsonResult["data"]["level"].stringValue
 			let admin = jsonResult["data"]["aoLanYaAdmin"].stringValue
+			let inviter = jsonResult["data"]["inviter"].stringValue
 			
             DDUDManager.share.saveUserID(uid: uid)
             DDUDManager.share.saveUserToken(token)
 			DDUDManager.share.saveUserLevel(level)
 			DDUDManager.share.saveUseraoLanYaAdmin(admin)
+			DDUDManager.share.saveInviter(inviter)
 			
             BFunction.shared.showToastMessge(jsonResult["message"].stringValue)
             
