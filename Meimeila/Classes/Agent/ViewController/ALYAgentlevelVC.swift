@@ -110,20 +110,21 @@ extension ALYAgentlevelVC: UICollectionViewDataSource,UICollectionViewDelegate{
 		vc.agentLevel = model.id
 		vc.toExamineone = model.toExamineone
 		vc.areaType = "3"
+		navigationController?.pushViewController(vc, animated: true)
 		
-		if Float(self.money!) > Float(model.money
-			) {
-			 navigationController?.pushViewController(vc, animated: true)
-		}else {
-			//BFunction.shared.showToastMessge("您的余额不足" + model.money)
-			BFunction.shared.showAlert(title: "温馨提示"
-				, subTitle: "您的余额不足" + model.money, ontherBtnTitle: "充值", ontherBtnAction: {
-					let vc = MMLPocketVC();
-					vc.title = "我的钱包"
-					vc.isHealthBean = false;
-					self.navigationController?.pushViewController(vc, animated: true);
-			})
-		}
+//		if Float(self.money!) > Float(model.money
+//			) {
+//			 navigationController?.pushViewController(vc, animated: true)
+//		}else {
+//			//BFunction.shared.showToastMessge("您的余额不足" + model.money)
+//			BFunction.shared.showAlert(title: "温馨提示"
+//				, subTitle: "您的余额不足" + model.money, ontherBtnTitle: "充值", ontherBtnAction: {
+//					let vc = MMLPocketVC();
+//					vc.title = "我的钱包"
+//					vc.isHealthBean = false;
+//					self.navigationController?.pushViewController(vc, animated: true);
+//			})
+//		}
 		
     }
 }

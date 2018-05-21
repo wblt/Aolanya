@@ -11,7 +11,7 @@ import UIKit
 class MMLPocketViewModel {
 
     var pocketCellTitleDic = [
-        ["name":"充值","icon":"icon_recharge"],
+       // ["name":"充值","icon":"icon_recharge"],
         ["name":"明细","icon":"icon_detail"],
         ["name":"我要提现","icon":"icon_cash"],
 //        ["name":"累计收益","icon":"icon_income"]

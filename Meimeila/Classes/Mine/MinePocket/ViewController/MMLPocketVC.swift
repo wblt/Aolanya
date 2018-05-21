@@ -126,19 +126,27 @@ extension MMLPocketVC:UITableViewDelegate {
                 
             }else{
             
-                let vc = MMLRechargeCashVC();
-                vc.delegate = self;
-                vc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen;
-                self.present(vc, animated: false, completion: {
-                    
-                })
-          
+//                let vc = MMLRechargeCashVC();
+//                vc.delegate = self;
+//                vc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen;
+//                self.present(vc, animated: false, completion: {
+//
+//                })
+				let vc = MMLPocketDetailVC();
+				vc.isHealBeans = self.isHealthBean;
+				navigationController?.pushViewController(vc, animated: true);
             }
         }else if indexPath.row == 1 {
-            
-            let vc = MMLPocketDetailVC();
-            vc.isHealBeans = self.isHealthBean;
-            navigationController?.pushViewController(vc, animated: true);
+			
+			if isHealthBean{
+				let vc = MMLPocketDetailVC();
+				vc.isHealBeans = self.isHealthBean;
+				navigationController?.pushViewController(vc, animated: true);
+			}else {
+				let vc = MMLWithdrawVC()
+				self.navigationController?.pushViewController(vc, animated: true);
+			}
+			
         
         }else if indexPath.row == 2 {
 			
