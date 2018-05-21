@@ -246,10 +246,7 @@
 		22DA89141FCD677C00F68576 /* ApplyForAfterSellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DA890B1FCD677C00F68576 /* ApplyForAfterSellVC.xib */; };
 		22E7780520098D9B00BCF9B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E7780420098D9B00BCF9B1 /* AVFoundation.framework */; };
 		22E77807200991AE00BCF9B1 /* STKAudioPlayerManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E77806200991AE00BCF9B1 /* STKAudioPlayerManger.swift */; };
-		22EF70331FC01F1C00BFCC99 /* APPVersionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF70311FC01F1B00BFCC99 /* APPVersionVC.swift */; };
-		22EF70341FC01F1C00BFCC99 /* APPVersionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EF70321FC01F1B00BFCC99 /* APPVersionVC.xib */; };
 		22EF70361FC01F4400BFCC99 /* APPVersionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF70351FC01F4400BFCC99 /* APPVersionAPI.swift */; };
-		22EF70381FC01F8D00BFCC99 /* MSXVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF70371FC01F8D00BFCC99 /* MSXVersionViewModel.swift */; };
 		22F146B51FCFEAB300B78B0F /* MMLTestReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F146B31FCFEAB300B78B0F /* MMLTestReportVC.swift */; };
 		22F146B61FCFEAB300B78B0F /* MMLTestReportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F146B41FCFEAB300B78B0F /* MMLTestReportVC.xib */; };
 		22F146BB1FCFF22200B78B0F /* MMLReportWaterAndOilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F146B91FCFF22200B78B0F /* MMLReportWaterAndOilCell.swift */; };
@@ -946,10 +943,7 @@
 		22DA890B1FCD677C00F68576 /* ApplyForAfterSellVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyForAfterSellVC.xib; sourceTree = "<group>"; };
 		22E7780420098D9B00BCF9B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		22E77806200991AE00BCF9B1 /* STKAudioPlayerManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STKAudioPlayerManger.swift; sourceTree = "<group>"; };
-		22EF70311FC01F1B00BFCC99 /* APPVersionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPVersionVC.swift; sourceTree = "<group>"; };
-		22EF70321FC01F1B00BFCC99 /* APPVersionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APPVersionVC.xib; sourceTree = "<group>"; };
 		22EF70351FC01F4400BFCC99 /* APPVersionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPVersionAPI.swift; sourceTree = "<group>"; };
-		22EF70371FC01F8D00BFCC99 /* MSXVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSXVersionViewModel.swift; sourceTree = "<group>"; };
 		22F146B31FCFEAB300B78B0F /* MMLTestReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMLTestReportVC.swift; sourceTree = "<group>"; };
 		22F146B41FCFEAB300B78B0F /* MMLTestReportVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MMLTestReportVC.xib; sourceTree = "<group>"; };
 		22F146B91FCFF22200B78B0F /* MMLReportWaterAndOilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMLReportWaterAndOilCell.swift; sourceTree = "<group>"; };
@@ -1863,48 +1857,6 @@
 			isa = PBXGroup;
 			children = (
 				22B8FB9A1F9D7EDF001638A2 /* MMLUserInfoViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		221575361F99E8DC00BC94EF /* MineAppVersion */ = {
-			isa = PBXGroup;
-			children = (
-				221575371F99E8DC00BC94EF /* Model */,
-				221575381F99E8DC00BC94EF /* View */,
-				221575391F99E8DC00BC94EF /* ViewController */,
-				2215753A1F99E8DC00BC94EF /* ViewModel */,
-			);
-			path = MineAppVersion;
-			sourceTree = "<group>";
-		};
-		221575371F99E8DC00BC94EF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		221575381F99E8DC00BC94EF /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		221575391F99E8DC00BC94EF /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				22EF70311FC01F1B00BFCC99 /* APPVersionVC.swift */,
-				22EF70321FC01F1B00BFCC99 /* APPVersionVC.xib */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		2215753A1F99E8DC00BC94EF /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				22EF70371FC01F8D00BFCC99 /* MSXVersionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -3018,7 +2970,6 @@
 				221012961FC94DAE0074ED03 /* AboutUs */,
 				224351EA1FC57B8700F039D6 /* CheckLogistics */,
 				221575431F99F6A300BC94EF /* MineOrder */,
-				221575361F99E8DC00BC94EF /* MineAppVersion */,
 				221575311F99E8C500BC94EF /* MineUserInfo */,
 				2215752C1F99E8BD00BC94EF /* MineOpinion */,
 				221575271F99E8B900BC94EF /* MineMessage */,
@@ -4720,7 +4671,6 @@
 				22DA88E41FCD633C00F68576 /* jquery.mmenu.all.css in Resources */,
 				22052BFD1F9ADCC800483E59 /* MMLFinish.xib in Resources */,
 				666971311F99F8D400A30598 /* MMLMakeMoneyVC.xib in Resources */,
-				22EF70341FC01F1C00BFCC99 /* APPVersionVC.xib in Resources */,
 				22F67EC81FC6A24C009BC04D /* MMLOrderDetailSectionThreeCell.xib in Resources */,
 				666FADAF1FB998B80011CBBF /* DDLuckdrawVC.xib in Resources */,
 				22DA88F41FCD633C00F68576 /* jquery.easy-pie-chart.js in Resources */,
@@ -5182,7 +5132,6 @@
 				66D8041F1F94D2A80022FEAE /* ProductListAPI.swift in Sources */,
 				22CFFF601FCBAD2700319A6B /* MusicAPI.swift in Sources */,
 				666FAD8D1FB985960011CBBF /* YLPhotoProgressView.swift in Sources */,
-				22EF70381FC01F8D00BFCC99 /* MSXVersionViewModel.swift in Sources */,
 				22DA890C1FCD677C00F68576 /* ReasonTFCell.swift in Sources */,
 				22D790C31FC66A2C00C150AB /* PayImmediatelyViewModel.swift in Sources */,
 				F8968E7B2085F790003F7D00 /* AYLFinishVCViewController.swift in Sources */,
@@ -5328,7 +5277,6 @@
 				221575421F99ED8500BC94EF /* MMLPocketViewModel.swift in Sources */,
 				22DA88A91FCD48E100F68576 /* MMLMessageCell.swift in Sources */,
 				CF71654C2084E3F40092692F /* AgentManagerViewModel.swift in Sources */,
-				22EF70331FC01F1C00BFCC99 /* APPVersionVC.swift in Sources */,
 				225195AE1FF4899D006A1611 /* MMLGiftListCell.swift in Sources */,
 				22A910A61FF61F8100660F61 /* MMLContactServiceModel.swift in Sources */,
 				22D4837F1FCBF3FD00172A2D /* MMLMusicPlayer.swift in Sources */,
