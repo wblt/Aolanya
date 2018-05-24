@@ -49,7 +49,7 @@ class DDHomeDataViewModel {
         }
     }
     
-    //获取广告 以及更新信息
+    //获取广告 以及
     func requestSplah(successBlock:@escaping () -> Void) {
         let url =   API.baseServer + API.splashData
 		var p = [String:Any]()

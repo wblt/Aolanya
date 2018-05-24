@@ -169,19 +169,20 @@ extension MMLMineVC:UITableViewDelegate{
             }
 			
             
+//            if indexPath.row == 0{
+//
+//                let vc = MMLPocketVC();
+//                vc.title = "我的钱包"
+//                vc.isHealthBean = false;
+//                navigationController?.pushViewController(vc, animated: true);
+//
+//            }else
             if indexPath.row == 0{
-                
-                let vc = MMLPocketVC();
-                vc.title = "我的钱包"
-                vc.isHealthBean = false;
-                navigationController?.pushViewController(vc, animated: true);
-                
-            }else if indexPath.row == 1 {
-                
+            
                 let vc = MMLEditeUserInfoVC();
                 navigationController?.pushViewController(vc, animated: true);
                 
-            }else if indexPath.row == 2 {
+            }else if indexPath.row == 1 {
                 
 //                let vc = MMLPocketVC()
 //                vc.title = "我的健康豆"
@@ -203,15 +204,19 @@ extension MMLMineVC:UITableViewDelegate{
                     return;
                 }
 				
-				let vc = DayTaskVC();
-				navigationController?.pushViewController(vc, animated: true)
-// 				  //地址
-//                let vc = MMLMineAddressVC()
-//                vc.isEdit = true;
-//                navigationController?.pushViewController(vc, animated: true);
+//                let vc = DayTaskVC();
+//                navigationController?.pushViewController(vc, animated: true)
 //
+                let vc = MMLContactServiceVC();
+                vc.title = "联系客服";
+                self.navigationController?.pushViewController(vc, animated: true);
+                
             }else if indexPath.row == 1 {
-				
+                if !loginStatue{
+                    goLogin(loginStatue: loginStatue)
+                    return;
+                }
+                
 				let vc = MMLContactServiceVC();
 				vc.title = "联系客服";
 				self.navigationController?.pushViewController(vc, animated: true);
@@ -227,15 +232,6 @@ extension MMLMineVC:UITableViewDelegate{
 				vc.titleMsg = "* 请输入入驻平台的商品名，联系人"
                 navigationController?.pushViewController(vc, animated: true);
                 
-            }else if indexPath.row == 1 {
-                let vc = MMLAboutUsVC();
-                navigationController?.pushViewController(vc, animated: true);
-            }else if indexPath.row == 2 {
-                let vc = MMLMineOpinionVC();
-                navigationController?.pushViewController(vc, animated: true);
-            }else if indexPath.row == 3 {
-				let vc = MMLMineOpinionVC();
-				navigationController?.pushViewController(vc, animated: true);
             }
         }
         

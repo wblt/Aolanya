@@ -68,7 +68,7 @@ extension AppDelegate {
         UMSocialManager.default().setPlaform(UMSocialPlatformType.wechatSession, appKey: WX_APPID, appSecret: WX_APPSecret, redirectURL: kWebsiteLinks)
         
         // QQ
-        UMSocialManager.default().setPlaform(UMSocialPlatformType.QQ, appKey: QQ_AppId, appSecret: QQ_APPSecret, redirectURL: kWebsiteLinks)
+      //  UMSocialManager.default().setPlaform(UMSocialPlatformType.QQ, appKey: QQ_AppId, appSecret: QQ_APPSecret, redirectURL: kWebsiteLinks)
         
         // 微博
         UMSocialManager.default().setPlaform(UMSocialPlatformType.sina, appKey: Sina_AppId, appSecret:  Sina_APPSecret, redirectURL: kWebsiteLinks)

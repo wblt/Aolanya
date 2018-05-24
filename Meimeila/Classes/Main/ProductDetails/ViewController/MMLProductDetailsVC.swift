@@ -512,7 +512,8 @@ extension MMLProductDetailsVC: MMLShareVCDelegate {
                 title = data.shopingName
                 content = data.shopingMessage
                 imageURL = kPrefixLink + data.shopingImg
-                downloadUrl = "http://ml.nnddkj.com/meimeila/API/download/appDownload.php?shopingID=" + data.shopingID
+                //http://yg.welcare-tech.com.cn/tpiot/app/shareshow?shopingID=2
+                downloadUrl = "http://yg.welcare-tech.com.cn/tpiot/app/shareshow?shopingID=" + data.shopingID
             }
         }
         

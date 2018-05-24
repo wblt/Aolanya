@@ -33,11 +33,6 @@
 #import <UMSocialCore/UMSocialCore.h>
 
 #import <StreamingKit/STKAudioPlayer.h>
-//bugly
-#import <Bugly/Bugly.h>
-
-#import <PgySDK/PgyManager.h>
-#import <PgyUpdate/PgyUpdateManager.h>
 
 // 模拟微信弹框
 #import "HCPopupCommon.h"

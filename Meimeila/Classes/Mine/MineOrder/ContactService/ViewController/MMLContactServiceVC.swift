@@ -101,14 +101,14 @@ extension MMLContactServiceVC:UITableViewDelegate{
         
         var titleMessage = "将微信福利粉丝群二维码保存至相册,微信扫码加群";
         
-        if indexPath.row == 0 {
+        if model.type == 0 {
             type = 0;
-        }else if indexPath.row == 1{
+        }else if model.type == 1{
             type = 1;
-            titleMessage = "是否复制微信客服微信号\(model.contact ?? "")";
-        }else{
-            type = 2;
             titleMessage = "是否拨打客服电话\(model.contact ?? "")";
+        }else{
+            type = 0;
+            titleMessage = "是否复制微信客服微信号\(model.contact ?? "")";
         }
         
         let popwin = DDPopupWindowVC.init(message: titleMessage, leftButtonTitle: "取消", rightButtonTitle: "确定")
@@ -134,15 +134,16 @@ extension MMLContactServiceVC:DDPopupWindowVCDelegate{
         
         let model = vm.modelArr[type]
         
-        if type == 0 {
+       // if type == 0 {
             
-            vm.saveImageToPhoneLibrary(codeString: "\(model.contact ?? "")");
+        //    vm.saveImageToPhoneLibrary(codeString: "\(model.contact ?? "")");
             
-        }else if type == 1{
+    //    }else
+    if type == 0{
             
             vm.copyText(copyString: "\(model.contact ?? "")")
             
-        }else if type == 2{
+        }else if type == 1{
             
             vm.callPhone(tel: "\(model.contact ?? "")");
         }

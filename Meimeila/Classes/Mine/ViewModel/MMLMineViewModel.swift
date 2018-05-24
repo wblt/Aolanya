@@ -22,11 +22,11 @@ class MMLMineViewModel{
 //                            ["name":"招商","icon":"icon_aboutUs"],
 //                             ["name":"招商中心","icon":"icon_aboutUs"]]]
 
-	var mineCellTitleDic = [[["name":"我的钱包","icon":"icon_minePocket"],
+	var mineCellTitleDic = [[//["name":"我的钱包","icon":"icon_minePocket"],
 							 ["name":"个人资料","icon":"icon_mineDate"],
 							// ["name":"我的邀请码:","icon":"icon_Linviter"],
 							 ["name":"健康豆","icon":"icon_bean"]],
-							[["name":"每日任务","icon":"img_assignment"],
+							[//["name":"每日任务","icon":"img_assignment"],
 							 ["name":"在线客服","icon":"customer_service"]],
 							[["name":"商家入驻洽谈","icon":"shopjoin"]]]
 

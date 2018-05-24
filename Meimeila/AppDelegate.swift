@@ -20,14 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Bugly
-		Bugly.start(withAppId: "321f3042db")
-		// 蒲公英
-		//启动基本SDK
-		//[[PgyManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
-		//启动更新检查SDK
-		//[[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"PGY_APP_ID"];
-        
         jq_application(application, didFinishLaunchingWithOptions: launchOptions)
 		
         // 注册极光推送

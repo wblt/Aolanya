@@ -168,7 +168,7 @@ class MMLAllList: DDBaseViewController {
                 nav?.pushViewController(vc, animated: true);
 				
             }else if type == 1{ //待发货-修改信息 （地址）wy
-                // http://yg.welcare-tech.com.cn/tpiot/app/updateOrder  // 更新地址
+                // http://yg.welcare-tech.com.cn/tpiot/app/updateOrder
 //				uid	55
 //				orderID	041815415256909
 //				sign	B57AC53F5FDFDB266E3DFE084ACC586E

@@ -25,7 +25,7 @@ extension API {
     // 首页推荐列表
     static let homeData = "tpiot/app/shoptop"
     
-    // 广告及更新信息
+    // 广告
     static let splashData = "tpiot/app/startup"
     
     // 签到红包

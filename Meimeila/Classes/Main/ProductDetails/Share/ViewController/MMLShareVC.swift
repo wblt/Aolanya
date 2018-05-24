@@ -56,8 +56,8 @@ class MMLShareVC: UIViewController {
         var datas = Array<Any>.init()
         datas.append(["title":"微信朋友圈", "iconName":"wechat_circle_friends", "module": UMShareType.wechatLine])
         datas.append(["title":"微信好友", "iconName":"wechat_friends", "module": UMShareType.wechat])
-        datas.append(["title":"QQ好友", "iconName":"qq_friends", "module": UMShareType.qq])
-        datas.append(["title":"QQ空间", "iconName":"qq_zone", "module": UMShareType.qzone])
+       // datas.append(["title":"QQ好友", "iconName":"qq_friends", "module": UMShareType.qq])
+       // datas.append(["title":"QQ空间", "iconName":"qq_zone", "module": UMShareType.qzone])
         datas.append(["title":"微博", "iconName":"weibo", "module": UMShareType.sina])
         datas.append(["title":"复制链接", "iconName":"cope_link", "module": UMShareType.copy])
         return datas as! [Dictionary<String, Any>]

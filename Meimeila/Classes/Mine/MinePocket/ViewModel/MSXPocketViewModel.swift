@@ -129,7 +129,7 @@ class MSXPocketViewModel{
         
     }
 	
-	///钱包充值_微信  新版本
+	///钱包充值_微信  新
 	func  newReChargeMoneyWith_weChatPay(price:String,succeeds:@escaping ()->()) {
 		
 		let r = PocketMonayAPI.wechatPayForPack(moneyNum: price)
@@ -156,7 +156,7 @@ class MSXPocketViewModel{
 		
 	}
     
-    ///钱包充值_支付宝  新版本
+    ///钱包充值_支付宝  新
     func  newReChargeMoneyWith_aliPay(price:String,succeeds:@escaping ()->()) {
         
         let r = PocketMonayAPI.aliPayForPack(moneyNum: price)
