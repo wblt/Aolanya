@@ -41,7 +41,10 @@ class MMLShoppingCartVC: DDBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barStyle = .black
-        requestCarListData()
+		if DDDeviceManager.shared.loginStatue() {
+			 requestCarListData()
+		}
+		
     }
     
     override func viewDidLoad() {
@@ -289,6 +292,12 @@ extension MMLShoppingCartVC: UITableViewDelegate {
 // MARK: - DDShoppingCarBottomViewDlegate
 extension MMLShoppingCartVC: DDShoppingCarBottomViewDlegate {
     func shoppingCarBottomViewSlectedButton(button: UIButton, type: Int) {
+		
+		if !DDDeviceManager.shared.loginStatue() {
+			BFunction.shared.showToastMessge("请先登录")
+			return
+		}
+		
         let tempType = ShoppingCarBottomViewBtnType(rawValue: type)!
         switch tempType {
             
