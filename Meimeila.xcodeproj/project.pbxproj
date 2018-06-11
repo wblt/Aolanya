@@ -5519,7 +5519,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.welcare.aolaiya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24a5e01c-2442-4fc2-b134-96c28d290512";
+				PROVISIONING_PROFILE = "58c2f073-6fdd-4e60-abf0-9beaa42d014b";
 				PROVISIONING_PROFILE_SPECIFIER = dev_aolaiya;
 				SWIFT_OBJC_BRIDGING_HEADER = Meimeila/Meimeila_bridge.h;
 				SWIFT_VERSION = 4.0;
