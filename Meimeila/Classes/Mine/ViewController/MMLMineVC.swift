@@ -169,20 +169,20 @@ extension MMLMineVC:UITableViewDelegate{
             }
 			
             
-//            if indexPath.row == 0{
-//
-//                let vc = MMLPocketVC();
-//                vc.title = "我的钱包"
-//                vc.isHealthBean = false;
-//                navigationController?.pushViewController(vc, animated: true);
-//
-//            }else
             if indexPath.row == 0{
+
+                let vc = MMLPocketVC();
+                vc.title = "我的钱包"
+                vc.isHealthBean = false;
+                navigationController?.pushViewController(vc, animated: true);
+
+            }else
+            if indexPath.row == 1{
             
                 let vc = MMLEditeUserInfoVC();
                 navigationController?.pushViewController(vc, animated: true);
                 
-            }else if indexPath.row == 1 {
+            }else if indexPath.row == 2 {
                 
 //                let vc = MMLPocketVC()
 //                vc.title = "我的健康豆"
@@ -204,13 +204,9 @@ extension MMLMineVC:UITableViewDelegate{
                     return;
                 }
 				
-//                let vc = DayTaskVC();
-//                navigationController?.pushViewController(vc, animated: true)
-//
-                let vc = MMLContactServiceVC();
-                vc.title = "联系客服";
-                self.navigationController?.pushViewController(vc, animated: true);
-                
+                let vc = DayTaskVC();
+                navigationController?.pushViewController(vc, animated: true)
+
             }else if indexPath.row == 1 {
                 if !loginStatue{
                     goLogin(loginStatue: loginStatue)

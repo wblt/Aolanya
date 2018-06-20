@@ -95,8 +95,8 @@ extension DayTaskVC:UITableViewDelegate{
 			navigationController?.pushViewController(VC, animated: true)
 			//navigationController?.pushViewController(MMLSmartHardwareVC(), animated: true)
 		}else if dayTaskModel.type == "3" {
-			navigationController?.popToRootViewController(animated: true)
-			UIApplication.sharedDelegate().window?.rootViewController = DDTabBarViewController();
+//			navigationController?.popToRootViewController(animated: true)
+//			UIApplication.sharedDelegate().window?.rootViewController = DDTabBarViewController();
 
 		}
 		

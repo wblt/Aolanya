@@ -73,13 +73,15 @@ extension MMLContactServiceVC:UITableViewDataSource{
         }
         cell?.setModel = vm.modelArr[indexPath.row];
         
-        if indexPath.row == 0 {
-            cell?.label2.textColor = UIColor.lightGray;
-        }else{
-            cell?.label2.textColor = APPgreenColor;
-        }
-        
-        return cell!;
+//        if indexPath.row == 0 {
+//            cell?.label2.textColor = UIColor.lightGray;
+//        }else{
+//            cell?.label2.textColor = APPgreenColor;
+//        }
+		
+		cell?.label2.textColor = APPgreenColor;
+		
+		return cell!;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

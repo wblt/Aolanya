@@ -5519,8 +5519,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.welcare.aolaiya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58c2f073-6fdd-4e60-abf0-9beaa42d014b";
-				PROVISIONING_PROFILE_SPECIFIER = dev_aolaiya;
+				PROVISIONING_PROFILE = "552600a3-80e3-4b83-a180-58c1506bf2df";
+				PROVISIONING_PROFILE_SPECIFIER = dev_aolanya;
 				SWIFT_OBJC_BRIDGING_HEADER = Meimeila/Meimeila_bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -5546,8 +5546,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.welcare.aolaiya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1433b9d3-204f-4bd5-bfc0-01ff608ce6a8";
-				PROVISIONING_PROFILE_SPECIFIER = dis_aolaiya;
+				PROVISIONING_PROFILE = "46cc9434-9e83-4b57-ac6a-81aeafebe889";
+				PROVISIONING_PROFILE_SPECIFIER = dis_aolanya;
 				SWIFT_OBJC_BRIDGING_HEADER = Meimeila/Meimeila_bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

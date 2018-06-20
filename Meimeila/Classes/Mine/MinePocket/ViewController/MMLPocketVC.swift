@@ -125,16 +125,13 @@ extension MMLPocketVC:UITableViewDelegate {
                 })
                 
             }else{
-            
-//                let vc = MMLRechargeCashVC();
-//                vc.delegate = self;
-//                vc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen;
-//                self.present(vc, animated: false, completion: {
-//
-//                })
-				let vc = MMLPocketDetailVC();
-				vc.isHealBeans = self.isHealthBean;
-				navigationController?.pushViewController(vc, animated: true);
+				
+                let vc = MMLRechargeCashVC();
+                vc.delegate = self;
+                vc.modalPresentationStyle = UIModalPresentationStyle.overFullScreen;
+                self.present(vc, animated: false, completion: {
+
+                })
             }
         }else if indexPath.row == 1 {
 			
@@ -143,8 +140,10 @@ extension MMLPocketVC:UITableViewDelegate {
 				vc.isHealBeans = self.isHealthBean;
 				navigationController?.pushViewController(vc, animated: true);
 			}else {
-				let vc = MMLWithdrawVC()
-				self.navigationController?.pushViewController(vc, animated: true);
+
+				let vc = MMLPocketDetailVC();
+				vc.isHealBeans = self.isHealthBean;
+				navigationController?.pushViewController(vc, animated: true);
 			}
 			
         
