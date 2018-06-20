@@ -176,8 +176,7 @@ extension MMLMineVC:UITableViewDelegate{
                 vc.isHealthBean = false;
                 navigationController?.pushViewController(vc, animated: true);
 
-            }else
-            if indexPath.row == 1{
+            }else if indexPath.row == 1{
             
                 let vc = MMLEditeUserInfoVC();
                 navigationController?.pushViewController(vc, animated: true);
@@ -189,12 +188,21 @@ extension MMLMineVC:UITableViewDelegate{
 //                vc.isHealthBean = true;
 //                navigationController?.pushViewController(vc, animated: true);
 
+				let level = DDUDManager.share.getUserLevel() as String
+				// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+				if level != "0"  && level != ""{
+					//let arr = vm.mineCellTitleDic2[indexPath.section];
+				}else {
+					let vc = MMLBeansToMonayVC()
+					vc.title = "健康豆兑换";
+					self.navigationController?.pushViewController(vc, animated: true);
+				}
+
+			}else {
 				let vc = MMLBeansToMonayVC()
 				vc.title = "健康豆兑换";
 				self.navigationController?.pushViewController(vc, animated: true);
-				
-                
-            }
+			}
         
         }else if indexPath.section == 1 {
            
@@ -245,21 +253,51 @@ extension MMLMineVC:UITableViewDataSource{
             cell = Bundle.main.loadNibNamed(String.init(describing: MMLMineCell.self), owner: nil, options: nil)?.last as? MMLMineCell;
             
         }
-        
-        let arr = vm.mineCellTitleDic[indexPath.section];
+		
+		var arr:Array<Any>;
+		let level = DDUDManager.share.getUserLevel() as String
+		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+		if level != "0"  && level != ""{
+			 arr = vm.mineCellTitleDic2[indexPath.section];
+			 cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+		}else {
+			 arr = vm.mineCellTitleDic[indexPath.section];
+		}
+		
+		if indexPath.section == 0 && indexPath.row == 2 {
+			cell?.celllNumLabel.isHidden = false;
+		}else {
+			cell?.celllNumLabel.text = "";
+			cell?.celllNumLabel.isHidden = true;
+		}
+		
         let dic = arr[indexPath.row];
-        cell?.setDic = dic;
+		cell?.setDic = dic as! [String : String];
         return cell!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let num = vm.mineCellTitleDic[section];
+		var num:Array<Any>;
+		
+		let level = DDUDManager.share.getUserLevel() as String
+		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+		if level != "0"  && level != ""{
+			num = vm.mineCellTitleDic2[section];
+		} else {
+			num = vm.mineCellTitleDic[section];
+		}
         return num.count;
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return vm.mineCellTitleDic.count;
+		let level = DDUDManager.share.getUserLevel() as String
+		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+		if level != "0"  && level != ""{
+			  return vm.mineCellTitleDic2.count;
+		} else {
+			 return vm.mineCellTitleDic.count;
+		}
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
