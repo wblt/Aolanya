@@ -25,14 +25,19 @@ class MMLMineVC: DDBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+		
         navigationController?.navigationBar.barStyle = .black
-        
+		
+		tableView.reloadData();
+		
         let loginStatue = DDDeviceManager.shared.loginStatue();
         tableHeadView.loginStatue(loginStatue);
         
         if loginStatue {
             requestUsrInfoData();
         }
+		
+		
     }
     
     override func viewDidLoad() {
@@ -115,8 +120,10 @@ extension MMLMineVC{
 			// 保存用户等级
 			DDUDManager.share.saveUserLevel((self?.uservm.infoModel?.level)!)
 			//保存管理员信息
-		   DDUDManager.share.saveUseraoLanYaAdmin((self?.uservm.infoModel?.aoLanYaAdmin)!)
+		    DDUDManager.share.saveUseraoLanYaAdmin((self?.uservm.infoModel?.aoLanYaAdmin)!)
 			DDUDManager.share.saveInviter((self?.uservm.infoModel?.inviter)!)
+			
+			self?.tableView.reloadData()
         }
     }
     
@@ -259,16 +266,26 @@ extension MMLMineVC:UITableViewDataSource{
 		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
 		if level != "0"  && level != ""{
 			 arr = vm.mineCellTitleDic2[indexPath.section];
-			 cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+			// cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+			
+			
+			
 		}else {
 			 arr = vm.mineCellTitleDic[indexPath.section];
 		}
 		
 		if indexPath.section == 0 && indexPath.row == 2 {
 			cell?.celllNumLabel.isHidden = false;
+			let loginStatue = DDDeviceManager.shared.loginStatue();
+			if loginStatue {
+				cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+			}else {
+				cell?.celllNumLabel.text = "";
+			}
 		}else {
 			cell?.celllNumLabel.text = "";
 			cell?.celllNumLabel.isHidden = true;
+			cell?.setInvateCode(code: "");
 		}
 		
         let dic = arr[indexPath.row];
