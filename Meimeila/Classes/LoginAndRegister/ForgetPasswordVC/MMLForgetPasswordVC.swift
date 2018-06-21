@@ -10,6 +10,8 @@ import UIKit
 
 class MMLForgetPasswordVC: DDBaseViewController {
 
+	var code:String!
+	
     @IBOutlet weak var phoneTF: UITextField!
     
     @IBOutlet weak var passwordTF: UITextField!
@@ -19,7 +21,12 @@ class MMLForgetPasswordVC: DDBaseViewController {
     @IBOutlet weak var smsBt: DDCountDownButton!
     
     @IBOutlet weak var resetBt: UIButton!
-    
+	
+//	lazy var logionVm:MMLLoginViewModel = {[weak self] in
+//		let vm = MMLLoginViewModel.init();
+//		return vm;
+//		}()
+	
     //验证码
     @IBAction func smsBtAction(_ sender: Any) {
      
@@ -30,9 +37,9 @@ class MMLForgetPasswordVC: DDBaseViewController {
             MMLLoginViewModel.shared.getSMSAction(phone: phoneTF.text!, type: 2, succeeds: { (isSucceed) in
                 
                 self.smsBt.startEclipse();
+				self.code = MMLLoginViewModel.shared.code
                 BFunction.shared.showSuccessMessage("发送成功")
-                
-                
+				
             })
             
         }else{
@@ -45,7 +52,10 @@ class MMLForgetPasswordVC: DDBaseViewController {
     @IBAction func resetBtAction(_ sender: Any) {
         if TFverifyInpute() {
             
-            MMLLoginViewModel.shared.forgetPasswordAction(phone: phoneTF.text!, newPassword: passwordTF.text!, sms: smsTF.text!)
+			MMLLoginViewModel.shared.forgetPasswordAction(phone: phoneTF.text!, newPassword: passwordTF.text!, sms: smsTF.text!,succeed: {
+				self.navigationController?.popViewController(animated: true)
+			})
+			
         }
         
     }
@@ -99,8 +109,11 @@ extension MMLForgetPasswordVC{
             BFunction.shared.showErrorMessage("请输入验证密码");
             return false;
         }
-        
-        
+		
+		if (smsTF.text != self.code) {
+			BFunction.shared.showErrorMessage("验证码错误");
+			return false;
+		}
         
         return true;
     }

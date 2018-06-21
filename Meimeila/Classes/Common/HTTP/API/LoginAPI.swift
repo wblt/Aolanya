@@ -114,7 +114,7 @@ extension LoginAPI: Request {
             var param = postParameters()
             param["username"] = phone
             param["password"] = newPassword.MD5.uppercased()
-            param["code"] = sms
+           // param["code"] = sms
             return DDIntegrationOfTheParameter(params: param)
             
         case .weChatLogin(let openid,let login_type,let name,let gender,let iconurl):

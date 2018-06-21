@@ -12,6 +12,8 @@ import SwiftyJSON
 class MMLLoginViewModel {
     
     static let shared = MMLLoginViewModel();
+	var code:String!
+	
     private init(){}
     
     //登录
@@ -74,13 +76,20 @@ class MMLLoginViewModel {
     }
     
     //忘记密码
-    func forgetPasswordAction(phone:String,newPassword:String,sms:String) {
+    func forgetPasswordAction(phone:String,newPassword:String,sms:String,succeed:@escaping () -> Void) {
         let r = LoginAPI.forgetPassword(phone: phone, newPassword: newPassword, sms: sms);
         
-        DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
-            
-            BFunction.shared.showSuccessMessage("设置成功");
-            
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
+			
+			let jsonResult = JSON.init(responds)
+			if jsonResult["result"].stringValue == "0" {
+				BFunction.shared.showSuccessMessage("设置成功");
+				succeed()
+			}else {
+				BFunction.shared.showErrorMessage("服务器异常");
+			}
+			
+			
         }, requestError: { (responds, ErrorModel) in
             BFunction.shared.showErrorMessage(ErrorModel.message);
             
@@ -116,7 +125,10 @@ class MMLLoginViewModel {
         let r = LoginAPI.getSmsCode(phone: phone, type: type);
         
         DDHTTPRequest.request(r: r, requestSuccess: { (responds) in
-            
+			let json = JSON.init(responds);
+			//BFunction.shared.showToastMessge(json["message"].stringValue);
+			self.code = json["vercode"].stringValue;
+			
             succeeds(true);
             
         }, requestError: { (responds, ErrorModel) in

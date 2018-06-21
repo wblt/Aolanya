@@ -266,10 +266,6 @@ extension MMLMineVC:UITableViewDataSource{
 		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
 		if level != "0"  && level != ""{
 			 arr = vm.mineCellTitleDic2[indexPath.section];
-			// cell?.celllNumLabel.text = DDUDManager.share.getUserID();
-			
-			
-			
 		}else {
 			 arr = vm.mineCellTitleDic[indexPath.section];
 		}
@@ -278,7 +274,11 @@ extension MMLMineVC:UITableViewDataSource{
 			cell?.celllNumLabel.isHidden = false;
 			let loginStatue = DDDeviceManager.shared.loginStatue();
 			if loginStatue {
-				cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+				if level != "0"  && level != ""{
+					cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+				}else {
+					cell?.celllNumLabel.text = "";
+				}
 			}else {
 				cell?.celllNumLabel.text = "";
 			}
@@ -287,7 +287,6 @@ extension MMLMineVC:UITableViewDataSource{
 			cell?.celllNumLabel.isHidden = true;
 			cell?.setInvateCode(code: "");
 		}
-		
         let dic = arr[indexPath.row];
 		cell?.setDic = dic as! [String : String];
         return cell!
