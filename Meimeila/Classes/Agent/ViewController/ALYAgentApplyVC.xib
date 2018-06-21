@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALYAgentApplyVC" customModule="Meimeila" customModuleProvider="target">
             <connections>
+                <outlet property="btn1" destination="UeQ-ZP-7eG" id="MRs-L4-xE9"/>
+                <outlet property="btn2" destination="dzn-s7-dnl" id="zur-vN-fCg"/>
+                <outlet property="btn3" destination="yTv-N2-YTg" id="pNz-un-Iu3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

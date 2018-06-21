@@ -10,6 +10,8 @@ import UIKit
 
 class ALYAgentViewController: DDBaseViewController {
 	@IBOutlet weak var invitTextField: UITextField!
+	@IBOutlet weak var btn1: UIButton!
+	@IBOutlet weak var btn2: UIButton!
 	
 	private lazy var cardDataViewModel: LevelCardDataViewModel = {[weak self] in
 		let viewModel = LevelCardDataViewModel.init()
@@ -42,6 +44,11 @@ class ALYAgentViewController: DDBaseViewController {
         super.viewDidLoad()
 		self.navigationItem.title = "我要赚钱"
         // Do any additional setup after loading the view.
+		btn1.layer.cornerRadius = 10;
+		btn1.layer.masksToBounds = true;
+		btn2.layer.cornerRadius = 10;
+		btn2.layer.masksToBounds = true;
+		
 		self.money = "0.00"
 		vms.getMoneyBalance {[weak self] in
 			// 获取 余额

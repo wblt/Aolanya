@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALYAgentViewController" customModule="Meimeila" customModuleProvider="target">
             <connections>
+                <outlet property="btn1" destination="HMi-hC-yUe" id="edp-Zm-7RI"/>
+                <outlet property="btn2" destination="OiM-Ie-O0Q" id="luB-J5-UZ7"/>
                 <outlet property="invitTextField" destination="c6B-LP-ttr" id="8lF-op-2FG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

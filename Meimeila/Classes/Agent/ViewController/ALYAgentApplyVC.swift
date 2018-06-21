@@ -9,7 +9,10 @@
 import UIKit
 
 class ALYAgentApplyVC: DDBaseViewController {
-
+	@IBOutlet weak var btn1: UIButton!
+	@IBOutlet weak var btn2: UIButton!
+	@IBOutlet weak var btn3: UIButton!
+	
 	lazy var uservm:MMLUserInfoViewModel = {[weak self] in
 		let vm = MMLUserInfoViewModel.init();
 		return vm;
@@ -40,8 +43,12 @@ class ALYAgentApplyVC: DDBaseViewController {
         super.viewDidLoad()
         self.title = "我要赚钱"
         // Do any additional setup after loading the view.
-		
-		
+		btn1.layer.cornerRadius = 10;
+		btn1.layer.masksToBounds = true;
+		btn2.layer.cornerRadius = 10;
+		btn2.layer.masksToBounds = true;
+		btn3.layer.cornerRadius = 10;
+		btn3.layer.masksToBounds = true;
 		
     }
 
