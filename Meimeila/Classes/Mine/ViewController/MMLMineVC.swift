@@ -166,7 +166,67 @@ extension MMLMineVC:UITableViewDelegate{
         print("我的cell->",indexPath.row);
         
         let loginStatue = DDDeviceManager.shared.loginStatue();
-        
+		
+		let status = DDDeviceManager.shared.getCheckSwitchStatus()
+		
+		if status == "0" {
+			if indexPath.section == 0 {
+				
+				if !loginStatue{
+					goLogin(loginStatue: loginStatue)
+					return;
+				}
+				
+				
+				if indexPath.row == 0{
+					let vc = MMLEditeUserInfoVC();
+					navigationController?.pushViewController(vc, animated: true);
+					
+				}else if indexPath.row == 1{
+					
+					let level = DDUDManager.share.getUserLevel() as String
+					// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+					if level != "0"  && level != ""{
+						//let arr = vm.mineCellTitleDic2[indexPath.section];
+					}else {
+						let vc = MMLBeansToMonayVC()
+						vc.title = "健康豆兑换";
+						self.navigationController?.pushViewController(vc, animated: true);
+					}
+				}else {
+					let vc = MMLBeansToMonayVC()
+					vc.title = "健康豆兑换";
+					self.navigationController?.pushViewController(vc, animated: true);
+				}
+				
+			}else if indexPath.section == 1 {
+				
+				if indexPath.row == 0{
+					if !loginStatue{
+						goLogin(loginStatue: loginStatue)
+						return;
+					}
+					
+					let vc = MMLContactServiceVC();
+					vc.title = "联系客服";
+					self.navigationController?.pushViewController(vc, animated: true);
+					
+				}
+			}else if indexPath.section == 2 {
+				
+				if indexPath.row == 0{
+					let vc = MMLMineOpinionVC();
+					vc.title = "商家入驻洽谈"
+					vc.titleMsg = "* 请输入入驻平台的商品名，联系人"
+					navigationController?.pushViewController(vc, animated: true);
+					
+				}
+			}
+			
+			return;
+		}
+		
+		
         
         if indexPath.section == 0 {
            
@@ -263,30 +323,56 @@ extension MMLMineVC:UITableViewDataSource{
 		
 		var arr:Array<Any>;
 		let level = DDUDManager.share.getUserLevel() as String
-		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
-		if level != "0"  && level != ""{
-			 arr = vm.mineCellTitleDic2[indexPath.section];
-		}else {
-			 arr = vm.mineCellTitleDic[indexPath.section];
-		}
 		
-		if indexPath.section == 0 && indexPath.row == 2 {
-			cell?.celllNumLabel.isHidden = false;
-			let loginStatue = DDDeviceManager.shared.loginStatue();
-			if loginStatue {
-				if level != "0"  && level != ""{
-					cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+		let status = DDDeviceManager.shared.getCheckSwitchStatus()
+		
+		if status == "0" {
+			 arr = vm.mineCellTitleDic3[indexPath.section];
+			if indexPath.section == 0 && indexPath.row == 1 {
+				cell?.celllNumLabel.isHidden = false;
+				let loginStatue = DDDeviceManager.shared.loginStatue();
+				if loginStatue {
+					if level != "0"  && level != ""{
+						cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+					}else {
+						cell?.celllNumLabel.text = "";
+					}
 				}else {
 					cell?.celllNumLabel.text = "";
 				}
 			}else {
 				cell?.celllNumLabel.text = "";
+				cell?.celllNumLabel.isHidden = true;
+				cell?.setInvateCode(code: "");
 			}
-		}else {
-			cell?.celllNumLabel.text = "";
-			cell?.celllNumLabel.isHidden = true;
-			cell?.setInvateCode(code: "");
+			 
+		}else{
+			// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+			if level != "0"  && level != ""{
+				arr = vm.mineCellTitleDic2[indexPath.section];
+			}else {
+				arr = vm.mineCellTitleDic[indexPath.section];
+			}
+			
+			if indexPath.section == 0 && indexPath.row == 2 {
+				cell?.celllNumLabel.isHidden = false;
+				let loginStatue = DDDeviceManager.shared.loginStatue();
+				if loginStatue {
+					if level != "0"  && level != ""{
+						cell?.celllNumLabel.text = DDUDManager.share.getUserID();
+					}else {
+						cell?.celllNumLabel.text = "";
+					}
+				}else {
+					cell?.celllNumLabel.text = "";
+				}
+			}else {
+				cell?.celllNumLabel.text = "";
+				cell?.celllNumLabel.isHidden = true;
+				cell?.setInvateCode(code: "");
+			}
 		}
+		
         let dic = arr[indexPath.row];
 		cell?.setDic = dic as! [String : String];
         return cell!
@@ -297,23 +383,37 @@ extension MMLMineVC:UITableViewDataSource{
 		var num:Array<Any>;
 		
 		let level = DDUDManager.share.getUserLevel() as String
-		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
-		if level != "0"  && level != ""{
-			num = vm.mineCellTitleDic2[section];
-		} else {
-			num = vm.mineCellTitleDic[section];
+		let status = DDDeviceManager.shared.getCheckSwitchStatus()
+		
+		if status == "0" {
+			num = vm.mineCellTitleDic3[section];
+		}else {
+			// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+			if level != "0"  && level != ""{
+				num = vm.mineCellTitleDic2[section];
+			} else {
+				num = vm.mineCellTitleDic[section];
+			}
 		}
+		
         return num.count;
         
     }
     func numberOfSections(in tableView: UITableView) -> Int {
 		let level = DDUDManager.share.getUserLevel() as String
-		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
-		if level != "0"  && level != ""{
-			  return vm.mineCellTitleDic2.count;
-		} else {
-			 return vm.mineCellTitleDic.count;
+		let status = DDDeviceManager.shared.getCheckSwitchStatus()
+		
+		if status == "0" {
+			return vm.mineCellTitleDic3.count;
+		}else {
+			// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
+			if level != "0"  && level != ""{
+				return vm.mineCellTitleDic2.count;
+			} else {
+				return vm.mineCellTitleDic.count;
+			}
 		}
+		
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

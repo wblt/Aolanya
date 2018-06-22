@@ -118,7 +118,10 @@ extension API {
 
 // MARK: - 我的相关
 extension API {
-    
+	
+	// checkStitch
+	static let  checkswitch = "tpiot/app/deleteswitch"
+	
     /// 个人中心相关
     // 用户登录
     //static let login = "user/login.php"
@@ -330,7 +333,7 @@ extension API {
 extension API{
     ///联系客服
     static let contactServiceAPI = "tpiot/app/contact"
-    
+	
 }
 
 extension API {

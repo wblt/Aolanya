@@ -18,6 +18,7 @@ enum LoginAPI {
     case outLogin
     case weChatLogin(openid:String,login_type:Int,name:String,gender:String,iconurl:String)
 
+	case check
 }
 
 extension LoginAPI: Request {
@@ -54,6 +55,8 @@ extension LoginAPI: Request {
             return API.userLogout
         case .weChatLogin(openid: _, login_type: _, name: _, gender: _, iconurl: _):
             return API.login_weChat
+		case .check:
+			return API.checkswitch
         }
     }
     
@@ -74,6 +77,8 @@ extension LoginAPI: Request {
             return .post
         case .weChatLogin(openid: _, login_type: _, name: _, gender: _, iconurl: _):
             return .post
+		case .check:
+			return .post
         }
     }
     
@@ -129,8 +134,10 @@ extension LoginAPI: Request {
         case .outLogin:
             let param =  postParameters()
             return DDIntegrationOfTheParameter(params: param ,isNeedLogin: true);
-        }
-        
+		
+		case .check:
+			return nil
+         }
     }
     
 }

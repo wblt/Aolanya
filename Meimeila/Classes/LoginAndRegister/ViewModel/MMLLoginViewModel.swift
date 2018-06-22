@@ -217,5 +217,34 @@ class MMLLoginViewModel {
         
         
     }
+	
+	func checkSwitch() {
+		  let r = LoginAPI.check
+		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: { (responds) in
+			
+			print(responds);
+			// 保存用户的uid和token
+			let jsonResult = JSON.init(responds)
+			let status = jsonResult["status"].stringValue
+			
+			if  status == "0" { // cl-ose
+				DDDeviceManager.shared.saveCheckSwitch(status: "0")
+			}else if status == "1" { // o-pen
+				DDDeviceManager.shared.saveCheckSwitch(status: "1")
+			}else {
+				DDDeviceManager.shared.saveCheckSwitch(status: "0")
+			}
+
+			
+		}, requestError: { (responds, errorModel) in
+			
+			DDDeviceManager.shared.saveCheckSwitch(status: "0")
+			
+		}) { (Error) in
+			DDDeviceManager.shared.saveCheckSwitch(status: "0")
+			//print(Error);
+		}
+		
+	}
     
 }

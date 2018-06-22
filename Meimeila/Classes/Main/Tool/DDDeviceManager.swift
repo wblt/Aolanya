@@ -18,6 +18,9 @@ extension UserDefaults {
             case isShowNewsWelfare
             // 是否登录
             case isLogin
+			// check Swtich
+			case checkSwitch
+			
         }
     }
 }
@@ -68,5 +71,18 @@ class DDDeviceManager {
         }
         return false;
     }
-    
+	
+	// 保存 s-witch 状态   1 o-pen  2 c-lose
+	func saveCheckSwitch(status:String) {
+		UserDefaults.DeviceInfo.set(value: status, forKey: .checkSwitch)
+		UserDefaults.standard.synchronize()
+	}
+	
+	// 获取 s-witch 状态呢
+	func getCheckSwitchStatus() -> String {
+		let status = UserDefaults.DeviceInfo.string(forKey: .checkSwitch)
+		
+		return status!
+	}
+	
 }

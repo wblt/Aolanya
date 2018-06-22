@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         jq_application(application, didFinishLaunchingWithOptions: launchOptions)
 		
-        // 注册极光推送
+		// 获取状态
+		self.checkSwitch()
+		
+		// 注册极光推送
         //JPush_register(launchOptions: launchOptions)
         // 注册融云推送
         // RongCloud_register(application: application)
@@ -173,6 +176,11 @@ extension AppDelegate {
 
 	}
 	
+	// 保存 ** 状态 check
+	func checkSwitch() {
+		DDDeviceManager.shared.saveCheckSwitch(status: "0")
+		MMLLoginViewModel.shared.checkSwitch()
+	}
 }
 
 
