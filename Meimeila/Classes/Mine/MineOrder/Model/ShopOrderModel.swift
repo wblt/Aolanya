@@ -121,17 +121,17 @@ class ShopOrderModel{
                 leftBtTitle = "再次购买"
                 rightBtTitle = "修改信息"
 
-            }else if type == 2{//交易成功
+            }else if type == 4{//交易成功  2
                 orderStateTitle = "交易成功"
                 leftBtTitle = "删除订单"
                 rightBtTitle = "查看订单"
 
-            }else if type == 3{//待收货
+            }else if type == 2{//待收货 、、3
                 orderStateTitle = "待收货"
                 leftBtTitle = "查看物流"
                 rightBtTitle = "确认收货"
                 modifyBtTitle = "再次购买"
-            }else if type == 4{//待评价
+            }else if type == 3{//待评价 4
                 orderStateTitle = "交易成功"
                 leftBtTitle = "查看物流"
                 rightBtTitle = "评价"

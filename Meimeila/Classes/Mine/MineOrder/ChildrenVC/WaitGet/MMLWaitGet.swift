@@ -114,6 +114,10 @@ class MMLWaitGet: DDBaseViewController {
         vc.shopModel = model;
         nav?.pushViewController(vc, animated: true);
     }
+	
+	@objc func modifyBtAction(bt:UIButton){
+		
+	}
 }
 
 
@@ -203,19 +207,31 @@ extension MMLWaitGet:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view:SecctionFootView = SecctionFootView.init(frame: CGRect.zero);
-//        view.btLeft.setTitle("查看物流", for: .normal)
+        view.modifyMessageBt.setTitle("查看物流", for: .normal)
 //        view.btRight.setTitle("确认收货", for: .normal)
         view.btLeft.setTitle("再次购买", for: .normal)
         view.btRight.setTitle("修改信息", for: .normal)
         
-        view.modifyMessageBt.isHidden = true;
-        
+     //   view.modifyMessageBt.isHidden = false;
+		if let _ = model.modifyBtTitle {
+			
+			view.modifyMessageBt.setTitle(model.modifyBtTitle, for: UIControlState.normal);
+			view.modifyMessageBt.tag = section + 1000;
+			view.modifyMessageBt.isHidden = false;
+			
+		}else{
+			
+			view.modifyMessageBt.isHidden = true;
+		}
+		
         view.btLeft.tag = section + 1000;
+		
         view.btRight.tag = section + 1000;
         
         view.btLeft.addTarget(self, action: #selector(leftBtAction(_:)), for: .touchUpInside);
-        
         view.btRight.addTarget(self, action: #selector(rightBtAction(_:)), for: .touchUpInside);
+		view.modifyMessageBt.addTarget(self, action: #selector(modifyBtAction(bt:)), for: UIControlEvents.touchUpInside);
+		
         let price = model.orderPrice;
        // let num = model.orderInfoNumber;
        // let post = model.postage ?? "0"

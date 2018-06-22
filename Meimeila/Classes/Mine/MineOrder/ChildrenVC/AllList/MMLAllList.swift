@@ -75,9 +75,15 @@ class MMLAllList: DDBaseViewController {
         self.tableView.showsVerticalScrollIndicator = false;
         self.tableView.register(UINib.init(nibName: String.init(describing: MineCollectCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: MineCollectCell.self));
     }
-    
-    
-    //查看全部订单-> 0是待付款 1已付款  2交易成功 3是待收货 4是待评价
+    /*
+	public final static String WAITING_PAYMENT="0";//等待付款
+	public final static String PAID="1";//已付款
+	public final static String GOODS_RECEIVED="2";//已付款,待收货
+	public final static String PENDING_EVALUATION="3";//确认收货,待评价customer_service
+	public final static String SUCCESSFUL_TRADE="4";//已评价,交易成功
+	*/
+	
+    //查看全部订单-> 0是待付款 1已付款  2是待收货 3  4是待评价
     
     //订单详情-删除订单  0为待付款，1是已付款，2是交易成功，3是待收货 4待评价
     
@@ -148,7 +154,7 @@ class MMLAllList: DDBaseViewController {
         
     }
     
-    //全部订单右  //0是待付款1是已付款2是交易成功3是待收货4是待评价
+    //全部订单右  //0是待付款 1是已付款 2待收货 3是待评价 4是交易成功
     @objc func rightBtAction(_ bt:UIButton) {
         
         let nav = self.parent?.navigationController;
