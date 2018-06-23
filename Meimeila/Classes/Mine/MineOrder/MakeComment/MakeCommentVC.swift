@@ -20,18 +20,16 @@ class MakeCommentVC: DDBaseViewController {
             
             let shopInfoModel = shopModel.orderInfo![0]
             
-            vm.upLoadCommentWithImage(shopingID: shopInfoModel.shopingID ?? "0", score: "90", fabulous: "100", evaluateMessage: "100", files: picArr, scueeds: {[weak self] in
-                
-                BFunction.shared.showSuccessMessage("发表成功");
+            vm.upLoadCommentWithImage(shopingID: shopInfoModel.shopingID ?? "0", orderID:shopModel.orderID!, evaluateMessage: textView.text, files: picArr, scueeds: {[weak self] in
+                BFunction.shared.showSuccessMessage("发布成功");
                 
                 DDUtility.delay(1, closure: {
-                    
                     self?.navigationController?.popViewController(animated: true);
                 })
                 
             }, errors: {
                 
-                
+                BFunction.shared.showErrorMessage("发布失败");
             });
         }
         

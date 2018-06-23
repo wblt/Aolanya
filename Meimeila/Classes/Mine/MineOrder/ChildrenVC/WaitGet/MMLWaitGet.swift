@@ -83,40 +83,61 @@ class MMLWaitGet: DDBaseViewController {
         
     }
     
-    //查看物流   ---- 再次购买
+    //查看物流
     @objc func leftBtAction(_ bt:UIButton) {
         print(bt.tag)
-        let model = vm.orderListArr[bt.tag - 1000];
-//
-//        let vc = CheckLogisticsVC();
-//        vc.model = model;
-//        let nav = parent?.navigationController;
-//        nav?.pushViewController(vc, animated: true);
-        let nav = self.parent?.navigationController;
-        let vc = MMLProductDetailsVC()
-        let mod = model.orderInfo![0] as! ShopOrderInfoModel
-        vc.shoppingID = mod.shopingID;
-        nav?.pushViewController(vc, animated: true)
         
+        
+        let model = vm.orderListArr[bt.tag - 1000];
+
+        if model.orderState == "2" {
+            let vc = CheckLogisticsVC();
+            vc.model = model;
+            let nav = parent?.navigationController;
+            nav?.pushViewController(vc, animated: true);
+        }else if model.orderState == "1"{
+            let nav = self.parent?.navigationController;
+            let vc = MMLProductDetailsVC()
+            let mod = model.orderInfo![0]
+            vc.shoppingID = mod.shopingID;
+            nav?.pushViewController(vc, animated: true)
+        }
     }
     
-    //确认收货   ---- 修改信息
+    //确认收货
     @objc func rightBtAction(_ bt:UIButton) {
         print(bt.tag)
-        let nav = self.parent?.navigationController;
-        let model = vm.orderListArr[bt.tag - 1000];
+        let model = self.vm.orderListArr[bt.tag - 1000];
+        if model.orderState == "2" {
+            BFunction.shared.showAlert(title: "温馨提示", subTitle: "确认收货？", ontherBtnTitle: "确认") {
+                self.vm.verifyTakeGoods(orderID:model.orderID ?? "0", succeeds: {[weak self] in
+                    
+                    self?.requestDataList();
+                })
+            }
+        }else if model.orderState == "1" {
+            let nav = self.parent?.navigationController;
+            let vc = MMLMineAddressVC();
+            vc.shopModel = model;
+            
+            nav?.pushViewController(vc, animated: true);
+        }
         
-//        vm.verifyTakeGoods(orderID:model.orderID ?? "0", succeeds: {[weak self] in
-//
-//            self?.requestDataList();
-//        })
-        let vc = MMLMineAddressVC();
-        vc.shopModel = model;
-        nav?.pushViewController(vc, animated: true);
+
     }
 	
 	@objc func modifyBtAction(bt:UIButton){
-		
+		// 再次购买 -- 跳转到商品详情
+//        let nav = self.parent?.navigationController;
+//        nav?.popViewController(animated: false);
+//        Barista.post(notification: Barista.Notification.gotoHome, object: nil);
+        
+        let model = self.vm.orderListArr[bt.tag - 1000];
+        let vc = MMLProductDetailsVC()
+        let mod = model.orderInfo![0]
+        vc.shoppingID = mod.shopingID;
+        let nav = self.parent?.navigationController;
+        nav?.pushViewController(vc, animated: true)
 	}
 }
 
@@ -127,6 +148,11 @@ extension MMLWaitGet:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(indexPath.row);
+        let model = vm.orderListArr[indexPath.section];
+        
+        let vc = MMLOrderDetailVC()
+        vc.shopModel = model;
+        self.navigationController?.pushViewController(vc, animated: true);
     }
 }
 
@@ -207,23 +233,23 @@ extension MMLWaitGet:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view:SecctionFootView = SecctionFootView.init(frame: CGRect.zero);
-        view.modifyMessageBt.setTitle("查看物流", for: .normal)
+        view.modifyMessageBt.setTitle(model.modifyBtTitle, for: .normal)
 //        view.btRight.setTitle("确认收货", for: .normal)
-        view.btLeft.setTitle("再次购买", for: .normal)
-        view.btRight.setTitle("修改信息", for: .normal)
+        view.btLeft.setTitle(model.leftBtTitle, for: .normal)
+        view.btRight.setTitle(model.rightBtTitle, for: .normal)
         
      //   view.modifyMessageBt.isHidden = false;
-		if let _ = model.modifyBtTitle {
-			
-			view.modifyMessageBt.setTitle(model.modifyBtTitle, for: UIControlState.normal);
-			view.modifyMessageBt.tag = section + 1000;
-			view.modifyMessageBt.isHidden = false;
-			
-		}else{
-			
-			view.modifyMessageBt.isHidden = true;
-		}
-		
+        if let _ = model.modifyBtTitle {
+            view.modifyMessageBt.setTitle(model.modifyBtTitle, for: UIControlState.normal);
+            view.modifyMessageBt.tag = section + 1000;
+            view.modifyMessageBt.isHidden = false;
+            
+        }else{
+            
+            view.modifyMessageBt.isHidden = true;
+        }
+        
+        view.modifyMessageBt.tag = section + 1000;
         view.btLeft.tag = section + 1000;
 		
         view.btRight.tag = section + 1000;

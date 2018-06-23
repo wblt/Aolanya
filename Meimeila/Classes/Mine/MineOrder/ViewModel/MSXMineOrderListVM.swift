@@ -325,12 +325,9 @@ class MSXMineOrderListVM{
         DDHTTPRequest.request(r: r, requestSuccess: {[weak self] (responds) in
             let json = JSON.init(responds);
             
-            let jsonArr = json["data"].arrayValue;
-            if !jsonArr.isEmpty {
-                
-                let model = ShopOrderModel.init(fromJson: jsonArr[0]);
+           
+                let model = ShopOrderModel.init(fromJson: json["data"]);
                 self?.orderListArr.append(model);
-            }
         
             self?.endRefresh();
             succeeds()
@@ -437,12 +434,12 @@ class MSXMineOrderListVM{
     func verifyTakeGoods(orderID:String,succeeds:@escaping ()->()) {
         
         let r = MineShopOrderAPI.varifyTakeGoods(orderID: orderID)
-        DDHTTPRequest.request(r: r, requestSuccess: {(responds) in
+        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {(responds) in
             let json = JSON.init(responds);
             
             let code = json["code"].intValue;
             
-            if code == 100 {
+            if code == 0 {
                 BFunction.shared.showSuccessMessage("确认成功");
                 succeeds()
             }else{

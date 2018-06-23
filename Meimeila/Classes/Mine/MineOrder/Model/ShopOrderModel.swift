@@ -108,7 +108,7 @@ class ShopOrderModel{
             if type == 0{//待付款    // 待审核
                 orderStateTitle = "待审核"
                 leftBtTitle = "修改信息"
-                rightBtTitle = "立即付款"
+                rightBtTitle = "立即支付"
                 modifyBtTitle = "取消订单"
 //                orderStateTitle = "待审核"
 //                leftBtTitle = "修改信息"
@@ -123,8 +123,8 @@ class ShopOrderModel{
 
             }else if type == 4{//交易成功  2
                 orderStateTitle = "交易成功"
-                leftBtTitle = "删除订单"
-                rightBtTitle = "查看订单"
+               // leftBtTitle = "删除订单"
+                rightBtTitle = "再次购买"
 
             }else if type == 2{//待收货 、、3
                 orderStateTitle = "待收货"
@@ -132,9 +132,9 @@ class ShopOrderModel{
                 rightBtTitle = "确认收货"
                 modifyBtTitle = "再次购买"
             }else if type == 3{//待评价 4
-                orderStateTitle = "交易成功"
+                orderStateTitle = "待评价"
                 leftBtTitle = "查看物流"
-                rightBtTitle = "评价"
+                rightBtTitle =  "立即评价" //""
                 modifyBtTitle = "再次购买"
             }else if type == 5{//申请退款
                 orderStateTitle = "申请退款"

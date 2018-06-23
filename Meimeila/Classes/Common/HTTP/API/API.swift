@@ -197,7 +197,7 @@ extension API {
     
     
     //订单详情
-    static let orderDetailAPI = "tpiot/app/selectPaymentOrder"
+    static let orderDetailAPI = "tpiot/app/orderDetail"
     
     //查看物流
     static let logisticsAPI = "notice/express_api/express_api.php"

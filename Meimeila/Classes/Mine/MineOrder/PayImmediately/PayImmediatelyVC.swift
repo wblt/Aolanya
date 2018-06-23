@@ -25,11 +25,11 @@ class PayImmediatelyVC: DDBaseViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        vm.starTime();
+       // vm.starTime();
     }
     override func viewWillDisappear(_ animated: Bool) {
         
-        vm.stopTime();
+       // vm.stopTime();
     }
     
     // 如果不写这个方法，iOS8会崩溃

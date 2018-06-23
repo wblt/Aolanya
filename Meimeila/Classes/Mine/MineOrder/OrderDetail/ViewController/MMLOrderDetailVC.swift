@@ -12,6 +12,11 @@ class MMLOrderDetailVC: DDBaseViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
+    lazy var vm:MSXMineOrderListVM = {[weak self] in
+        let vm = MSXMineOrderListVM()
+       // vm.tableView = self?.tableView;
+        return vm;
+        }()
     
     //iOS8用到XIB必须写这两个方法
     init() {
@@ -28,8 +33,13 @@ class MMLOrderDetailVC: DDBaseViewController {
 
         self.title = "订单详情"
         // Do any additional setup after loading the view.
+        
+        vm.orderDetailLister(orderID: shopModel.orderID!, orderState: Int(shopModel.orderState!)!, succeeds: {
+            self.shopModel =  self.vm.orderListArr[0]
+            self.tableView.reloadData()
+        })
     }
-
+    
     override func setupUI() {
      
         setTableView();

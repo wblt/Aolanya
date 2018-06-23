@@ -9,7 +9,7 @@
 import UIKit
 
 enum ShopCommentAPI{
-    case addComment(shopingID:String,score:String,fabulous:String,evaluateMessage:String,files:[UIImage]?)
+    case addComment(shopingID:String,orderID:String,evaluateMessage:String,files:[UIImage]?)
 }
 
 
@@ -17,7 +17,7 @@ extension ShopCommentAPI:Request{
     var path: String {
 
         switch self {
-        case .addComment(shopingID: _, score: _, fabulous: _, evaluateMessage: _, files: _):
+        case .addComment(shopingID: _, orderID: _, evaluateMessage: _, files: _):
             return API.commentAPI;
         }
     }
@@ -25,11 +25,12 @@ extension ShopCommentAPI:Request{
     var parameters: [String : Any]?{
 
         switch self {
-        case .addComment(let shopingID,let score,let fabulous,let evaluateMessage,let files):
+        case .addComment(let shopingID,let orderID,let evaluateMessage,let files):
             var p = postParameters();
             p["shoppingID"] = shopingID;
-            p["score"] = score;
-            p["fabulous"] = fabulous;
+            p["orderID"] = orderID;
+           // p["fabulous"] = fabulous;
+            
             p["evaluateMessage"] = evaluateMessage;
             
             if let images = files {

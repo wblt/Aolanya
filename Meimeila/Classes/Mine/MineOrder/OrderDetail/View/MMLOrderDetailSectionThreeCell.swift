@@ -52,9 +52,9 @@ class MMLOrderDetailSectionThreeCell: UITableViewCell {
             
             let times = setModel?.orderTime ?? "0";
             
-            let time = timestampToDate(format:  "yy-MM-dd HH:mm:ss", timestamp:times)
+          //  let time = timestampToDate(format:  "yy-MM-dd HH:mm:ss", timestamp:times)
             
-            orderTime.text = time;
+            orderTime.text = times;
             
             orderNumber.text = setModel?.orderID;
         }

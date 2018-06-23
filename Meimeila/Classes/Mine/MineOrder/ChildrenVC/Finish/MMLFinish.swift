@@ -82,33 +82,50 @@ class MMLFinish: DDBaseViewController {
         
     }
     
-    //查看物流
+    //  3就是 查看物流
     @objc func leftBtAction(_ bt:UIButton) {
         print(bt.tag)
         let model = vm.orderListArr[bt.tag - 1000];
         
-        let vc = CheckLogisticsVC();
-        vc.model = model;
-        let nav = parent?.navigationController;
-        nav?.pushViewController(vc, animated: true);
+        if model.orderState == "3" {
+            let vc = CheckLogisticsVC();
+            vc.model = model;
+            let nav = parent?.navigationController;
+            nav?.pushViewController(vc, animated: true);
+        }else {
+            
+        }
+        
     }
     
-    //确认收货
+    // 3状态立即评价  4 交易完成
     @objc func rightBtAction(_ bt:UIButton) {
         print(bt.tag)
+        let model = vm.orderListArr[bt.tag - 1000];
         
-        let vc = MakeCommentVC();
-        vc.shopModel = vm.orderListArr[bt.tag - 1000]
-        navigationController?.pushViewController(vc, animated: true);
+        if model.orderState == "3" {
+            let vc = MakeCommentVC();
+            vc.shopModel =  model
+            navigationController?.pushViewController(vc, animated: true);
+        }else if model.orderState == "4" {
+            let vc = MMLProductDetailsVC()
+            let mod = model.orderInfo![0]
+            vc.shoppingID = mod.shopingID;
+            let nav = self.parent?.navigationController;
+            nav?.pushViewController(vc, animated: true)
+        }
+        
     }
     
-    
+    // 再次购买
     @objc func modifyBtAction(bt:UIButton){
         
+        let model = self.vm.orderListArr[bt.tag - 1000];
+        let vc = MMLProductDetailsVC()
+        let mod = model.orderInfo![0]
+        vc.shoppingID = mod.shopingID;
         let nav = self.parent?.navigationController;
-        nav?.popViewController(animated: false);
-                
-        Barista.post(notification: Barista.Notification.gotoHome, object: nil);
+        nav?.pushViewController(vc, animated: true)
     }
     
 }
@@ -120,6 +137,11 @@ extension MMLFinish:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(indexPath.row);
+        let model = vm.orderListArr[indexPath.section];
+        
+        let vc = MMLOrderDetailVC()
+        vc.shopModel = model;
+        self.navigationController?.pushViewController(vc, animated: true);
     }
 }
 
@@ -169,7 +191,12 @@ extension MMLFinish:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view = SectionHeadView.init(frame: CGRect.zero);
-        view.titleLabel.text = "交易完成"
+        if model.orderState == "3" {
+          view.titleLabel.text = "待评价"
+        }else if  model.orderState == "4" {
+            view.titleLabel.text = "交易完成"
+        }
+        
         view.timeLabel.text = model.orderTime!
 			//timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
 		return view;
@@ -187,10 +214,11 @@ extension MMLFinish:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view:SecctionFootView = SecctionFootView.init(frame: CGRect.zero);
-        view.btLeft.setTitle("查看物流", for: .normal)
-        view.btRight.setTitle("评价", for: .normal)
+        view.btLeft.setTitle(model.leftBtTitle, for: .normal)
+        
+        view.btRight.setTitle(model.rightBtTitle, for: .normal)
+        
         if let _ = model.modifyBtTitle {
-            
             view.modifyMessageBt.setTitle(model.modifyBtTitle, for: UIControlState.normal);
             view.modifyMessageBt.tag = section + 1000;
             view.modifyMessageBt.isHidden = false;
@@ -199,6 +227,17 @@ extension MMLFinish:UITableViewDataSource{
             
             view.modifyMessageBt.isHidden = true;
         }
+        
+        if let _ = model.leftBtTitle {
+            view.btLeft.setTitle(model.leftBtTitle, for: UIControlState.normal);
+            view.btLeft.isHidden = false;
+            
+        }else{
+            
+            view.btLeft.isHidden = true;
+        }
+        
+        
         
         view.btLeft.tag = section + 1000;
         view.btRight.tag = section + 1000;

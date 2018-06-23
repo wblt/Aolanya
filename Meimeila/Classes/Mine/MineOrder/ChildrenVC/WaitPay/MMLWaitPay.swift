@@ -89,7 +89,7 @@ class MMLWaitPay: DDBaseViewController {
     //独立->     0是待付款 1待发货  2待收货  4待评价 5正在申请退款 6已退款订单
     
     
-    //取消订单
+    //修改信息
     @objc func leftBtAction(_ bt:UIButton) {
         print(bt.tag)
 
@@ -114,13 +114,19 @@ class MMLWaitPay: DDBaseViewController {
     }
     
     
-    
+    // 取消订单
     @objc func modifyBtAction(bt:UIButton){
-        let model = vm.orderListArr[bt.tag - 1000];
-        vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
+        
+        BFunction.shared.showAlert(title: "温馨提示", subTitle: "确认取消订单？", ontherBtnTitle: "确定") {
             
-            self?.requestDataList();
-        })
+            let model = self.vm.orderListArr[bt.tag - 1000];
+            self.vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
+                
+                self?.requestDataList();
+            })
+        }
+        
+        
         
     }
     
@@ -211,7 +217,7 @@ extension MMLWaitPay:UITableViewDataSource{
 //        view.modifyMessageBt.setTitle("修改信息", for: UIControlState.normal);
         
         view.btLeft.setTitle("修改信息", for: .normal)
-        view.btRight.setTitle("立即付款", for: .normal)
+        view.btRight.setTitle("立即支付", for: .normal)
         view.modifyMessageBt.setTitle("取消订单", for: UIControlState.normal);
         
         

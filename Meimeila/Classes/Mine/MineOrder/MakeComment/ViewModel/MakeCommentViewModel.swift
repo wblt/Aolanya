@@ -20,9 +20,9 @@ class MakeCommentViewModel{
 
 extension MakeCommentViewModel{
     
-    func upLoadCommentWithImage(shopingID: String, score: String, fabulous: String, evaluateMessage: String, files: [UIImage],scueeds:@escaping ()->(),errors:@escaping ()->()) {
+    func upLoadCommentWithImage(shopingID: String, orderID: String, evaluateMessage: String, files: [UIImage],scueeds:@escaping ()->(),errors:@escaping ()->()) {
         
-        let r = ShopCommentAPI.addComment(shopingID: shopingID, score: score, fabulous: fabulous, evaluateMessage: evaluateMessage, files: files);
+        let r = ShopCommentAPI.addComment(shopingID: shopingID, orderID: orderID, evaluateMessage: evaluateMessage, files: files);
 
         DDHTTPRequest.upLoadImages(r: r, requestSuccess: { (responds) in
             

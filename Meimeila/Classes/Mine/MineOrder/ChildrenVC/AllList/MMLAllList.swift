@@ -95,7 +95,7 @@ class MMLAllList: DDBaseViewController {
         if let state = model.orderState {
             let type = Int(state);
             print(type ?? 999)
-            if type == 0{       //待审核-   修改收货地址
+            if type == 0{       //待付款-   修改收货地址
                 
 //                vm.deleteOrderLister(ordetID: model.orderID!, orderState: "0", succeeds: {[weak self] in
 //
@@ -106,7 +106,7 @@ class MMLAllList: DDBaseViewController {
                 vc.shopModel = model;
                 nav?.pushViewController(vc, animated: true);
                 
-            }else if type == 1{ //待发货- 再次购买 wy
+            }else if type == 1{ // 已付款
                 
 //                let vc = ApplyForAfterSellVC();
 //                vc.model = model;
@@ -117,11 +117,15 @@ class MMLAllList: DDBaseViewController {
 				nav?.pushViewController(vc, animated: true)
 				
             }else if type == 2{ //交易成功-删除订单
-                vm.deleteOrderLister(ordetID: model.orderID!, orderState: "2", succeeds: {[weak self] in
-                    
-                    self?.requestDataList();
-                })
                 
+//                vm.deleteOrderLister(ordetID: model.orderID!, orderState: "2", succeeds: {[weak self] in
+//
+//                    self?.requestDataList();
+//                })
+                // 查看物流
+                let vc = CheckLogisticsVC()
+                vc.model = model;
+                nav?.pushViewController(vc, animated: true);
                 
             }else if type == 3{ //待收货-查看物流
                 
@@ -195,24 +199,34 @@ class MMLAllList: DDBaseViewController {
 				
             }else if type == 2{ //交易成功-查看订单
                 
-                let model = orderModel;
-                
-                let vc = MMLOrderDetailVC()
-                vc.shopModel = model;
-                self.navigationController?.pushViewController(vc, animated: true);
-                
-            }else if type == 3{ //待收货-确认收货
-                
-                vm.verifyTakeGoods(orderID: orderModel.orderID ?? "0", succeeds: {[weak self] in
-                    
-                    self?.requestDataList();
+//                let model = orderModel;
+//
+//                let vc = MMLOrderDetailVC()
+//                vc.shopModel = model;
+//                self.navigationController?.pushViewController(vc, animated: true);
+                BFunction.shared.showAlert(title: "温馨提示", subTitle: "确认收货?", ontherBtnTitle: "确认", ontherBtnAction: {
+                    self.vm.verifyTakeGoods(orderID: orderModel.orderID ?? "0", succeeds: {[weak self] in
+                        
+                        self?.requestDataList();
+                    })
                 })
-                
-            }else if type == 4{ //待评价-评价
-                
+            }else if type == 3{ // 去评价
                 let vc = MakeCommentVC()
                 vc.shopModel = orderModel;
                 nav?.pushViewController(vc, animated: true);
+                
+//                vm.verifyTakeGoods(orderID: orderModel.orderID ?? "0", succeeds: {[weak self] in
+//
+//                    self?.requestDataList();
+//                })
+                
+            }else if type == 4{ //再次购买
+                print("4")
+                let vc = MMLProductDetailsVC()
+                let mod = orderModel.orderInfo![0]
+                vc.shoppingID = mod.shopingID;
+                nav?.pushViewController(vc, animated: true)
+              
             }else if type == 5{ //退款申请
                 //MARK:修改
 
@@ -249,35 +263,37 @@ class MMLAllList: DDBaseViewController {
             
             if type == 0{//待付款-修改信息
                 
-                print("0")
-
-				vm.deleteOrderLister(ordetID: orderModel.orderID!, orderState: "0", succeeds: {[weak self] in
-					
-					self?.requestDataList();
-				})
-                
+                 print("0")
+                 BFunction.shared.showAlert(title: "温馨提示", subTitle: "确认取消订单？", ontherBtnTitle: "确定") {
+                    self.vm.deleteOrderLister(ordetID: orderModel.orderID!, orderState: "0", succeeds: {[weak self] in
+                        
+                        self?.requestDataList();
+                    })
+                }
                 
             }else if type == 1{//待付款-修改信息
                 print("1")
 
-            }else if type == 2{
+            }else if type == 2{ // 再次购买
                 print("2")
-
                 
-            }else if type == 3{//待收货-再次购买
+                let vc = MMLProductDetailsVC()
+                let mod = orderModel.orderInfo![0]
+                vc.shoppingID = mod.shopingID;
+                nav?.pushViewController(vc, animated: true)
+                
+            }else if type == 3{//待评价-再次购买
                 print("3")
-
-                nav?.popViewController(animated: false);
-                
-                Barista.post(notification: Barista.Notification.gotoHome, object: nil);
-                
+                let vc = MMLProductDetailsVC()
+                let mod = orderModel.orderInfo![0]
+                vc.shoppingID = mod.shopingID;
+                nav?.pushViewController(vc, animated: true)
             }else if type == 4{//交易成功-再次购买
                print("4")
-                
-                nav?.popViewController(animated: false);
-                Barista.post(notification: Barista.Notification.gotoHome, object: nil);
-                
-                
+                let vc = MMLProductDetailsVC()
+                let mod = orderModel.orderInfo![0]
+                vc.shoppingID = mod.shopingID;
+                nav?.pushViewController(vc, animated: true)
             }else if type == 5{
                 
                 print("5")
@@ -285,7 +301,6 @@ class MMLAllList: DDBaseViewController {
                 
             }else if type == 6{
                 print("6")
-
             }
         }
     }
@@ -308,7 +323,6 @@ extension MMLAllList:UITableViewDelegate{
         let vc = MMLOrderDetailVC()
         vc.shopModel = model;
     self.navigationController?.pushViewController(vc, animated: true);
-        
     }
 }
 
@@ -396,6 +410,17 @@ extension MMLAllList:UITableViewDataSource{
         }else{
             
             view.modifyMessageBt.isHidden = true;
+        }
+        
+        if let _ = model.leftBtTitle {
+            
+            view.btLeft.setTitle(model.leftBtTitle, for: UIControlState.normal);
+            view.btLeft.tag = section + 1000;
+            view.btLeft.isHidden = false;
+            
+        }else{
+            
+            view.btLeft.isHidden = true;
         }
         
         view.btLeft.tag = section + 1000;
