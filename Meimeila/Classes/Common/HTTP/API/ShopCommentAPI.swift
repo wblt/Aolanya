@@ -32,19 +32,20 @@ extension ShopCommentAPI:Request{
            // p["fabulous"] = fabulous;
             
             p["evaluateMessage"] = evaluateMessage;
-            
+		//	p["file"] = files;
+			
             if let images = files {
-                
+
                 if images.count > 0{
-                    
+					
                     for (index,value) in images.enumerated() {
-                        
+
                         p["file\(index)"] = value
                     }
                 }
-                
+				
             }
-        
+			
             return DDIntegrationOfTheParameter(params: p, isNeedLogin: true);
 
         

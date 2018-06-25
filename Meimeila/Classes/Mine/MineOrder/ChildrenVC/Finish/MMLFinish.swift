@@ -88,11 +88,15 @@ class MMLFinish: DDBaseViewController {
         let model = vm.orderListArr[bt.tag - 1000];
         
         if model.orderState == "3" {
-            let vc = CheckLogisticsVC();
-            vc.model = model;
-            let nav = parent?.navigationController;
-            nav?.pushViewController(vc, animated: true);
-        }else {
+//            let vc = CheckLogisticsVC();
+//            vc.model = model;
+//            let nav = parent?.navigationController;
+//            nav?.pushViewController(vc, animated: true);
+			let nav = parent?.navigationController;
+			let vc = DDBaseWebViewVC()
+			vc.loadUrlString("https://m.kuaidi100.com:443", title: "查询物流")
+			nav?.pushViewController(vc, animated: true);
+		}else {
             
         }
         

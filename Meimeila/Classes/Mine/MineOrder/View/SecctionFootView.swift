@@ -117,9 +117,11 @@ class SecctionFootView: UIView {
         
         let bt:UIButton = UIButton.init(type: UIButtonType.custom);
         bt.setTitle("----", for: .normal);
-        bt.setTitleColor(DDGlobalNavBarColor(), for: .normal);
+	  //bt.setTitleColor(DDGlobalNavBarColor(), for: .normal);
+		bt.setTitleColor(UIColor.lightGray, for: .normal);
         bt.titleLabel?.font = UIFont.systemFont(ofSize: 16.0);
-        bt.layer.borderColor = DDGlobalNavBarColor().cgColor;
+       // bt.layer.borderColor = DDGlobalNavBarColor().cgColor;
+		bt.layer.borderColor = UIColor.lightGray.cgColor;
         bt.layer.borderWidth = 1.0;
         bt.layer.cornerRadius = 5.0;
 

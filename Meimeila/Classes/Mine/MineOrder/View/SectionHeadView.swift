@@ -82,7 +82,8 @@ class SectionHeadView: UIView {
         
         let label = UILabel.init(frame: CGRect.zero);
         label.font = UIFont.systemFont(ofSize: 16);
-        label.textColor = UIColor.lightGray;
+        //label.textColor = UIColor.lightGray;
+		label.textColor = DDGlobalNavBarColor()
         label.textAlignment = .right;
         label.text = "------";
         return label;

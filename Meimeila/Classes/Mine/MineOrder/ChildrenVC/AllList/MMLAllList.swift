@@ -135,10 +135,12 @@ class MMLAllList: DDBaseViewController {
                 
             }else if type == 4{ //待评价-查看物流
                 
-                let vc = CheckLogisticsVC()
-                vc.model = model;
-                nav?.pushViewController(vc, animated: true);
-                
+//                let vc = CheckLogisticsVC()
+//                vc.model = model;
+//                nav?.pushViewController(vc, animated: true);
+				let vc = DDBaseWebViewVC()
+				vc.loadUrlString("https://m.kuaidi100.com:443", title: "查询物流")
+				nav?.pushViewController(vc, animated: true);
             }else if type == 5{ //退款申请
                 
                 //MARK:修改

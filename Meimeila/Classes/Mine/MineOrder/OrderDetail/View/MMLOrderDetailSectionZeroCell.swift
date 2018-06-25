@@ -30,9 +30,9 @@ class MMLOrderDetailSectionZeroCell: UITableViewCell {
         
         didSet{
             name.text = setModel?.aeliveryAddressModel?.consignee;
-           let ad = setModel?.aeliveryAddressModel?.addAdress
+           let ad = setModel?.aeliveryAddressModel?.localArea
            let add = setModel?.aeliveryAddressModel?.detailedAddress
-            address.text = "\(ad ?? "")/\(add ?? "")";
+            address.text = "\(ad ?? "") \(add ?? "")";
         }
     }
 }

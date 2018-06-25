@@ -18,7 +18,7 @@ class ShopOrderModel{
     var orderSource:String?
     var orderState:String?
     var effectiveTime:String?
-    var aeliveryAddress:String?
+   // var aeliveryAddress:String?
     var aeliveryAddressModel:AddressModel?
     var postage:String?
     
@@ -67,9 +67,9 @@ class ShopOrderModel{
         orderType = json["orderType"].stringValue
         orderSource = json["orderSource"].stringValue
         effectiveTime = json["effectiveTime"].stringValue
-        aeliveryAddress = json["aeliveryAddress"].stringValue
+      //  aeliveryAddress = json["aeliveryAddress"].stringValue
         
-        let addressJson = JSON.init(parseJSON: aeliveryAddress ?? "0");
+        let addressJson = JSON.init(json["aeliveryAddress"]);
         aeliveryAddressModel = AddressModel.init(fromJson: addressJson);
         
         invoice = json["invoice"].stringValue
@@ -127,7 +127,7 @@ class ShopOrderModel{
                 rightBtTitle = "再次购买"
 
             }else if type == 2{//待收货 、、3
-                orderStateTitle = "待收货"
+                orderStateTitle = "商家已发货"
                 leftBtTitle = "查看物流"
                 rightBtTitle = "确认收货"
                 modifyBtTitle = "再次购买"

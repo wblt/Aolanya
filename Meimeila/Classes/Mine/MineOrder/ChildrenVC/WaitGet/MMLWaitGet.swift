@@ -91,11 +91,15 @@ class MMLWaitGet: DDBaseViewController {
         let model = vm.orderListArr[bt.tag - 1000];
 
         if model.orderState == "2" {
-            let vc = CheckLogisticsVC();
-            vc.model = model;
-            let nav = parent?.navigationController;
-            nav?.pushViewController(vc, animated: true);
-        }else if model.orderState == "1"{
+//            let vc = CheckLogisticsVC();
+//            vc.model = model;
+//            let nav = parent?.navigationController;
+//            nav?.pushViewController(vc, animated: true);
+			let nav = parent?.navigationController;
+			let vc = DDBaseWebViewVC()
+			vc.loadUrlString("https://m.kuaidi100.com:443", title: "查询物流")
+			nav?.pushViewController(vc, animated: true);
+		}else if model.orderState == "1"{
             let nav = self.parent?.navigationController;
             let vc = MMLProductDetailsVC()
             let mod = model.orderInfo![0]
@@ -201,22 +205,22 @@ extension MMLWaitGet:UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let model = vm.orderListArr[section];
         
-        var stateText = "待发货";
-        
-        if let _ = model.orderState {
-            
-            let state = model.orderState!
-            
-            if state == "3"{
-                stateText = "商家已发货";
-            }
-        }
+//        var stateText = "待发货";
+//        
+//        if let _ = model.orderState {
+//            
+//            let state = model.orderState!
+//            
+//            if state == "2"{
+//                stateText = "商家已发货";
+//			}
+//        }
         
         
         let view = SectionHeadView.init(frame: CGRect.zero);
-        view.titleLabel.text = stateText;
+     //   view.titleLabel.text = stateText;
         view.timeLabel.text = model.orderTime!
-			
+		view.titleLabel.text = model.orderStateTitle;
 			//timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
 		return view;
         

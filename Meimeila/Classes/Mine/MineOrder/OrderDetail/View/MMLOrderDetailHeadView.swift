@@ -47,32 +47,38 @@ class MMLOrderDetailHeadView: UIView {
             
             if orderState == "0" {
                 ///等待时间
-//               let effectiveTime = Int(setModel?.effectiveTime ?? "0")!
+//                let effectiveTime = Int(setModel?.effectiveTime ?? "0")!
 //                ///下单时间
 //                let orderTime = Int(setModel?.orderTime ?? "0")!
 //                ///到期时间
 //                let overTime = effectiveTime + orderTime;
-                
- //               let time =  effectiveTime
-				//timestampToDate(format:  "HH:mm", timestamp:"\(overTime)")
-                
- //               timeLabel.text = "请在\(time)之前完成支付，逾期订单将关闭"
-                
+//
+//                let time =  effectiveTime
+//				timestampToDate(format:  "HH:mm", timestamp:"\(overTime)")
+				
+                titleLabel.text = "等待付款"
+				let str = setModel?.effectiveTime as! String;
+				
+				let index3 = str.index(str.startIndex, offsetBy: 11)
+				let index4 = str.index(str.startIndex, offsetBy: 16)
+				let sub4 = str[index3..<index4]
+				
+				timeLabel.text = "请在\(sub4)之前完成支付，逾期订单将关闭"
+				
             }else if orderState == "1"{
                 
                 titleLabel.text = "已付款"
                 timeLabel.text = "等待商家发货"
             }else if orderState == "2"{
-                
-                titleLabel.text = "交易成功"
-                timeLabel.text = ""
+				titleLabel.text = "已付款"
+				timeLabel.text = "待收货"
             }else if orderState == "3"{
-                titleLabel.text = "已发货"
-                timeLabel.text = "等待用户收货"
-            }else if orderState == "4"{
-                
                 titleLabel.text = "已收货"
                 timeLabel.text = "等待用户评价"
+            }else if orderState == "4"{
+                
+                titleLabel.text = "交易完成"
+                timeLabel.text = ""
             }
             
             
