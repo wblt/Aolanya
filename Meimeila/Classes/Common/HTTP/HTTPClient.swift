@@ -209,7 +209,58 @@ class HTTPClient {
             }
         })
     }
-    
+	
+	// 多图片上传
+	func uploadMore(_ r: Request, success: @escaping RequestSucceed, failure: @escaping RequestFailure, requestError: @escaping RequestError) {
+		if r.hud {
+			
+		}
+		// 2.自定义头部
+		let headers: HTTPHeaders = [
+			"Accept": "application/json",
+			"content-type":"multipart/form-data"
+		]
+		
+		debugLog("请求链接:\(r.host + r.path)")
+		debugLog("请求参数:\( r.parameters ?? [:] )")
+		
+		// 3.发送网络请求
+		sessionManager.upload( multipartFormData: { multipartFormData in
+			// 图片数据绑定
+			for (key, value) in r.parameters! {
+				if key == "file" {
+					let ary = value as! Array<UIImage>
+					ary.forEach({ (item) in
+						let fileName =
+							 key + ".jpg"
+						// 图片压缩可能导致图片变形，最好是按比例缩放
+						multipartFormData.append(UIImageJPEGRepresentation(item , 0.5)!, withName: key , fileName: fileName, mimeType: "image/jpeg")
+					})
+				}else {
+					assert(value is String)
+					let utf8Value = (value as AnyObject).data(using: String.Encoding.utf8.rawValue)!
+					multipartFormData.append(utf8Value, withName: key )
+				}
+			}
+		},to: r.host + r.path, headers: headers, encodingCompletion: { encodingResult in
+			switch encodingResult {
+			case .success(let upload, _, _):
+				upload.responseJSON { response in
+					if let value = response.result.value as? [String: AnyObject]{
+						success(value)
+						return
+					}
+					// 未知错误
+					let m = DDErrorModel(status: -11211, message: "未知的错误")
+					requestError([:], m)
+				}
+			case .failure(let error):
+				failure(error)
+				break
+			}
+		})
+	}
+	
     // MARK: - lazy load
     private lazy var sessionManager: SessionManager = {
         let configuration = URLSessionConfiguration.default

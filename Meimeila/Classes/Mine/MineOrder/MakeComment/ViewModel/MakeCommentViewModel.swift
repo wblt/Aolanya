@@ -24,7 +24,7 @@ extension MakeCommentViewModel{
         
         let r = ShopCommentAPI.addComment(shopingID: shopingID, orderID: orderID, evaluateMessage: evaluateMessage, files: files);
 
-        DDHTTPRequest.upLoadImages(r: r, requestSuccess: { (responds) in
+        DDHTTPRequest.upLoadImagesCommon(r: r, requestSuccess: { (responds) in
             
             print(responds);
             scueeds()
