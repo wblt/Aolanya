@@ -85,6 +85,7 @@ class ALYAgentViewController: DDBaseViewController {
 			}else {
 				let vc = ALYAgentlevelVC();
 				vc.invitCode = self.invitTextField.text!
+				vc.money = self.money
 				self.navigationController?.pushViewController(vc, animated: true);
 			}
 			
