@@ -19,12 +19,15 @@
                 <outlet property="agentLab" destination="gVM-wF-z40" id="P6R-li-rHl"/>
                 <outlet property="agentManagerbgView" destination="EJW-aS-abL" id="Epf-8w-N6N"/>
                 <outlet property="buyBgView" destination="NH8-1c-Vpj" id="oEw-Qv-GAc"/>
+                <outlet property="buyMoneyLab" destination="UoY-aO-j8k" id="JCH-Yc-yEJ"/>
                 <outlet property="headImgView" destination="KOH-90-Ij2" id="4Pr-1K-KiA"/>
                 <outlet property="lastAgentBgView" destination="TJD-Tl-pUx" id="5fm-9g-Oqz"/>
                 <outlet property="nameLab" destination="ssy-6D-ieJ" id="Gen-Pj-xcS"/>
                 <outlet property="numLab" destination="TUb-ka-8Eb" id="9PV-ZH-pvK"/>
                 <outlet property="profitBgView" destination="j9h-Ns-Wup" id="DWx-Vi-Gsm"/>
+                <outlet property="profitLab" destination="gND-nH-0qI" id="HoG-PC-Ov1"/>
                 <outlet property="saleBgView" destination="VHb-Eg-E3j" id="SDz-Rv-7YR"/>
+                <outlet property="sellMoneyLab" destination="rOB-8G-cXY" id="Cxr-wq-R12"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

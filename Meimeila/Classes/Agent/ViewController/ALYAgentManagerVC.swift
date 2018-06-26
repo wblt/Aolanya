@@ -9,7 +9,14 @@
 import UIKit
 
 class ALYAgentManagerVC: DDBaseViewController {
-
+	
+	@IBOutlet weak var profitLab: UILabel!
+	
+	@IBOutlet weak var sellMoneyLab: UILabel!
+	
+	
+	@IBOutlet weak var buyMoneyLab: UILabel!
+	
 	@IBOutlet weak var headImgView: UIImageView!
 	
 	@IBOutlet weak var nameLab: UILabel!
@@ -58,6 +65,12 @@ class ALYAgentManagerVC: DDBaseViewController {
         return vm;
     }()
 	
+	//获取所有订单
+	lazy var ordervm:MSXMineOrderListVM = {[weak self] in
+		let vm = MSXMineOrderListVM()
+		return vm;
+		}()
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
@@ -65,6 +78,7 @@ class ALYAgentManagerVC: DDBaseViewController {
 		// 判断是 无等级还是在审核中 还是已经不是审核中了 ,并且还要判断、是否需要切换
 		if level != "0"  && level != ""{
 			requestUserInfo()
+			getAllOrder()
 			agentVC.view.removeFromSuperview()
 			agentVC.removeFromParentViewController()
 		}else {
@@ -157,6 +171,48 @@ class ALYAgentManagerVC: DDBaseViewController {
 			self?.requestAgentData()
         }
     }
+	
+	// 获取所有订单信息
+	func getAllOrder() {
+		
+		ordervm.allOrderLister {[weak self] in
+			
+			 //ordervm.orderListArr
+			var buyMoney = 0.0 as Float
+			self?.ordervm.orderListArr.forEach({ (model) in
+				
+				if model.orderState != "0" {
+					
+					model.orderInfo?.forEach({ (orderInfoModel) in
+						
+						buyMoney = Float(orderInfoModel.price!)! * Float(orderInfoModel.shoppingNumber!)! + buyMoney
+					})
+					
+				}
+				
+			})
+			self?.buyMoneyLab.text = "\(buyMoney)"
+		}
+	}
+	
+	func getAgentOrder() {
+		let uid = DDUDManager.share.getUserID()
+		agentVm.getSubordinateShoppingData(uid: uid) {[weak self] in
+			var sellMoney = 0.0 as Float
+			self?.agentVm.subordinateShoppingArray.forEach({ (model) in
+				
+				model.shoppingHistoryData.forEach({ (item) in
+					// 循环遍历 这里面的字段  价格*数量 === 等有数据了一起加上来
+					
+					
+				})
+				
+			})
+			self?.sellMoneyLab.text = "\(sellMoney)"
+			self?.profitLab.text = "\(sellMoney * 0.05)"
+		}
+		
+	}
 	
 	@objc func lastAgentTap(){
 		let vc = ALYLastAgentVC()
