@@ -64,7 +64,13 @@ class MSXMineOrderListsVC: DDBaseViewController {
     }
     
     func setUI() {
-        
+		
+		if DDUDManager.share.getInviter() != "" {
+			waitPayBt.setTitle("待审核", for: .normal)
+		}else {
+			waitPayBt.setTitle("待付款", for: .normal)
+		}
+		
         btArr.append(allBt);
         btArr.append(waitPayBt);
         btArr.append(waitSendBt);

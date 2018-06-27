@@ -77,7 +77,13 @@ class MMLMineHeadView: UIView {
                        ["name":"待付款","icon":"icon_waitPay"],
                        ["name":"待收货","icon":"icon_waitGet"],
                        ["name":"已完成","icon":"icon_orderFinish"]];
-    
+	var cellDateArr1 = [["name":"全部订单","icon":"icon_allOrderList"],
+					   ["name":"待审核","icon":"icon_waitPay"],
+					   ["name":"待收货","icon":"icon_waitGet"],
+					   ["name":"已完成","icon":"icon_orderFinish"]];
+
+	
+	
     lazy var flayout:UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout.init();
         layout.itemSize = CGSize.init(width: Screen.width/4, height: 64)
@@ -199,7 +205,12 @@ extension MMLMineHeadView:UICollectionViewDataSource{
         
         let cell: MMLHeadBtCell = collectionView.dequeueReusableCell(withReuseIdentifier: String.init(describing: MMLHeadBtCell.self), for: indexPath) as! MMLHeadBtCell;
         
-        let dic = cellDateArr[indexPath.row];
+		var dic = cellDateArr[indexPath.row];
+		if DDUDManager.share.getInviter() != "" {
+			dic = cellDateArr1[indexPath.row];
+		}else {
+			dic = cellDateArr[indexPath.row];
+		}
         cell.setDic = dic;
         return cell;
     }

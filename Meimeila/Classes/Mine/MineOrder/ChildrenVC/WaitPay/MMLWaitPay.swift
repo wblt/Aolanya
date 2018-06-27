@@ -103,13 +103,16 @@ class MMLWaitPay: DDBaseViewController {
     //立即付款
     @objc func rightBtAction(_ bt:UIButton) {
         print(bt.tag)
-        
-        let nav = self.parent?.navigationController;
-        let orderModel = vm.orderListArr[bt.tag - 1000];
-        let vc = PayImmediatelyVC()
-        vc.shopOrderModel = orderModel;
-        nav?.pushViewController(vc, animated: true);
-        
+		  let orderModel = vm.orderListArr[bt.tag - 1000];
+		if orderModel.orderType == "3" || orderModel.orderType == "4"{
+			
+		}else {
+			let nav = self.parent?.navigationController;
+			
+			let vc = PayImmediatelyVC()
+			vc.shopOrderModel = orderModel;
+			nav?.pushViewController(vc, animated: true);
+		}
         
     }
     
@@ -194,7 +197,7 @@ extension MMLWaitPay:UITableViewDataSource{
         let model = vm.orderListArr[section];
         
         let view = SectionHeadView.init(frame: CGRect.zero);
-        view.titleLabel.text = "待付款";
+        view.titleLabel.text = model.orderStateTitle;
         view.timeLabel.text = model.orderTime!
             //timestampToDate(format: "yyyy-MM-dd HH:mm:ss", timestamp: model.orderTime!);
         return view;
@@ -214,13 +217,24 @@ extension MMLWaitPay:UITableViewDataSource{
         let view:SecctionFootView = SecctionFootView.init(frame: CGRect.zero);
 //        view.btLeft.setTitle("取消订单", for: .normal)
 //        view.btRight.setTitle("立即付款", for: .normal)
-//        view.modifyMessageBt.setTitle("修改信息", for: UIControlState.normal);
-        
-        view.btLeft.setTitle("修改信息", for: .normal)
-        view.btRight.setTitle("立即支付", for: .normal)
         view.modifyMessageBt.setTitle("取消订单", for: UIControlState.normal);
-        
-        
+        view.btLeft.setTitle(model.leftBtTitle, for: .normal)
+        view.btRight.setTitle(model.rightBtTitle, for: .normal)
+		
+		
+		if model.orderType == "3" || model.orderType == "4" {
+			view.btRight.setTitle("待审核", for: UIControlState.normal);
+			view.btRight.setTitleColor(DDGlobalNavBarColor(), for: .normal);
+			view.btRight.layer.borderColor = DDGlobalNavBarColor().cgColor;
+		}else if model.orderType == "5"{
+			view.btRight.setTitleColor(UIColor.lightGray, for: .normal);
+			view.btRight.layer.borderColor =  UIColor.lightGray.cgColor;
+		} else {
+			view.btRight.setTitle(model.rightBtTitle, for: UIControlState.normal);
+			view.btRight.setTitleColor(UIColor.lightGray, for: .normal);
+			view.btRight.layer.borderColor =  UIColor.lightGray.cgColor;
+		}
+		
         view.btLeft.tag = section + 1000;
         view.btRight.tag = section + 1000;
         view.modifyMessageBt.tag = section + 1000;

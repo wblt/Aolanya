@@ -22,11 +22,11 @@ extension MMLMoneyPayViewModel{
     
     ///余额订单支付
     
-    func moneyPayOrder(payment_pwd:String,orderID:String?,orders:String,orderType:String = "1",adressID:String,invoice:String?,succeeds:@escaping ()->(),fails:@escaping ()->())  {
+	func moneyPayOrder(payment_pwd:String,orderID:String?,orders:String,orderType:String ,adressID:String,invoice:String?,totalPrice:String?,shangjiId:String?,succeeds:@escaping ()->(),fails:@escaping ()->())  {
         
-        let r = MoneyPayAPI.moneyPay_OrderAPI(payment_pwd: payment_pwd, orderID: orderID, orders: orders, orderType: orderType, adressID: adressID,invoice: invoice)
+		let r = MoneyPayAPI.moneyPay_OrderAPI(payment_pwd: payment_pwd, orderID: orderID, orders: orders, orderType: orderType, adressID: adressID,invoice: invoice,totalPrice: totalPrice!,shangjiId: shangjiId!)
         
-        DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
+        DDHTTPRequest.request(r: r, requestSuccess: {[weak self] (responds) in
             
             let json = JSON.init(responds);
             

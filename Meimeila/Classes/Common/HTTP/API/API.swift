@@ -94,10 +94,16 @@ extension API {
     
     // 微信支付
     static let getWechapayOrders = "tpiot/app/wechaPay/getWechapayOrders"
-    
+	
+	// 给上级支付 （4 微信   3 支付宝）
+	static let payOrdersAgent = "tpiot/app/payOrdersAgent"
+	
+	
     // 获取默认地址
     static let getDefaultAddress = "tpiot/app/getDefaultAddress"
-    
+	
+	// 获取上级 收款码
+	static let getpayqrcode = "/tpiot/app/getpayqrcode"
     
     /// 购物车相关
     // 获取购物车列表

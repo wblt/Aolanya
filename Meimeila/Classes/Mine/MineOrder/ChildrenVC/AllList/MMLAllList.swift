@@ -172,12 +172,17 @@ class MMLAllList: DDBaseViewController {
             let type = Int(state);
             print(type ?? 999)
             if type == 0{       //待付款-立即付款
-                
-                let nav = self.parent?.navigationController;
-                let orderModel = vm.orderListArr[bt.tag - 1000];
-                let vc = PayImmediatelyVC()
-                vc.shopOrderModel = orderModel;
-                nav?.pushViewController(vc, animated: true);
+				
+				if orderModel.orderType == "3" || orderModel.orderType == "4" {
+					// 等待审核
+					
+				}else {
+					let nav = self.parent?.navigationController;
+					let orderModel = vm.orderListArr[bt.tag - 1000];
+					let vc = PayImmediatelyVC()
+					vc.shopOrderModel = orderModel;
+					nav?.pushViewController(vc, animated: true);
+				}
 				
             }else if type == 1{ //待发货-修改信息 （地址）wy
                 // http://yg.welcare-tech.com.cn/tpiot/app/updateOrder
@@ -424,7 +429,21 @@ extension MMLAllList:UITableViewDataSource{
             
             view.btLeft.isHidden = true;
         }
-        
+		
+		
+		if model.orderType == "3" || model.orderType == "4" {
+			view.btRight.setTitle("待审核", for: UIControlState.normal);
+			view.btRight.setTitleColor(DDGlobalNavBarColor(), for: .normal);
+			view.btRight.layer.borderColor = DDGlobalNavBarColor().cgColor;
+		}else if model.orderType == "5"{
+			view.btRight.setTitleColor(UIColor.lightGray, for: .normal);
+			view.btRight.layer.borderColor =  UIColor.lightGray.cgColor;
+		} else {
+			view.btRight.setTitle(model.rightBtTitle, for: UIControlState.normal);
+			view.btRight.setTitleColor(UIColor.lightGray, for: .normal);
+			view.btRight.layer.borderColor =  UIColor.lightGray.cgColor;
+		}
+
         view.btLeft.tag = section + 1000;
         view.btRight.tag = section + 1000;
         

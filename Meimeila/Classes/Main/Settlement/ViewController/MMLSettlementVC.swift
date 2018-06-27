@@ -10,8 +10,15 @@ import UIKit
 import IQKeyboardManagerSwift
 import SwiftyJSON
 class MMLSettlementVC: DDBaseViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+	
+	@IBOutlet weak var contentView: UIView!
+	
+	@IBOutlet weak var dealImgView: UIImageView!
+	@IBOutlet weak var dealNumTextField: UITextField!
+	
+	@IBOutlet weak var dealImgBgView: UIView!
+	@IBOutlet weak var dealNumBgView: UIView!
+	@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightCons: NSLayoutConstraint!
     
     // 地址相关
@@ -76,6 +83,12 @@ class MMLSettlementVC: DDBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "用户结算"
+		
+		let inviter = DDUDManager.share.getInviter()
+		if inviter != "" { // 有邀请码
+			getQRCode()
+		}
+		
         adjustLayout()
         viewBindEvents()
         addNotificationMonitor()
@@ -109,10 +122,11 @@ class MMLSettlementVC: DDBaseViewController {
         productPriceLabel.text =  "￥" + "\(productInfoModel.totalPrice)"
         
         transportMoney.text = "￥" + "\(productInfoModel.totalPostPrice)"
-        
-        // 默认使用微信支付
-        wechatSelectedButton.isSelected = true
-        
+		
+        wechatSelectedButton.isSelected = false
+		// 默认不显示图片和截图
+		self.dealImgBgView.isHidden = true
+		self.dealNumBgView.isHidden = true
     }
     
     ///转json字符串
@@ -168,6 +182,12 @@ class MMLSettlementVC: DDBaseViewController {
         invoiceView.addGestureRecognizer(invoiceTapGes)
         
     }
+	
+	func getQRCode() {
+		settlementViewModel.getinviterQRCode(inviteId: DDUDManager.share.getInviter()) {
+			
+		}
+	}
     
     // 支付宝支付
     func aliPayAction() {
@@ -181,6 +201,25 @@ class MMLSettlementVC: DDBaseViewController {
     func wechatPayAction() {
         DDWechatPay.shared.payAction(payModel: settlementViewModel.wechatPayModel)
     }
+	
+	@IBAction func uploadDealImgAction(_ sender: Any) {
+		
+		 alter.show();
+	}
+	
+	lazy var photoManger:DDPhotoLibraryManager = {[weak self] in
+		let manger = DDPhotoLibraryManager.shared;
+		manger.delegate = self;
+		return manger;
+		}()
+	
+	lazy var alter:UIAlertView =  {[weak self] in
+		let view = UIAlertView.init(title:"图片来源", message: "", delegate: self, cancelButtonTitle: "取消");
+		view.addButton(withTitle: "图库");
+		//view.addButton(withTitle: "相机");
+		return view;
+		}()
+	
     
     // MARK: - Lazy load
     private lazy var settlementViewModel: MMLSettlementViewModel = {
@@ -189,6 +228,29 @@ class MMLSettlementVC: DDBaseViewController {
     }()
     
 }
+
+extension MMLSettlementVC:UIAlertViewDelegate{
+	
+	func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+		
+		if buttonIndex == 1 {
+			photoManger.browseFromLibrary();
+		}else if buttonIndex == 2{
+			//photoManger.browseFromCamera();
+		}
+	}
+}
+
+extension MMLSettlementVC:DDPhotoLibraryManagerDelegate {
+	
+	func delegatePhotoLibraryManager(_ manager: DDPhotoLibraryManager, didPickedImage image: UIImage?) {
+		dealImgView.image = image;
+		
+	}
+	
+	
+}
+
 
 // MARK: - 获取网络数据
 extension MMLSettlementVC {
@@ -272,15 +334,21 @@ extension MMLSettlementVC {
             var dict = [String: String]()
             dict["shoppingID"] = data.shopingID
             dict["shoppingNumber"] = data.shoppingCartNumber
+			dict["price"] = data.price
             orders.append(dict)
         }
         // 转换成json字符串
         let data = try? JSONSerialization.data(withJSONObject: orders, options: JSONSerialization.WritingOptions.init(rawValue: 0))
         let strJson = String(data: data!, encoding: String.Encoding.utf8)
-        
+		
+		let str = totalPriceLabel.text!
+		let index = str.index(str.startIndex, offsetBy:4)//获取字符d的索引
+		let result = str.substring(from: index)
+		
         let vc = MMLMoneyPayKeyBoardVC();
         vc.payModel = MMLMoneyPayModel.init(orders: strJson!, addressID: addressID, orderID: nil,invoice: invoiceJson ?? jsonString());
-        
+		vc.totalPrice = result
+			
         vc.delegate = self;
         
         vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.5);
@@ -378,19 +446,37 @@ extension MMLSettlementVC {
             wechatSelectedButton.isSelected = true
             aliPaySelectedButton.isSelected = false
             moneyPayBt.isSelected = false;
-
+			
+			self.dealImgBgView.isHidden = false
+			self.dealNumBgView.isHidden = false
+			
+			let inviter = DDUDManager.share.getInviter()
+			if inviter != "" {
+				 MMLPhotoViewer.shared.viewImages(vc: self, images: [settlementViewModel.wechatQR!], currentIndex: 0)
+				//BFunction.shared.showMessage(settlementViewModel.wechatQR!)
+			}
+			
+			
         }else if tag == 1 {
             debugLog("支付宝支付")
             aliPaySelectedButton.isSelected = true
             wechatSelectedButton.isSelected = false
             moneyPayBt.isSelected = false;
-
+			self.dealImgBgView.isHidden = false
+			self.dealNumBgView.isHidden = false
+			let inviter = DDUDManager.share.getInviter()
+			if inviter != "" {
+				 MMLPhotoViewer.shared.viewImages(vc: self, images: [settlementViewModel.alipayQR!], currentIndex: 0)
+				//BFunction.shared.showMessage(settlementViewModel.alipayQR!)
+			}
         }else{
             debugLog("余额支付")
 
             aliPaySelectedButton.isSelected = false
             wechatSelectedButton.isSelected = false
             moneyPayBt.isSelected = true;
+			self.dealImgBgView.isHidden = true
+			self.dealNumBgView.isHidden = true
         }
     }
     
@@ -404,24 +490,100 @@ extension MMLSettlementVC {
     
     // 去付款
     @IBAction func payAction(_ sender: Any) {
-        
+        let inviter = DDUDManager.share.getInviter()
         if addressID != nil {  // 当前地址可以用
             if wechatSelectedButton.isSelected {
-                // 判断是否安装了微信
-                if  DDWechatPay.shared.isWXAppInstalled() {
-                    requestWechatOrderData()
-                }else {
-                    BFunction.shared.showToastMessge("您尚未安装微信客户端，请安装后再来支付")
-                }
+				if inviter != "" { // 有邀请码
+					
+					if dealNumTextField.text?.count == 0 {
+						BFunction.shared.showToastMessge("请填写交易单号")
+						return;
+					}
+					
+					if dealImgView.image == nil {
+						BFunction.shared.showToastMessge("请上传付款截图")
+						return;
+					}
+					
+					var orders = [[String: String]]()
+					productInfoModel.productList.forEach { (data) in
+						var dict = [String: String]()
+						dict["shoppingID"] = data.shopingID
+						dict["shoppingNumber"] = data.shoppingCartNumber
+						dict["price"] = data.price
+						orders.append(dict)
+					}
+					
+					let str = totalPriceLabel.text!
+					let index = str.index(str.startIndex, offsetBy:4)//获取字符d的索引
+					let result = str.substring(from: index)
+					
+					// 转换成json字符串
+					let data = try? JSONSerialization.data(withJSONObject: orders, options: JSONSerialization.WritingOptions.init(rawValue: 0))
+					let strJson = String(data: data!, encoding: String.Encoding.utf8)
+					
+					settlementViewModel.payOrderAgent(orders: strJson!, addressID: addressID, invoice: invoiceJson ?? jsonString(), total: result, orderType: "4", paymentNumber: dealNumTextField.text!, paymentImg: dealImgView.image!, successBlock: {
+						
+						self.navigationController?.popViewController(animated: true)
+					})
+					
+					
+				}else { // 无邀请码
+					// 判断是否安装了微信
+					if  DDWechatPay.shared.isWXAppInstalled() {
+						requestWechatOrderData()
+					}else {
+						BFunction.shared.showToastMessge("您尚未安装微信客户端，请安装后再来支付")
+					}
+				}
+				
                 
             }else if aliPaySelectedButton.isSelected{
-                requestAliPayOrderData()
-            }else{
+				if inviter != "" { // 有邀请码
+					if dealNumTextField.text?.count == 0 {
+						BFunction.shared.showToastMessge("请填写交易单号")
+						return;
+					}
+					
+					if dealImgView == nil {
+						BFunction.shared.showToastMessge("请上传付款截图")
+						return;
+					}
+					
+					var orders = [[String: String]]()
+					productInfoModel.productList.forEach { (data) in
+						var dict = [String: String]()
+						dict["shoppingID"] = data.shopingID
+						dict["shoppingNumber"] = data.shoppingCartNumber
+						dict["price"] = data.price
+						orders.append(dict)
+					}
+					
+					let str = totalPriceLabel.text!
+					let index = str.index(str.startIndex, offsetBy:4)//获取字符d的索引
+					let result = str.substring(from: index)
+					
+					// 转换成json字符串
+					let data = try? JSONSerialization.data(withJSONObject: orders, options: JSONSerialization.WritingOptions.init(rawValue: 0))
+					let strJson = String(data: data!, encoding: String.Encoding.utf8)
+					
+					settlementViewModel.payOrderAgent(orders: strJson!, addressID: addressID, invoice: invoiceJson ?? jsonString(), total: result, orderType: "3", paymentNumber: dealNumTextField.text!, paymentImg: dealImgView.image!, successBlock: {
+						
+						self.navigationController?.popViewController(animated: true)
+					})
+				}else { // 无邀请码
+					 requestAliPayOrderData()
+				}
+				
+            }else if moneyPayBt.isSelected{
                 
                 print("余额支付");
                 
                 moneyPay();
-            }
+				
+			}else {
+				BFunction.shared.showToastMessge("请选择支付类型")
+			}
             
         }else {
             BFunction.shared.showToastMessge("请添加收货地址")

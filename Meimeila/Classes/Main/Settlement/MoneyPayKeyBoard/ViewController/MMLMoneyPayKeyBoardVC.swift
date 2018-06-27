@@ -69,7 +69,7 @@ class MMLMoneyPayKeyBoardVC: DDBaseViewController {
     }()
     
     var payModel:MMLMoneyPayModel!;
-    
+	var totalPrice:String?;
     
     @IBAction func forgetPWBtAction(_ sender: Any) {
         
@@ -180,8 +180,11 @@ class MMLMoneyPayKeyBoardVC: DDBaseViewController {
             
         }else{
             print("---->",TF.text!);
-            
-            vm.moneyPayOrder(payment_pwd: TF.text!, orderID:payModel.orderID, orders: payModel.orders!, orderType: "1", adressID: payModel.addressID!, invoice: payModel.invoice,succeeds: {[weak self] in
+			
+			
+			let invite = DDUDManager.share.getInviter() != "" ? DDUDManager.share.getInviter():"-1"
+			
+			vm.moneyPayOrder(payment_pwd: TF.text!, orderID:payModel.orderID, orders: payModel.orders!, orderType: "5", adressID: payModel.addressID!, invoice: payModel.invoice,totalPrice: self.totalPrice,shangjiId:invite,succeeds: {[weak self] in
                 
                 self?.dismiss(animated: false, completion: {
                     

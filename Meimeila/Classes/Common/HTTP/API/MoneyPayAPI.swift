@@ -15,7 +15,7 @@ enum MoneyPayAPI {
     //2代表健康豆充值
     
     case moneyPay_RecordAPI(numberPages:Int)
-    case moneyPay_OrderAPI(payment_pwd:String,orderID:String?,orders:String,orderType:String,adressID:String,invoice:String?)//还有appkey
+	case moneyPay_OrderAPI(payment_pwd:String,orderID:String?,orders:String,orderType:String,adressID:String,invoice:String?,totalPrice:String,shangjiId:String)//还有appkey
     case moneyPay_BeanAPI(payment_pwd:String,orderPrice:String,orderType:String,invoice:String?)
     case moneyPay_SetPwdAPI(payment_pwd:String,code:String)
     case moneyPay_BindPhone(code:String,type:String,phone:String)
@@ -27,7 +27,7 @@ extension MoneyPayAPI:Request{
         switch self {
         case .moneyPay_RecordAPI(numberPages: _):
             return API.moneyPayRecordAPI;
-        case .moneyPay_OrderAPI(payment_pwd: _, orderID: _, orders: _, orderType: _, adressID: _, invoice:_):
+		case .moneyPay_OrderAPI(payment_pwd: _, orderID: _, orders: _, orderType: _, adressID: _, invoice:_,totalPrice:_,shangjiId:_):
             return API.momeyPayOrderAPI;
         case .moneyPay_BeanAPI(payment_pwd: _, orderPrice: _, orderType: _,invoice: _):
             return API.moneyPayHealthBeanAPI;
@@ -47,14 +47,16 @@ extension MoneyPayAPI:Request{
             var p = postParameters();
             p["numberPages"] = "\(numberPages)"
             return DDIntegrationOfTheParameter(params: p, isNeedLogin: true);
-        case .moneyPay_OrderAPI(let payment_pwd,let orderID,let orders,let  orderType,let adressID,let invoice):
+        case .moneyPay_OrderAPI(let payment_pwd,let orderID,let orders,let  orderType,let adressID,let invoice,let totalPrice,let shangjiId):
             var p = postParameters();
-            p["payment_pwd"] = payment_pwd;
+            p["payment_pwd"] = payment_pwd.md5();
             
             if let _ = orderID{
-                p["orderID"] = orderID;
-            }
-            p["app_key"] = kApp_key;
+                p["ordId"] = orderID;
+			}else {
+				p["ordId"]  = "";
+			}
+            p["orderSource"] = "iOS APP";
             p["orders"] = orders;
             p["orderType"] = orderType;
             p["adressID"] = adressID;
@@ -63,7 +65,11 @@ extension MoneyPayAPI:Request{
                 p["invoice"] = invoice!
                 
             }
-            
+			
+			p["toalPrice"] = totalPrice
+			p["shangjiId"] = shangjiId
+			p["discountMsg"] = "[]"
+			p["remarks"] = ""
             return DDIntegrationOfTheParameter(params: p, isNeedLogin: true);
         case .moneyPay_BindPhone(let code,let type ,let phone):
             var p = postParameters();

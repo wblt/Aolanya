@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ALYAgentManagerVC: DDBaseViewController {
 	
@@ -79,6 +80,7 @@ class ALYAgentManagerVC: DDBaseViewController {
 		if level != "0"  && level != ""{
 			requestUserInfo()
 			getAllOrder()
+			getAgentOrder()
 			agentVC.view.removeFromSuperview()
 			agentVC.removeFromParentViewController()
 		}else {
@@ -203,8 +205,9 @@ class ALYAgentManagerVC: DDBaseViewController {
 				
 				model.shoppingHistoryData.forEach({ (item) in
 					// 循环遍历 这里面的字段  价格*数量 === 等有数据了一起加上来
-					
-					
+					let dic = JSON.init(item)
+					let money = dic["paymentMoney"].floatValue
+					sellMoney += money 
 				})
 				
 			})
