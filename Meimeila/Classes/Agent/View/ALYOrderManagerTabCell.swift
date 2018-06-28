@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ALYOrderManagerTabCell: UITableViewCell {
     @IBOutlet weak var nameLab: UILabel!
@@ -38,6 +39,17 @@ class ALYOrderManagerTabCell: UITableViewCell {
 			
 			numLab.text = data?.dataCount ?? ""
 			totalPriceLab.text = "￥:" + (data?.dataCount)!
+			
+			var sellMoney = 0.0 as Float
+				
+			data?.shoppingHistoryData.forEach({ (item) in
+					// 循环遍历 这里面的字段  价格*数量 === 等有数据了一起加上来
+					let dic = JSON.init(item)
+					let money = dic["paymentMoney"].floatValue
+					sellMoney += money
+			})
+			totalPriceLab.text = "￥:" + "\(sellMoney)"
+			
 		}
 	}
 	

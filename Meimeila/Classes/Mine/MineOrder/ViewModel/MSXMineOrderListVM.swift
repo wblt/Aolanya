@@ -14,6 +14,9 @@ class MSXMineOrderListVM{
     var tableView:UITableView?
     var orderListArr = [ShopOrderModel]()
     var logisticsArr = [LogisticsModel]()
+	
+	
+	
     ///全部订单
     func allOrderLister(succeeds:@escaping () -> Void) {
         let r = MineShopOrderAPI.allOrder(numberPage: "\(numberPage)");

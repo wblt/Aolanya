@@ -12,6 +12,8 @@ import FDStackView
 class ALYOrderManagerListVC: DDBaseViewController {
 	
 	var name:String?
+	var lowerId:String?
+	var subShoopingModel:SubordinateShoopingModel!
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var notSureBtn: UIButton!
@@ -100,7 +102,7 @@ class ALYOrderManagerListVC: DDBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		self.title =  "\(name)的订单"
+		self.title =  "\(name!)的订单"
 		setUI()
     }
 
@@ -163,15 +165,21 @@ class ALYOrderManagerListVC: DDBaseViewController {
 		var arr = [UIViewController]();
 		
 		let vc1 = ALYNotSureVC();
+		vc1.subShoopingModel = self?.subShoopingModel
+		vc1.lowerId = self?.lowerId
 		arr.append(vc1);
 		
 		let vc2 = ALYNotSendVC();
+		vc2.subShoopingModel = self?.subShoopingModel
+		vc2.lowerId = self?.lowerId
 		arr.append(vc2);
 		
 		let vc3 = ALYNotRecivedVC();
+		
 		arr.append(vc3);
 		
 		let vc4 = AYLFinishVCViewController();
+		
 		arr.append(vc4);
 		
 		self?.addChildViewController(vc1);

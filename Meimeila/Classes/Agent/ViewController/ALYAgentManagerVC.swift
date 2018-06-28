@@ -184,11 +184,12 @@ class ALYAgentManagerVC: DDBaseViewController {
 			self?.ordervm.orderListArr.forEach({ (model) in
 				
 				if model.orderState != "0" {
-					
-					model.orderInfo?.forEach({ (orderInfoModel) in
-						
-						buyMoney = Float(orderInfoModel.price!)! * Float(orderInfoModel.shoppingNumber!)! + buyMoney
-					})
+					buyMoney += Float(model.orderPrice!)!
+//					model.orderInfo?.forEach({ (orderInfoModel) in
+//
+//						buyMoney = Float(orderInfoModel.price!)! * Float(orderInfoModel.shoppingNumber!)! + buyMoney
+//
+//					})
 					
 				}
 				
@@ -207,7 +208,7 @@ class ALYAgentManagerVC: DDBaseViewController {
 					// 循环遍历 这里面的字段  价格*数量 === 等有数据了一起加上来
 					let dic = JSON.init(item)
 					let money = dic["paymentMoney"].floatValue
-					sellMoney += money 
+					sellMoney += money
 				})
 				
 			})

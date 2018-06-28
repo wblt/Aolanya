@@ -58,7 +58,19 @@ class MineCollectCell: UITableViewCell {
 			specificationsLab.text = setOrderInfoData.specifications
         }
     }
-    
+	
+	var setOrderInfoData2:ShopOrderInfoModel! {
+		
+		didSet{
+			
+			titleText.text = setOrderInfoData2.shoppingName
+			price.text = "￥" + setOrderInfoData2.price!
+			count.text = "X" + setOrderInfoData2.shoppingNumber!
+			iconView.jq_setImage(imageUrl:kPrefixLink + setOrderInfoData2.shoppingImg!, placeholder: "http_error", isShowIndicator: false);
+			specificationsLab.text = setOrderInfoData2.specifications
+		}
+	}
+	
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -9,7 +9,7 @@
 import UIKit
 
 class AYLFinishVCViewController: DDBaseViewController {
-
+	var lowerUid:String?
     override func viewDidLoad() {
         super.viewDidLoad()
 

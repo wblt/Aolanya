@@ -80,6 +80,8 @@ extension ALYOrderManagerVC:UITableViewDelegate{
 		let vc  = ALYOrderManagerListVC()
 		let model:SubordinateShoopingModel = self.agentVm.subordinateShoppingArray[indexPath.section]
 		vc.name = model.realName
+		vc.subShoopingModel = model
+		vc.lowerId = model.uid
 		self.navigationController?.pushViewController(vc, animated: true)
 		
 	}

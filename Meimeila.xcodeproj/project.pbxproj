@@ -617,6 +617,10 @@
 		F83477C6207B0D3B00E4F926 /* ALYLevelCardColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83477C4207B0D3B00E4F926 /* ALYLevelCardColCell.xib */; };
 		F83477C9207B166800E4F926 /* LevelCardDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477C8207B166800E4F926 /* LevelCardDataViewModel.swift */; };
 		F83477CB207B16A500E4F926 /* LevelCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83477CA207B16A500E4F926 /* LevelCardModel.swift */; };
+		F834A86020E4EB1400081EBB /* ALYSureMoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834A85E20E4EB1400081EBB /* ALYSureMoneyCell.swift */; };
+		F834A86120E4EB1400081EBB /* ALYSureMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F834A85F20E4EB1400081EBB /* ALYSureMoneyCell.xib */; };
+		F834A86420E4EB6A00081EBB /* ALYExpressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834A86220E4EB6A00081EBB /* ALYExpressCell.swift */; };
+		F834A86520E4EB6A00081EBB /* ALYExpressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F834A86320E4EB6A00081EBB /* ALYExpressCell.xib */; };
 		F83CF8C22079AE3E00FA9423 /* ALYAgentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8C02079AE3E00FA9423 /* ALYAgentViewController.swift */; };
 		F83CF8C32079AE3E00FA9423 /* ALYAgentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83CF8C12079AE3E00FA9423 /* ALYAgentViewController.xib */; };
 		F83CF8C62079C80500FA9423 /* ALYAgentlevelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CF8C42079C80500FA9423 /* ALYAgentlevelVC.swift */; };
@@ -1328,6 +1332,10 @@
 		F83477C4207B0D3B00E4F926 /* ALYLevelCardColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYLevelCardColCell.xib; sourceTree = "<group>"; };
 		F83477C8207B166800E4F926 /* LevelCardDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCardDataViewModel.swift; sourceTree = "<group>"; };
 		F83477CA207B16A500E4F926 /* LevelCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCardModel.swift; sourceTree = "<group>"; };
+		F834A85E20E4EB1400081EBB /* ALYSureMoneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYSureMoneyCell.swift; sourceTree = "<group>"; };
+		F834A85F20E4EB1400081EBB /* ALYSureMoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYSureMoneyCell.xib; sourceTree = "<group>"; };
+		F834A86220E4EB6A00081EBB /* ALYExpressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYExpressCell.swift; sourceTree = "<group>"; };
+		F834A86320E4EB6A00081EBB /* ALYExpressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYExpressCell.xib; sourceTree = "<group>"; };
 		F83CF8C02079AE3E00FA9423 /* ALYAgentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentViewController.swift; sourceTree = "<group>"; };
 		F83CF8C12079AE3E00FA9423 /* ALYAgentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALYAgentViewController.xib; sourceTree = "<group>"; };
 		F83CF8C42079C80500FA9423 /* ALYAgentlevelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALYAgentlevelVC.swift; sourceTree = "<group>"; };
@@ -2439,6 +2447,10 @@
 				22F67EC21FC69FD3009BC04D /* MMLOrderDetailSectionTwoCell.xib */,
 				22F67EC51FC6A24C009BC04D /* MMLOrderDetailSectionThreeCell.swift */,
 				22F67EC61FC6A24C009BC04D /* MMLOrderDetailSectionThreeCell.xib */,
+				F834A85E20E4EB1400081EBB /* ALYSureMoneyCell.swift */,
+				F834A85F20E4EB1400081EBB /* ALYSureMoneyCell.xib */,
+				F834A86220E4EB6A00081EBB /* ALYExpressCell.swift */,
+				F834A86320E4EB6A00081EBB /* ALYExpressCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4581,6 +4593,7 @@
 				665660F21F9B3D7300629064 /* MMLMakeMoneyTableViewCell.xib in Resources */,
 				221575111F99E42400BC94EF /* MMLForgetPasswordVC.xib in Resources */,
 				66C64BF31FC513BE0070FB76 /* DDProductCommentsImageCell.xib in Resources */,
+				F834A86520E4EB6A00081EBB /* ALYExpressCell.xib in Resources */,
 				22F67EC01FC6805F009BC04D /* MMLOrderDetailSectionZeroCell.xib in Resources */,
 				22052C151F9B2C8300483E59 /* MMLAddressCell.xib in Resources */,
 				225195B71FF495ED006A1611 /* MMLGiftRuleCell.xib in Resources */,
@@ -4730,6 +4743,7 @@
 				221F1EF31FF1DB18001F36B1 /* MMLLuckDrawRecoardVC.xib in Resources */,
 				66C93B9C1F98A121005EB4E3 /* MMLContentDetailsVC.xib in Resources */,
 				66D130941F96F3F2002C8BE8 /* MMLProductListVC.xib in Resources */,
+				F834A86120E4EB1400081EBB /* ALYSureMoneyCell.xib in Resources */,
 				F8968E572085D2DE003F7D00 /* ALYAreaDetailsVC.xib in Resources */,
 				2230A33B1F98877F00F6EF8F /* MMLMineCell.xib in Resources */,
 				22DA88EB1FCD633C00F68576 /* glyphicons-halflings-regular.eot in Resources */,
@@ -5074,6 +5088,7 @@
 				666971301F99F8D400A30598 /* MMLMakeMoneyVC.swift in Sources */,
 				229542CF1FDA654700629205 /* MoneyPayAPI.swift in Sources */,
 				66D804111F94D2A80022FEAE /* JQUIWindow-Extension.swift in Sources */,
+				F834A86020E4EB1400081EBB /* ALYSureMoneyCell.swift in Sources */,
 				22463CA51FE7938F00D15B91 /* DayTaskVC.swift in Sources */,
 				66D804121F94D2A80022FEAE /* JQUserDefault-Extension.swift in Sources */,
 				66D804131F94D2A80022FEAE /* JQValidate.swift in Sources */,
@@ -5290,6 +5305,7 @@
 				66D803EA1F94D1ED0022FEAE /* AppDelegate-Alipay.swift in Sources */,
 				226158E51FDE79C000CF46F8 /* HealthBeansAPI.swift in Sources */,
 				22052BFC1F9ADCC800483E59 /* MMLFinish.swift in Sources */,
+				F834A86420E4EB6A00081EBB /* ALYExpressCell.swift in Sources */,
 				66F568CE1FA03EB700D727AC /* MMLEvaluateListModel.swift in Sources */,
 				22DA889E1FCCF62A00F68576 /* MMLDetailModel.swift in Sources */,
 				66D803EB1F94D1ED0022FEAE /* DDAliPay.swift in Sources */,

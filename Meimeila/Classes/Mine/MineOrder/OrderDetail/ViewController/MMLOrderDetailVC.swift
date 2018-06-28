@@ -10,7 +10,9 @@ import UIKit
 
 class MMLOrderDetailVC: DDBaseViewController {
 
-    
+	// 下级的id ,如果存在这个id  就代表是在订单管理里面
+	var lowerId:String!
+	
     @IBOutlet weak var tableView: UITableView!
     lazy var vm:MSXMineOrderListVM = {[weak self] in
         let vm = MSXMineOrderListVM()
@@ -33,11 +35,28 @@ class MMLOrderDetailVC: DDBaseViewController {
 
         self.title = "订单详情"
         // Do any additional setup after loading the view.
-        
+		
+		// 为了避免切换uid 代码不好动  这里先设置一下 本地uid 为下级id ，请求后立马切换回来
+		let uid = DDUDManager.share.getUserID()
+		
+		if self.lowerId.count > 0 {
+			DDUDManager.share.saveUserID(uid: self.lowerId);
+		}
+		
         vm.orderDetailLister(orderID: shopModel.orderID!, orderState: Int(shopModel.orderState!)!, succeeds: {
             self.shopModel =  self.vm.orderListArr[0]
+
+			if self.shopModel.orderState == "0" {
+				self.headView.titleLabel.text = "未确认收款";
+				
+			}else if self.shopModel.orderState == "1" {
+				self.headView.titleLabel.text = "未发货";
+			}
+			self.headView.timeLabel.text = ""
             self.tableView.reloadData()
         })
+		
+		DDUDManager.share.saveUserID(uid: uid);
     }
     
     override func setupUI() {
@@ -48,7 +67,7 @@ class MMLOrderDetailVC: DDBaseViewController {
     lazy var headView:MMLOrderDetailHeadView = {[weak self] in
         
         let view = MMLOrderDetailHeadView.init(frame: CGRect.init(x: 0, y: 0, width: Screen.width, height: 64));
-        view.setModel = self?.shopModel;
+       // view.setModel = self?.shopModel;
         return view;
     }()
     
