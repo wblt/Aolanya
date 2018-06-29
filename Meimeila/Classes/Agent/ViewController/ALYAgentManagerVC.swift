@@ -213,7 +213,7 @@ class ALYAgentManagerVC: DDBaseViewController {
 				
 			})
 			self?.sellMoneyLab.text = "\(sellMoney)"
-			self?.profitLab.text = "\(sellMoney * 0.05)"
+			self?.profitLab.text = String(format: "%.2f",sellMoney * 0.05)
 		}
 		
 	}

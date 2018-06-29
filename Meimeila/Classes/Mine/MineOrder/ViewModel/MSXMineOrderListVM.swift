@@ -461,9 +461,44 @@ class MSXMineOrderListVM{
         }
         
     }
-    
-    
-    
+	
+	// 上级确认收款
+	func submitPaymentState(uid:String,subordinateUid:String,orderId:String,paymentState:String,succeeds:@escaping ()->()) {
+		
+		let r = MineShopOrderAPI.submitPaymentState(uid: uid, subordinateUid: subordinateUid, orderId: orderId, paymentState: paymentState)
+		
+		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
+			let json = JSON.init(responds);
+			print(json);
+	    	//BFunction.shared.showSuccessMessage(json["message"].stringValue)
+			succeeds()
+			}, requestError: { (responds, ErrorModel) in
+				BFunction.shared.showToastMessge(ErrorModel.message)
+				
+		}) { (error) in
+			
+		
+		}
+	}
+	
+	//上级提交发货信息
+	func submitDeliverGoods(uid: String, subordinateUid: String, orderId: String, expressNum: String,expressName:String,succeeds:@escaping ()->()){
+		
+		let r = MineShopOrderAPI.submitDeliverGoods(uid: uid, subordinateUid: subordinateUid, orderId: orderId, expressNum: expressNum, expressName: expressName)
+		
+		DDHTTPRequest.requestWithJsonCoding(r: r, requestSuccess: {[weak self] (responds) in
+			let json = JSON.init(responds);
+			print(json);
+			//BFunction.shared.showSuccessMessage(json["message"].stringValue)
+			succeeds()
+			}, requestError: { (responds, ErrorModel) in
+				BFunction.shared.showToastMessge(ErrorModel.message)
+				
+		}) { (error) in
+			
+			
+		}
+	}
     
     // tableView停止刷新
     private func endRefresh(isNomore: Bool = false) {

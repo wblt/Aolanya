@@ -47,9 +47,15 @@ class ShopOrderModel{
     
     ///订单总价
     var orderFinalPrice:String? = "0.00"
-    
+	//付款截图
+	var paymentImg:String?
+	// 交易单号
+	var paymentNumber:String?
+	
     init(fromJson json:JSON) {
-        
+		paymentImg = json["paymentImg"].stringValue
+		paymentNumber = json["paymentNumber"].stringValue
+		
         id = json["id"].stringValue
         orderID = json["orderID"].stringValue
         uid = json["uid"].stringValue

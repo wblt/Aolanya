@@ -95,13 +95,15 @@ class DDHomeDataViewModel {
 		
         Alamofire.request(url, method: .post, parameters: p, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
 			print(response);
+			if response.result.value != nil{
+				let jsonRequest = JSON.init(response.result.value as![String:Any]);
+				self.imgurl = jsonRequest["splash"]["imgurl"].stringValue ?? ""
+				self.imglink = jsonRequest["splash"]["imgurl"].stringValue ?? ""
+				self.imglink = jsonRequest["upgrade"]["type"].stringValue ?? ""
+				self.imglink = jsonRequest["upgrade"]["downurl"].stringValue ?? ""
+				successBlock()
+			}
 			
-            let jsonRequest = JSON.init(response.result.value as![String:Any]);
-            self.imgurl = jsonRequest["splash"]["imgurl"].stringValue ?? ""
-            self.imglink = jsonRequest["splash"]["imgurl"].stringValue ?? ""
-            self.imglink = jsonRequest["upgrade"]["type"].stringValue ?? ""
-            self.imglink = jsonRequest["upgrade"]["downurl"].stringValue ?? ""
-            successBlock()
         }
     }
     

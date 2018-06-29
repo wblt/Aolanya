@@ -210,8 +210,13 @@ extension API {
     
     ///确认收货
     static let verifyTakeGoods = "tpiot/app/confirmReceipt"
-    
-    
+	
+	//上级 确认收款
+    static let submitPaymentStateAPI = "tpiot/app/submitPaymentState"
+	// 上级发货
+	static let submitDeliverGoodsAPI = "tpiot/app/submitDeliverGoods"
+	
+	
     ///售后
     //售后退款列表
     static let afterSaleListAPI = "shoping/getAfterSaleList.php"

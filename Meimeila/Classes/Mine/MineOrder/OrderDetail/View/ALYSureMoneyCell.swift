@@ -10,7 +10,12 @@ import UIKit
 
 class ALYSureMoneyCell: UITableViewCell {
 
-    override func awakeFromNib() {
+	@IBOutlet weak var numTextField: UITextField!
+	
+	@IBOutlet weak var lookImgBtn: UIButton!
+	
+	@IBOutlet weak var sureMoneyBtn: UIButton!
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

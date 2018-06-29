@@ -175,11 +175,13 @@ class ALYOrderManagerListVC: DDBaseViewController {
 		arr.append(vc2);
 		
 		let vc3 = ALYNotRecivedVC();
-		
+		vc3.subShoopingModel = self?.subShoopingModel
+		vc3.lowerId = self?.lowerId
 		arr.append(vc3);
 		
 		let vc4 = AYLFinishVCViewController();
-		
+		vc4.subShoopingModel = self?.subShoopingModel
+		vc4.lowerId = self?.lowerId
 		arr.append(vc4);
 		
 		self?.addChildViewController(vc1);

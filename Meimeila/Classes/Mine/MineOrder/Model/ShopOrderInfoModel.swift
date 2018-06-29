@@ -22,6 +22,7 @@ class ShopOrderInfoModel{
 	var shoppingTime:String?
 	var orderNumber:String?
 	var uid :String?
+	var orderState:String?
     
     init(fromJson json:JSON) {
         shopingID = json["shoppingID"].stringValue

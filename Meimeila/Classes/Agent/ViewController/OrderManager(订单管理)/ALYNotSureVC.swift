@@ -60,17 +60,23 @@ class ALYNotSureVC: DDBaseViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		requestOrderData()
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 		setTableView()
-		requestOrderData()
+		
     }
 	
 	func requestOrderData()  {
 		let uid = DDUDManager.share.getUserID()
 		self.shoppingDataAry.removeAll()
+		agentVm.subordinateShoppingArray.removeAll()
 		agentVm.getSubordinateShoppingData(uid: uid) {
 
 			self.agentVm.subordinateShoppingArray.forEach({ (model) in
@@ -88,6 +94,7 @@ class ALYNotSureVC: DDBaseViewController {
 								shopInfoModel.shoppingTime = item["shoppingTime"].stringValue
 								shopInfoModel.orderNumber = item["orderNumber"].stringValue
 								shopInfoModel.uid = model.uid
+								shopInfoModel.orderState = item["orderState"].stringValue
 								ary.append(shopInfoModel)
 							})
 							self.shoppingDataAry.append(ary)

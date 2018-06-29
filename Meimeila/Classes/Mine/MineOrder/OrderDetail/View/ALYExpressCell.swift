@@ -9,8 +9,13 @@
 import UIKit
 
 class ALYExpressCell: UITableViewCell {
-
-    override func awakeFromNib() {
+	@IBOutlet weak var kuaidiNumTextField: UITextField!
+	
+	@IBOutlet weak var kuaidiNameTextField: UITextField!
+	@IBOutlet weak var saoyisaoBtn: UIButton!
+	
+	@IBOutlet weak var sendBtn: UIButton!
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

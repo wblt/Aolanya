@@ -30,18 +30,24 @@ class ALYNotSendVC: DDBaseViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		requestOrderData()
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 		setTableView()
-		requestOrderData()
+		//requestOrderData()
     }
 
 	func requestOrderData()  {
 		
 		let uid = DDUDManager.share.getUserID()
 		self.shoppingDataAry.removeAll()
+		agentVm.subordinateShoppingArray.removeAll()
 		agentVm.getSubordinateShoppingData(uid: uid) {
 			
 			self.agentVm.subordinateShoppingArray.forEach({ (model) in
@@ -60,6 +66,7 @@ class ALYNotSendVC: DDBaseViewController {
 								shopInfoModel.shoppingTime = item["shoppingTime"].stringValue
 								shopInfoModel.orderNumber = item["orderNumber"].stringValue
 								shopInfoModel.uid = model.uid
+								shopInfoModel.orderState = item["orderState"].stringValue
 								ary.append(shopInfoModel)
 							})
 							self.shoppingDataAry.append(ary)
@@ -94,7 +101,7 @@ class ALYNotSendVC: DDBaseViewController {
 		
 		vc.shopModel = ShopOrderModel.init(fromJson: "");
 		vc.shopModel.orderID = model.orderNumber;
-		vc.shopModel.orderState = "0"
+		vc.shopModel.orderState = "1"
 		vc.lowerId = model.uid
 		self.navigationController?.pushViewController(vc, animated: true);
 	}

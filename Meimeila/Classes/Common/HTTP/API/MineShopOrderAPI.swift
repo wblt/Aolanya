@@ -29,6 +29,11 @@ enum MineShopOrderAPI {
     
     ///确认收货
     case varifyTakeGoods(orderID:String)
+	// 上级确认收款
+	case submitPaymentState(uid:String,subordinateUid:String,orderId:String,paymentState:String)
+	
+	//上级 提交快递信息
+	case submitDeliverGoods(uid:String,subordinateUid:String,orderId:String,expressNum:String,expressName:String)
 }
 
 
@@ -61,7 +66,12 @@ extension MineShopOrderAPI:Request{
             return API.verifyTakeGoods
         case .cancleOrder(orderID: _):
             return API.cancleOrderAPI;
-        }
+	case .submitPaymentState(uid:_,subordinateUid:_,orderId:_,paymentState:_):
+			return API.submitPaymentStateAPI;
+			
+		case .submitDeliverGoods(uid:_, subordinateUid:_, orderId:_,expressNum:_,expressName:_):
+			return API.submitDeliverGoodsAPI;
+		}
     }
     
     var host: String {
@@ -153,6 +163,23 @@ extension MineShopOrderAPI:Request{
             param["orderID"] = orderID;
             return DDIntegrationOfTheParameter(params: param, isNeedLogin: true);
             
-        }
+		case .submitPaymentState(let uid, let subordinateUid, let orderId, let paymentState):
+			var param = [String:Any]()
+		
+			param["uid"] = uid
+			param["subordinateUid"] = subordinateUid
+			param["orderId"] = orderId
+			param["paymentState"] = paymentState
+			return param
+		case .submitDeliverGoods(let uid, let subordinateUid, let orderId, let expressNum, let expressName):
+			var param = [String:Any]()
+			
+			param["uid"] = uid
+			param["subordinateUid"] = subordinateUid
+			param["orderId"] = orderId
+			param["expressNum"] = expressNum
+			param["expressName"] = expressName
+			return param
+		}
     }
 }

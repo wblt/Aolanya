@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALYNotRecivedVC" customModule="Meimeila" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="KIG-cp-Yqa" id="KFY-xs-m7d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
