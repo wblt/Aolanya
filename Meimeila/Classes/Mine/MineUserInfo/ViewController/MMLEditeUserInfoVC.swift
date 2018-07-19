@@ -21,6 +21,8 @@ class MMLEditeUserInfoVC: DDBaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     //
+	
+	
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +127,23 @@ extension MMLEditeUserInfoVC{
     
 }
 
+extension MMLEditeUserInfoVC:MMLAddressSelectVCDelegate,ALYProvinceSelectVCDelegate{
+	func provinceSelectFinish(address: String, vc: ALYProvinceSelectVC) {
+		
+	}
+	
+	func addressSelectFinish(address: String, vc: MMLAddressSelectVC) {
+		
+		vc.dismiss(animated: false) {[weak self] in
+			var arr = self?.vm.userInfoCellDetailArr[2];
+			arr![2] = address;
+			
+			self?.vm.userInfoCellDetailArr[2] = arr!;
+			self?.tableView.reloadData()
+		}
+	}
+	
+}
 
 
 extension MMLEditeUserInfoVC:MMLEditeInfoVCDelegate{
@@ -169,17 +188,22 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
             vc.indexPath = indexPath;
             if indexPath.row == 0{
                 vc.title = "昵称";
-                
+				navigationController?.pushViewController(vc, animated: true);
             }else if indexPath.row == 1 {
                 vc.title = "性别";
-
+				navigationController?.pushViewController(vc, animated: true);
             }else if indexPath.row == 2 {
-                vc.title = "所在地";
-
+               // vc.title = "所在地";
+				let vc = MMLAddressSelectVC();
+				vc.modalPresentationStyle = .overFullScreen;
+				vc.delegate = self as MMLAddressSelectVCDelegate;
+				self.present(vc, animated: false) {
+				}
+				
             }else if indexPath.row == 3 {
                 vc.title = "个性签名";
+				navigationController?.pushViewController(vc, animated: true);
             }
-            navigationController?.pushViewController(vc, animated: true);
             
         }else if indexPath.section == 3 {
             
@@ -203,10 +227,23 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
 				}
                 navigationController?.pushViewController(vc, animated: true);
             }else{
-                
-                let vc = MMLModifedPasswordVC();
-                navigationController?.pushViewController(vc, animated: true);
-
+				let section = indexPath.section;
+				let row = indexPath.row;
+				
+				var title = vm.userInfoCellDetailArr[section];
+				if title[row] == "" {
+					let vc = MMLBindPhoneVC()
+					vc.title = "绑定手机号"
+					navigationController?.pushViewController(vc, animated: true);
+				}else {
+					let vc = MMLBindPhoneVC()
+					vc.title = "解除绑定"
+					vc.isBindPhone = false;
+					navigationController?.pushViewController(vc, animated: true);
+				}
+//                let vc = MMLModifedPasswordVC();
+//                navigationController?.pushViewController(vc, animated: true);
+				
             }
         }
     }
@@ -266,6 +303,14 @@ extension MMLEditeUserInfoVC:UITableViewDataSource{
 				}
 				
                 cell?.setInfo = title[row];
+				if section == 3 && row == 3 {
+					var phone = title[row];
+					
+					phone.replaceSubrange(phone.index(phone.startIndex, offsetBy: 3)..<phone.index(phone.startIndex, offsetBy: 7), with:"****")
+					
+					
+					cell?.setInfo = phone;
+				}
             }
             return cell!
         }

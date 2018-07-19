@@ -26,9 +26,9 @@ class MMLMineOpinionVC: DDBaseViewController {
 			
 			var type = ""
 			if self.title == "意见反馈" {
-				type = "0"
-			}else {
 				type = "1"
+			}else {
+				type = "2"
 			}
 			
             vm.submit(feedbackMessage: textView.text , feedbackPhone: phoneTF.text, feedbackAdress: nil, feedbackType: type, succeeds: {

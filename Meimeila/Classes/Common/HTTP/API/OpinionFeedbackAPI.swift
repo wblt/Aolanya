@@ -28,12 +28,15 @@ extension OpinionFeedbackAPI:Request{
         switch self {
         case .feedback(let feedbackMessage,let feedbackPhone, let feedbackAdress,let feedbackType):
             
-            var p = postParameters()
-            p["feedbackMessage"] = feedbackMessage;
+			var p = [String:Any]()   //postParameters()
+			
+			let uid  = DDUDManager.share.getUserID();
+			p["deviceid"] = uid;
+            p["text"] = feedbackMessage;
             p["feedbackType"] = feedbackType
-            
+			
             if let _ = feedbackPhone {
-                p["feedbackPhone"] = feedbackPhone;
+                p["contact"] = feedbackPhone;
             }
             
             if let _ = feedbackAdress{
