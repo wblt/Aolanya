@@ -190,9 +190,24 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
                 vc.title = "昵称";
 				navigationController?.pushViewController(vc, animated: true);
             }else if indexPath.row == 1 {
-                vc.title = "性别";
-				navigationController?.pushViewController(vc, animated: true);
-            }else if indexPath.row == 2 {
+//                vc.title = "性别";
+//				navigationController?.pushViewController(vc, animated: true);
+				BFunction.shared.showActioSheetWithTitleArray(title: "温馨提示", subTitle: "请选择性别", titles: ["男","女"], callback: { (index, sex) in
+					if index == 0 {
+						var arr = self.vm.userInfoCellDetailArr[2];
+						arr[1] = "1";
+						
+						self.vm.userInfoCellDetailArr[2] = arr;
+						self.tableView.reloadData()
+					}else {
+						var arr = self.vm.userInfoCellDetailArr[2];
+						arr[1] = "0";
+						
+						self.vm.userInfoCellDetailArr[2] = arr;
+						self.tableView.reloadData()
+					}
+				})
+			}else if indexPath.row == 2 {
                // vc.title = "所在地";
 				let vc = MMLAddressSelectVC();
 				vc.modalPresentationStyle = .overFullScreen;
@@ -214,18 +229,22 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
                 vc.delegate = self;
                 if indexPath.row == 0 {
                     vc.title = "职业";
-
+					navigationController?.pushViewController(vc, animated: true);
                 }else if indexPath.row == 1 {
-                    vc.title = "年龄";
-
+                  //  vc.title = "年龄";
+					let a = LHCDatepicker(frame: CGRect(x: 0, y: 0, width: JQScreenwidth, height: JQScreenHeight), 起始时间: "1980-1-1", position: .底部);
+					a.dateType = .年月日;
+					a.delegate = self
+					view.addSubview(a)
+					
                 }else if indexPath.row == 2 {
                     vc.title = "邮箱";
-
+					navigationController?.pushViewController(vc, animated: true);
 				}else if indexPath.row == 3 {
 					vc.title = "手机号";
-					
+					 navigationController?.pushViewController(vc, animated: true);
 				}
-                navigationController?.pushViewController(vc, animated: true);
+				
             }else{
 				let section = indexPath.section;
 				let row = indexPath.row;
@@ -249,6 +268,22 @@ extension MMLEditeUserInfoVC:UITableViewDelegate{
     }
     
 }
+
+extension MMLEditeUserInfoVC:LHCDatePickerDelegate{
+	func 点击确定(date: String) {
+		var arr = self.vm.userInfoCellDetailArr[3];
+		arr[1] = date;
+		
+		self.vm.userInfoCellDetailArr[3] = arr;
+		self.tableView.reloadData()
+	}
+	
+	func 点击取消(date: String) {
+		
+	}
+	
+}
+
 
 extension MMLEditeUserInfoVC:UITableViewDataSource{
     

@@ -81,7 +81,7 @@ extension UserInfoAPI:Request{
             }
             
             if let _  = sex {
-                params["gender"] = sex!
+				 params["gender"] =  sex!
             }
             
             if let _  = age {
